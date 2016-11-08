@@ -14,4 +14,9 @@
 class Event < ApplicationRecord
   has_many :participations
   has_many :accommodations
+
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :starting_at, presence: true
+  validates :ending_at, presence: true
 end
