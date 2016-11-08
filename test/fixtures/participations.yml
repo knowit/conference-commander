@@ -1,13 +1,26 @@
+# == Schema Information
+#
+# Table name: participations
+#
+#  id               :integer          not null, primary key
+#  single_room      :boolean          default(FALSE)
+#  user_id          :integer          not null
+#  event_id         :integer          not null
+#  accommodation_id :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   single_room: false
   user: one
   event: one
-  accomodation: one
+  accommodation: one
 
 two:
   single_room: false
   user: two
   event: two
-  accomodation: two
+  accommodation: two

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: accomodations
+# Table name: accommodations
 #
 #  id             :integer          not null, primary key
 #  number_of_beds :integer
@@ -8,6 +8,7 @@
 #  updated_at     :datetime         not null
 #
 
-class Accomodation < ApplicationRecord
+class Accommodation < ApplicationRecord
   has_many :participations
+  belongs_to :event
 end

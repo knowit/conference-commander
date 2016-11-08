@@ -11,4 +11,7 @@
 
 class User < ApplicationRecord
   has_many :participations
+
+  # Role enum
+  enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
 end
