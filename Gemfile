@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'annotate'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'slim'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

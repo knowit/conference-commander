@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: accomodations
+# Table name: accommodations
 #
 #  id             :integer          not null, primary key
 #  number_of_beds :integer
@@ -8,6 +8,10 @@
 #  updated_at     :datetime         not null
 #
 
-class Accomodation < ApplicationRecord
-  has_many :participations
-end
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_of_beds: 1
+
+two:
+  number_of_beds: 1

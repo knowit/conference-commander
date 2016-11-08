@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: accomodations
+# Table name: accommodations
 #
 #  id             :integer          not null, primary key
 #  number_of_beds :integer
@@ -10,7 +10,7 @@
 
 require 'test_helper'
 
-class AccomodationTest < ActiveSupport::TestCase
+class AccommodationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
