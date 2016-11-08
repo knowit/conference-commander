@@ -17,7 +17,6 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'annotate'
-
 gem 'slim'
 
 # Use jquery as the JavaScript library
@@ -50,3 +49,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :util do
+  gem 'annotate'
+end
