@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108161521) do
+ActiveRecord::Schema.define(version: 20161108172055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,7 @@ ActiveRecord::Schema.define(version: 20161108161521) do
     t.integer  "number_of_beds"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-  end
-
-  create_table "accommodations_events", id: false, force: :cascade do |t|
-    t.integer "event_id",         null: false
-    t.integer "accommodation_id", null: false
+    t.integer  "event_id",       null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -61,6 +57,7 @@ ActiveRecord::Schema.define(version: 20161108161521) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "accommodations", "events"
   add_foreign_key "participations", "accommodations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
