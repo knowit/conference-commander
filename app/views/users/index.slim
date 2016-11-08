@@ -1,8 +1,9 @@
 - unless @users.empty?
-  table
-    - @users.each do |user|
-      tr
-        td = user.name
-        td = user.email
-        td = user.id
-
+  table.ui.celled.table
+    thead
+    tbody
+      - @users.each do |user|
+        tr
+          td = user.name
+          td = user.email
+          td = user.id
