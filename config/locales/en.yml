@@ -24,4 +24,6 @@ en:
 
   users:
     table:
-      edit: "Edit user"
+      tooltips:
+        edit: "Edit user"
+        delete: "Delete user"

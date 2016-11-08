@@ -8,5 +8,6 @@
           td = user.email
           td = user.id
           td
-            = link_to fa_icon('pencil-square-o'), edit_user_path(user)
-            = link_to fa_icon('remove'), user_path(user), method: :delete
+            div.ui.icon.buttons
+              = link_to fa_icon('pencil'), edit_user_path(user), class: 'ui button', data: {tooltip: t('users.table.tooltips.edit')}
+              = link_to fa_icon('remove'), user_path(user), method: :delete, class: 'ui button', data: {tooltip: t('users.table.tooltips.delete')}
