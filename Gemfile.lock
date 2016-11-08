@@ -49,6 +49,7 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
     arel (7.1.4)
+    as-duration (0.1.1)
     builder (3.2.2)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -62,6 +63,10 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
+    faker (1.6.6)
+      i18n (~> 0.5)
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -169,8 +174,11 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  as-duration
   byebug
   coffee-rails (~> 4.2)
+  factory_girl
+  faker
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
