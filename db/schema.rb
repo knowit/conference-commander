@@ -10,15 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108151031) do
+ActiveRecord::Schema.define(version: 20161108154859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accomodations", force: :cascade do |t|
+  create_table "accommodations", force: :cascade do |t|
     t.integer  "number_of_beds"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "accommodations_events", id: false, force: :cascade do |t|
+    t.integer "event_id",         null: false
+    t.integer "accommodation_id", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -31,13 +36,13 @@ ActiveRecord::Schema.define(version: 20161108151031) do
   end
 
   create_table "participations", force: :cascade do |t|
-    t.boolean  "single_room",     default: false
-    t.integer  "user_id",                         null: false
-    t.integer  "event_id",                        null: false
-    t.integer  "accomodation_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.index ["accomodation_id"], name: "index_participations_on_accomodation_id", using: :btree
+    t.boolean  "single_room",      default: false
+    t.integer  "user_id",                          null: false
+    t.integer  "event_id",                         null: false
+    t.integer  "accommodation_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["accommodation_id"], name: "index_participations_on_accommodation_id", using: :btree
     t.index ["event_id"], name: "index_participations_on_event_id", using: :btree
     t.index ["user_id", "event_id"], name: "index_participations_on_user_id_and_event_id", unique: true, using: :btree
     t.index ["user_id"], name: "index_participations_on_user_id", using: :btree
@@ -51,7 +56,7 @@ ActiveRecord::Schema.define(version: 20161108151031) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
-  add_foreign_key "participations", "accomodations"
+  add_foreign_key "participations", "accommodations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
 end

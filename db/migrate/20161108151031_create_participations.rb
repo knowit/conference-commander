@@ -4,7 +4,7 @@ class CreateParticipations < ActiveRecord::Migration[5.0]
       t.boolean :single_room, default: false
       t.references :user, foreign_key: true, null: false
       t.references :event, foreign_key: true, null: false
-      t.references :accomodation, foreign_key: true
+      t.references :accommodation, foreign_key: true
 
       t.timestamps
     end
