@@ -1,8 +1,10 @@
 - unless @users.empty?
-  table
-    - @users.each do |user|
-      tr
-        td = user.name
-        td = user.email
-        td = user.id
-
+  table.ui.celled.table
+    thead
+    tbody
+      - @users.each do |user|
+        tr
+          td = user.name
+          td = user.email
+          td = user.id
+          td = link_to t('edit_user_button'), edit_user_path(user)

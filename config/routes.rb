@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
+
+  # we need to redirect in order to use the correct method and thus the correct layout:
+  get '/pages/front', to: redirect('/')
   get '/pages/:page' => 'pages#show'
+
+  root to: 'pages#front'
   root to: 'pages#index'
 
   get '/signin' => 'sessions#new', :as => :signin

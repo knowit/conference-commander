@@ -13,5 +13,5 @@
 
 class Event < ApplicationRecord
   has_many :participations
-  has_and_belongs_to_many :accommodations
+  has_many :accommodations
 end
