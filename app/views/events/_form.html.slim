@@ -1,8 +1,7 @@
 = form_for @event do |f|
-  <ul>
+  ul
     - @event.errors.full_messages.each do |msg|
-      <li>#{ msg }</li>
-  </ul>
+      li = msg
 
   = f.text_field :name, placeholder: "Name"
   = f.text_area :description, placeholder: "Description"
