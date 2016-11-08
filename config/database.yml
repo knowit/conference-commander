@@ -10,6 +10,7 @@ default: &default
   encoding: unicode
   host: localhost
   username: <%= ENV['MY_USER'] || ENV['USER'] %>
+  password: <%= ENV['MY_PASSWORD'] %>
 
 development:
   <<: *default
