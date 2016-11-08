@@ -9,6 +9,7 @@ default: &default
   port: 5432
   encoding: unicode
   host: localhost
+  username: <%= ENV['MY_USER'] || ENV['USER'] %>
 
 development:
   <<: *default
