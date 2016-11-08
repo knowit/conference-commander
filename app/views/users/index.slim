@@ -2,10 +2,17 @@
   table.ui.celled.table
     thead
     tbody
+      tr
+        th = User.human_attribute_name(:name)
+        th = User.human_attribute_name(:email)
+        th = User.human_attribute_name(:gender)
+        th = User.human_attribute_name(:id)
+        th
       - @users.each do |user|
         tr
           td = user.name
           td = user.email
+          td = user.gender
           td = user.id
           td
             = link_to fa_icon('pencil-square-o'), edit_user_path(user)
