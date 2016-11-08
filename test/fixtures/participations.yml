@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  single_room: false
+  user: one
+  event: one
+  accomodation: one
+
+two:
+  single_room: false
+  user: two
+  event: two
+  accomodation: two
