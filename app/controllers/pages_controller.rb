@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    render layout: "pages_index"
+    render
   end
 
   def show
