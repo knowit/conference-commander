@@ -1,0 +1,21 @@
+attributes:
+  - content
+  - foreign_key
+  - inheritance
+disconnected: true
+filename: doc/ER-model
+filetype: pdf
+indirect: true
+inheritance: false
+markup: true
+notation: simple
+orientation: vertical
+polymorphism: false
+sort: true
+warn: true
+title: ER diagram
+exclude: null
+only: null
+only_recursion_depth: null
+prepend_primary: false
+cluster: false
