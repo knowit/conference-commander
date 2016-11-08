@@ -14,5 +14,5 @@
 class Participation < ApplicationRecord
   belongs_to :user
   belongs_to :event
-  belongs_to :accomodation
+  belongs_to :accommodation
 end

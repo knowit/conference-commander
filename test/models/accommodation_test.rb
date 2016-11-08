@@ -8,6 +8,10 @@
 #  updated_at     :datetime         not null
 #
 
-class Accomodation < ApplicationRecord
-  has_many :participations
+require 'test_helper'
+
+class AccommodationTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

@@ -17,10 +17,10 @@ one:
   single_room: false
   user: one
   event: one
-  accomodation: one
+  accommodation: one
 
 two:
   single_room: false
   user: two
   event: two
-  accomodation: two
+  accommodation: two
