@@ -1,13 +1,13 @@
 - unless @users.empty?
   table.ui.celled.table
     thead
-    tbody
       tr
         th = User.human_attribute_name(:name)
         th = User.human_attribute_name(:email)
         th = User.human_attribute_name(:gender)
         th = User.human_attribute_name(:id)
         th
+    tbody
       - @users.each do |user|
         tr
           td = user.name
