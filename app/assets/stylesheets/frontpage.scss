@@ -69,7 +69,7 @@ section {
   width: 100%;
   /*min-height: 100%;*/
   position: relative;
-  padding-bottom: 100px;
+  padding: 6em 0;
 }
 
 .intro {
@@ -110,10 +110,6 @@ section {
   font-size: 25px;
   margin: 0;
   padding: 0;
-}
-
-.two, .talks {
-  padding: 85px 20px 40px;
 }
 
 .two::before, .schedule::before, .talks::before, .logo-divider::before {
