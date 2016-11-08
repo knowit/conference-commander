@@ -1,0 +1,15 @@
+#signin-container
+  = form_tag '/auth/crowd', class: 'form-signin' do
+    h1.form-signin-heading
+      | Logg inn
+    .form-group
+      = label_tag :email, 'Epost'
+      = text_field_tag :email, params[:username], type: :email, class: 'form-control'
+    .form-group
+      = label_tag :password, 'Passord'
+      = password_field_tag :password, '', class: 'form-control'
+    .checkbox
+      label
+        = check_box_tag :remember_me, 1, params[:remember_me]
+        = 'Husk meg!'
+    = submit_tag 'Logg inn', class: 'btn btn-lg btn-primary btn-block'

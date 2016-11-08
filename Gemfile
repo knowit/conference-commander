@@ -31,6 +31,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Crowd
+# https://github.com/robdimarco/omniauth_crowd
+gem 'omniauth', '>= 1.0.0'  # We depend on this
+gem 'omniauth_crowd'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
