@@ -1,0 +1,8 @@
+= form_for @event do |f|
+  = f.text_field :name, placeholder: "Name"
+  = f.text_field :description, placeholder: "Description"
+  = f.label "Starting at"
+  = f.datetime_select :starting_at
+  = f.label "Ending at"
+  = f.datetime_select :ending_at
+  = f.submit "Save"
