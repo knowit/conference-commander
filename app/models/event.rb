@@ -14,10 +14,8 @@
 class Event < ApplicationRecord
   has_many :participations
 
-  validates :name, nil: false
-  validates :description, nil: false
-  validates :starting_at, nil: false
-  validates :ending_at, nil: false
-  validates :created_at, nil: false
-  validates :updated_at, nil: false
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :starting_at, presence: true
+  validates :ending_at, presence: true
 end
