@@ -15,6 +15,5 @@
           td = user.gender
           td = user.id
           td
-            div.ui.icon.buttons
-              = link_to fa_icon('pencil'), edit_user_path(user), class: 'ui button', data: {tooltip: t('users.table.tooltips.edit')}
-              = link_to fa_icon('remove'), user_path(user), method: :delete, class: 'ui button', data: {tooltip: t('users.table.tooltips.delete')}
+            = link_to fa_icon('pencil'), edit_user_path(user), class: 'ui button', data: {tooltip: t('users.table.tooltips.edit')}
+            = link_to fa_icon('remove'), user_path(user), method: :delete, class: 'ui button', data: {tooltip: t('users.table.tooltips.delete')}

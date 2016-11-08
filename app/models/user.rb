@@ -11,6 +11,8 @@
 
 class User < ApplicationRecord
   has_many :participations
+  validates :name, presence: true
+  validates :email, presence: true
 
   # Role enum
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
