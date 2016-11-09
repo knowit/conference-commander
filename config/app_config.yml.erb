@@ -5,8 +5,8 @@ defaults: &defaults
   # USING CVREG FOR NOW.
   ##############################################
   crowd:
-    app_name: cvreg-test
-    app_password: bbc23d83-4341-4bf9-be66-c7d8d6f60820
+    app_name: conference-commander-test
+    app_password: <%= ENV['CROWD_APP_PASSWORD'] %>
     url: http://singlesignon.dmz.unified.no:8095/crowd
 
 development:
@@ -16,8 +16,8 @@ development:
   #   $ ssh -L 8095:singlesignon.dmz.unified.no:8095 admin@osldmzappsrv03.dmz.unified.no
   # and uncomment the config below:
   #crowd:
-  #  app_name: cvreg-test
-  #  app_password: bbc23d83-4341-4bf9-be66-c7d8d6f60820
+  #  app_name: conference-commander-test
+  #  app_password: <%= ENV['CROWD_APP_PASSWORD'] %>
   #  url: http://localhost:8095/crowd
 
 test:
@@ -25,3 +25,4 @@ test:
 
 production:
   <<: *defaults
+  app_name: conference-commander
