@@ -1,0 +1,27 @@
+defaults: &defaults
+  version: 0.0.1
+  ##############################################
+  # ASK DRIFT TO CREATE A CROWD APP FOR US.
+  # USING CVREG FOR NOW.
+  ##############################################
+  crowd:
+    app_name: cvreg-test
+    app_password: bbc23d83-4341-4bf9-be66-c7d8d6f60820
+    url: http://singlesignon.dmz.unified.no:8095/crowd
+
+development:
+  <<: *defaults
+  # Crowd is configured to accept requests for cvreg-test from these ip-ranges: 192.168.10.0/24 192.168.160.0/24
+  # If this is not working for you, you can accedd Crowd through a ssh tunnell:
+  #   $ ssh -L 8095:singlesignon.dmz.unified.no:8095 admin@osldmzappsrv03.dmz.unified.no
+  # and uncomment the config below:
+  #crowd:
+  #  app_name: cvreg-test
+  #  app_password: bbc23d83-4341-4bf9-be66-c7d8d6f60820
+  #  url: http://localhost:8095/crowd
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
