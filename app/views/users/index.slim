@@ -1,10 +1,19 @@
 - unless @users.empty?
   table.ui.celled.table
     thead
+      tr
+        th = User.human_attribute_name(:name)
+        th = User.human_attribute_name(:email)
+        th = User.human_attribute_name(:gender)
+        th = User.human_attribute_name(:id)
+        th
     tbody
       - @users.each do |user|
         tr
           td = user.name
           td = user.email
+          td = user.gender
           td = user.id
-          td = link_to t('edit_user_button'), edit_user_path(user)
+          td
+            = link_to fa_icon('pencil'), edit_user_path(user), class: 'ui button', data: {tooltip: t('users.table.tooltips.edit')}
+            = link_to fa_icon('remove'), user_path(user), method: :delete, class: 'ui button', data: {tooltip: t('users.table.tooltips.delete')}

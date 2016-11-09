@@ -20,6 +20,10 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'slim'
 gem 'simple_form'
 gem 'responders'
+gem 'font-awesome-rails'
+
+# slim
+gem 'slim-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

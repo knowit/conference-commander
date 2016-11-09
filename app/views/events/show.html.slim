@@ -1,0 +1,9 @@
+div
+  p = @event.name
+  p = @event.description
+  p = @event.starting_at
+  p = @event.ending_at
+
+  div
+    = link_to "Edit", edit_event_path
+    = link_to "Delete", event_path(@event), method: :delete

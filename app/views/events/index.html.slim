@@ -1,0 +1,10 @@
+= link_to "Add new event", new_event_path
+
+.events
+  - @events.each do |event|
+    .event
+      p = event.name
+      p = event.description
+      p = event.starting_at
+      p = event.ending_at
+

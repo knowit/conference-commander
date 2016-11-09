@@ -21,4 +21,9 @@
 
 nb:
   hello: "Hei Verden"
-  edit_user_button: "Endre bruker"
+
+  user:
+    table:
+      tooltips:
+        edit: "Endre bruker"
+        delete: "Slett bruker"

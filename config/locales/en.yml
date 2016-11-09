@@ -21,4 +21,9 @@
 
 en:
   hello: "Hello world"
-  edit_user_button: "Edit user"
+
+  users:
+    table:
+      tooltips:
+        edit: "Edit user"
+        delete: "Delete user"

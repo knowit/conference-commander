@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  responders :flash
   respond_to :html
 
   def index
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    respond_with @user
+    redirect_to action: :index
   end
 
   def update
@@ -29,9 +30,15 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_with @user
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :gender)
   end
 
 end
