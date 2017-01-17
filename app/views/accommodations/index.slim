@@ -1,0 +1,19 @@
+= link_to t('accommodations.table.tooltips.new'), new_accommodation_path
+
+- unless @accommodations.empty?
+  table.ui.celled.table
+    thead
+      tr
+        th = Accommodation.human_attribute_name(:number_of_beds)
+        th = Accommodation.human_attribute_name(:event)
+        th = Accommodation.human_attribute_name(:id)
+        th
+    tbody
+      - @accommodations.each do |accommodation|
+        tr
+          td = accommodation.number_of_beds
+          td = accommodation.event && accommodation.event.name
+          td = accommodation.id
+          td
+            = link_to fa_icon('pencil'), edit_accommodation_path(accommodation), class: 'ui button', data: {tooltip: t('accommodations.table.tooltips.edit')}
+            = link_to fa_icon('remove'), accommodation_path(accommodation), method: :delete, class: 'ui button', data: {tooltip: t('accommodations.table.tooltips.delete')}
