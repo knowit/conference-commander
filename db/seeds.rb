@@ -11,3 +11,5 @@ User.create(name: 'Vegarddd', email: 'vegard.molvig@knowit.no')
 
 Event.create(name: "Fredrikstad", description: "Fagseminar i Fredrikstad", starting_at: "2015-11-08 17:50:00", ending_at: "2015-11-08 17:50:00")
 Event.create(name: "Lofoten", description: "Fagseminar i Lofoten", starting_at: "2016-11-08 17:50:00", ending_at: "2016-11-08 17:50:00")
+
+Proposal.create(title: "Do you even Rails?", description: "En liten techtalk om Rail", duration: 10, event_id: 1)
