@@ -1,0 +1,40 @@
+div
+  h3 Activity info
+  table.ui.celled.table
+    thead
+      tr
+        th name
+        th description
+        th start date/time
+        th end date/time
+        th event
+        th
+    tbody
+      tr
+        td = @activity.name
+        td = @activity.description
+        td = @activity.starting_at.strftime("%d/%m/%Y")
+        td = @activity.ending_at.strftime("%d/%m/%Y")
+        td = @activity.event.name
+        td
+          div.ui.mini.buttons
+            = link_to "Edit", edit_activity_path(@activity), class: "ui button primary"
+            div.or
+            = link_to "Delete", activity_path(@activity), method: :delete, class: "ui button"
+
+  div
+    h4 Participants
+
+    - unless @activity.participants.empty?
+      table.ui.celled.table
+        thead
+          tr
+            th name
+            th email
+            th role
+        tbody
+          - @activity.participants.each do |participant|
+            tr
+              td = link_to participant.name, user_path(participant)
+              td = participant.email
+              td = participant.role

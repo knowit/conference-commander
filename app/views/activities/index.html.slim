@@ -1,0 +1,24 @@
+= link_to "Add new activity", new_activity_path
+- unless @activities.empty?
+  table.ui.celled.table
+    thead
+      tr
+        th = Activity.human_attribute_name(:name)
+        th = Activity.human_attribute_name(:description)
+        th = Activity.human_attribute_name(:starting_at)
+        th = Activity.human_attribute_name(:ending_at)
+        th = Activity.human_attribute_name(:event)
+        th
+    tbody
+      - @activities.each do |activity|
+        tr
+          td = link_to activity.name, activity_path(activity)
+          td = activity.description
+          td = activity.starting_at.strftime("%d/%m/%Y")
+          td = activity.ending_at.strftime("%d/%m/%Y")
+          td = activity.event.name
+          td
+            div.ui.mini.buttons
+              = link_to "Edit", edit_activity_path(activity), class: "ui button primary"
+              div.or
+              = link_to "Delete", activity_path(activity), method: :delete, class: "ui button"

@@ -1,0 +1,17 @@
+= simple_form_for @activity do |f|
+  ul
+    - @activity.errors.full_messages.each do |msg|
+      li = msg
+  .four.fields
+    .field
+      = f.input :name, as: :string
+    .field
+      .ui.calendar= f.input :starting_at, as: :string
+    .field
+      .ui.calendar= f.input :ending_at, as: :string
+    .field
+      = f.association :event, input_html:{class: 'ui dropdown fluid'}
+      
+  = f.input :description
+
+  = f.submit class: 'ui primary button'

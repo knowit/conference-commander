@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(version: 20170201141422) do
     t.integer  "event_id",       null: false
   end
 
+  create_table "activities", force: :cascade do |t|
+    t.text     "name",        null: false
+    t.text     "description", null: false
+    t.datetime "starting_at", null: false
+    t.datetime "ending_at",   null: false
+    t.integer  "event_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["event_id"], name: "index_activities_on_event_id", using: :btree
+  end
+
+  create_table "activity_participations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["activity_id"], name: "index_activity_participations_on_activity_id", using: :btree
+    t.index ["user_id"], name: "index_activity_participations_on_user_id", using: :btree
+  end
+
   create_table "events", force: :cascade do |t|
     t.text     "name",        null: false
     t.text     "description", null: false

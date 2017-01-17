@@ -18,6 +18,7 @@
 class User < ApplicationRecord
   has_many :participations
   has_many :proposals
+  has_many :activity_participations
 
   validates :name, presence: true
   validates :email, presence: true

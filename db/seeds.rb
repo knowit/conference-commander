@@ -26,3 +26,9 @@ a2 = Accommodation.create(event: e1, number_of_beds: 2)
 
 Participation.create(user: u1, event: e1, accommodation: a1)
 Participation.create(user: u2, event: e1)
+
+ac1 = Activity.create(name: 'Ølsykkel', description: 'Vi kjører sykkel og drikker øl', starting_at: "2016-11-08 17:50:00", ending_at: "2016-11-09 17:50:00", event_id: e1)
+ac2 = Activity.create(name: 'Vinsmaking', description: 'Vi smaker på vin', starting_at: "2016-11-08 18:30:00", ending_at: "2016-11-10 18:00:00", event_id: e2)
+
+acp1 = ActivityParticipation.create(activity_id: ac1.id, user_id: u1.id)
+acp2 = ActivityParticipation.create(activity_id: ac2.id, user_id: u2.id)

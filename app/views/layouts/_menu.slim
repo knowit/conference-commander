@@ -9,3 +9,5 @@
     .item = link_to Proposal.model_name.human.pluralize, proposals_path
   - if can? :read, Accommodation
     .item = link_to Accommodation.model_name.human.pluralize, accommodations_path
+  - if can? :read, Activity
+    .item = link_to Activity.model_name.human.pluralize, activities_path
