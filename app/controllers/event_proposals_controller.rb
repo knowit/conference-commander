@@ -11,7 +11,6 @@ class EventProposalsController < ApplicationController
     if @proposal.save
       redirect_to event_proposals_url(@event)
     else
-      p @proposal.errors.inspect
       render "proposals/new"
 
     end
