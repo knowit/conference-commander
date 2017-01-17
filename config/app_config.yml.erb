@@ -1,28 +1,15 @@
 defaults: &defaults
   version: 0.0.1
-  ##############################################
-  # ASK DRIFT TO CREATE A CROWD APP FOR US.
-  # USING CVREG FOR NOW.
-  ##############################################
   crowd:
-    app_name: conference-commander-test
+    app_name: <%= ENV['CROWD_APP_NAME'] %>
     app_password: <%= ENV['CROWD_APP_PASSWORD'] %>
-    url: http://singlesignon.dmz.unified.no:8095/crowd
+    url: <%= ENV['CROWD_ENDPOINT_URL'] %>
 
 development:
   <<: *defaults
-  # Crowd is configured to accept requests for cvreg-test from these ip-ranges: 192.168.10.0/24 192.168.160.0/24
-  # If this is not working for you, you can accedd Crowd through a ssh tunnell:
-  #   $ ssh -L 8095:singlesignon.dmz.unified.no:8095 admin@osldmzappsrv03.dmz.unified.no
-  # and uncomment the config below:
-  #crowd:
-  #  app_name: conference-commander-test
-  #  app_password: <%= ENV['CROWD_APP_PASSWORD'] %>
-  #  url: http://localhost:8095/crowd
 
 test:
   <<: *defaults
 
 production:
   <<: *defaults
-  app_name: conference-commander
