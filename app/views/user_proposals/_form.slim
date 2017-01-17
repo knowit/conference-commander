@@ -1,0 +1,6 @@
+= simple_form_for [@user, @proposal] do |f|
+  = f.input :title, as: :string
+  = f.input :description
+  = f.input :duration, collection: [10, 15, 20, 30, 45, 60], prompt: "Select duration", selected: @proposal.duration
+  = f.input :event_id, collection: Event.all, prompt: "Select an event"
+  = f.button :submit
