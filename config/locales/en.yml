@@ -27,3 +27,9 @@ en:
       tooltips:
         edit: "Edit user"
         delete: "Delete user"
+
+  accommodations:
+    table:
+      tooltips:
+        edit: "Edit accommodation"
+        delete: "Delete accommodation"
