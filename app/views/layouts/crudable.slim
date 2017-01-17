@@ -1,0 +1,9 @@
+- content_for :content do
+
+  = render 'shared/crud_title'
+
+  = yield
+
+  = render 'shared/new_link' if action_name == 'index'
+
+= render template: 'layouts/application'

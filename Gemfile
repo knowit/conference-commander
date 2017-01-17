@@ -16,11 +16,14 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Load environment variables from .env
+gem 'dotenv-rails'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'slim'
 gem 'simple_form'
 gem 'responders'
 gem 'font-awesome-rails'
+gem 'bower-rails', '~> 0.11.0'
 
 # Awesome print, for awesome printing!
 gem 'awesome_print'
@@ -38,6 +41,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Crowd
+# https://github.com/robdimarco/omniauth_crowd
+gem 'omniauth', '>= 1.0.0'  # We depend on this
+gem 'omniauth_crowd'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

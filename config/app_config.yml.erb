@@ -1,0 +1,15 @@
+defaults: &defaults
+  version: 0.0.1
+  crowd:
+    app_name: <%= ENV['CROWD_APP_NAME'] %>
+    app_password: <%= ENV['CROWD_APP_PASSWORD'] %>
+    url: <%= ENV['CROWD_ENDPOINT_URL'] %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

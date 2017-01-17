@@ -1,9 +1,40 @@
 div
-  p = @event.name
-  p = @event.description
-  p = @event.starting_at
-  p = @event.ending_at
+  h3 Event info
+  table.ui.celled.table
+    thead
+      tr
+        th name
+        th description
+        th start date/time
+        th end date/time
+        th registration
+        th
+    tbody
+      tr
+        td = @event.name
+        td = @event.description
+        td = @event.starting_at.strftime("%d/%m/%Y")
+        td = @event.ending_at.strftime("%d/%m/%Y")
+        td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(@event)
+        td
+          div.ui.mini.buttons
+            = link_to "Edit", edit_event_path(@event), class: "ui button primary"
+            div.or
+            = link_to "Delete", event_path(@event), method: :delete, class: "ui button"
 
   div
-    = link_to "Edit", edit_event_path
-    = link_to "Delete", event_path(@event), method: :delete
+    h4 Participants
+
+    - unless @event.participants.empty?
+      table.ui.celled.table
+        thead
+          tr
+            th name
+            th email
+            th role
+        tbody
+          - @event.participants.each do |participant|
+            tr
+              td = link_to participant.name, user_path(participant)
+              td = participant.email
+              td = participant.role
