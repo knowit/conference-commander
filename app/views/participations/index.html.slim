@@ -1,0 +1,22 @@
+h1 Listing participations
+
+table
+  thead
+    tr
+      th = User.human_attribute_name(:name)
+      th = Event.human_attribute_name(:name)
+      th
+      th
+
+  tbody
+    - @participations.each do |participation|
+      tr
+        td = participation.user&.name
+        td = participation.event&.name
+        td = link_to 'Show', participation
+        td = link_to 'Edit', edit_participation_path(participation)
+        td = link_to 'Destroy', participation, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Participation', new_participation_path
