@@ -1,0 +1,4 @@
+div.ui.mini.buttons
+  = link_to "Edit", edit_polymorphic_path(object), class: "ui button primary"
+  div.or
+  = link_to "Delete", polymorphic_path(object), method: :delete, class: "ui button"

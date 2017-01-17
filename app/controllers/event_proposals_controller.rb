@@ -1,4 +1,5 @@
 class EventProposalsController < ApplicationController
+
   before_action :set_event
   before_action :set_proposal, except: [:index, :new, :create]
 
@@ -12,7 +13,6 @@ class EventProposalsController < ApplicationController
       redirect_to event_proposals_url(@event)
     else
       render "proposals/new"
-
     end
   end
 

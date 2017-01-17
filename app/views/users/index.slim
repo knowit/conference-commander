@@ -17,8 +17,4 @@
           td = user.email
           td = user.gender
           td = user.id
-          td
-            div.ui.mini.buttons
-              = link_to "Edit", edit_user_path(user), class: "ui button primary"
-              div.or
-              = link_to "Delete", user_path(user), method: :delete, class: "ui button"
+          td = render 'shared/action_links', object: user
