@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require semantic-ui
+//= require semantic-ui-calendar/dist/calendar
 //= require_tree .

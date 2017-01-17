@@ -7,6 +7,8 @@
 #  email      :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  role       :integer          default("participant"), not null
+#  gender     :integer          default("unspecified"), not null
 #
 
 require 'test_helper'

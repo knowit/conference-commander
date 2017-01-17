@@ -1,12 +1,15 @@
-= form_for @event do |f|
+= simple_form_for @event do |f|
   ul
     - @event.errors.full_messages.each do |msg|
       li = msg
+  .three.fields
+    .field
+      = f.input :name, as: :string
+    .field
+      .ui.calendar= f.input :starting_at, as: :string
+    .field
+      .ui.calendar= f.input :ending_at, as: :string
 
-  = f.text_field :name, placeholder: "Name"
-  = f.text_area :description, placeholder: "Description"
-  = f.label "Starting at"
-  = f.datetime_select :starting_at
-  = f.label "Ending at"
-  = f.datetime_select :ending_at
-  = f.submit "Save"
+  = f.input :description
+
+  = f.submit class: 'ui primary button'
