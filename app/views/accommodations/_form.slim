@@ -1,0 +1,4 @@
+= simple_form_for @accommodation do |u|
+  = u.input :number_of_beds, as: :integer
+  = u.association :event
+  = u.button :submit
