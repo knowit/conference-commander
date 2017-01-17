@@ -10,9 +10,15 @@
 #  role       :integer          default("participant"), not null
 #  gender     :integer          default("unspecified"), not null
 #
+# Indexes
+#
+#  index_users_on_email  (email) UNIQUE
+#
 
 class User < ApplicationRecord
   has_many :participations
+  has_many :proposals
+
   validates :name, presence: true
   validates :email, presence: true
 

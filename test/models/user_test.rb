@@ -10,6 +10,10 @@
 #  role       :integer          default("participant"), not null
 #  gender     :integer          default("unspecified"), not null
 #
+# Indexes
+#
+#  index_users_on_email  (email) UNIQUE
+#
 
 require 'test_helper'
 

@@ -1,10 +1,16 @@
 = link_to "Add new event", new_event_path
-
-.events
-  - @events.each do |event|
-    .event
-      p = event.name
-      p = event.description
-      p = event.starting_at
-      p = event.ending_at
-
+- unless @events.empty?
+  table.ui.celled.table
+    thead
+      tr
+        th = Event.human_attribute_name(:name)
+        th = Event.human_attribute_name(:description)
+        th = Event.human_attribute_name(:starting_at)
+        th = Event.human_attribute_name(:ending_at)
+    tbody
+      - @events.each do |event|
+        tr
+          td = event.name
+          td = event.description
+          td = event.starting_at
+          td = event.ending_at

@@ -2,6 +2,7 @@
   table.ui.celled.table
     thead
       tr
+        th
         th = User.human_attribute_name(:name)
         th = User.human_attribute_name(:email)
         th = User.human_attribute_name(:gender)
@@ -10,6 +11,8 @@
     tbody
       - @users.each do |user|
         tr
+          td
+            i.ui.big.user.icon
           td = user.name
           td = user.email
           td = user.gender

@@ -1,0 +1,11 @@
+- unless @proposals.empty?
+  table.ui.celled.table
+    thead
+    tbody
+      - @proposals.each do |proposal|
+        tr
+          td = proposal.title
+          td = proposal.description
+          td = proposal.duration
+          td = link_to proposal.event.name, event_path(proposal.event)
+          td = link_to proposal.user.name, event_path(proposal.user)
