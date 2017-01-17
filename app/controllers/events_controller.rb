@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
+
   before_action :set_event, except: [:index, :new, :create]
+
+  layout 'crudable'
 
   def index
     @events = Event.all

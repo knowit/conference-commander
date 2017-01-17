@@ -3,6 +3,8 @@ class AccommodationsController < ApplicationController
   responders :flash
   respond_to :html
 
+  layout 'crudable'
+
   def index
     @accommodations = Accommodation.all
   end

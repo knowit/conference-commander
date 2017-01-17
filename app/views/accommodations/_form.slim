@@ -1,5 +1,3 @@
-= render 'shared/crud_title'
-
 = simple_form_for @accommodation do |u|
   = u.input :number_of_beds, as: :integer
   = u.association :event, input_html: { class: 'ui fluid dropdown' }

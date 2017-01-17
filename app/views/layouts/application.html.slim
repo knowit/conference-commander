@@ -10,4 +10,4 @@ html
     = render 'layouts/menu'
     .ui.page.grid
       .wide.column
-        = yield
+        = content_for?(:content) ? yield(:content) : yield

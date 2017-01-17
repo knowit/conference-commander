@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   responders :flash
   respond_to :html
 
+  layout 'crudable'
+
   def index
     @users = User.all
   end

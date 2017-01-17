@@ -1,4 +1,7 @@
 class ParticipationsController < ApplicationController
+
+  layout 'crudable'
+  
   before_action :set_participation, only: [:show, :edit, :update, :destroy]
 
   # GET /participations
