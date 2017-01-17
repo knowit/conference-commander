@@ -21,6 +21,7 @@ gem 'slim'
 gem 'simple_form'
 gem 'responders'
 gem 'font-awesome-rails'
+gem 'bower-rails', '~> 0.11.0'
 
 # Awesome print, for awesome printing!
 gem 'awesome_print'

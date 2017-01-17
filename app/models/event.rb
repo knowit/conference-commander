@@ -15,6 +15,7 @@ class Event < ApplicationRecord
   has_many :participations
   has_many :accommodations
   has_many :proposals
+  has_many :users, through: :participations
 
   has_many :participants, through: :participations, source: :user
 
