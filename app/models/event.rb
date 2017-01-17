@@ -16,6 +16,8 @@ class Event < ApplicationRecord
   has_many :accommodations
   has_many :proposals
 
+  has_many :participants, through: :participations, source: :user
+
   validates :name, presence: true
   validates :description, presence: true
   validates :starting_at, presence: true

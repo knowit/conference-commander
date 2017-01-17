@@ -19,3 +19,20 @@ Proposal.create(
   event_id: Event.first.id,
   user_id: User.first.id
 )
+
+Accommodation.create(
+  number_of_beds: 2,
+  event_id: Event.first.id
+)
+
+Participation.create(
+  user_id: User.first.id,
+  event_id: Event.first.id,
+  accommodation_id: Accommodation.first.id,
+)
+
+Participation.create(
+  user_id: User.last.id,
+  event_id: Event.first.id,
+  accommodation_id: Accommodation.first.id,
+)
