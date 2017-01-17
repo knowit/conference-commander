@@ -25,6 +25,11 @@ Create database and seed some data:
     $ rails db:migrate
     $ rails db:seed
 
+## Bower
+
+$ npm install -g Bower
+$ rake bower:install
+
 ## How to run the test suite
 
 ## Services (job queues, cache servers, search engines, etc.)
