@@ -1,9 +1,11 @@
-class ProposalsController < ApplicationController
+class UserProposalsController < ApplicationController
   before_action :set_user
   before_action :set_proposal, except: [:index, :new, :create]
 
   def index
     @proposals = @user.proposals
+
+    render "proposals/index"
   end
 
   def create
@@ -11,18 +13,21 @@ class ProposalsController < ApplicationController
     if @proposal.save
       redirect_to user_proposals_url(@user)
     else
-      render :new
+      render "proposals/new"
     end
   end
 
   def new
     @proposal = Proposal.new
+
+    render "proposals/new"
   end
 
   def show
   end
 
   def edit
+    render "proposals/edit"
   end
 
   def update

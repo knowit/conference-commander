@@ -1,3 +1,5 @@
+= link_to fa_icon('plus'), new_user_proposal_path(@user)
+
 - unless @proposals.empty?
   table.ui.celled.table
     thead
@@ -8,5 +10,6 @@
           td = proposal.description
           td = proposal.duration
           td = link_to proposal.event.name, event_path(proposal.event)
-          = link_to fa_icon('pencil-square-o'), edit_user_proposal_path(@user, proposal)
-          = link_to fa_icon('remove'), user_proposal_path(@user, proposal), method: :delete
+          td
+            = link_to fa_icon('pencil-square-o'), edit_user_proposal_path(@user, proposal)
+            = link_to fa_icon('remove'), user_proposal_path(@user, proposal), method: :delete
