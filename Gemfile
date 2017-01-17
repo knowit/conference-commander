@@ -18,7 +18,7 @@ gem 'coffee-rails', '~> 4.2'
 
 # Load environment variables from .env
 gem 'dotenv-rails'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'slim'
 gem 'simple_form'
 gem 'responders'
@@ -30,6 +30,9 @@ gem 'awesome_print'
 
 # slim
 gem 'slim-rails'
+
+# Authorization
+gem 'cancancan'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
