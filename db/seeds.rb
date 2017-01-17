@@ -17,7 +17,7 @@ Proposal.create(
   description: "En liten techtalk om Rail",
   duration: 10,
   event: e1,
-  user_id: u2
+  user: u2
 )
 
 a1 = Accommodation.create(event: e1, number_of_beds: 1)
