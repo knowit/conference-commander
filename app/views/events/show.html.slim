@@ -12,8 +12,8 @@ div
       tr
         td = @event.name
         td = @event.description
-        td = @event.starting_at
-        td = @event.ending_at
+        td = @event.starting_at.strftime("%d/%m/%Y")
+        td = @event.ending_at.strftime("%d/%m/%Y")
         td
           div.ui.mini.buttons
             = link_to "Edit", edit_event_path, class: "ui button primary"
