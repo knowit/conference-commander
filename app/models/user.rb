@@ -25,4 +25,10 @@ class User < ApplicationRecord
   # Role enum
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
   enum gender: { unspecified: 0, male: 1, female: 2 }
+
+  def self.find_or_initialize_by_auth_hash(auth)
+    logger.debug "UID from Crowd: #{auth['uid']}"
+    find_or_initialize_by(email: auth['uid'])
+  end
+
 end
