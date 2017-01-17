@@ -1,4 +1,6 @@
 = render 'shared/crud_title'
 = simple_form_for [@event, @participation]  do |u|
+  .inline.fields
+    = u.input :single_room, as: :radio_buttons
   = u.association :user
   = u.button :submit
