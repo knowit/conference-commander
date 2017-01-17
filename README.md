@@ -1,24 +1,32 @@
-# README
+## Ruby version
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Latest and greatest, ie MRI v2.3.3
 
-Things you may want to cover:
+## System dependencies
 
-* Ruby version
+## Configuration
 
-* System dependencies
+## Database creation
 
-* Configuration
+### macOS
 
-* Database creation
+Install and start a local Postgre server using [dock](https://github.com/bripkens/dock)
 
-* Database initialization
+    $ brew tap bripkens/dock
+    $ brew install dock
+    $ dock postgres
 
-* How to run the test suite
+## Database initialization
 
-* Services (job queues, cache servers, search engines, etc.)
+Create database and seed some data:
 
-* Deployment instructions
+    $ export MY_USER=postgres
+    $ rails db:create
+    $ rails db:migrate
+    $ rails db:seed
 
-* ...
+## How to run the test suite
+
+## Services (job queues, cache servers, search engines, etc.)
+
+## Deployment instructions
