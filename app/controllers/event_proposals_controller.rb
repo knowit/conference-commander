@@ -1,17 +1,19 @@
-class UserProposalsController < ApplicationController
-  before_action :set_user
+class EventProposalsController < ApplicationController
+  before_action :set_event
   before_action :set_proposal, except: [:index, :new, :create]
 
   def index
-    @proposals = @user.proposals
+    @proposals = @event.proposals
   end
 
   def create
-    @proposal = @user.proposals.build(proposal_params)
+    @proposal = @event.proposals.build(proposal_params)
     if @proposal.save
-      redirect_to user_proposals_url(@user)
+      redirect_to event_proposals_url(@event)
     else
+      p @proposal.errors.inspect
       render "proposals/new"
+
     end
   end
 
@@ -30,7 +32,7 @@ class UserProposalsController < ApplicationController
 
   def update
     if @proposal.update(proposal_params)
-      redirect_to user_proposals_url(@user)
+      redirect_to event_proposals_url(@event)
     else
       render :edit
     end
@@ -38,16 +40,16 @@ class UserProposalsController < ApplicationController
 
   def destroy
     @proposal.destroy
-    redirect_to user_proposals_url(@user)
+    redirect_to event_proposals_url(@event)
   end
 
   private
-  def set_user
-    @user = User.find(params[:user_id])
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 
   def proposal_params
-    params.require(:proposal).permit(:title, :description, :duration, :event_id)
+    params.require(:proposal).permit(:title, :description, :duration, :user_id)
   end
 
   def set_proposal
