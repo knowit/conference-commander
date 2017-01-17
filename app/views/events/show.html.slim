@@ -16,7 +16,7 @@ div
         td = @event.ending_at.strftime("%d/%m/%Y")
         td
           div.ui.mini.buttons
-            = link_to "Edit", edit_event_path, class: "ui button primary"
+            = link_to "Edit", edit_event_path(@event), class: "ui button primary"
             div.or
             = link_to "Delete", event_path(@event), method: :delete, class: "ui button"
 
