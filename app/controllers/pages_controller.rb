@@ -4,6 +4,11 @@ class PagesController < ApplicationController
   end
 
   def show
+    @current_page = params[:page]
     render template: "pages/#{params[:page]}"
+  end
+
+  def front
+    @frontpage = true
   end
 end

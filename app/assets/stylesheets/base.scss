@@ -1,0 +1,83 @@
+@import "variables";
+@import "mixins";
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+.ui.secondary.pointing.menu.fixed {
+  top:0;
+ }
+.ui.secondary.pointing.menu {
+  top: -200px; //height of the div
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+
+  margin-top: 0;
+  border-bottom: 2px solid $knowit-green;
+  background-color: $white;
+  .item {
+    padding: 1.5em 1.14285714em;
+  }
+  .item:first-child {
+    margin-left: 10%;
+  }
+  .item:hover {
+    background-color: $knowit-green;
+  }
+  .item:hover a {
+    color: white;
+  }
+  .item a{
+    color: $knowit-green;
+  }
+}
+
+.button.knowit-purple {
+  @include knowit-purple;
+  color: $white;
+}
+.button.knowit-green {
+  @include knowit-green;
+  color: $white;
+}
+
+.button.knowit-purple:hover, .button.knowit-purple:focus {
+  @include dark-knowit-purple;
+  color: $white;
+}
+.button.knowit-green:hover, .button.knowit-green:focus {
+  @include dark-knowit-green;
+  color: $white;
+}
+
+
+
+footer {
+  width: 100%;
+  background-color: $knowit-green;
+  color: white;
+  text-align: center;
+  padding: 3em 0;
+
+  a {
+    color: $knowit-light-green;
+  }
+  a:hover, a:focus {
+    color: $knowit-light-green;
+    text-decoration: underline;
+  }
+
+  .ui.horizontal.divider.header {
+    color: white;
+  }
+
+}

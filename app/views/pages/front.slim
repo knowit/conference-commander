@@ -1,19 +1,27 @@
-section.intro
-  .wrapper
-    img src="/kds.png"
-    .content
-      h1 Conference Commander
-      h3 Laget gjennom Ruby Roundtable
-
-section.logo-divider.two
-  .content
-    h1 Frontpage
-    p.lead Dette er forsiden, her kommer masse fint etterhvert.
-
-section.logo-divider.two
-  .content
-    h1 Mer ting
-    h2 Litt undertittel
-    h4 Mer undertittel
-    p.lead Dette er "Lead tekst". Logoaktiv sak kommer opp mellom seksjonene.
-    p Vanlig tekst til slutt.
+section.frontpage-image-background#lofoten
+  div.intro-elements
+    img src="/assets/knowit_logo_white_rgb.png"
+    button.ui.button.knowit-purple Logg inn
+    button.ui.button.knowit-green#show-conferences Vis konferanser
+  
+= render 'layouts/menu', fixed: false    
+section#frontpage-info
+  .ui.items
+    .item
+      .ui.large.image
+        img src="/assets/kds.png"
+      .middle.aligned.content
+        .header
+          h1 Knowit Konferanser
+          p På denne siden har alle ansatte i Knowit mulighet til å melde seg på konferanser arrangert av Objectnet. Disse turene kan variere mellom Fredrikstad til Berlin.
+section.frontpage-image-background#berlin
+section#frontpage-events
+  h1 Konferanser som skal være eller har vært
+  table.ui.striped.table
+    thead
+      tr
+        th Tittel
+        th Hvor
+        th Når
+        th 
+section.frontpage-image-background#mallorca

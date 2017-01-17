@@ -7,5 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body#frontpage
-    = render 'layouts/menu'
+    - if !@frontpage
+      = render 'layouts/menu', fixed: true
     = yield
+    = render 'layouts/footer'

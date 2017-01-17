@@ -1,4 +1,4 @@
-.ui.secondary.pointing.menu
-  .item = link_to 'Conference Commander', root_path
+.ui.secondary.pointing.menu#top-menu class="#{fixed ? 'fixed' : ''}"
+  .item = link_to 'Frontpage', root_path
   .item = link_to User.model_name.human.pluralize, users_path
   .item = link_to Event.model_name.human.pluralize, events_path

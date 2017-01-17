@@ -7,7 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    = render 'layouts/menu'
+    = render 'layouts/menu', fixed: true
     .ui.page.grid
       .wide.column
         = yield
