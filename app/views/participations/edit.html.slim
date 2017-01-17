@@ -1,5 +1,5 @@
 == render 'form'
 
-= link_to 'Show', @participation
+= link_to 'Show', event_participation_path(@event, @participation)
 '|
-= link_to 'Back', participations_path
+= link_to 'Back', event_participations_path(@event)

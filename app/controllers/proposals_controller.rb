@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
-  
-  layout 'crudable'
+
+  #layout 'crudable'
 
   def index
     @proposals = Proposal.all

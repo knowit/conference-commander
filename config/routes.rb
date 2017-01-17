@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :participations
   resources :events do
     resources :proposals, controller: :event_proposals
+    resources :participations
   end
 
   resources :users do

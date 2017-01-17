@@ -7,6 +7,7 @@ div
         th description
         th start date/time
         th end date/time
+        th registration
         th
     tbody
       tr
@@ -14,6 +15,7 @@ div
         td = @event.description
         td = @event.starting_at.strftime("%d/%m/%Y")
         td = @event.ending_at.strftime("%d/%m/%Y")
+        td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(@event)
         td
           div.ui.mini.buttons
             = link_to "Edit", edit_event_path(@event), class: "ui button primary"

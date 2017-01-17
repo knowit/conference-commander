@@ -1,7 +1,6 @@
 class ParticipationsController < ApplicationController
-
-  layout 'crudable'
-  
+  #layout 'crudable'
+  before_action :set_event
   before_action :set_participation, only: [:show, :edit, :update, :destroy]
 
   # GET /participations
@@ -27,11 +26,11 @@ class ParticipationsController < ApplicationController
   # POST /participations
   # POST /participations.json
   def create
-    @participation = Participation.new(participation_params)
+    @participation = @event.participations.build(participation_params)
 
     respond_to do |format|
       if @participation.save
-        format.html { redirect_to @participation, notice: 'Participation was successfully created.' }
+        format.html { redirect_to event_participation_url(@event, @participation), notice: 'Participation was successfully created.' }
         format.json { render :show, status: :created, location: @participation }
       else
         format.html { render :new }
@@ -45,7 +44,7 @@ class ParticipationsController < ApplicationController
   def update
     respond_to do |format|
       if @participation.update(participation_params)
-        format.html { redirect_to @participation, notice: 'Participation was successfully updated.' }
+        format.html { redirect_to event_participation_url(@event, @participation), notice: 'Participation was successfully updated.' }
         format.json { render :show, status: :ok, location: @participation }
       else
         format.html { render :edit }
@@ -59,12 +58,15 @@ class ParticipationsController < ApplicationController
   def destroy
     @participation.destroy
     respond_to do |format|
-      format.html { redirect_to participations_url, notice: 'Participation was successfully destroyed.' }
+      format.html { redirect_to event_participations_url(@event), notice: 'Participation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def set_event
+      @event = Event.find(params[:event_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_participation
       @participation = Participation.find(params[:id])
