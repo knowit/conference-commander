@@ -12,11 +12,13 @@
       - @users.each do |user|
         tr
           td
-            i.ui.big.user.icon
+            i.ui.large.user.icon
           td = user.name
           td = user.email
           td = user.gender
           td = user.id
           td
-            = link_to fa_icon('pencil'), edit_user_path(user), class: 'ui button', data: {tooltip: t('users.table.tooltips.edit')}
-            = link_to fa_icon('remove'), user_path(user), method: :delete, class: 'ui button', data: {tooltip: t('users.table.tooltips.delete')}
+            div.ui.mini.buttons
+              = link_to "Edit", edit_user_path(user), class: "ui button primary"
+              div.or
+              = link_to "Delete", user_path(user), method: :delete, class: "ui button"

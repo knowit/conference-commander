@@ -1,5 +1,10 @@
 = simple_form_for @user do |u|
   = u.input :name, as: :string
   = u.input :email, as: :string
-  = u.input :gender, as: :radio_buttons, collection: User.genders.keys
+  .inline.fields
+    - User.genders.keys.each do |gender|
+      .field
+        = u.radio_button :gender, gender
+        = u.label gender
+        
   = u.button :submit

@@ -7,6 +7,7 @@
         th = Event.human_attribute_name(:description)
         th = Event.human_attribute_name(:starting_at)
         th = Event.human_attribute_name(:ending_at)
+        th
     tbody
       - @events.each do |event|
         tr
@@ -14,3 +15,8 @@
           td = event.description
           td = event.starting_at
           td = event.ending_at
+          td
+            div.ui.mini.buttons
+              = link_to "Edit", edit_event_path(event), class: "ui button primary"
+              div.or
+              = link_to "Delete", event_path(event), method: :delete, class: "ui button"
