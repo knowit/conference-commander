@@ -22,6 +22,9 @@ gem 'simple_form'
 gem 'responders'
 gem 'font-awesome-rails'
 
+# Awesome print, for awesome printing!
+gem 'awesome_print'
+
 # slim
 gem 'slim-rails'
 

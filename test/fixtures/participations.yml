@@ -10,6 +10,13 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
+# Indexes
+#
+#  index_participations_on_accommodation_id      (accommodation_id)
+#  index_participations_on_event_id              (event_id)
+#  index_participations_on_user_id               (user_id)
+#  index_participations_on_user_id_and_event_id  (user_id,event_id) UNIQUE
+#
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
