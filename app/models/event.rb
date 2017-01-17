@@ -12,9 +12,9 @@
 #
 
 class Event < ApplicationRecord
-  has_many :participations
-  has_many :accommodations
-  has_many :proposals
+  has_many :participations, dependent: :destroy
+  has_many :accommodations, dependent: :destroy
+  has_many :proposals, dependent: :destroy
   has_many :users, through: :participations
 
   has_many :participants, through: :participations, source: :user
