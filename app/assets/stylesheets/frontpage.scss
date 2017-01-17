@@ -10,56 +10,6 @@ html, body {
 }
 
 #frontpage {
-
-  section:nth-child(2) {
-  	background-color: #fafafa;
-  }
-
-  *, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    font-size: 35px;
-    margin: 0;
-    padding: 0;
-  }
-
-  dt, .important {
-    font-weight: bold;
-  }
-
-  dd {
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-
-  .important,.subtext {
-    font-style: italic;
-  }
-
-  a {
-    color: #666;
-  }
-
-  .btn {
-    border-radius: 5px;
-    background: #85d6cb;
-    color: #fff;
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.4em;
-    margin: 30px auto;
-    max-width: 400px;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-  }
-
   .lead {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
@@ -74,28 +24,38 @@ html, body {
     position: relative;
   	padding-bottom: 6em;
   }
-
-  section:nth-child(n+1) {
-  	padding-top: 6em;
+  .frontpage-image-background {
+    min-height: 256px;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: 100% !important;
+    background-repeat: no-repeat;
   }
-
-  .intro {
-    min-height: 100%;
-    position: relative;
-    background: #fff;
+  #lofoten {
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/lofoten.jpg');
   }
-
+  .intro-elements {
+    align-self: center;
+    text-align: center;
+    img {
+      margin-bottom: 1em;
+      display: block;
+    }
+  }
+  #berlin {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/berlin.jpg');
+  }
+  #mallorca {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/mallorca.jpg');
+  }
   .intro .wrapper {
     text-align: center;
   }
-
-  .intro img {
-    width: 100%;
-    margin: 30px 0;
-  }
-
-  .intro .content {
-    color: #999;
+  section {
+    padding: 2em 10%;
   }
 
   .content h1 {
@@ -129,195 +89,6 @@ html, body {
     transform: translateX(-50%) rotate(45deg);
   }
 
-  .logo-divider::before  {
-    position: absolute;
-    content: '';
-    pointer-events: none;
-  }
-
-  .content h1 {
-    text-align: center;
-  }
-
-  .schedule, .talks {
-    padding-top: 100px;
-  }
-  .schedule h1 {
-    text-align: center;
-  }
-  .schedule-day {
-    margin-top: 20px;
-    clear: both;
-  }
-  .schedule-all-tracks {
-    clear: both;
-  }
-  h3.schedule-all-tracks {
-    margin: 20px 0;
-    padding: 5px;
-    background: #fafafa;
-  }
-  h3.schedule-all-tracks.session {
-    background: #85d6cb;
-  }
-  h4 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    font-size: 25px;
-
-  }
-  h4.schedule-all-tracks {
-    padding: 0;
-    margin: 10px 0;
-  }
-
-  .fav {
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-
-  /*
-  .schedule-slot--faved {
-    background-color: lightyellow;
-  }
-
-  .schedule-slot--faved .fav {
-    color: orange;
-    text-shadow: 0 0 1px yellow;
-  }
-  */
-
-  .favourited {
-    background-color: lightyellow;
-  }
-
-  .favourited .fav {
-    color: orange;
-    text-shadow: 0 0 1px yellow;
-  }
-
-  .my-content-only .talks-entry {
-    display: none;
-  }
-
-  .my-content-only .talks-entry.favourited {
-    display: block;
-  }
-
-  table, th, td,  tr{
-    border: 1px solid black;
-  }
-  table{
-     width: 100%;
-  }
-
-  td, th{
-    padding: 10px;
-  }
-  .time{
-    vertical-align: top;
-    width: 1em;
-    white-space:nowrap;
-  }
-
-  .topics {
-      line-height: 2em;
-  }
-
-  .topic::after {
-    content: ' â—† ';
-    color: #85d6cb;
-  }
-
-  .topic:last-of-type::after {
-    content: '';
-  }
-
-  .schedule-collection {
-    clear: both;
-  }
-
-  .schedule-entry {
-    margin-bottom: 20px;
-    background: #fafafa;
-  }
-
-  /*
-  .schedule-entry .pending { background: orange; }
-  .schedule-entry .rejected { background: red; }
-  */
-
-  .schedule-entry h5 {
-    background: #C3ECE6;
-    font-weight: normal;
-    padding: 5px;
-    margin: 0;
-  }
-
-  .schedule-entry p {
-    font-weight: bold;
-    margin: 10px 10px 0 10px;
-  }
-
-  .schedule-entry p[lang=no]:after {
-      display: inline-block;
-      content: url(norway.png);
-      padding-left: 4px;
-  }
-
-  .schedule-entry p[lang=sv]:after {
-      display: inline-block;
-      content: url(sweden.png);
-      padding-left: 4px;
-  }
-
-  .schedule-entry address {
-    margin: 0px 10px 10px 10px;
-  }
-
-  .schedule-entry .annote {
-    font-weight: normal;
-  }
-
-  .talks-entry {
-    margin-bottom: 3em;
-  }
-
-
-  .location {
-    height: 100%;
-    padding-bottom: 0;
-    overflow: hidden;
-  }
-
-  .location iframe {
-    margin-top: 90px;
-  }
-
-  .location .wrapper {
-    height: 100%;
-  }
-
-  .location .content {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 20px;
-    background: white;
-  }
-
-  .location h3 {
-    font-size: 20px;
-  }
-
-  .blocker {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-
   @media (min-width: 760px) {
     dt {
       text-align: right;
@@ -332,37 +103,10 @@ html, body {
       margin-bottom: 10px;
     }
 
-    .intro img {
-      width: 300px;
-      height: 300px;
-      margin: 0;
-      float: left;
-      margin-top: 26px;
-    }
-
-    .intro .content {
-      float: left;
-      width: 340px;
-      border-left: 1px dotted #999;
-      margin: 26px 0 26px 50px;
-      padding: 10px 0 10px 50px;
-      text-align: left;
-    }
 
     .intro .content h1 {
       margin: 0;
     }
-
-    .intro .wrapper {
-      width: 690px;
-      height: 300px;
-      top: 50%;
-      left: 50%;
-      position: absolute;
-      margin-top: -150px;
-      margin-left: -345px;
-    }
-
     .location .content {
       width: 350px;
       height: 200px;

@@ -1,0 +1,21 @@
+@import "variables";
+@mixin knowit-green() {
+  background-color: $knowit-green;
+  border: 1px solid $knowit-green;
+}
+
+@mixin knowit-purple() {
+  background-color: $knowit-purple;
+  border: 1px solid $knowit-purple;
+}
+
+
+@mixin dark-knowit-green() {
+  background-color: saturate($knowit-green, 80%);
+  border: 1px solid saturate($knowit-green, 80%);
+}
+
+@mixin dark-knowit-purple() {
+  background-color: saturate($knowit-purple, 80%);
+  border: 1px solid saturate($knowit-purple, 80%);
+}
