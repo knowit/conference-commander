@@ -38,10 +38,11 @@ $ rake bower:install
 
 ## Crowd integration
 
-The crowd integration expects the following parameters to be set in the environment:
+The Crowd integration expects the following environment variables to be set:
 
     CROWD_APP_NAME
     CROWD_APP_PASSWORD
     CROWD_ENDPOINT_URL
 
-These can be set in .env, for instance.
+Define these in your `.env` file and they are automatically loaded during startup (see examples in `example.env`).
+
