@@ -5,40 +5,41 @@ class UsersController < ApplicationController
 
   layout 'crudable'
 
+  load_and_authorize_resource
+
   def index
-    @users = User.all
+    # NOOP
   end
 
   def show
-    @user = User.find(params[:id])
+    # NOOP
   end
 
   def edit
-    @user = User.find(params[:id])
+    # NOOP
   end
 
   def new
-    @user = User.new
+    # NOOP
   end
 
   def create
     @user = User.create(user_params)
-    redirect_to action: :index
+    respond_with @user
   end
 
   def update
-    @user = User.find(params[:id])
     @user.update(user_params)
     respond_with @user
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     respond_with @user
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :gender)
   end
