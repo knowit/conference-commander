@@ -2,14 +2,12 @@
   table.ui.celled.table
     thead
       tr
-        th = Accommodation.human_attribute_name(:number_of_beds)
         th = Accommodation.human_attribute_name(:event)
-        th = Accommodation.human_attribute_name(:id)
-        th
+        th = Accommodation.human_attribute_name(:number_of_beds)
+        th = t('.actions')
     tbody
       - @accommodations.each do |accommodation|
         tr
+          td = accommodation.event.try(:name)
           td = accommodation.number_of_beds
-          td = accommodation.event && accommodation.event.name
-          td = accommodation.id
           td = render 'shared/action_links', object: accommodation

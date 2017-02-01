@@ -20,10 +20,78 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 nb:
-  hello: "Hei Verden"
+
+  accommodations:
+    index:
+      actions: Handlinger
+
+  activerecord:
+    attributes:
+      accommodation:
+        number_of_beds: Antall sengeplasser
+        event: Arrangement
+      event:
+        description: Beskrivelse
+        ending_at: Sluttidspunkt
+        name: Navn
+        starting_at: Starttidspunkt
+
+      proposal:
+        description: Beskrivelse
+        duration: Varighet (i minutter)
+        title: Tittel
+
+      user:
+        email: E-postaddresse
+        gender: Kjønn
+        name: Navn
+
+    models:
+      accommodation:
+        one: Rom
+        other: Rom
+
+      event:
+        one: Arrangement
+        other: Arrangementer
+
+      proposal:
+        one: Innslag
+        other: Innslag
+
+      user:
+        one: Bruker
+        other: Brukere
+
+  events:
+    index:
+      actions: Handlinger
+      registration: Registrering
+
+  layouts:
+    menu:
+      frontpage: Forside
+
+  proposals:
+    index:
+      event_name: Arrangement
+      header: Liste over alle innslag
+      user_name: Holdes av
+
+  shared:
+    action_links:
+      delete: Slett
+      edit: Rediger
+    new_link:
+      new_button: Legg til %{class_name}
 
   user:
+    signout: Logg ut
     table:
       tooltips:
-        edit: "Endre bruker"
-        delete: "Slett bruker"
+        edit: Endre bruker
+        delete: Slett bruker
+
+  users:
+    index:
+      actions: Handlinger

@@ -3,5 +3,6 @@
 = simple_form_for [@event, @participation]  do |u|
   .inline.fields
     = u.input :single_room, as: :radio_buttons
+  = u.input :request_for_single_room
   = u.association :user
   = u.button :submit

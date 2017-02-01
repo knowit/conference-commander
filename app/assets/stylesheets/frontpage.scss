@@ -195,3 +195,7 @@ html, body {
     background-color: #efefef;
   }
 }
+
+#top-menu.fixed + .grid {
+  margin-top: 35px;
+}

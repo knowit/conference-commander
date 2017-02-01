@@ -20,21 +20,17 @@ div
           div.ui.mini.buttons
             = link_to "Edit", edit_event_path(@event), class: "ui button primary"
             div.or
-            = link_to "Delete", event_path(@event), method: :delete, class: "ui button"
+            = link_to "Delete", event_path(@event), method: :delete, class: "ui button negative"
+
+  div
+    h4 Reports
+
+    = link_to "Allergies", event_allergies_path(@event)
 
   div
     h4 Participants
 
     - unless @event.participants.empty?
-      table.ui.celled.table
-        thead
-          tr
-            th name
-            th email
-            th role
-        tbody
-          - @event.participants.each do |participant|
-            tr
-              td = link_to participant.name, user_path(participant)
-              td = participant.email
-              td = participant.role
+      == render 'participations/table'
+
+    = link_to "Add participant", new_event_participation_path(@event), class: 'ui button green'

@@ -1,1 +1,1 @@
-= link_to "Add new #{controller_name.classify.downcase}", new_polymorphic_path(controller_name.classify.constantize), class: 'ui button green'
+= link_to t('.new_button') % { class_name: controller_name.classify.constantize.model_name.human.downcase }, new_polymorphic_path(controller_name.classify.constantize), class: 'ui button green'
