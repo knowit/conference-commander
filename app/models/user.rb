@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  role       :integer          default("participant"), not null
 #  gender     :integer          default("unspecified"), not null
+#  allergies  :text
 #
 # Indexes
 #
