@@ -8,19 +8,16 @@ div
         th start date/time
         th end date/time
         th event
-        th
     tbody
       tr
         td = @activity.name
         td = @activity.description
         td = @activity.starting_at.strftime("%d/%m/%Y")
         td = @activity.ending_at.strftime("%d/%m/%Y")
-        td = @activity.event.name
-        td
-          div.ui.mini.buttons
-            = link_to "Edit", edit_activity_path(@activity), class: "ui button primary"
-            div.or
-            = link_to "Delete", activity_path(@activity), method: :delete, class: "ui button"
+        td = @activity.event
+            //= link_to "Edit", edit_activity_path(@activity), class: "ui button primary"
+            //div.or
+            //= link_to "Delete", activity_path(@activity), method: :delete, class: "ui button"
 
   div
     h4 Participants

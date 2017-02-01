@@ -1,6 +1,10 @@
 class ActivitiesController < ApplicationController
+
+  layout 'crudable'
+
   respond_to :html
   before_action :set_activity, except: [:index, :new, :create]
+
 
   def index
     @activities = Activity.all

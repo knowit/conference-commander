@@ -23,4 +23,8 @@ class Event < ApplicationRecord
   validates :description, presence: true
   validates :starting_at, presence: true
   validates :ending_at, presence: true
+
+  def to_s
+    name
+  end
 end

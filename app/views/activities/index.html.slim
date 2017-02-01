@@ -1,4 +1,3 @@
-= link_to "Add new activity", new_activity_path
 - unless @activities.empty?
   table.ui.celled.table
     thead
@@ -16,9 +15,5 @@
           td = activity.description
           td = activity.starting_at.strftime("%d/%m/%Y")
           td = activity.ending_at.strftime("%d/%m/%Y")
-          td = activity.event.name
-          td
-            div.ui.mini.buttons
-              = link_to "Edit", edit_activity_path(activity), class: "ui button primary"
-              div.or
-              = link_to "Delete", activity_path(activity), method: :delete, class: "ui button"
+          td = activity.event
+          td = render 'shared/action_links', object: activity

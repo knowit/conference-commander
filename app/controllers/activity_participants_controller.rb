@@ -1,4 +1,7 @@
 class ActivityParticipantsController < ApplicationController
+
+  layout 'crudable'
+
   before_action :set_activity_participant, except: [:index, :new, :create]
 
   def index
