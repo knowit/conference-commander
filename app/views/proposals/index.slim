@@ -1,6 +1,15 @@
+
+h1 Listing all proposals
+
 - unless @proposals.empty?
   table.ui.celled.table
     thead
+      tr
+        th = Proposal.human_attribute_name(:title)
+        th = Proposal.human_attribute_name(:description)
+        th = Proposal.human_attribute_name(:duration)
+        th
+        th
     tbody
       - @proposals.each do |proposal|
         tr
