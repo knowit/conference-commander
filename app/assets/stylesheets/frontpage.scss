@@ -28,7 +28,6 @@ html, body {
     min-height: 256px;
     background-attachment: fixed;
     background-position: top center;
-    background-size: 100% !important;
     background-repeat: no-repeat;
   }
   #lofoten {
@@ -194,4 +193,8 @@ html, body {
     width: 150px;
     background-color: #efefef;
   }
+}
+
+#top-menu.fixed + .grid {
+  margin-top: 35px;
 }
