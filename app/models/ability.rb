@@ -14,6 +14,6 @@ class Ability
   end
 
   def guest_abilities
-    can :read, [Event, Page]
+    can :read, [Event]
   end
 end
