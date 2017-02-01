@@ -12,5 +12,3 @@ $(document).on 'turbolinks:load', ->
       menu.addClass('fixed')
     else
       menu.removeClass('fixed')
-
-    console.log(menu.position())
