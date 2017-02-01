@@ -2,19 +2,16 @@
   table.ui.celled.table
     thead
       tr
-        th
         th = User.human_attribute_name(:name)
         th = User.human_attribute_name(:email)
         th = User.human_attribute_name(:gender)
-        th = User.human_attribute_name(:id)
-        th
+        th = t('.actions')
     tbody
       - @users.each do |user|
         tr
           td
             i.ui.large.user.icon
-          td = user.name
+            = user.name
           td = user.email
           td = user.gender
-          td = user.id
           td = render 'shared/action_links', object: user

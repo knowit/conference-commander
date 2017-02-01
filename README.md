@@ -1,6 +1,6 @@
 ## Ruby version
 
-Latest and greatest, ie MRI v2.3.3
+Latest and greatest, ie MRI v2.4.0
 
 ## System dependencies
 

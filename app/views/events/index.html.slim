@@ -6,8 +6,8 @@
         th = Event.human_attribute_name(:description)
         th = Event.human_attribute_name(:starting_at)
         th = Event.human_attribute_name(:ending_at)
-        th registration
-        th
+        th = t('.registration')
+        th = t('.actions')
     tbody
       - @events.each do |event|
         tr
@@ -16,8 +16,5 @@
           td = event.starting_at.strftime("%d/%m/%Y")
           td = event.ending_at.strftime("%d/%m/%Y")
           td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(event)
-          td
-            div.ui.mini.buttons
-              = link_to "Edit", edit_event_path(event), class: "ui button primary"
-              div.or
-              = link_to "Delete", event_path(event), method: :delete, class: "ui button"
+          td = render 'shared/action_links', object: event
+

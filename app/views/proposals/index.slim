@@ -1,5 +1,5 @@
 
-h1 Listing all proposals
+h1 = t('.header')
 
 - unless @proposals.empty?
   table.ui.celled.table
@@ -8,8 +8,8 @@ h1 Listing all proposals
         th = Proposal.human_attribute_name(:title)
         th = Proposal.human_attribute_name(:description)
         th = Proposal.human_attribute_name(:duration)
-        th
-        th
+        th = t('.event_name')
+        th = t('.user_name')
     tbody
       - @proposals.each do |proposal|
         tr
