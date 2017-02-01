@@ -31,5 +31,4 @@ class User < ApplicationRecord
       user.name = auth_hash.dig('info', 'name')
     end
   end
-
 end

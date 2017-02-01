@@ -1,3 +1,10 @@
-- if @user
-  b = @user.name
-  b = @user.email
+img src="http://placehold.it/150x150"
+
+.user-info
+  h2 = @user.name
+
+  p = @user.email
+  p Gender: #{@user.gender}
+  p Allergies: #{@user.allergies || "No allergies"}
+
+  = link_to "Edit profile info", edit_user_path(@user)
