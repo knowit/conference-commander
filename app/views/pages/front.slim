@@ -1,7 +1,8 @@
 section.frontpage-image-background#lofoten
   div.intro-elements
     img src="/assets/knowit_logo_white_rgb.png"
-    = link_to "Logg inn", signin_path, class: "ui button knowit-purple"
+    - unless current_user
+      = link_to "Logg inn", signin_path, class: "ui button knowit-purple"
     button.ui.button.knowit-green#show-conferences Vis konferanser
 
 = render 'layouts/menu', fixed: false
