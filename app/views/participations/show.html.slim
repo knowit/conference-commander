@@ -19,5 +19,5 @@ table.ui.celled.table
             div.or
             = link_to 'Edit', edit_event_participation_path(@event, @participation), class: "ui button"
             div.or
-            = link_to 'Destroy', event_participation_path(@event, @participation), data: { confirm: 'Are you sure?' }, method: :delete, class: "ui button negative"
-= link_to 'Back', event_path(@event)
+            = link_to 'Delete', event_participation_path(@event, @participation), data: { confirm: 'Are you sure?' }, method: :delete, class: "ui button negative"
+= link_to 'Back', event_participations_path(@event)
