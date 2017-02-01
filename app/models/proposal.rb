@@ -18,11 +18,15 @@
 #
 
 class Proposal < ApplicationRecord
+
+  DURATIONS = [10, 15, 20, 30, 45, 60]
+
   belongs_to :user
   belongs_to :event
+  belongs_to :track
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :duration, presence: true, inclusion: { in: [10, 15, 20, 30, 45, 60] }
+  validates :duration, presence: true, inclusion: { in: DURATIONS }
 
 end
