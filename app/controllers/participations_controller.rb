@@ -38,6 +38,6 @@ class ParticipationsController < ApplicationController
   private
 
   def participation_params
-    params.require(:participation).permit(:user_id, :event_id)
+    params.require(:participation).permit(:user_id, :event_id, :single_room, :request_for_single_room)
   end
 end
