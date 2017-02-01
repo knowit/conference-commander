@@ -50,6 +50,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'omniauth', '>= 1.0.0'  # We depend on this
 gem 'omniauth_crowd'
 
+gem 'paperclip'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

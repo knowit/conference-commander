@@ -53,4 +53,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.log_level = :debug
+
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end
