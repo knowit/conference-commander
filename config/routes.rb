@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :accommodations
 
+  resources :hotels
+
   # we need to redirect in order to use the correct method and thus the correct layout:
   get '/pages/front', to: redirect('/')
   get '/pages/:page' => 'pages#show'

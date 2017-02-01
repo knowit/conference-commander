@@ -9,5 +9,7 @@
     .item = link_to Proposal.model_name.human(count: 2), proposals_path
   - if can? :read, Accommodation
     .item = link_to Accommodation.model_name.human(count: 2), accommodations_path
+  - if can? :read, Hotel
+    .item = link_to Hotel.model_name.human(count: 2), hotels_path
   - if current_user
     .item.right = link_to t('user.signout'), signout_path, method: :delete

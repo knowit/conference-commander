@@ -1,0 +1,17 @@
+- unless @hotels.empty?
+  table.ui.celled.table
+    thead
+      tr
+        th = Hotel.human_attribute_name(:name)
+        th = Hotel.human_attribute_name(:address)
+        th = Hotel.human_attribute_name(:country)
+        th = t('.coordinates')
+        th = t('.actions')
+    tbody
+      - @hotels.each do |hotel|
+        tr
+          td = link_to hotel.name, hotel_path(hotel)
+          td = hotel.address
+          td = hotel.country
+          td = "#{hotel.lat}, #{hotel.lon}"
+          td = render 'shared/action_links', object: hotel
