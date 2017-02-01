@@ -8,6 +8,7 @@
 
 u1 = User.create(name: 'Henning', email: 'henkol@knowit.no')
 u2 = User.create(name: 'Vegar uten d', email: 'vegar.uten.d.molvig@knowit.no')
+u2 = User.create(name: 'Rune Melhus', email: 'rme@knowit.no')
 
 e1 = Event.create(name: "Fredrikstad", description: "Fagseminar i Fredrikstad", starting_at: "2015-11-08 17:50:00", ending_at: "2015-11-08 17:50:00")
 e2 = Event.create(name: "Lofoten", description: "Fagseminar i Lofoten", starting_at: "2016-11-08 17:50:00", ending_at: "2016-11-08 17:50:00")

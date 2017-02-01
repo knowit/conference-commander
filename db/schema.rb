@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201135601) do
+ActiveRecord::Schema.define(version: 20170201141422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,12 +32,13 @@ ActiveRecord::Schema.define(version: 20170201135601) do
   end
 
   create_table "participations", force: :cascade do |t|
-    t.boolean  "single_room",      default: false
-    t.integer  "user_id",                          null: false
-    t.integer  "event_id",                         null: false
+    t.boolean  "single_room",             default: false
+    t.integer  "user_id",                                 null: false
+    t.integer  "event_id",                                null: false
     t.integer  "accommodation_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.text     "request_for_single_room"
     t.index ["accommodation_id"], name: "index_participations_on_accommodation_id", using: :btree
     t.index ["event_id"], name: "index_participations_on_event_id", using: :btree
     t.index ["user_id", "event_id"], name: "index_participations_on_user_id_and_event_id", unique: true, using: :btree
@@ -68,7 +69,6 @@ ActiveRecord::Schema.define(version: 20170201135601) do
     t.datetime "updated_at",             null: false
     t.integer  "role",       default: 3, null: false
     t.integer  "gender",     default: 0, null: false
-    t.text     "allergies"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 

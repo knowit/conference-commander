@@ -38,3 +38,5 @@ div
               td = link_to participant.name, user_path(participant)
               td = participant.email
               td = participant.role
+
+    = link_to "Add participant", new_event_participation_path(@event), class: 'ui button green'
