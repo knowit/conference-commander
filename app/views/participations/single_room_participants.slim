@@ -1,0 +1,5 @@
+p#notice = notice
+
+== render 'participations/table', participations: @event.participations.single_room_participants
+
+= link_to 'Back', event_path(@event)
