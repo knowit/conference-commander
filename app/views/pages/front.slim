@@ -1,10 +1,10 @@
 section.frontpage-image-background#lofoten
   div.intro-elements
     img src="/assets/knowit_logo_white_rgb.png"
-    button.ui.button.knowit-purple Logg inn
+    = link_to "Logg inn", signin_path, class: "ui button knowit-purple"
     button.ui.button.knowit-green#show-conferences Vis konferanser
-  
-= render 'layouts/menu', fixed: false    
+
+= render 'layouts/menu', fixed: false
 section#frontpage-info
   .ui.items
     .item
@@ -21,7 +21,14 @@ section#frontpage-events
     thead
       tr
         th Tittel
-        th Hvor
-        th Når
-        th 
+        th Beskrivelse
+        th Starter
+        th Slutter
+    tbody
+      - Event.all.each do |event|
+        tr
+          td = link_to event.name, event_path(event)
+          td = event.description
+          td = event.starting_at.strftime("%d/%m/%Y")
+          td = event.ending_at.strftime("%d/%m/%Y")
 section.frontpage-image-background#mallorca

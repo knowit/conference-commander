@@ -5,12 +5,14 @@ table.ui.celled.table
     tr
       th name
       th event name
+      th single room
       th
 
   tbody
       tr
         td = @participation.user.name
         td = @participation.event.name
+        td = @participation.single_room
         td
           div.ui.mini.buttons
             = link_to 'Show', event_participation_path(@event, @participation), class: "ui button primary"
