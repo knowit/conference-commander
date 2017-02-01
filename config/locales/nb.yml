@@ -42,9 +42,11 @@ nb:
         title: Tittel
 
       user:
+        allergies: Allergier
         email: E-postaddresse
         gender: Kjønn
         name: Navn
+        role: Rolle
 
     models:
       accommodation:
@@ -95,3 +97,8 @@ nb:
   users:
     index:
       actions: Handlinger
+    edit:
+      administrator: Administrator
+      organizer: Organisator
+      participant: Deltager
+      speaker: Foredragsholder

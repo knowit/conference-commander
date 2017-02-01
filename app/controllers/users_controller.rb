@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :remove_role_if_not_admin, only: :update
+
   responders :flash
   respond_to :html
 
@@ -41,7 +43,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :gender, :allergies)
+    params.require(:user).permit(:name, :email, :gender, :role, :allergies)
+  end
+
+  def remove_role_if_not_admin
+    params[:user].delete :role unless current_user.role == 'administrator'
   end
 
 end

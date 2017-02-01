@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/events/:event_id/allergies', to: 'allergies#index', as: :event_allergies
 
   resources :events do
     resources :proposals, controller: :event_proposals
@@ -22,5 +23,5 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   get '/auth/failure' => 'sessions#failure'
 
-  root to: 'pages#front'  
+  root to: 'pages#front'
 end

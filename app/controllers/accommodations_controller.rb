@@ -6,7 +6,7 @@ class AccommodationsController < ApplicationController
   layout 'crudable'
 
   def index
-    @accommodations = Accommodation.all
+    @accommodations = Accommodation.includes(:event).order("events.name")
   end
 
   def show

@@ -23,6 +23,11 @@ div
             = link_to "Delete", event_path(@event), method: :delete, class: "ui button negative"
 
   div
+    h4 Reports
+
+    = link_to "Allergies", event_allergies_path(@event)
+
+  div
     h4 Participants
 
     - unless @event.participants.empty?
