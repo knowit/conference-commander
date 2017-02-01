@@ -26,17 +26,6 @@ div
     h4 Participants
 
     - unless @event.participants.empty?
-      table.ui.celled.table
-        thead
-          tr
-            th name
-            th email
-            th role
-        tbody
-          - @event.participants.each do |participant|
-            tr
-              td = link_to participant.name, user_path(participant)
-              td = participant.email
-              td = participant.role
+      == render 'participations/table'
 
     = link_to "Add participant", new_event_participation_path(@event), class: 'ui button green'

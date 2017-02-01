@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170201141422) do
     t.datetime "updated_at",             null: false
     t.integer  "role",       default: 3, null: false
     t.integer  "gender",     default: 0, null: false
+    t.text     "allergies"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
