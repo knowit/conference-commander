@@ -31,6 +31,8 @@ div
     h4 Participants
 
     - unless @event.participants.empty?
-      == render 'participations/table'
+      == render 'participations/table', participations: @event.participations
 
     = link_to "Add participant", new_event_participation_path(@event), class: 'ui button green'
+    = link_to "List deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button green'
+

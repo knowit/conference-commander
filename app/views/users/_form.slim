@@ -11,4 +11,9 @@
 
   = u.input :allergies
 
+  - if current_user.role == 'administrator'
+    = u.input :role, collection: User.roles.keys.to_a,
+      input_html: { class: 'ui dropdown selection' },
+      label_method: lambda { |v| t("users.edit.#{v}") }
+
   = u.button :submit

@@ -1,0 +1,20 @@
+= simple_form_for @hotel do |f|
+  ul
+    - @hotel.errors.full_messages.each do |msg|
+      li = msg
+  = f.input :name, as: :string
+  .two.fields
+    .field
+      = f.input :address, as: :string
+    .field
+      = f.input :country, as: :string
+  .two.fields
+    .field
+      = f.input :lat
+    .field
+      = f.input :lon
+
+  = f.simple_fields_for :image do |i|
+    = i.input :file, as: :file
+
+  = f.submit class: 'ui primary button'
