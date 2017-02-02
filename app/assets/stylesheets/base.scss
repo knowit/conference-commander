@@ -10,6 +10,10 @@ h2 {
   margin: 0;
   padding: 0;
 }
+
+#top-menu.fixed + #frontpage-info {
+  margin-top: 75px;
+}
 .ui.secondary.pointing.menu.fixed {
   top:0;
  }
@@ -18,8 +22,6 @@ h2 {
   left: 0;
   z-index: 1;
   width: 100%;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
 
   margin-top: 0;
   border-bottom: 2px solid $knowit-green;
