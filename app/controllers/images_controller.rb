@@ -4,8 +4,6 @@ class ImagesController < ApplicationController
 
   load_and_authorize_resource
 
-  before_action :find_imageable, only: [:show]
-
   def create
     respond_to do |format|
       if @image.save
@@ -17,11 +15,9 @@ class ImagesController < ApplicationController
   end
 
   def show
-    not_found if @imageable.nil?
-    image = @imageable.images.find(params[:id])
-    file = File.new(image.file.path)
+    file = File.new(@image.file.path)
 
-    send_external_file(file, image)
+    send_external_file(file, @image)
   end
 
   def destroy

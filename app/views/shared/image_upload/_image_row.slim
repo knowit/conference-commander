@@ -4,6 +4,6 @@ tr id="image-#{image.id}"
     = " #{image.file_file_name}"
   td.actions
     - if image.imageable.is_a?(Hotel)
-      = link_to t('.show'), hotel_image_path(image.imageable, image), target: '_blank', action: :show
+      = link_to t('.show'), image_path(image), target: '_blank', action: :show
       = ' '
-      = link_to t('.delete'), hotel_image_path(image.imageable, image), method: :delete, remote: true
+      = link_to t('.delete'), image_path(image), method: :delete, remote: true

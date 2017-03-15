@@ -1,4 +1,4 @@
-= simple_form_for @hotel do |f|
+= simple_form_for [@parent, @hotel] do |f|
   ul
     - @hotel.errors.full_messages.each do |msg|
       li = msg

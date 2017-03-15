@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :events do
     resources :proposals
     resources :accommodations
-    resources :hotels
+    resources :hotels do
+      resources :images, shallow: true
+    end
     resources :schedules
     resources :proposals
     resources :participations do
@@ -21,12 +23,6 @@ Rails.application.routes.draw do
   end
 
   resources :proposals, only: [:index]
-
-  resources :accommodations
-
-  resources :hotels do
-    resources :images
-  end
 
   # we need to redirect in order to use the correct method and thus the correct layout:
   get '/pages/front', to: redirect('/')

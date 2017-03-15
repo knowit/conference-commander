@@ -28,7 +28,7 @@ class HotelsController < ApplicationController
 
   def update
     @hotel.save
-    respond_with @hotel
+    redirect_to event_hotel_path(@parent, @hotel)
   end
 
   def destroy
@@ -44,6 +44,7 @@ class HotelsController < ApplicationController
 
   def hotel_params
     params.require(:hotel).permit(
+      :event_id,
       :name,
       :address,
       :country,

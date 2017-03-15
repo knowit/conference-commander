@@ -10,7 +10,7 @@
     tbody
       - @hotels.each do |hotel|
         tr
-          td = link_to hotel.name, hotel_path(hotel)
+          td = link_to hotel.name, event_hotel_path(@parent, hotel)
           td = hotel.address
           td = hotel.country
           td = "#{hotel.lat}, #{hotel.lon}"
