@@ -6,9 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create(name: 'Henning', email: 'henkol@knowit.no')
-u2 = User.create(name: 'Vegar uten d', email: 'vegar.uten.d.molvig@knowit.no')
-u2 = User.create(name: 'Rune Melhus', email: 'rme@knowit.no')
+u1 = User.create(first_name: 'Henning', last_name: 'Koller', email: 'henkol@knowit.no')
+u2 = User.create(first_name: 'Vegar uten d', last_name: 'Molvig', email: 'vegar.uten.d.molvig@knowit.no')
 
 e1 = Event.create(name: "Fredrikstad", description: "Fagseminar i Fredrikstad", starting_at: "2015-11-08 17:50:00", ending_at: "2015-11-08 17:50:00")
 e2 = Event.create(name: "Lofoten", description: "Fagseminar i Lofoten", starting_at: "2016-11-08 17:50:00", ending_at: "2016-11-08 17:50:00")

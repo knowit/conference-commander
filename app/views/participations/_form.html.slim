@@ -4,5 +4,5 @@
   .inline.fields
     = u.input :single_room, as: :radio_buttons
   = u.input :request_for_single_room
-  = u.association :user
+  = u.association :user, label_method: lambda{|u| u.full_name}
   = u.button :submit

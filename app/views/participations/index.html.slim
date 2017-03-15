@@ -13,7 +13,7 @@ table.ui.celled.table
   tbody
     - @participations.each do |participation|
       tr
-        td = participation.user.name
+        td = participation.user.full_name
         td = participation.event.name
         td = participation.single_room
         td = participation.request_for_single_room
