@@ -10,10 +10,10 @@ class Ability
 
     # roles are defined in user model
     case user.role
-    when 'administrator' administrator_abilities
-    when 'organizer' organizer_abilities
-    when 'speaker' speaker_abilities
-    when 'participant' participant_abilities
+    when 'administrator' then administrator_abilities
+    when 'organizer' then organizer_abilities
+    when 'speaker' then speaker_abilities
+    when 'participant' then participant_abilities
     end
   end
 
