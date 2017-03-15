@@ -2,11 +2,11 @@ module Crudable
   extend ActiveSupport::Concern
 
   included do
-    attr_reader :resource
+    before_action :set_resource
   end
 
-  def resource
-    controller_name.classify.constantize
+  def set_resource
+    @resource = controller_name.classify.constantize
   end
 
 end
