@@ -27,7 +27,8 @@ class Event < ApplicationRecord
   validates :starting_at, presence: true
   validates :ending_at, presence: true
 
-  accepts_nested_attributes_for :venues
+  accepts_nested_attributes_for :venues, allow_destroy: true
+
   def add_accommodations(quantity, number_of_beds)
     accs = Array.new(quantity, { number_of_beds: number_of_beds })
     accommodations.create(accs)

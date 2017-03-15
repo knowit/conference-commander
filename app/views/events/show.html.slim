@@ -1,19 +1,19 @@
 div
-  h3 Event info
   table.ui.celled.table
     thead
       tr
-        th name
-        th description
-        th start date/time
-        th end date/time
-        th registration
-        - if can? :manage, @event
-          th
+        th = Event.human_attribute_name(:name)
+        th = Event.human_attribute_name(:description)
+        th = Venue.model_name.human.pluralize
+        th = Event.human_attribute_name(:starting_at)
+        th = Event.human_attribute_name(:ending_at)
+        th
+        th
     tbody
       tr
         td = @event.name
         td = @event.description
+        td = @event.venues.size
         td = @event.starting_at.strftime("%d/%m/%Y")
         td = @event.ending_at.strftime("%d/%m/%Y")
         td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(@event)
@@ -24,13 +24,13 @@ div
               div.or
               = link_to "Delete", event_path(@event), method: :delete, class: "ui button negative"
 
-  div
-    h4 Reports
+  .ui.container.segment
+    h3 Reports
 
     = link_to "Allergies", event_allergies_path(@event)
 
-  div
-    h4 Participants
+  .ui.container.segment
+    h3 Participants
 
     - unless @event.participants.empty?
       == render 'participations/table', participations: @event.participations
