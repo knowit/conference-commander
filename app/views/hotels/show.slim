@@ -1,2 +1,2 @@
-- if @hotel.image.present?
-  = image_tag @hotel.image.file.url, width: 800
+- @hotel.images.each do |image|
+  = image_tag image.file.url, width: 800

@@ -1,0 +1,5 @@
+var id = "#image-" + <%= @image.id %>;
+$(id).remove();
+if ($("#images-table tr").length < 1) {
+  $("#images-table").hide();
+}

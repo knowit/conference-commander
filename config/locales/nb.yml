@@ -86,6 +86,12 @@ nb:
     action_links:
       delete: Slett
       edit: Rediger
+    image_upload:
+      image_row:
+        delete: Slett
+        show: Vis
+      upload_fields:
+        add: Legg til bilde
     new_link:
       new_button: Legg til %{class_name}
 

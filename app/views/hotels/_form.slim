@@ -13,8 +13,4 @@
       = f.input :lat
     .field
       = f.input :lon
-
-  = f.simple_fields_for :image do |i|
-    = i.input :file, as: :file
-
   = f.submit class: 'ui primary button'

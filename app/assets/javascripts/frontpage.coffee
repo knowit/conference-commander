@@ -8,7 +8,6 @@ $(document).on 'turbolinks:load', ->
   $(window).on 'scroll', ->
     scroll = $(window).scrollTop();
     positionNav = scroll-(top_photo.height() + 56)
-    console.log(positionNav)
     if positionNav >= 0
       menu.addClass('fixed')
     else

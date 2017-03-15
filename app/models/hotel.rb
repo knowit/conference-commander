@@ -13,6 +13,6 @@
 #
 
 class Hotel < ApplicationRecord
-  has_one :image, as: :imageable, dependent: :destroy
-  accepts_nested_attributes_for :image
+  has_many :images, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :images
 end

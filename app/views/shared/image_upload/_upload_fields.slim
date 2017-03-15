@@ -1,0 +1,10 @@
+#images-box
+  - images = owner.images
+  table.ui.celled.table#images-table style=('display: none' if images.empty?)
+    tbody#images
+      - images.each do |image|
+        = render 'shared/image_upload/image_row', image: image
+  = simple_form_for [owner, Image.new], remote: true, html: { class: 'form-horizontal fileupload image-upload-form', multipart: true } do |a|
+    .images-upload
+    = image_file_field(a)
+    = a.label t('.add'), class: 'file ui primary button', for: 'image_files'

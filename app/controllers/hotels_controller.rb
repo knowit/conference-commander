@@ -7,17 +7,31 @@ class HotelsController < ApplicationController
 
   layout 'crudable'
 
-  def index
-    @hotels = Hotel.all
-  end
-
   def new
-    @hotel.build_image
+    # NOOP
   end
 
   def create
     @hotel.save
     respond_with @hotel
+  end
+
+  def index
+    @hotels = Hotel.all
+  end
+
+  def edit
+    # NOOP
+  end
+
+  def update
+    @hotel.save
+    respond_with @hotel
+  end
+
+  def destroy
+    @hotel.destroy
+    redirect_to hotels_path
   end
 
   private
