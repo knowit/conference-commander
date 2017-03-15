@@ -4,8 +4,10 @@ table.ui.celled.table
       th name
       th event name
       th single room
-      th reason for single room
-      th
+      - if can? :manage, @event
+        -# Don't show reason for single room to guests.
+        th reason for single room
+        th
 
   tbody
     - participations.each do |participation|
@@ -13,11 +15,12 @@ table.ui.celled.table
         td = participation.user.full_name
         td = participation.event.name
         td = participation.single_room
-        td = participation.request_for_single_room
-        td
-          div.ui.mini.buttons
-            /= link_to 'Show', event_participation_path(@event, participation), class: "ui button primary"
-            /div.or
-            = link_to 'Edit', edit_event_participation_path(@event, participation), class: "ui button"
-            div.or
-            = link_to 'Delete', event_participation_path(@event, participation), data: { confirm: 'Are you sure?' }, method: :delete, class: "ui button negative"
+        - if can? :manage, @event
+          td = participation.request_for_single_room
+          td
+            div.ui.mini.buttons
+              /= link_to 'Show', event_participation_path(@event, participation), class: "ui button primary"
+              /div.or
+              = link_to 'Edit', edit_event_participation_path(@event, participation), class: "ui button"
+              div.or
+              = link_to 'Delete', event_participation_path(@event, participation), data: { confirm: 'Are you sure?' }, method: :delete, class: "ui button negative"
