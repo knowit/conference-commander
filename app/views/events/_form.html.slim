@@ -9,13 +9,13 @@
 
   = f.input :description
 
-  h3 = Venue.model_name.human.pluralize
-  #venues
-    = f.simple_fields_for :venues do |venue|
-      = render 'venue_fields', f: venue
-    .links
-      = link_to_add_association "Add venue <i class='plus circle icon'></i>".html_safe, f, :venues
+  .ui.container.segment
+    h3 = Venue.model_name.human.pluralize
+    #venues
+      = f.simple_fields_for :venues do |venue|
+        = render 'venue_fields', f: venue
+      .links
+        = link_to_add_association "<i class='plus icon'></i> Add venue".html_safe, f, :venues, class: 'ui teal mini button'
 
-  hr
-
+  hr 
   = f.submit class: 'ui primary button'

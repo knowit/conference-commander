@@ -1,5 +1,3 @@
-.nested-fields
-  .field
-    = f.input :name
-    
-  = link_to_remove_association "<i class='minus circle icon'></i>".html_safe, f
+.inline.fields.nested-fields
+  = f.input :name
+  = link_to_remove_association "<i class='minus icon' ></i> Remove".html_safe, f, class: 'ui red mini button'
