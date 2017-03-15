@@ -8,7 +8,7 @@ class CreateFlights < ActiveRecord::Migration[5.1]
       t.integer :direction, null: false
       t.datetime :travel_date, null: false
       t.date :change_reservation_before, null: true
-      t.references :events, foreign_key: true, null: false
+      t.references :event, foreign_key: true, null: false
       t.timestamps
     end
   end
