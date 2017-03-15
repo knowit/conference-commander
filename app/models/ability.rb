@@ -6,8 +6,6 @@ class Ability
     guest_abilities
     return unless user
 
-    common_abilities
-
     # roles are defined in user model
     case user.role
     when 'administrator' then administrator_abilities
@@ -18,10 +16,11 @@ class Ability
   end
 
   def common_abilities
-    can :manage, [User] do |user|
+    can :update, [User] do |user|
       # allow users to manage themselves
       @user == user
     end
+    can :read, User
 
     can :single_room_participants, Participation
   end
@@ -31,12 +30,15 @@ class Ability
   end
 
   def organizer_abilities
+    common_abilities
   end
 
   def speaker_abilities
+    common_abilities
   end
 
   def participant_abilities
+    common_abilities
   end
 
   def guest_abilities
