@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315131621) do
+ActiveRecord::Schema.define(version: 20170315154307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,33 @@ ActiveRecord::Schema.define(version: 20170315131621) do
     t.datetime "ending_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "flight_reservations", force: :cascade do |t|
+    t.datetime "travel_date"
+    t.string "flight_number"
+    t.bigint "flight_id"
+    t.bigint "participation_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_flight_reservations_on_event_id"
+    t.index ["flight_id"], name: "index_flight_reservations_on_flight_id"
+    t.index ["participation_id"], name: "index_flight_reservations_on_participation_id"
+  end
+
+  create_table "flights", force: :cascade do |t|
+    t.string "airline", null: false
+    t.string "from", null: false
+    t.string "destination", null: false
+    t.string "flight_number", null: false
+    t.integer "direction", null: false
+    t.datetime "travel_date", null: false
+    t.date "change_reservation_before"
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_flights_on_event_id"
   end
 
   create_table "hotels", id: :serial, force: :cascade do |t|
@@ -121,6 +148,10 @@ ActiveRecord::Schema.define(version: 20170315131621) do
   end
 
   add_foreign_key "accommodations", "events"
+  add_foreign_key "flight_reservations", "events"
+  add_foreign_key "flight_reservations", "flights"
+  add_foreign_key "flight_reservations", "participations"
+  add_foreign_key "flights", "events"
   add_foreign_key "participations", "accommodations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
