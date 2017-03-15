@@ -2,6 +2,8 @@ class HotelsController < ApplicationController
 
   include Crudable
 
+  before_action :set_parent
+
   load_and_authorize_resource :event
   load_and_authorize_resource through: :event
 
@@ -17,7 +19,7 @@ class HotelsController < ApplicationController
   end
 
   def index
-    @hotels = Hotel.all
+    # NOOP
   end
 
   def edit
@@ -35,6 +37,10 @@ class HotelsController < ApplicationController
   end
 
   private
+
+  def set_parent
+    @parent ||= Event.find(params[:event_id])
+  end
 
   def hotel_params
     params.require(:hotel).permit(

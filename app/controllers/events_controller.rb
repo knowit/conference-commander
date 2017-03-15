@@ -1,12 +1,12 @@
 class EventsController < ApplicationController
-  
+
   include Crudable
+
+  load_and_authorize_resource
 
   layout 'crudable'
 
   respond_to :html
-
-  load_and_authorize_resource
 
   def index
     # NOOP

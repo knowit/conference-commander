@@ -8,7 +8,6 @@ class AccommodationsController < ApplicationController
   load_and_authorize_resource through: :event
 
   responders :flash
-
   respond_to :html
 
   layout 'crudable'
