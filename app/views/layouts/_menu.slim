@@ -13,7 +13,6 @@
     .item = link_to Hotel.model_name.human(count: 2), hotels_path
   - if current_user
     .item.right = link_to t('user.signout'), signout_path, method: :delete
-    .item = link_to Accommodation.model_name.human.pluralize, accommodations_path
 
 - if content_for? :auxiliary_menu
   .ui.secondary.pointing.menu#auxiliary-menu
