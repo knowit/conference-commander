@@ -2,18 +2,17 @@
 .ui.secondary.pointing.menu#top-menu class="#{fixed ? 'fixed' : ''}"
   .item = link_to t('.frontpage'), root_path
   - if can? :read, User
-    .item = link_to User.model_name.human.pluralize, users_path
+    .item = link_to User.model_name.human(count: 2), users_path
   - if can? :read, Event
-    .item = link_to Event.model_name.human.pluralize, events_path
+    .item = link_to Event.model_name.human(count: 2), events_path
   - if can? :read, Proposal
-    .item = link_to Proposal.model_name.human.pluralize, proposals_path
+    .item = link_to Proposal.model_name.human(count: 2), proposals_path
   - if can? :read, Accommodation
     .item = link_to Accommodation.model_name.human(count: 2), accommodations_path
   - if can? :read, Hotel
     .item = link_to Hotel.model_name.human(count: 2), hotels_path
   - if current_user
     .item.right = link_to t('user.signout'), signout_path, method: :delete
-    .item = link_to Accommodation.model_name.human.pluralize, accommodations_path
 
 - if content_for? :auxiliary_menu
   .ui.secondary.pointing.menu#auxiliary-menu

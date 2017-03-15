@@ -1,6 +1,7 @@
 = simple_form_for @user do |u|
 
-  = u.input :name, as: :string
+  = u.input :first_name, as: :string
+  = u.input :last_name, as: :string
   = u.input :email, as: :string
 
   .inline.fields

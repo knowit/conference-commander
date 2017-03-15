@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include Crudable
 
   before_action :remove_role_if_not_admin, only: :update
 

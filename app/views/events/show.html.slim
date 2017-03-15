@@ -1,38 +1,42 @@
 div
-  h3 Event info
   table.ui.celled.table
     thead
       tr
-        th name
-        th description
-        th start date/time
-        th end date/time
-        th registration
+        th = Event.human_attribute_name(:name)
+        th = Event.human_attribute_name(:description)
+        th = Venue.model_name.human.pluralize
+        th = Event.human_attribute_name(:starting_at)
+        th = Event.human_attribute_name(:ending_at)
+        th
         th
     tbody
       tr
         td = @event.name
         td = @event.description
+        td = @event.venues.size
         td = @event.starting_at.strftime("%d/%m/%Y")
         td = @event.ending_at.strftime("%d/%m/%Y")
         td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(@event)
-        td
-          div.ui.mini.buttons
-            = link_to "Edit", edit_event_path(@event), class: "ui button primary"
-            div.or
-            = link_to "Delete", event_path(@event), method: :delete, class: "ui button negative"
+        - if can? :manage, @event
+          td
+            div.ui.mini.buttons
+              = link_to "Edit", edit_event_path(@event), class: "ui button primary"
+              div.or
+              = link_to "Delete", event_path(@event), method: :delete, class: "ui button negative"
 
-  div
-    h4 Reports
+  .ui.container.segment
+    h3 Reports
 
     = link_to "Allergies", event_allergies_path(@event)
 
-  div
-    h4 Participants
+  .ui.container.segment
+    h3 Participants
 
     - unless @event.participants.empty?
       == render 'participations/table', participations: @event.participations
 
-    = link_to "Add participant", new_event_participation_path(@event), class: 'ui button green'
-    = link_to "List deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button green'
+    - if can? :manage, @event
+      = link_to "Add participant", new_event_participation_path(@event), class: 'ui button green'
 
+    - if can? :single_room_participants, Participation
+      = link_to "List deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button green'

@@ -11,7 +11,7 @@
         th = Event.human_attribute_name(:starting_at)
         th = Event.human_attribute_name(:ending_at)
         th = t('.registration')
-        - if @events.any? { |event| can? :update, event }
+        - if can? :manage, Event
           th = t('.actions')
     tbody
       - @events.each do |event|
@@ -22,5 +22,5 @@
           td = event.starting_at.strftime("%d/%m/%Y")
           td = event.ending_at.strftime("%d/%m/%Y")
           td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(event)
-          - if can? :update, event
+          - if can? :manage, event
             td = render 'shared/action_links', object: event

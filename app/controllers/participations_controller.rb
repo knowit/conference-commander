@@ -5,19 +5,19 @@ class ParticipationsController < ApplicationController
   load_and_authorize_resource through: :event
 
   def index
-    # NOOP
+    respond_with @participations
   end
 
   def show
-    # NOOP
+    respond_with @participation
   end
 
   def new
-    # NOOP
+    respond_with @participation
   end
 
   def edit
-    # NOOP
+    respond_with @participation
   end
 
   def create

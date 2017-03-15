@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include Crudable
 
   layout 'crudable'
 
@@ -40,6 +41,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :starting_at, :ending_at, venues_attributes: [:name, :_destroy])
+    params.require(:event).permit(:id, :name, :description, :starting_at, :ending_at, venues_attributes: [:id, :name, :_destroy])
   end
 end
