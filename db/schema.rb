@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315154307) do
+ActiveRecord::Schema.define(version: 20170315183817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20170315154307) do
     t.float "lon"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_hotels_on_event_id"
   end
 
   create_table "images", id: :serial, force: :cascade do |t|
