@@ -1,1 +1,4 @@
-= link_to t('.new_button') % { class_name: @resource.model_name.human.downcase }, new_polymorphic_path(@resource), class: 'ui button green'
+- if @parent
+  = link_to t('.new_button') % { class_name: @crudable_name.model_name.human.downcase }, new_polymorphic_path([@parent, @crudable_name]), class: 'ui button green'
+- else
+  = link_to t('.new_button') % { class_name: @crudable_name.model_name.human.downcase }, new_polymorphic_path(@crudable_name), class: 'ui button green'

@@ -1,6 +1,9 @@
 class HotelsController < ApplicationController
 
-  load_and_authorize_resource
+  include Crudable
+
+  load_and_authorize_resource :event
+  load_and_authorize_resource through: :event
 
   layout 'crudable'
 

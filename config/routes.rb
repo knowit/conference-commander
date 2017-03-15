@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :proposals, controller: :event_proposals
-    member do
-      resources :accommodations
-      resources :hotels
-    end
+    resources :accommodations
+    resources :hotels
+    resources :schedules
+    resources :proposals
     resources :participations do
       collection do
         get :single_room_participants

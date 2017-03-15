@@ -1,6 +1,9 @@
 class ProposalsController < ApplicationController
 
-  #layout 'crudable'
+  include Crudable
+
+  load_and_authorize_resource :event
+  load_and_authorize_resource through: :event
 
   def index
     @proposals = Proposal.all

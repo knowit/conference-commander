@@ -2,10 +2,13 @@ class AccommodationsController < ApplicationController
 
   include Crudable
 
+  before_action :set_parent
+
   load_and_authorize_resource :event
-  load_and_authorize_resource through: :event, shallow: true
+  load_and_authorize_resource through: :event
 
   responders :flash
+
   respond_to :html
 
   layout 'crudable'
@@ -39,6 +42,10 @@ class AccommodationsController < ApplicationController
   def destroy
     @accommodation.destroy
     respond_with @accommodation
+  end
+
+  def set_parent
+    @parent ||= Event.find(params[:event_id])
   end
 
   private
