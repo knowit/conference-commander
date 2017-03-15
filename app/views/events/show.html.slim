@@ -8,7 +8,8 @@ div
         th start date/time
         th end date/time
         th registration
-        th
+        - if can? :update, @event
+          th
     tbody
       tr
         td = @event.name
@@ -16,11 +17,12 @@ div
         td = @event.starting_at.strftime("%d/%m/%Y")
         td = @event.ending_at.strftime("%d/%m/%Y")
         td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(@event)
-        td
-          div.ui.mini.buttons
-            = link_to "Edit", edit_event_path(@event), class: "ui button primary"
-            div.or
-            = link_to "Delete", event_path(@event), method: :delete, class: "ui button negative"
+        - if can? :update, @event
+          td
+            div.ui.mini.buttons
+              = link_to "Edit", edit_event_path(@event), class: "ui button primary"
+              div.or
+              = link_to "Delete", event_path(@event), method: :delete, class: "ui button negative"
 
   div
     h4 Reports
