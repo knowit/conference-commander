@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 20170315154307) do
   create_table "flight_reservations", force: :cascade do |t|
     t.datetime "travel_date"
     t.string "flight_number"
-    t.bigint "flights_id"
-    t.bigint "participations_id", null: false
-    t.bigint "events_id", null: false
+    t.bigint "flight_id"
+    t.bigint "participation_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["events_id"], name: "index_flight_reservations_on_events_id"
-    t.index ["flights_id"], name: "index_flight_reservations_on_flights_id"
-    t.index ["participations_id"], name: "index_flight_reservations_on_participations_id"
+    t.index ["event_id"], name: "index_flight_reservations_on_event_id"
+    t.index ["flight_id"], name: "index_flight_reservations_on_flight_id"
+    t.index ["participation_id"], name: "index_flight_reservations_on_participation_id"
   end
 
   create_table "flights", force: :cascade do |t|
@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 20170315154307) do
     t.integer "direction", null: false
     t.datetime "travel_date", null: false
     t.date "change_reservation_before"
-    t.bigint "events_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["events_id"], name: "index_flights_on_events_id"
+    t.index ["event_id"], name: "index_flights_on_event_id"
   end
 
   create_table "hotels", id: :serial, force: :cascade do |t|
@@ -148,10 +148,10 @@ ActiveRecord::Schema.define(version: 20170315154307) do
   end
 
   add_foreign_key "accommodations", "events"
-  add_foreign_key "flight_reservations", "events", column: "events_id"
-  add_foreign_key "flight_reservations", "flights", column: "flights_id"
-  add_foreign_key "flight_reservations", "participations", column: "participations_id"
-  add_foreign_key "flights", "events", column: "events_id"
+  add_foreign_key "flight_reservations", "events"
+  add_foreign_key "flight_reservations", "flights"
+  add_foreign_key "flight_reservations", "participations"
+  add_foreign_key "flights", "events"
   add_foreign_key "participations", "accommodations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
