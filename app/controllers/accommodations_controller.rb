@@ -2,6 +2,8 @@ class AccommodationsController < ApplicationController
 
   include Crudable
 
+  layout 'crudable'
+
   before_action :set_parent
 
   load_and_authorize_resource :event
@@ -9,8 +11,6 @@ class AccommodationsController < ApplicationController
 
   responders :flash
   respond_to :html
-
-  layout 'crudable'
 
   def index
     # NOOP

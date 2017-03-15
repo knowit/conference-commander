@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/events/:event_id/allergies', to: 'allergies#index', as: :event_allergies
 
   resources :events do
-    resources :proposals, controller: :event_proposals
+    resources :proposals
     resources :accommodations
     resources :hotels
     resources :schedules
