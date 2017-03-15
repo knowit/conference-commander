@@ -100,16 +100,16 @@ ActiveRecord::Schema.define(version: 20170315131621) do
     t.index ["schedule_id"], name: "index_tracks_on_schedule_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name",               null: false
-    t.text     "email",                    null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "role",       default: 3,   null: false
-    t.integer  "gender",     default: 0,   null: false
-    t.text     "allergies"
-    t.string   "last_name",  default: "X", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "first_name", null: false
+    t.text "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "role", default: 3, null: false
+    t.integer "gender", default: 0, null: false
+    t.text "allergies"
+    t.string "last_name", default: "X", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "venues", id: :serial, force: :cascade do |t|
@@ -126,4 +126,6 @@ ActiveRecord::Schema.define(version: 20170315131621) do
   add_foreign_key "participations", "users"
   add_foreign_key "proposals", "events"
   add_foreign_key "proposals", "users"
+  add_foreign_key "tracks", "schedules"
+  add_foreign_key "venues", "events"
 end
