@@ -21,7 +21,8 @@ class User < ApplicationRecord
   has_many :participations
   has_many :proposals
 
-  validates :name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :email, presence: true
 
   # Role enum
@@ -29,8 +30,17 @@ class User < ApplicationRecord
   enum gender: { unspecified: 0, male: 1, female: 2 }
 
   def self.find_or_create_by_auth_hash(auth_hash)
+
+    puts auth_hash.inspect
+
     find_or_create_by(email: auth_hash['uid']) do |user|
-      user.name = auth_hash.dig('info', 'name')
+      user.first_name = auth_hash.dig('info', 'first_name')
+      user.last_name = auth_hash.dig('info', 'last_name')
     end
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 end

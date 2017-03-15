@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201173158) do
+ActiveRecord::Schema.define(version: 20170315131621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,15 +100,16 @@ ActiveRecord::Schema.define(version: 20170201173158) do
     t.index ["schedule_id"], name: "index_tracks_on_schedule_id"
   end
 
-  create_table "users", id: :serial, force: :cascade do |t|
-    t.text "name", null: false
-    t.text "email", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "role", default: 3, null: false
-    t.integer "gender", default: 0, null: false
-    t.text "allergies"
-    t.index ["email"], name: "index_users_on_email", unique: true
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name",               null: false
+    t.text     "email",                    null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "role",       default: 3,   null: false
+    t.integer  "gender",     default: 0,   null: false
+    t.text     "allergies"
+    t.string   "last_name",  default: "X", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   create_table "venues", id: :serial, force: :cascade do |t|
@@ -125,6 +126,4 @@ ActiveRecord::Schema.define(version: 20170201173158) do
   add_foreign_key "participations", "users"
   add_foreign_key "proposals", "events"
   add_foreign_key "proposals", "users"
-  add_foreign_key "tracks", "schedules"
-  add_foreign_key "venues", "events"
 end
