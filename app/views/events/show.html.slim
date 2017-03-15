@@ -38,4 +38,5 @@ div
     - if can? :manage, @event
       = link_to "Add participant", new_event_participation_path(@event), class: 'ui button green'
 
-    = link_to "List deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button green'
+    - if can? :single_room_participants, Participation
+      = link_to "List deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button green'

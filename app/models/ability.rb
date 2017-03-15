@@ -22,6 +22,8 @@ class Ability
       # allow users to manage themselves
       @user == user
     end
+
+    can :single_room_participants, Participation
   end
 
   def administrator_abilities
