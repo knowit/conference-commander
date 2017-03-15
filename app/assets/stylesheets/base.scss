@@ -22,10 +22,13 @@ h2 {
   left: 0;
   z-index: 1;
   width: 100%;
-
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
   margin-top: 0;
+  margin-bottom: 0;
   border-bottom: 2px solid $knowit-green;
   background-color: $white;
+
   .item {
     padding: 1.5em 1.14285714em;
   }
@@ -38,8 +41,32 @@ h2 {
   .item:hover a {
     color: white;
   }
-  .item a{
+  .item a {
     color: $knowit-green;
+  }
+}
+
+#auxiliary-menu {
+  width: 100%;
+  margin: 0;
+
+  border-bottom: 2px solid $knowit-green;
+  background-color: $knowit-green;
+
+  .item {
+    padding: 1em;
+  }
+  .item:first-child {
+    margin-left: 10%;
+  }
+  .item:hover {
+    background-color: $knowit-green;
+  }
+  .item:hover a {
+    color: white;
+  }
+  .item a {
+    color: white;
   }
 }
 
@@ -61,6 +88,9 @@ h2 {
   color: $white;
 }
 
+.ui.page.grid {
+  margin-top: 50px;
+}
 
 
 footer {

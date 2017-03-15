@@ -3,13 +3,19 @@
     - @event.errors.full_messages.each do |msg|
       li = msg
   .three.fields
-    .field
-      = f.input :name, as: :string
-    .field
-      .ui.calendar= f.input :starting_at, as: :string
-    .field
-      .ui.calendar= f.input :ending_at, as: :string
+    .field = f.input :name, as: :string
+    .field: .ui.calendar = f.input :starting_at, as: :string
+    .field: .ui.calendar = f.input :ending_at,   as: :string
 
   = f.input :description
+
+  h3 = Venue.model_name.human.pluralize
+  #venues
+    = f.simple_fields_for :venues do |venue|
+      = render 'venue_fields', f: venue
+    .links
+      = link_to_add_association "Add venue <i class='plus circle icon'></i>".html_safe, f, :venues
+
+  hr
 
   = f.submit class: 'ui primary button'

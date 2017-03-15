@@ -1,54 +1,45 @@
 class EventsController < ApplicationController
 
-  before_action :set_event, except: [:index, :new, :create]
-
   layout 'crudable'
 
+  respond_to :html
+
+  load_and_authorize_resource
+
   def index
-    @events = Event.all
+    # NOOP
   end
 
   def new
-    @event = Event.new
-  end
-
-  def create
-    @event = Event.new(event_params)
-
-    if @event.save
-      redirect_to @event
-    else
-      render :new
-    end
+    @event.venues.build
   end
 
   def show
+    respond_with @event
   end
 
   def edit
+    respond_with @event
+  end
+
+  def create
+    @event.save(event_params)
+    respond_with @event
   end
 
   def update
-    if @event.update(event_params)
-      redirect_to @event
-    else
-      render :edit
-    end
+    @event.update(event_params)
+    respond_with @event
   end
 
   def destroy
     @event.destroy
-
-    redirect_to events_url
+    respond_with @event
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :starting_at, :ending_at)
-  end
-
-  def set_event
-    @event = Event.find(params[:id])
+    params.require(:event).permit(:name, :description, :starting_at, :ending_at, venues_attributes: [:name, :_destroy])
   end
 end

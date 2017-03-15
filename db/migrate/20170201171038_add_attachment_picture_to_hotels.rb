@@ -1,4 +1,4 @@
-class AddAttachmentPictureToHotels < ActiveRecord::Migration
+class AddAttachmentPictureToHotels < ActiveRecord::Migration[5.0]
   def self.up
     change_table :hotels do |t|
       t.attachment :picture

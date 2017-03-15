@@ -1,9 +1,13 @@
+- content_for :auxiliary_menu do
+  .item = link_to Schedule.model_name.human.pluralize, schedules_path(@event)
+
 - unless @events.empty?
   table.ui.celled.table
     thead
       tr
         th = Event.human_attribute_name(:name)
         th = Event.human_attribute_name(:description)
+        th = Venue.model_name.human.pluralize
         th = Event.human_attribute_name(:starting_at)
         th = Event.human_attribute_name(:ending_at)
         th = t('.registration')
@@ -13,6 +17,7 @@
         tr
           td = link_to event.name, event_path(event)
           td = event.description
+          td = event.venues.size
           td = event.starting_at.strftime("%d/%m/%Y")
           td = event.ending_at.strftime("%d/%m/%Y")
           td = link_to fa_icon('check-circle-o 2x'), new_event_participation_path(event)

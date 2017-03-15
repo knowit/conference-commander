@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :schedules
+  
   resources :users do
     resources :proposals, controller: :user_proposals
   end
