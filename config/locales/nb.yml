@@ -47,6 +47,8 @@ nb:
         gender: Kjønn
         name: Navn
         role: Rolle
+        first_name: Fornavn
+        last_name: Etternavn
 
     models:
       accommodation:
