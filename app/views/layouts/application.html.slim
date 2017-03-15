@@ -8,6 +8,7 @@ html
 
   body
     = render 'layouts/menu', fixed: true
+    = render 'layouts/alerts', flash: flash
     .ui.page.grid
       .wide.column
         = content_for?(:content) ? yield(:content) : yield
