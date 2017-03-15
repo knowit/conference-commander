@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :proposals, controller: :event_proposals
+    member do
+      resources :accommodations
+      resources :hotels
+    end
     resources :participations do
       collection do
         get :single_room_participants
@@ -11,16 +15,13 @@ Rails.application.routes.draw do
   end
 
   resources :schedules
-  
+
   resources :users do
     resources :proposals, controller: :user_proposals
   end
 
   resources :proposals, only: [:index]
 
-  resources :accommodations
-
-  resources :hotels
 
   # we need to redirect in order to use the correct method and thus the correct layout:
   get '/pages/front', to: redirect('/')

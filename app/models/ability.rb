@@ -2,9 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    @user = user
-    guest_abilities
+
     return unless user
+
+    @user = user
 
     # roles are defined in user model
     case user.role
@@ -12,17 +13,15 @@ class Ability
     when 'organizer' then organizer_abilities
     when 'speaker' then speaker_abilities
     when 'participant' then participant_abilities
+    else guest_abilities
     end
   end
 
   def common_abilities
     can :update, [User] do |user|
-      # allow users to manage themselves
-      @user == user
+      @user == user # allow users to manage themselves
     end
     can :read, User
-
-    can :single_room_participants, Participation
   end
 
   def administrator_abilities

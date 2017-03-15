@@ -10,6 +10,7 @@
 #
 
 class Accommodation < ApplicationRecord
+
   has_many :participations
   belongs_to :event
 

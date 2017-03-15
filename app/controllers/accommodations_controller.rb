@@ -1,39 +1,42 @@
 class AccommodationsController < ApplicationController
 
+  include Crudable
+
+  load_and_authorize_resource :event
+  load_and_authorize_resource through: :event, shallow: true
+
   responders :flash
   respond_to :html
 
   layout 'crudable'
 
   def index
-    @accommodations = Accommodation.includes(:event).order("events.name")
+    # NOOP
   end
 
   def show
-    @accommodation= Accommodation.find(params[:id])
+    # NOOP
   end
 
   def edit
-    @accommodation= Accommodation.find(params[:id])
+    # NOOP
   end
 
   def new
-    @accommodation= Accommodation.new
+    # NOOP
   end
 
   def create
-    @accommodation= Accommodation.create(accommodation_params)
-    redirect_to action: :index
+    @accommodation.save(accommodation_params)
+    respond_with @accommodation
   end
 
   def update
-    @accommodation= Accommodation.find(params[:id])
     @accommodation.update(accommodation_params)
     respond_with @accommodation
   end
 
   def destroy
-    @accommodation= Accommodation.find(params[:id])
     @accommodation.destroy
     respond_with @accommodation
   end
