@@ -5,7 +5,7 @@ table.ui.celled.table
       th = Participation.human_attribute_name(:name)
       th = Participation.human_attribute_name(:single_room)
       th = Participation.human_attribute_name(:request_for_single_room)
-      th
+      th = t('.actions')
 
   tbody
     - participations.each do |participation|
