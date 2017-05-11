@@ -1,12 +1,18 @@
 .two.fields
-  = f.input :single_room
+  .field
+    .ui.slider.checkbox
+      = f.input :single_room
   = f.input :request_for_single_room, as: :string
 .three.fields
-  = f.input :extended_stay
-  = f.label :extended_stay_from
-  .field: .ui.calendar
-    = f.text_field :extended_stay_from
+  .field
+    .ui.slider.checkbox
+      = f.input :extended_stay
+  .field
+    = f.label :extended_stay_from
+    .ui.calendar
+      = f.text_field :extended_stay_from
 
-  = f.label :extended_stay_to
-  .field: .ui.calendar
-    = f.text_field :extended_stay_to
+  .field
+    = f.label :extended_stay_to
+    .ui.calendar
+      = f.text_field :extended_stay_to

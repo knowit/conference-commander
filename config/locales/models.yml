@@ -58,6 +58,9 @@ nb:
       participation:
         single_room: Enkeltrom
         request_for_single_room: Årsak til enkeltrom
+        extended_stay: Utvidet opphold
+        extended_stay_from: Utvidet opphold fra
+        extended_stay_to: Utvidet opphold til
 
       activity:
         title: Tittel
