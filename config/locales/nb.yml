@@ -49,6 +49,16 @@ nb:
         role: Rolle
         first_name: Fornavn
         last_name: Etternavn
+        passport_name: Navn i passet
+        passport_number: Passnummer
+        passport_nationality: Nasjonalitet i passet
+        passport_issued_at: Passets utstedelsesdato
+        passport_expires_at: Passets utløpsdato
+
+      participation:
+        single_room: Enkeltrom
+        request_for_single_room: Årsak til enkeltrom
+
 
     models:
       accommodation:
@@ -110,3 +120,9 @@ nb:
       organizer: Organisator
       participant: Deltager
       speaker: Foredragsholder
+
+  date:
+    order:
+      - :day
+      - :month
+      - :year

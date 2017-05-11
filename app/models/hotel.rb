@@ -10,6 +10,7 @@
 #  lon        :float
 #  created_at :datetime
 #  updated_at :datetime
+#  event_id   :integer
 #
 
 class Hotel < ApplicationRecord

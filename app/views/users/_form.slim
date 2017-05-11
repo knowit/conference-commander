@@ -1,8 +1,18 @@
 = simple_form_for @user do |u|
 
-  = u.input :first_name, as: :string
-  = u.input :last_name, as: :string
-  = u.input :email, as: :string
+  .three.fields
+    = u.input :first_name, as: :string
+    = u.input :last_name, as: :string
+    = u.input :email, as: :string
+
+  h4 Passinformasjon
+  .three.fields
+    = u.input :passport_name
+    = u.input :passport_number
+    = u.input :passport_nationality
+  .two.fields
+    = u.input :passport_issued_at, as: :string
+    = u.input :passport_expires_at, as: :string
 
   .inline.fields
     - User.genders.keys.each do |gender|

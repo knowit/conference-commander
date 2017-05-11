@@ -13,6 +13,7 @@ class ParticipationsController < ApplicationController
   end
 
   def new
+    @participation.user = current_user
     respond_with @participation
   end
 

@@ -1,8 +1,7 @@
 .ui.two.column.centered.grid
   #signin-container.ui.segment.column
     = form_tag '/auth/crowd', class: 'ui form' do
-      h3
-        | Logg inn
+      h1 CONFERENCE COMMANDER
       .field
         = label_tag :username, 'Epost'
         = text_field_tag :username, params[:username], type: :email
@@ -14,4 +13,4 @@
           label= 'Husk meg!'
           = check_box_tag :remember_me, 1, params[:remember_me]
 
-      = submit_tag 'Logg inn', class: 'ui primary button'
+      = submit_tag 'Logg inn', class: 'ui massive inverted button'

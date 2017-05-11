@@ -12,10 +12,6 @@
 #  file_file_size    :integer
 #  file_updated_at   :datetime
 #
-# Indexes
-#
-#  index_images_on_imageable_type_and_imageable_id  (imageable_type,imageable_id)
-#
 
 class Image < ApplicationRecord
   belongs_to :imageable, polymorphic: true

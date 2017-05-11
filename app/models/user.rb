@@ -3,21 +3,18 @@
 # Table name: users
 #
 #  id         :integer          not null, primary key
-#  name       :text             not null
+#  first_name :string           not null
 #  email      :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  role       :integer          default("participant"), not null
 #  gender     :integer          default("unspecified"), not null
 #  allergies  :text
-#
-# Indexes
-#
-#  index_users_on_email  (email) UNIQUE
+#  last_name  :string           default("X"), not null
 #
 
 class User < ApplicationRecord
-  
+
   has_many :participations
   has_many :proposals
 
@@ -25,14 +22,19 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
 
+  validates :passport_name, presence: true
+  validates :passport_number, presence: true
+  validates :passport_issued_at, presence: true
+  validates :passport_expires_at, presence: true
+  validates :passport_nationality, presence: true
+
+  validates :birth_date, presence: true
+
   # Role enum
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
   enum gender: { unspecified: 0, male: 1, female: 2 }
 
   def self.find_or_create_by_auth_hash(auth_hash)
-
-    puts auth_hash.inspect
-
     find_or_create_by(email: auth_hash['uid']) do |user|
       user.first_name = auth_hash.dig('info', 'first_name')
       user.last_name = auth_hash.dig('info', 'last_name')

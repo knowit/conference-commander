@@ -39,6 +39,9 @@ gem 'cancancan'
 # Netsed associations
 gem 'cocoon'
 
+# Wizard
+gem 'wicked'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
