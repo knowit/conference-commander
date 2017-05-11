@@ -15,7 +15,7 @@ table.ui.celled.table
         td = participation.single_room
         td = participation.request_for_single_room
         td
-          - if can? :update, participation
+          - if can? :manage, participation
             div.ui.mini.buttons
               = link_to 'Edit', edit_event_participation_path(@event, participation), class: "ui button"
               div.or

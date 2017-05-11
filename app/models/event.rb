@@ -40,4 +40,8 @@ class Event < ApplicationRecord
     accommodations.create(accs)
   end
 
+  def user_already_signed_up?(user)
+    participants.include? user
+  end
+
 end

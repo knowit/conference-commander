@@ -19,3 +19,5 @@
     = f.label :extended_stay_to
     .ui.calendar
       = f.text_field :extended_stay_to
+
+= f.input :activity_ids, as: :select, collection: participation.event.activities.all
