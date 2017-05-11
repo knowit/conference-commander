@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by_auth_hash(auth_hash)
     reset_session
     session[:user_id] = @user.id
-    redirect_to @user.new_record? ? new_user_path(user: @user.attributes()) : root_path
+    redirect_to after_sign_in_path_for(@user)
   end
 
 
