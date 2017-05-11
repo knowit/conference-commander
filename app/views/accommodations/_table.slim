@@ -9,4 +9,6 @@ table.ui.celled.table
       tr
         td = accommodation.event.try(:name)
         td = accommodation.number_of_beds
-        td = render 'shared/action_links', object: accommodation
+        td
+          - if can? :manage, accommodation
+            = render 'shared/action_links', object: accommodation
