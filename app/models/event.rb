@@ -15,12 +15,12 @@ class Event < ApplicationRecord
 
   has_many :participations, dependent: :destroy
   has_many :accommodations, dependent: :destroy
-  has_many :schedules, dependent: :destroy
+  # has_many :schedules, dependent: :destroy
   has_many :hotels, dependent: :destroy
   has_many :proposals, dependent: :destroy
   has_many :users, through: :participations
 
-  has_many :venues
+  has_many :venues, dependent: :destroy
 
   has_many :participants, through: :participations, source: :user
 
