@@ -17,6 +17,9 @@ e1.add_accommodations(15, 2)
 e2.add_accommodations(5, 1)
 e2.add_accommodations(20, 2)
 
+Hotel.create(name: "Havna Hotel", event: e1)
+Hotel.create(name: "Lofoten Hotel", event: e2)
+
 Proposal.create(
   title: "Do you even Rails?",
   description: "En liten techtalk om Rail",

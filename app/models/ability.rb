@@ -38,6 +38,10 @@ class Ability
 
   def participant_abilities
     common_abilities
+    can :read, [Event, Participation]
+    can :manage, [Participation] do |p|
+      p.user.nil? || p.user == @user # allow users to manage own participation
+    end
   end
 
   def guest_abilities
