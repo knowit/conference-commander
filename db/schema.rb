@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511132448) do
+ActiveRecord::Schema.define(version: 20170511144824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,9 @@ ActiveRecord::Schema.define(version: 20170511132448) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "request_for_single_room"
+    t.boolean "extended_stay"
+    t.date "extended_stay_from"
+    t.date "extended_stay_to"
     t.index ["accommodation_id"], name: "index_participations_on_accommodation_id"
     t.index ["event_id"], name: "index_participations_on_event_id"
     t.index ["user_id", "event_id"], name: "index_participations_on_user_id_and_event_id", unique: true

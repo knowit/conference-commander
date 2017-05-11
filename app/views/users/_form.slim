@@ -1,30 +1,3 @@
-= simple_form_for user do |u|
-
-  .three.fields
-    = u.input :first_name, as: :string
-    = u.input :last_name, as: :string
-    = u.input :email, as: :string
-
-  h4 Passinformasjon
-  .three.fields
-    = u.input :passport_name
-    = u.input :passport_number
-    = u.input :passport_nationality
-  .two.fields
-    = u.input :passport_issued_at, as: :string
-    = u.input :passport_expires_at, as: :string
-
-  .inline.fields
-    - User.genders.keys.each do |gender|
-      .field
-        = u.radio_button :gender, gender
-        = u.label gender
-
-  = u.input :allergies
-
-  - if current_user.role == 'administrator'
-    = u.input :role, collection: User.roles.keys.to_a,
-      input_html: { class: 'ui dropdown selection' },
-      label_method: lambda { |v| t("users.edit.#{v}") }
-
-  = u.button :submit
+= simple_form_for user do |f|
+  = render 'fields', f: f
+  = f.button :submit
