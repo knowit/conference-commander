@@ -44,7 +44,9 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :gender, :role, :allergies)
+    params.require(:user).permit(:first_name, :last_name, :email, :gender, :role, :allergies,
+                                 :birth_date, :passport_name, :passport_number, :passport_nationality,
+                                 :passport_issued_at, :passport_expires_at)
   end
 
   def remove_role_if_not_admin
