@@ -1,11 +1,11 @@
 .ui.secondary.pointing.menu#top-menu
-  .item = link_to t('.frontpage'), root_path
+  = link_to t('.frontpage'), root_path, class: 'item'
   - if can? :read, Event
-    .item = link_to Event.model_name.human(count: 2), events_path
+    = link_to Event.model_name.human(count: 2), events_path, class: 'item'
   - if can? :read, User
-    .item = link_to User.model_name.human(count: 2), users_path
+    = link_to User.model_name.human(count: 2), users_path, class: 'item'
   - if current_user
-    .item.right = link_to t('user.signout'), signout_path, method: :delete
+    = link_to t('user.signout'), signout_path, method: :delete, class: 'item right'
 
 - if content_for? :auxiliary_menu
   .ui.secondary.pointing.menu#auxiliary-menu
