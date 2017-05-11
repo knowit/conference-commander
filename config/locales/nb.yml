@@ -60,6 +60,10 @@ nb:
         request_for_single_room: Årsak til enkeltrom
 
 
+      activity:
+        title: Tittel
+        description: Beskrivelse
+
     models:
       accommodation:
         one: Rom
@@ -77,10 +81,18 @@ nb:
         one: Bruker
         other: Brukere
 
+      activity:
+        one: Aktivitet
+        other: Aktiviteter
+
   events:
     index:
       actions: Handlinger
       registration: Registrering
+
+  activities:
+    index:
+      actions: Handlinger
 
   layouts:
     menu:

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         get :single_room_participants
       end
     end
+    resources :activities 
   end
 
   resources :after_signup
