@@ -14,4 +14,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
+
+  def after_sign_in_path_for(user)
+    if user.complete?
+      root_path
+    else
+      after_signup_path(:complete_profile)
+    end
+  end
+
 end

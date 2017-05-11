@@ -1,5 +1,8 @@
 = render 'steps'
+
 .ui.segment
-  h1 Complete your profile
+  h1= I18n.t('after_signup.steps.%s' % step)
+  .ui.divider
   = simple_form_for @user, url: wizard_path, method: :put do |f|
     = render 'users/fields', f: f, user: @user
+    = f.submit 'Next', class: 'ui primary button'

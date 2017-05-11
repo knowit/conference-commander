@@ -18,6 +18,8 @@ class Participation < ApplicationRecord
   belongs_to :event
   belongs_to :accommodation, optional: true
 
+  has_and_belongs_to_many :activities, through: :activities_participations
+
   has_many :flight_reservations
 
   has_and_belongs_to_many :preferred_roommates, class_name: 'User'
