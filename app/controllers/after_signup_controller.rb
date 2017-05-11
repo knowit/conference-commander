@@ -5,23 +5,26 @@ class AfterSignupController < ApplicationController
   steps :complete_profile, :add_participation
 
   def show
+    @event = Event.last
+    @user = current_user
+
     case step
     when :complete_profile
-      @user = current_user
     when :add_participation
-      @participation = Event.last.participations.new(user: current_user)
+      @participation = @event.participations.where(user: current_user).first || @event.participations.new(user: current_user)
     end
     render_wizard
   end
 
   def update
+    @event = Event.last
+    @user = current_user
     case step
     when :complete_profile
-      @user = current_user
       @user.update(wizard_params)
       render_wizard @user
     when :add_participation
-      @participation = Event.last.participations.first_or_initialize(user: current_user)
+      @participation = @event.participations.where(user: current_user).first || @event.participations.new(user: current_user)
       @participation.update(wizard_params)
       render_wizard @participation
     end
