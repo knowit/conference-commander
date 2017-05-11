@@ -8,5 +8,5 @@ table.ui.celled.table
   tbody
     - @participants.each do |participant|
       tr
-        td = link_to participant.name, user_path(participant)
+        td = link_to participant.full_name, user_path(participant)
         td = participant.allergies

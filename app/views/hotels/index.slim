@@ -14,4 +14,5 @@
           td = hotel.address
           td = hotel.country
           td = "#{hotel.lat}, #{hotel.lon}"
-          td = render 'shared/action_links', object: hotel
+          - if can? :manage, hotel
+            td = render 'shared/action_links', object: hotel
