@@ -1,10 +1,10 @@
 - if event
   - content_for :auxiliary_menu do
     - if can? :read, Accommodation
-      .item = link_to Accommodation.model_name.human(count: 2), event_accommodations_path(event)
+      = link_to Accommodation.model_name.human(count: 2), event_accommodations_path(event), class: 'item'
     - if can? :read, Proposal
-      .item = link_to Proposal.model_name.human(count: 2), event_proposals_path(event)
+      = link_to Proposal.model_name.human(count: 2), event_proposals_path(event), class: 'item'
     - if can? :read, Schedule
-      .item = link_to Schedule.model_name.human(count: 2), event_schedules_path(event)
+      = link_to Schedule.model_name.human(count: 2), event_schedules_path(event), class: 'item'
     - if can? :read, Hotel
-      .item = link_to Hotel.model_name.human(count: 2), event_hotels_path(event)
+      = link_to Hotel.model_name.human(count: 2), event_hotels_path(event), class: 'item'

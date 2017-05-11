@@ -134,3 +134,8 @@ nb:
       organizer: Organisator
       participant: Deltager
       speaker: Foredragsholder
+
+  after_signup:
+    steps:
+      complete_profile: Ferdigstill profil
+      add_participation: Opprett deltagelse
