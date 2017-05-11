@@ -2,15 +2,15 @@
   = f.input :first_name, as: :string
   = f.input :last_name, as: :string
   = f.input :email, as: :string
-  = f.input :birth_date, as: :string
+  .field: .ui.calendar = f.input :birth_date, as: :string
 
 .three.fields
   = f.input :passport_name
   = f.input :passport_number
   = f.input :passport_nationality
 .two.fields
-  = f.input :passport_issued_at, as: :string
-  = f.input :passport_expires_at, as: :string
+  .field: .ui.calendar = f.input :passport_issued_at, as: :string
+  .field: .ui.calendar = f.input :passport_expires_at, as: :string
 
 .inline.fields
   - User.genders.keys.each do |gender|
