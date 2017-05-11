@@ -9,7 +9,9 @@ html
 
 
   body
-    = render 'layouts/menu', fixed: true
+    - unless controller_name.to_sym == :sessions
+      = render 'layouts/menu', fixed: true
+      
     = render 'layouts/alerts', flash: flash
     .ui.page.grid
       .wide.column
