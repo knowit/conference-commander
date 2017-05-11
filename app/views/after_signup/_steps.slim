@@ -1,6 +1,6 @@
 .ui.ordered.steps
   - wizard_steps.each do |step|
-    .step
+    div class=step_classes(step)
       .content
         .title
-          = link_to step, wizard_path(step)
+          = link_to I18n.t('after_signup.steps.%s' % step), wizard_path(step)
