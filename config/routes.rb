@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :after_signup
   resources :schedules
 
   resources :users do
