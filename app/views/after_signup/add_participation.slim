@@ -1,8 +1,12 @@
 = render 'steps'
 
-.ui.segment
-  h1= I18n.t('after_signup.steps.%s' % step)
+.ui.segment#add-participation
+  h1
+    => I18n.t('after_signup.steps.%s' % step)
+    | &mdash;
+    =< @participation.event.name
   .ui.divider
   = simple_form_for @participation, url: wizard_path, method: :put do |f|
     = render 'participations/fields', f: f, participation: @participation
+    .ui.divider
     = f.submit 'Finish', class: 'ui primary button'

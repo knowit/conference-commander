@@ -43,12 +43,13 @@ nb:
 
       user:
         allergies: Allergier
-        email: E-postaddresse
+        email: E-post
         gender: Kjønn
         name: Navn
         role: Rolle
         first_name: Fornavn
         last_name: Etternavn
+        birth_date: Fødselsdato
         passport_name: Navn i passet
         passport_number: Passnummer
         passport_nationality: Nasjonalitet i passet
@@ -61,6 +62,7 @@ nb:
         extended_stay: Utvidet opphold
         extended_stay_from: Utvidet opphold fra
         extended_stay_to: Utvidet opphold til
+        activity_ids: Aktivitet
 
       activity:
         title: Tittel
