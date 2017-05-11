@@ -1,4 +1,4 @@
 = simple_form_for [event, participation]  do |f|
-  = render 'fields', f: f
+  = render 'fields', f: f, participation: @participation
   = f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }
   = f.button :submit
