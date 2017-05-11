@@ -1,6 +1,7 @@
 .field
   .ui.checkbox
     = f.input :single_room
+
 = f.input :request_for_single_room, as: :string
 
 .ui.divider
@@ -20,4 +21,6 @@
     .ui.calendar
       = f.text_field :extended_stay_to
 
-= f.input :activity_ids, as: :select, collection: participation.event.activities.all
+.ui.divider
+
+= f.input :activity_ids, as: :select, collection: participation.event.activities.all, input_html: { class: 'ui dropdown selection' }

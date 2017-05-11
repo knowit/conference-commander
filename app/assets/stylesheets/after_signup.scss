@@ -1,3 +1,13 @@
 // Place all the styles related to the after_signup controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+#complete-profile {
+  background: lighten($knowit-primary-green-color-lightest, 5%);
+}
+
+#add-participation {
+  background: lighten($knowit-complementary-blue-color-lightest, 5%);
+}

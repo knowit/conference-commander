@@ -9,16 +9,24 @@
   = f.input :passport_number
   = f.input :passport_nationality
 .two.fields
-  = f.input :passport_issued_at, as: :string
-  = f.input :passport_expires_at, as: :string
+  .field
+    = f.label :passport_issued_at
+    .ui.calendar
+      = f.text_field :passport_issued_at
+  .field
+    = f.label :passport_expires_at
+    .ui.calendar
+      = f.text_field :passport_expires_at
 
 .inline.fields
+  = f.label :gender
   - User.genders.keys.each do |gender|
     .field
-      = f.radio_button :gender, gender
-      = f.label gender
+      .ui.radio.checkbox
+        = f.radio_button :gender, gender
+        = f.label gender
 
-= f.input :allergies
+= f.input :allergies, as: :string
 
 - if current_user.role == 'administrator'
   = f.input :role, collection: User.roles.keys.to_a,
