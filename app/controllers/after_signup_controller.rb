@@ -21,7 +21,7 @@ class AfterSignupController < ApplicationController
       @user.update(wizard_params)
       render_wizard @user
     when :add_participation
-      @participation = Event.last.participation.first_or_initialize(user: current_user)
+      @participation = Event.last.participations.first_or_initialize(user: current_user)
       @participation.update(wizard_params)
       render_wizard @participation
     end
