@@ -22,13 +22,16 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
 
-  validates :passport_name, presence: true
-  validates :passport_number, presence: true
-  validates :passport_issued_at, presence: true
-  validates :passport_expires_at, presence: true
-  validates :passport_nationality, presence: true
+  with_options if: :created_at? do |user|
+    user.validates :passport_name, presence: true
+    user.validates :passport_number, presence: true
+    user.validates :passport_issued_at, presence: true
+    user.validates :passport_expires_at, presence: true
+    user.validates :passport_nationality, presence: true
+    user.validates :birth_date, presence: true
+  end
 
-  validates :birth_date, presence: true
+
 
   # Role enum
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
