@@ -1,0 +1,9 @@
+table.ui.celled.table
+  thead
+    tr
+      th = Event.human_attribute_name(:title)
+      th = Event.human_attribute_name(:description)
+      - if can? :manage, Activity
+        th = t('.actions')
+
+    = render @activities

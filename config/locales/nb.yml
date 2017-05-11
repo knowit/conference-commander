@@ -50,6 +50,10 @@ nb:
         first_name: Fornavn
         last_name: Etternavn
 
+      activity:
+        title: Tittel
+        description: Beskrivelse
+
     models:
       accommodation:
         one: Rom
@@ -67,10 +71,18 @@ nb:
         one: Bruker
         other: Brukere
 
+      activity:
+        one: Aktivitet
+        other: Aktiviteter
+
   events:
     index:
       actions: Handlinger
       registration: Registrering
+
+  activities:
+    index:
+      actions: Handlinger
 
   layouts:
     menu:
