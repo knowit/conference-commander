@@ -1,0 +1,122 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+nb:
+
+  accommodations:
+    index:
+      actions: Handlinger
+
+  activerecord:
+    attributes:
+      accommodation:
+        number_of_beds: Antall sengeplasser
+        event: Arrangement
+      event:
+        description: Beskrivelse
+        ending_at: Sluttidspunkt
+        name: Navn
+        starting_at: Starttidspunkt
+
+      proposal:
+        description: Beskrivelse
+        duration: Varighet (i minutter)
+        title: Tittel
+
+      user:
+        allergies: Allergier
+        email: E-postaddresse
+        gender: Kjønn
+        name: Navn
+        role: Rolle
+        first_name: Fornavn
+        last_name: Etternavn
+        passport_name: Navn i passet
+        passport_number: Passnummer
+        passport_nationality: Nasjonalitet i passet
+        passport_issued_at: Passets utstedelsesdato
+        passport_expires_at: Passets utløpsdato
+
+      participation:
+        single_room: Enkeltrom
+        request_for_single_room: Årsak til enkeltrom
+
+
+    models:
+      accommodation:
+        one: Rom
+        other: Rom
+
+      event:
+        one: Arrangement
+        other: Arrangementer
+
+      proposal:
+        one: Innslag
+        other: Innslag
+
+      user:
+        one: Bruker
+        other: Brukere
+
+  events:
+    index:
+      actions: Handlinger
+      registration: Registrering
+
+  layouts:
+    menu:
+      frontpage: Forside
+
+  proposals:
+    index:
+      event_name: Arrangement
+      header: Liste over alle innslag
+      user_name: Holdes av
+
+  shared:
+    action_links:
+      delete: Slett
+      edit: Rediger
+    image_upload:
+      image_row:
+        delete: Slett
+        show: Vis
+      upload_fields:
+        add: Legg til bilde
+    new_link:
+      new_button: Legg til %{class_name}
+
+  user:
+    signout: Logg ut
+    table:
+      tooltips:
+        edit: Endre bruker
+        delete: Slett bruker
+
+  users:
+    index:
+      actions: Handlinger
+    edit:
+      administrator: Administrator
+      organizer: Organisator
+      participant: Deltager
+      speaker: Foredragsholder

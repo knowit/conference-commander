@@ -1,0 +1,6 @@
+.ui.ordered.steps
+  - wizard_steps.each do |step|
+    .step
+      .content
+        .title
+          = link_to step, wizard_path(step)
