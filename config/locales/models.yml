@@ -96,6 +96,10 @@ nb:
     index:
       actions: Handlinger
 
+  participations:
+    index:
+      actions: Handlinger
+
   layouts:
     menu:
       frontpage: Forside
