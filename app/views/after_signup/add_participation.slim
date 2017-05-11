@@ -1,0 +1,11 @@
+.ui.ordered.steps
+  - wizard_steps.each do |step|
+    .step
+      .content
+        .title
+          = link_to step, wizard_path(step)
+
+.ui.segment
+  h1 Add participation
+  = simple_form_for @participation, url: wizard_path, method: :put do |f|
+    = render 'participations/form', participation: @participation, event: @participation.event
