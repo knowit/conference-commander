@@ -30,7 +30,7 @@
 
 = f.input :allergies, as: :string
 
-- if current_user.role == 'administrator'
+- if current_user.admin?
   = f.input :role, collection: User.roles.keys.to_a,
     input_html: { class: 'ui dropdown selection' },
     label_method: lambda { |v| t("users.edit.#{v}") }

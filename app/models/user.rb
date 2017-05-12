@@ -50,4 +50,8 @@ class User < ApplicationRecord
     valid?
   end
 
+  def admin?
+    role == 'administrator'
+  end
+
 end
