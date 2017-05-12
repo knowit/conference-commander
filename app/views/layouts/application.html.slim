@@ -7,7 +7,6 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Sarpanch:400,500,600,700,800,900"
 
-
   body
     - unless controller_name.to_sym == :sessions
       = render 'layouts/menu', fixed: true

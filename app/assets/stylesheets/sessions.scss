@@ -1,11 +1,18 @@
 @import "variables";
 
 #signin-container {
+  position: relative;
+  top: 40%;
+
   h1 {
     font-family: 'Sarpanch';
     text-align: center;
     font-size: 55px;
+    font-weight: 600;
+    line-height: 65px;
   }
 
-  background: $knowit-primary-green-color-lightest;
+  .segment {
+    background: $knowit-primary-green-color-lightest;
+  }
 }

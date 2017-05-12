@@ -5,10 +5,10 @@ html
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Sarpanch:400,500,600,700,800,900"
 
   body#frontpage
-    - if !@frontpage
-      = render 'layouts/menu', fixed: true
+    = render 'layouts/menu'
     = yield
     - if !@frontpage
       = render 'layouts/footer'

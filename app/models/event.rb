@@ -44,4 +44,8 @@ class Event < ApplicationRecord
     participants.include? user
   end
 
+  def user_participation(user)
+    participations.where(user: user).first
+  end
+
 end

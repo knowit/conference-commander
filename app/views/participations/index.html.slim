@@ -1,5 +1,2 @@
-h1 Listing participations
-
-= link_to 'New Participation', new_event_participation_path(@event)
-
-= render 'participations/table', participation: @participation
+.ui.segment
+  = render 'table', participation: @participation

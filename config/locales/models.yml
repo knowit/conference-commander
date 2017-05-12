@@ -32,9 +32,9 @@ nb:
         event: Arrangement
       event:
         description: Beskrivelse
-        ending_at: Sluttidspunkt
+        ending_at: Slutt
+        starting_at: Start
         name: Navn
-        starting_at: Starttidspunkt
 
       proposal:
         description: Beskrivelse
@@ -58,7 +58,7 @@ nb:
 
       participation:
         single_room: Enkeltrom
-        request_for_single_room: Årsak til enkeltrom
+        request_for_single_room: Begrunnelse for Enkeltrom
         extended_stay: Utvidet opphold
         extended_stay_from: Utvidet opphold fra
         extended_stay_to: Utvidet opphold til
@@ -88,6 +88,10 @@ nb:
       activity:
         one: Aktivitet
         other: Aktiviteter
+
+      participation:
+        one: Påmelding
+        other: Påmeldinger
 
   events:
     index:
@@ -126,7 +130,6 @@ nb:
       new_button: Legg til %{class_name}
 
   user:
-    signout: Logg ut
     table:
       tooltips:
         edit: Endre bruker
@@ -145,3 +148,7 @@ nb:
     steps:
       complete_profile: Ferdigstill profil
       add_participation: Opprett deltagelse
+
+  menu:
+    sign_out: Logg ut
+    edit_profile: Rediger profil

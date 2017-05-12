@@ -11,6 +11,10 @@ h2 {
   padding: 0;
 }
 
+.ui.segment {
+  background: lighten($knowit-primary-green-color-lightest, 7%);
+}
+
 #top-menu.fixed + #frontpage-info {
   margin-top: 75px;
 }

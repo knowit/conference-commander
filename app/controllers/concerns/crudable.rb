@@ -1,4 +1,5 @@
 module Crudable
+
   extend ActiveSupport::Concern
 
   included do

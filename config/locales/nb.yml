@@ -141,9 +141,15 @@ nb:
     select:
       prompt: Vennligst velg
     submit:
-      create: Lag %{model}
+      create: Opprett %{model}
       submit: Lagre %{model}
       update: Oppdater %{model}
+    actions:
+      index: Liste over %{model}
+      show: '%{model}: %{record}'
+      edit: Rediger %{model}
+      new: Opprett %{model}
+      delete: Slett %{model}
   number:
     currency:
       format:
