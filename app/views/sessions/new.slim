@@ -1,12 +1,16 @@
 .ui.two.column.centered.grid
   #signin-container.ui.segment.column
-    = simple_form_for :session, url: '/auth/crowd', class: 'ui form' do |f|
+    = form_tag '/auth/crowd', class: 'ui form' do
       h1 CONFERENCE COMMANDER
-      = f.input :username
-      = f.input :password
+      .field
+        = label_tag :username, 'E-post'
+        = text_field_tag :username, params[:username], type: :email
+      .field
+        = label_tag :password, 'Passord'
+        = password_field_tag :password, ''
       .field
         .ui.checkbox
           label= 'Husk meg!'
           = check_box_tag :remember_me, 1, params[:remember_me]
 
-      = submit_tag 'Logg inn', class: 'ui massive fluid inverted button'
+      = submit_tag 'Logg inn', class: 'ui massive fluid black button'
