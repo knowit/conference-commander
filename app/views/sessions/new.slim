@@ -3,7 +3,7 @@
     = form_tag '/auth/crowd', class: 'ui form' do
       h1 CONFERENCE COMMANDER
       .field
-        = label_tag :username, 'Epost'
+        = label_tag :username, 'E-post'
         = text_field_tag :username, params[:username], type: :email
       .field
         = label_tag :password, 'Passord'
@@ -13,4 +13,4 @@
           label= 'Husk meg!'
           = check_box_tag :remember_me, 1, params[:remember_me]
 
-      = submit_tag 'Logg inn', class: 'ui massive inverted button'
+      = submit_tag 'Logg inn', class: 'ui massive fluid black button'
