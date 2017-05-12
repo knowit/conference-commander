@@ -1,22 +1,22 @@
 @import "variables";
 
 @mixin knowit-green() {
-  background-color: $knowit-green;
-  border: 1px solid $knowit-green;
+  background-color: $knowit-primary-green-color-light;
+  border: 1px solid $knowit-primary-green-color-light;
 }
 
 @mixin knowit-purple() {
-  background-color: $knowit-purple;
-  border: 1px solid $knowit-purple;
+  background-color: $knowit-primary-purple-color-light;
+  border: 1px solid $knowit-primary-purple-color-light;
 }
 
 
 @mixin dark-knowit-green() {
-  background-color: saturate($knowit-green, 80%);
-  border: 1px solid saturate($knowit-green, 80%);
+  background-color: $knowit-primary-green-color;
+  border: 1px solid $knowit-primary-green-color;
 }
 
 @mixin dark-knowit-purple() {
-  background-color: saturate($knowit-purple, 80%);
-  border: 1px solid saturate($knowit-purple, 80%);
+  background-color: $knowit-primary-purple-color;
+  border: 1px solid $knowit-primary-purple-color;
 }

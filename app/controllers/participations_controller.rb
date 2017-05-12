@@ -25,17 +25,17 @@ class ParticipationsController < ApplicationController
 
   def create
     @participation.save
-    respond_with @participation, location: @participation.event
+    respond_with @participation, location: events_path
   end
 
   def update
     @participation.update(participation_params)
-    respond_with @participation, location: @participation.event
+    respond_with @participation, location: events_path
   end
 
   def destroy
     @participation.destroy
-    respond_with @participation, location: @participation.event
+    respond_with @participation, location: events_path
   end
 
   private

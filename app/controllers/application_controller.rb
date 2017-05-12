@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   respond_to :html
 
-  helper_method :current_user
+  helper_method :current_user, :user_signed_in?
 
   def current_user
     begin
@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     rescue Exception => e
       nil
     end
+  end
+
+  def user_signed_in?
+    !!current_user
   end
 
   private
