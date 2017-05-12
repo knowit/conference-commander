@@ -10,5 +10,6 @@ class PagesController < ApplicationController
 
   def front
     @frontpage = true
+    @current_event = Event.last
   end
 end

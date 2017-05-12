@@ -10,4 +10,5 @@ html
     - if !@frontpage
       = render 'layouts/menu', fixed: true
     = yield
-    = render 'layouts/footer'
+    - if !@frontpage
+      = render 'layouts/footer'

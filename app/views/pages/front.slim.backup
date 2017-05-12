@@ -1,0 +1,35 @@
+section.frontpage-image-background#lofoten
+  div.intro-elements
+    img src="/assets/knowit_logo_white_rgb.png"
+    - unless current_user
+      = link_to "Logg inn", signin_path, class: "ui button knowit-purple"
+    button.ui.button.knowit-green#show-conferences Vis konferanser
+
+= render 'layouts/menu', fixed: false
+section#frontpage-info
+  .ui.items
+    .item
+      .ui.large.image
+        img src="/assets/kds.png"
+      .middle.aligned.content
+        .header
+          h1 Knowit Konferanser
+          p På denne siden har alle ansatte i Knowit mulighet til å melde seg på konferanser arrangert av Objectnet. Disse turene kan variere mellom Fredrikstad til Berlin.
+section.frontpage-image-background#berlin
+section#frontpage-events
+  h1 Konferanser som skal være eller har vært
+  table.ui.striped.table
+    thead
+      tr
+        th Tittel
+        th Beskrivelse
+        th Starter
+        th Slutter
+    tbody
+      - Event.all.each do |event|
+        tr
+          td = link_to event.name, event_path(event)
+          td = event.description
+          td = event.starting_at.strftime("%d/%m/%Y")
+          td = event.ending_at.strftime("%d/%m/%Y")
+section.frontpage-image-background#mallorca
