@@ -26,12 +26,11 @@ html, body {
   }
   .frontpage-image-background {
     h1 {
-      font-family: 'Sarpanch';
+      font-family: 'Brushup';
       color: white;
       font-size: 70px;
       line-height: 65px;
       font-weight: 600;
-      text-shadow: 0 0 3px white;
       margin-bottom: 1em;
     }
     min-height: 256px;
@@ -47,7 +46,7 @@ html, body {
   }
   .intro-elements {
     position: relative;
-    top: 40%;
+    top: 30%;
     align-self: center;
     text-align: center;
     img {

@@ -5,6 +5,7 @@
     => I18n.t('after_signup.steps.%s' % step)
     | &mdash;
     =< @participation.event.name
+    =< "(%s &ndash; %s)".html_safe % [l(@participation.event.starting_at.to_date), l(@participation.event.ending_at.to_date)]
   .ui.divider
   = simple_form_for @participation, url: wizard_path, method: :put do |f|
     = render 'participations/fields', f: f, participation: @participation

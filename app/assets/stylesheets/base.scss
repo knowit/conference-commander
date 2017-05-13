@@ -1,6 +1,10 @@
 @import "variables";
 @import "mixins";
 
+body {
+  background-color: $knowit-complementary-red-color-lightest;
+}
+
 h1, h2, h3, h4, h5 {
   font-weight: 800;
   font-family: 'Raleway';
@@ -32,6 +36,7 @@ h2 {
   margin-bottom: 0;
   border-bottom: 2px solid $knowit-green;
   background-color: $white;
+  font-family: 'Raleway';
 
   .item {
     padding: 1.5em 1.14285714em;

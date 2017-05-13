@@ -57,12 +57,12 @@ nb:
         passport_expires_at: Passets utløpsdato
 
       participation:
-        single_room: Enkeltrom
-        request_for_single_room: Begrunnelse for Enkeltrom
-        extended_stay: Utvidet opphold
+        single_room: Jeg vil ha enkeltrom
+        request_for_single_room: Begrunnelse for enkeltrom (valgfritt)
+        extended_stay: Jeg vil utvide oppholdet
         extended_stay_from: Utvidet opphold fra
         extended_stay_to: Utvidet opphold til
-        activity_ids: Aktivitet
+        activity_ids: Deltagelse på aktivitet
 
       activity:
         title: Tittel
