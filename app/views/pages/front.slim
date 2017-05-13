@@ -1,13 +1,11 @@
 section.frontpage-image-background#mallorca
   div.intro-elements
     h1
-      | CONFERENCE
-      br
-      | COMMANDER
+      | CONFERENCES
     - unless current_user
-      = link_to "Logg inn", signin_path, class: "ui huge button knowit-purple"
-
-    a.ui.huge.button.knowit-green#show-conferences Vis konferanser
+      = link_to "Logg inn", signin_path, class: "ui massive button knowit-purple"
+    br
+    a.ui.massive.button.knowit-green#show-conferences Vis konferanser
 
 section#frontpage-info
   .ui.items

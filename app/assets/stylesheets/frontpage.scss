@@ -28,10 +28,7 @@ html, body {
     h1 {
       font-family: 'Brushup';
       color: white;
-      font-size: 70px;
-      line-height: 65px;
-      font-weight: 600;
-      margin-bottom: 1em;
+      font-size: 8.125rem;
     }
     min-height: 256px;
     background-attachment: fixed;
@@ -47,8 +44,6 @@ html, body {
   .intro-elements {
     position: relative;
     top: 30%;
-    align-self: center;
-    text-align: center;
     img {
       margin-bottom: 1em;
       display: block;
@@ -58,14 +53,16 @@ html, body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/berlin.jpg');
   }
   #mallorca {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/mallorca.jpg');
-    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.01)), url('/assets/mallorca.jpg');
+    height: 80%;
   }
   .intro .wrapper {
     text-align: center;
   }
+
   section {
     padding: 2em 10%;
+    background: white;
   }
 
   .content h1 {

@@ -1,3 +1,18 @@
 .ui.segment
-  h3= @participation.user.full_name
+  .ui.list.horizontal
+    .item
+      .header= Event.model_name.human
+      = @participation.event.name
+    .item
+      .header= Event.human_attribute_name(:starting_at)
+      = l @participation.event.starting_at.to_date
+    .item
+      .header= Event.human_attribute_name(:ending_at)
+      = l @participation.event.ending_at.to_date
+    .item
+      .header= User.human_attribute_name(:name)
+      = @participation.user.full_name
+
+  .ui.divider
+
   = render 'form', event: @event, participation: @participation
