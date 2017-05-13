@@ -2,7 +2,7 @@
 @import "mixins";
 
 body {
-  background-color: $knowit-complementary-red-color-lightest;
+  background-color: $knowit-complementary-gray-color-lightest-tint50;
 }
 
 h1, h2, h3, h4, h5 {
@@ -16,7 +16,7 @@ h2 {
 }
 
 .ui.segment {
-  background: lighten($knowit-primary-green-color-lightest, 7%);
+  background: $knowit-primary-green-color-lightest-tint50;
 }
 
 #top-menu.fixed + #frontpage-info {
@@ -34,8 +34,8 @@ h2 {
   transition: top 0.3s;
   margin-top: 0;
   margin-bottom: 0;
-  border-bottom: 2px solid $knowit-green;
-  background-color: $white;
+  border-bottom: 3px solid $knowit-primary-green-color-lighter;
+  background-color: white;
   font-family: 'Raleway';
 
   .item {
@@ -45,13 +45,13 @@ h2 {
     margin-left: 10%;
   }
   a.item:hover {
-    background-color: $knowit-green;
+    background-color: $knowit-primary-green-color-lighter;
   }
   a.item:hover {
     color: white;
   }
   a.item {
-    color: $knowit-green;
+    color: $knowit-black-color;
   }
 }
 
@@ -59,8 +59,8 @@ h2 {
   width: 100%;
   margin: 0;
 
-  border-bottom: 2px solid $knowit-green;
-  background-color: $knowit-green;
+  border-bottom: 2px solid $knowit-primary-green-color-lighter;
+  background-color: $knowit-primary-green-color-lighter;
 
   .item {
     padding: 1em;
@@ -69,7 +69,7 @@ h2 {
     margin-left: 10%;
   }
   .item:hover {
-    background-color: $knowit-green;
+    background-color: $knowit-primary-green-color-lighter;
   }
   a.item:hover {
     color: white;
@@ -81,20 +81,20 @@ h2 {
 
 .button.knowit-purple {
   @include knowit-purple;
-  color: $white;
+  color: white;
 }
 .button.knowit-green {
   @include knowit-green;
-  color: $white;
+  color: white;
 }
 
 .button.knowit-purple:hover, .button.knowit-purple:focus {
   @include dark-knowit-purple;
-  color: $white;
+  color: white;
 }
 .button.knowit-green:hover, .button.knowit-green:focus {
   @include dark-knowit-green;
-  color: $white;
+  color: white;
 }
 
 .ui.page.grid {
@@ -104,16 +104,16 @@ h2 {
 
 footer {
   width: 100%;
-  background-color: $knowit-green;
+  background-color: $knowit-primary-green-color-light;
   color: white;
   text-align: center;
   padding: 3em 0;
 
   a {
-    color: $knowit-light-green;
+    color: $knowit-primary-green-color-lighter;
   }
   a:hover, a:focus {
-    color: $knowit-light-green;
+    color: $knowit-primary-green-color-lighter;
     text-decoration: underline;
   }
 
