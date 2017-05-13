@@ -2,9 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.4.0'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0.beta1'
+gem 'rails', '~> 5.1.0'
 # Postgres
 gem 'pg'
 # Use Puma as the app server
@@ -22,10 +21,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'dotenv-rails'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'slim'
-gem 'simple_form'
+# gem 'simple_form', '~> 3.4.0'
+gem 'simple_form', git: 'https://github.com/elsurudo/simple_form.git', branch: 'rails-5.1.0'
 gem 'responders'
 gem 'font-awesome-rails'
-gem 'bower-rails', '~> 0.11.0'
+#gem 'bower-rails', '~> 0.11.0'
+gem 'webpacker'
 
 # Awesome print, for awesome printing!
 gem 'awesome_print'
@@ -60,6 +61,13 @@ gem 'omniauth', '>= 1.0.0'  # We depend on this
 gem 'omniauth_crowd'
 
 gem 'paperclip'
+
+# Deploy
+gem 'capistrano-rails', group: :development
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+gem 'capistrano3-puma'
+gem 'airbrussh', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

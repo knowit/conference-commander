@@ -8,5 +8,4 @@
   .ui.divider
   = simple_form_for @participation, url: wizard_path, method: :put do |f|
     = render 'participations/fields', f: f, participation: @participation
-    .ui.divider
-    = f.submit 'Finish', class: 'ui primary button'
+    = f.submit 'Finish', class: 'ui large knowit-purple button'
