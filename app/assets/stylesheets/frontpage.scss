@@ -39,7 +39,7 @@ html, body {
   #lofoten {
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/lofoten.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url(asset-path('lofoten.jpg'));
   }
   .intro-elements {
     position: relative;
@@ -50,10 +50,10 @@ html, body {
     }
   }
   #berlin {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/berlin.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url(asset-path('berlin.jpg'));
   }
   #mallorca {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.01)), url('/assets/mallorca.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.01)), url(asset-path('mallorca.jpg'));
     height: 80%;
   }
   .intro .wrapper {
