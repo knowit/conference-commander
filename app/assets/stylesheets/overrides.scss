@@ -1,7 +1,16 @@
+@import 'variables';
+
 .ui, input, select {
   border-radius: 0px !important;
 }
 
 .ui.segment {
   box-shadow: none !important;
+}
+
+.ui.primary.button {
+  background: $knowit-primary-purple-color-light !important;
+  &:hover {
+    background: $knowit-primary-purple-color !important;
+  }
 }

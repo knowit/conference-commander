@@ -1,10 +1,5 @@
-img src="http://placehold.it/150x150"
-
-.user-info
-  h2 = @user.full_name
-
-  p = @user.email
-  p Gender: #{@user.gender}
-  p Allergies: #{@user.allergies || "No allergies"}
-
-  = link_to "Edit profile info", edit_user_path(@user)
+.ui.segment
+  .ui.list
+    .item
+      .header= User.human_attribute_name(:name)
+      = @user.full_name

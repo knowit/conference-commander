@@ -4,21 +4,17 @@
   = f.input :email, as: :string
   .field
     .ui.calendar
-      = f.input :birth_date, as: :string
+      = f.input :birth_date, as: :string, required: @user.persisted?
 
 .three.fields
-  = f.input :passport_name
-  = f.input :passport_number
-  = f.input :passport_nationality
+  = f.input :passport_name, required: @user.persisted?
+  = f.input :passport_number, required: @user.persisted?
+  = f.input :passport_nationality, required: @user.persisted?
 .two.fields
-  .field
-    = f.label :passport_issued_at
-    .ui.calendar
-      = f.text_field :passport_issued_at
-  .field
-    = f.label :passport_expires_at
-    .ui.calendar
-      = f.text_field :passport_expires_at
+  .field: .ui.calendar
+    = f.input :passport_issued_at, as: :string, required: @user.persisted?
+  .field: .ui.calendar
+    = f.input :passport_expires_at, as: :string, required: @user.persisted?
 
 .inline.fields
   = f.label :gender

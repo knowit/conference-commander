@@ -28,12 +28,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    respond_with @user
+    respond_with @user, location: edit_user_path(@user)
   end
 
   def update
     @user.update(user_params)
-    respond_with @user
+    respond_with @user, location: edit_user_path(@user)
   end
 
   def destroy
