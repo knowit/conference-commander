@@ -25,4 +25,7 @@ test:
 
 production:
   <<: *default
+  host: <%= ENV['DATABASE_HOST'] %>
+  user: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   database: conference_commander
