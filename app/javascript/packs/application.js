@@ -11,4 +11,5 @@ import { calendar } from 'semantic-ui-calendar/dist/calendar';
 
 $(document).on('ready', function() {
   $('.calendar').calendar({type: 'date'})
+  $('.ui.dropdown').dropdown();
 })

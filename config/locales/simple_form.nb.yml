@@ -1,0 +1,5 @@
+nb:
+  simple_form:
+    required:
+      text: 'Påkrevd'
+      html: <i class="fa fa-asterisk red"></i>
