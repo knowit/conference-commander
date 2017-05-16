@@ -152,3 +152,9 @@ nb:
   menu:
     sign_out: Logg ut
     edit_profile: Rediger profil
+
+  misc:
+    gender:
+      male: Mann
+      female: Kvinne
+      unspecified: Uspesifisert

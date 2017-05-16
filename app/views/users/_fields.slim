@@ -1,7 +1,6 @@
-.three.fields
+.two.fields
   = f.input :first_name, as: :string
   = f.input :last_name, as: :string
-  = f.input :email, as: :string
   .field
     .ui.calendar
       = f.input :birth_date, as: :string, required: @user.persisted?
@@ -22,7 +21,7 @@
     .field
       .ui.radio.checkbox
         = f.radio_button :gender, gender
-        = f.label gender
+        = f.label I18n.t("misc.gender.#{gender}")
 
 = f.input :allergies, as: :string
 

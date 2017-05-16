@@ -9,7 +9,7 @@
 
 import { calendar } from 'semantic-ui-calendar/dist/calendar';
 
-$(document).on('ready', function() {
+$(document).on('turbolinks:load', function() {
   $('.calendar').calendar({type: 'date'})
   $('.ui.dropdown').dropdown();
 })
