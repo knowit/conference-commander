@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :gender, :role, :allergies,
-                                 :birth_date, :passport_name, :passport_number, :passport_nationality,
+                                 :birth_date, :passport_first_name, :passport_last_name, :passport_number, :passport_nationality,
                                  :passport_issued_at, :passport_expires_at)
   end
 

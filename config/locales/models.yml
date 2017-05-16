@@ -50,7 +50,8 @@ nb:
         first_name: Fornavn
         last_name: Etternavn
         birth_date: Fødselsdato
-        passport_name: Navn i passet
+        passport_first_name: Fornavn i passet
+        passport_last_name: Etternavn i passet
         passport_number: Passnummer
         passport_nationality: Nasjonalitet i passet
         passport_issued_at: Passets utstedelsesdato
