@@ -10,6 +10,6 @@
 import { calendar } from 'semantic-ui-calendar/dist/calendar';
 
 $(document).on('turbolinks:load', function() {
-  $('.calendar').calendar({type: 'date'})
+  $('.calendar').calendar({ type: 'date' });
   $('.ui.dropdown').dropdown();
 })

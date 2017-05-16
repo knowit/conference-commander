@@ -6,7 +6,8 @@
       = f.input :birth_date, as: :string, required: @user.persisted?
 
 .three.fields
-  = f.input :passport_name, required: @user.persisted?
+  = f.input :passport_first_name, required: @user.persisted?
+  = f.input :passport_last_name, required: @user.persisted?
   = f.input :passport_number, required: @user.persisted?
   = f.input :passport_nationality, required: @user.persisted?
 .two.fields
