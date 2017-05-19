@@ -14,8 +14,10 @@ Rails.application.routes.draw do
         get :single_room_participants
       end
     end
-    resources :activities 
+    resources :activities
   end
+
+  resources :participations
 
   resources :after_signup
   resources :schedules
