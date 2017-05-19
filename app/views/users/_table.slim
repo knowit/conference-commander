@@ -1,0 +1,17 @@
+- unless users.empty?
+  table.ui.very.basic.large.table
+    thead
+      tr
+        th = User.human_attribute_name(:name)
+        th = User.human_attribute_name(:email)
+        th = t('.actions')
+    tbody
+      - users.each do |user|
+        tr
+          td
+            i.ui.large.user.icon
+            = user.full_name
+          td = user.email
+          td style="width: 10%"
+            - if can? :update, user
+              = render 'shared/action_links', object: user

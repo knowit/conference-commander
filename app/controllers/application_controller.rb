@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   respond_to :html
+  responders :flash
 
   helper_method :current_user, :user_signed_in?
 

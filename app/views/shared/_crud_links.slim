@@ -1,0 +1,9 @@
+
+- if action_name == 'index'
+  - if can? :create, @crudable_name
+    = link_to fa_icon('plus'), new_polymorphic_path(@crudable_name)
+
+- elsif action_name.in? %w(show edit)
+  - if can? :manage, @crudable_name
+    = link_to fa_icon('pencil'), edit_polymorphic_path(crudable) unless action_name == 'edit'
+    =< link_to fa_icon('trash'), polymorphic_path(crudable), method: :delete

@@ -4,6 +4,9 @@ h1
   - when :index
     = t("helpers.actions.#{action_name.downcase}", model: model_name.human(count: 2).downcase)
   - when :show
-    = t("helpers.actions.#{action_name.downcase}", model: model_name, record: @crudable)
+    = t("helpers.actions.#{action_name.downcase}", model: model_name, record: crudable.to_s)
   - else
     = t("helpers.actions.#{action_name.downcase}", model: model_name.human.downcase)
+
+  span style='float: right'
+    = render 'shared/crud_links', object: crudable

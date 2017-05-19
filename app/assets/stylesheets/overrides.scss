@@ -1,20 +1,31 @@
 @import 'variables';
 
-.ui, input, select {
+.ui, input, select, textarea {
   border-radius: 0px !important;
 }
 
-input, select {
+input, select, textarea {
   border: 0px !important;
 }
 
 .ui.segment {
   box-shadow: none !important;
+
+  table, td, th {
+    border-color: $knowit-primary-green-color-lighter !important;
+  }
 }
 
 .ui.primary.button {
   background: $knowit-primary-purple-color-light !important;
   &:hover {
     background: $knowit-primary-purple-color !important;
+  }
+}
+
+.ui.secondary.button {
+  background: $knowit-complementary-blue-color-light !important;
+  &:hover {
+    background: $knowit-complementary-blue-color !important;
   }
 }

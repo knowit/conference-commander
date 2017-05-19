@@ -1,19 +1,2 @@
-- unless @users.empty?
-  table.ui.celled.table
-    thead
-      tr
-        th = User.human_attribute_name(:name)
-        th = User.human_attribute_name(:email)
-        th = User.human_attribute_name(:gender)
-        th = t('.actions')
-    tbody
-      - @users.each do |user|
-        tr
-          td
-            i.ui.large.user.icon
-            = user.full_name
-          td = user.email
-          td = user.gender
-          td
-            - if can? :update, user
-              = render 'shared/action_links', object: user
+.ui.segment
+  = render 'table', users: @users

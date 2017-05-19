@@ -3,9 +3,10 @@ module Crudable
   extend ActiveSupport::Concern
 
   included do
-    before_action :set_crudable
     before_action :set_crudable_name
+    helper_method :crudable
   end
+
 
   def resource
     controller_name.classify.underscore
@@ -23,8 +24,8 @@ module Crudable
     @crudable_name = controller_name.classify.constantize
   end
 
-  def set_crudable
-    @crudable = member || collection
+  def crudable
+    member || collection
   end
 
 end

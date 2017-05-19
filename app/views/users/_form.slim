@@ -1,3 +1,4 @@
 = simple_form_for user, html: { class: 'ui large form' } do |f|
   = render 'fields', f: f
-  = f.button :submit, class: 'ui large primary button'
+  .actions
+    = f.button :submit, class: 'ui large primary button'

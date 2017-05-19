@@ -4,7 +4,5 @@
 
   = yield
 
-  - if @crudable_name and can? :create, @crudable_name
-    = render 'shared/new_link' if action_name == 'index'
 
 = render template: 'layouts/application'

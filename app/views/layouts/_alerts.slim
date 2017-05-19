@@ -1,11 +1,13 @@
-- flash.each do |type, message|
+.row
+  .wide.column
+    - flash.each do |type, message|
 
-  div class=flash_class(type)
-    i.close.icon
-    - unless message.blank?
-      - if message.is_a?(Array) && message.size > 1
-        ul
-          - message.each do |error|
-            li= error
-      - else
-        = " #{message.is_a?(Array) ? message.first : message}"
+      div class=flash_class(type)
+        i.close.icon
+        - unless message.blank?
+          - if message.is_a?(Array) && message.size > 1
+            ul
+              - message.each do |error|
+                li= error
+          - else
+            = " #{message.is_a?(Array) ? message.first : message}"

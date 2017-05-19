@@ -1,9 +1,8 @@
 class EventsController < ApplicationController
 
-  include Crudable
-
   load_and_authorize_resource
 
+  include Crudable
   layout 'crudable'
 
   respond_to :html

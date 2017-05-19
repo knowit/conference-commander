@@ -48,4 +48,8 @@ class Event < ApplicationRecord
     participations.where(user: user).first
   end
 
+  def to_s
+    name
+  end
+
 end

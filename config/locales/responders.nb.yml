@@ -1,0 +1,12 @@
+nb:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} opprettet.'
+        alert: '%{resource_name} kunne ikke opprettes.'
+      update:
+        notice: '%{resource_name} oppdatert.'
+        alert: '%{resource_name} kunne ikke oppdateres.'
+      destroy:
+        notice: '%{resource_name} slettet.'
+        alert: '%{resource_name} kunne ikke slettes.'

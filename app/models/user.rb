@@ -55,4 +55,8 @@ class User < ApplicationRecord
     role == 'administrator'
   end
 
+  def to_s
+    full_name
+  end
+
 end

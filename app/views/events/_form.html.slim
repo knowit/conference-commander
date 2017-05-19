@@ -1,7 +1,4 @@
-= simple_form_for @event do |f|
-  ul
-    - @event.errors.full_messages.each do |msg|
-      li = msg
+= simple_form_for @event, html: { class: 'ui large form' } do |f|
   .three.fields
     .field = f.input :name, as: :string
     .field: .ui.calendar = f.input :starting_at, as: :string
@@ -9,13 +6,12 @@
 
   = f.input :description
 
-  .ui.container.segment
-    h3 = Venue.model_name.human.pluralize
-    #venues
-      = f.simple_fields_for :venues do |venue|
-        = render 'venue_fields', f: venue
-      .links
-        = link_to_add_association "<i class='plus icon'></i> Add venue".html_safe, f, :venues, class: 'ui teal mini button'
+  h3 = Venue.model_name.human.pluralize
+  #venues
+    = f.simple_fields_for :venues do |venue|
+      = render 'venue_fields', f: venue
+    .links
+      = link_to_add_association "<i class='plus icon'></i> Add venue".html_safe, f, :venues, class: 'ui secondary icon button'
 
-  hr 
-  = f.submit class: 'ui primary button'
+  .actions
+    = f.submit class: 'ui large primary button'

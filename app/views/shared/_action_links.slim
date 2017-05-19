@@ -1,10 +1,6 @@
 - if @parent
-  div.ui.mini.buttons
-    = link_to t('.edit'), edit_polymorphic_path([@parent, object]), class: "ui button primary"
-    div.or
-    = link_to t('.delete'), polymorphic_path([@parent, object]), method: :delete, class: "ui button negative"
+  = link_to fa_icon('pencil lg'), edit_polymorphic_path([@parent, object])
+  =< link_to fa_icon('trash lg'), polymorphic_path([@parent, object]), method: :delete
 - else
-  div.ui.mini.buttons
-    = link_to t('.edit'), edit_polymorphic_path(object), class: "ui button primary"
-    div.or
-    = link_to t('.delete'), polymorphic_path(object), method: :delete, class: "ui button negative"
+  = link_to fa_icon('pencil lg'), edit_polymorphic_path(object)
+  =< link_to fa_icon('trash lg'), polymorphic_path(object), method: :delete

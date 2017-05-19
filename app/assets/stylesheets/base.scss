@@ -26,6 +26,23 @@ h2 {
 .ui.segment {
   background: $knowit-primary-green-color-lightest;
   border: 0px;
+
+  form .actions {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 2px solid $knowit-black-color;
+  }
+
+  .ui.divider {
+    border: 0px;
+    border-top: 1px solid $knowit-primary-green-color-lighter;
+  }
+
+}
+
+.ui.error.message {
+  font-weight: bold;
+  border-width: 0px;
 }
 
 #top-menu.fixed + #frontpage-info {
@@ -43,7 +60,6 @@ h2 {
   transition: top 0.3s;
   margin-top: 0;
   margin-bottom: 0;
-  border-bottom: 3px solid $knowit-primary-green-color-lighter;
   background-color: white;
   font-family: 'Raleway';
 
@@ -60,7 +76,9 @@ h2 {
     color: white;
   }
   a.item {
+    font-size: 18px;
     color: $knowit-black-color;
+    font-weight: bold;
   }
 }
 
