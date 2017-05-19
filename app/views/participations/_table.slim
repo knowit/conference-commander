@@ -4,7 +4,7 @@ table.ui.celled.table
       th = User.human_attribute_name(:name)
       th = Participation.human_attribute_name(:name)
       th = Participation.human_attribute_name(:single_room)
-      th = Participation.human_attribute_name(:request_for_single_room)
+      th = Participation.human_attribute_name(:request_for_sharing_room)
       th = t('.actions')
 
   tbody
@@ -13,7 +13,7 @@ table.ui.celled.table
         td = participation.user.full_name
         td = participation.event.name
         td = participation.single_room
-        td = participation.request_for_single_room
+        td = participation.request_for_sharing_room
         td
           - if can? :manage, participation
             div.ui.mini.buttons

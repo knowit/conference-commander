@@ -59,7 +59,7 @@ nb:
 
       participation:
         single_room: Jeg vil ha enkeltrom
-        request_for_single_room: Begrunnelse for enkeltrom (valgfritt)
+        request_for_sharing_room: Ønsker å dele rom med
         extended_stay: Jeg vil utvide oppholdet
         extended_stay_from: Utvidet opphold fra
         extended_stay_to: Utvidet opphold til

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: activities
+#
+#  id          :integer          not null, primary key
+#  title       :text             not null
+#  description :text             not null
+#  event_id    :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Activity < ApplicationRecord
   belongs_to :event
 
