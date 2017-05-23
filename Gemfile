@@ -43,6 +43,9 @@ gem 'cocoon'
 # Wizard
 gem 'wicked'
 
+# Encryption
+gem 'attr_encrypted'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
