@@ -36,15 +36,15 @@ class User < ApplicationRecord
     user.attr_encrypted :passport_nationality
   end
 
-  with_options if: :created_at? do |user|
-    user.validates :passport_first_name, presence: true
-    user.validates :passport_last_name, presence: true
-    user.validates :passport_number, presence: true
-    user.validates :passport_issued_at, presence: true
-    user.validates :passport_expires_at, presence: true
-    user.validates :passport_nationality, presence: true
-    user.validates :birth_date, presence: true
-  end
+  # with_options if: :created_at? do |user|
+  #   user.validates :passport_first_name, presence: true
+  #   user.validates :passport_last_name, presence: true
+  #   user.validates :passport_number, presence: true
+  #   user.validates :passport_issued_at, presence: true
+  #   user.validates :passport_expires_at, presence: true
+  #   user.validates :passport_nationality, presence: true
+  #   user.validates :birth_date, presence: true
+  # end
 
   # Role enum
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
