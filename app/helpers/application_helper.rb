@@ -15,4 +15,14 @@ module ApplicationHelper
     form_builder.file_field :file, as: :file, class: 'image_file', id: 'image_files'
   end
 
+  def yesno_icon(pred, display_on_false: true)
+    raw begin
+      if pred
+        fa_icon 'check'
+      else
+        fa_icon 'remove' if display_on_false
+      end
+    end
+  end
+
 end
