@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixins";
 
-body {
+html, body {
   background-color: $knowit-complementary-gray-color-lightest-tint25;
 }
 

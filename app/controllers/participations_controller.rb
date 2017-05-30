@@ -42,6 +42,6 @@ class ParticipationsController < ApplicationController
 
   def participation_params
     params.require(:participation).permit(:user_id, :event_id, :single_room, :request_for_sharing_room, :extended_stay,
-      :extended_stay_from, :extended_stay_to)
+      :extended_stay_from, :extended_stay_to, activity_ids: [])
   end
 end
