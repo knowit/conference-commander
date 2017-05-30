@@ -25,4 +25,16 @@ module ApplicationHelper
     end
   end
 
+  def maybe(string)
+    begin
+      if string.present?
+        string
+      else
+        content_tag(:span, nil, class: 'maybe') do
+          raw '&mdash;'
+        end
+      end
+    end
+  end
+
 end
