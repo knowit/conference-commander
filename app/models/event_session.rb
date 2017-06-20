@@ -2,14 +2,19 @@
 #
 # Table name: event_sessions
 #
-#  id          :integer          not null, primary key
-#  title       :text             not null
-#  description :text             not null
-#  duration    :integer          not null
-#  user_id     :integer          not null
-#  event_id    :integer          not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id           :integer          not null, primary key
+#  title        :text             not null
+#  description  :text             not null
+#  duration     :integer          not null
+#  submitter_id :integer          not null
+#  event_id     :integer          not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  outline      :text
+#  start_time   :datetime
+#  state        :integer          default("proposed")
+#  track_id     :integer
+#  language     :integer          default("en")
 #
 
 class EventSession < ApplicationRecord

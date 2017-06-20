@@ -107,10 +107,6 @@ nb:
     index:
       actions: Handlinger
 
-  layouts:
-    menu:
-      frontpage: Forside
-
   proposals:
     index:
       event_name: Arrangement
@@ -151,6 +147,7 @@ nb:
       add_participation: Opprett deltagelse
 
   menu:
+    frontpage: Forside
     sign_out: Logg ut
     edit_profile: Rediger profil
 
