@@ -1,6 +1,9 @@
 = render 'events/menu', event: @event
 
+- breadcrumb :event, @event
+
 .ui.segment
+  = @event.description
 
 .ui.segment
   h3 Reports

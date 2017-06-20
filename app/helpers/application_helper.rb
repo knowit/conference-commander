@@ -37,4 +37,8 @@ module ApplicationHelper
     end
   end
 
+  def empty_table
+    I18n.t('misc.empty', name: controller_name.classify.constantize.model_name.human(count: 2).downcase)
+  end
+
 end

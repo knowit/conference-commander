@@ -1,12 +1,4 @@
 = link_to "Download as CSV", event_allergies_path(@event, format: :csv), class: "ui primary button"
 
-table.ui.celled.table
-  thead
-    tr
-      th Participant
-      th Allergies
-  tbody
-    - @participants.each do |participant|
-      tr
-        td = link_to participant.full_name, user_path(participant)
-        td = participant.allergies
+.ui.segment
+  = render 'table', participants: @event.participants.with_allergies

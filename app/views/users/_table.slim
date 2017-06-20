@@ -1,4 +1,6 @@
-- unless users.empty?
+- if users.empty?
+  .empty= empty_table
+- else
   table.ui.very.basic.large.table
     thead
       tr
@@ -8,9 +10,7 @@
     tbody
       - users.each do |user|
         tr
-          td
-            i.ui.large.user.icon
-            = user.full_name
+          td = user.full_name
           td = user.email
           td style="width: 10%"
             - if can? :update, user

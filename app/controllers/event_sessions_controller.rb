@@ -1,7 +1,6 @@
 class EventSessionsController < ApplicationController
 
   include Crudable
-
   layout 'crudable'
 
   before_action :set_parent

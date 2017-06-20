@@ -36,7 +36,7 @@ nb:
         starting_at: Start
         name: Navn
 
-      proposal:
+      event_session:
         description: Beskrivelse
         duration: Varighet (i minutter)
         title: Tittel
@@ -78,7 +78,7 @@ nb:
         one: Arrangement
         other: Arrangementer
 
-      proposal:
+      event_session:
         one: Innslag
         other: Innslag
 
@@ -159,3 +159,4 @@ nb:
       male: Mann
       female: Kvinne
       unspecified: Uspesifisert
+    empty: Ingen %{name}

@@ -1,7 +1,8 @@
 - content_for :content do
 
-  = render 'shared/crud_title'
+  = raw(breadcrumbs separator: fa_icon('angle-right lg'))
 
+  = render 'shared/crud_title'
   = yield
 
 

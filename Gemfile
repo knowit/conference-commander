@@ -28,6 +28,8 @@ gem 'font-awesome-rails'
 #gem 'bower-rails', '~> 0.11.0'
 gem 'webpacker'
 
+gem 'gretel'
+
 # Awesome print, for awesome printing!
 gem 'awesome_print'
 

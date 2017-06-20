@@ -62,6 +62,7 @@ h2 {
   margin-bottom: 0;
   background-color: white;
   font-family: 'Raleway';
+  border-bottom: 2px solid white;
 
   .item {
     padding: 1.5em 1.14285714em;
@@ -86,8 +87,8 @@ h2 {
   width: 100%;
   margin: 0;
 
-  border-bottom: 2px solid $knowit-primary-green-color-lighter;
-  background-color: $knowit-primary-green-color-lighter;
+  border-bottom: 2px solid $knowit-complementary-blue-color-lighter;
+  background-color: $knowit-complementary-blue-color-lighter;
 
   .item {
     padding: 1em;
@@ -96,7 +97,7 @@ h2 {
     margin-left: 10%;
   }
   .item:hover {
-    background-color: $knowit-primary-green-color-lighter;
+    background-color: $knowit-complementary-blue-color-light;
   }
   a.item:hover {
     color: white;
@@ -161,4 +162,19 @@ footer {
 
 .maybe {
   color: $knowit-primary-green-color-lighter;
+}
+
+.empty {
+  text-align: center;
+  color: $knowit-primary-green-color-lighter;
+  font-style: italic;
+  font-size: 2em;
+  padding: 3em;
+}
+
+.breadcrumbs {
+  i.fa {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
 }
