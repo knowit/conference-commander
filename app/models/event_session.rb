@@ -46,4 +46,12 @@ class EventSession < ApplicationRecord
       description.split[0..10].join(' ') + ' (...)'
     end
   end
+
+  def end_time
+    start_time + duration.minutes
+  end
+
+  def time_interval
+    start_time..end_time
+  end
 end

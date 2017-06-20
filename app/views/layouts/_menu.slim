@@ -5,9 +5,10 @@
   - if can? :manage, User
     = link_to User.model_name.human(count: 2), users_path, class: 'item'
 
+  .right.menu
   - if current_user
     = link_to t('menu.edit_profile'), edit_user_path(current_user), class: 'item'
-    = link_to t('menu.sign_out'), signout_path, method: :delete, class: 'item right'
+    = link_to t('menu.sign_out'), signout_path, method: :delete, class: 'item'
 
 - if content_for? :auxiliary_menu
   .ui.secondary.pointing.menu#auxiliary-menu
