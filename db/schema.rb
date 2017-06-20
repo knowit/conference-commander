@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620160213) do
+ActiveRecord::Schema.define(version: 20170620163855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,11 +61,11 @@ ActiveRecord::Schema.define(version: 20170620160213) do
     t.text "outline"
     t.datetime "start_time"
     t.integer "state", default: 0
-    t.bigint "tracks_id"
+    t.bigint "track_id"
     t.integer "language", default: 0
     t.index ["event_id"], name: "index_event_sessions_on_event_id"
     t.index ["submitter_id"], name: "index_event_sessions_on_submitter_id"
-    t.index ["tracks_id"], name: "index_event_sessions_on_tracks_id"
+    t.index ["track_id"], name: "index_event_sessions_on_track_id"
   end
 
   create_table "events", id: :serial, force: :cascade do |t|
@@ -178,10 +178,10 @@ ActiveRecord::Schema.define(version: 20170620160213) do
   create_table "tracks", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "venues_id"
+    t.bigint "venue_id"
     t.text "name"
     t.integer "capacity"
-    t.index ["venues_id"], name: "index_tracks_on_venues_id"
+    t.index ["venue_id"], name: "index_tracks_on_venue_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

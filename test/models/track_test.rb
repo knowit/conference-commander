@@ -3,10 +3,11 @@
 # Table name: tracks
 #
 #  id         :integer          not null, primary key
-#  start_at   :datetime
-#  end_at     :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  venue_id   :integer
+#  name       :text
+#  capacity   :integer
 #
 
 require 'test_helper'
