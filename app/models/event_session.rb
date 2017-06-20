@@ -29,6 +29,7 @@ class EventSession < ApplicationRecord
 
   enum state: { proposed: 0, rejected: 1, accepted: 2 }
   enum language: { en: 0, no: 1, sv: 2 }
+  enum session_type: { lightingtalk: 0, presentation: 1, workshop: 2 }
 
   validates :title, presence: true
   validates :submitter, presence: true

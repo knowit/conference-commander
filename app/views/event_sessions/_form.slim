@@ -1,6 +1,18 @@
-= simple_form_for [@parent, @event_session] do |f|
-  = f.input :title, as: :string
-  = f.input :description
-  = f.input :duration
-  = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid dropdown' }
-  = f.button :submit
+ui.form
+  = simple_form_for [@parent, @event_session] do |f|
+    .field
+      = f.input :title, as: :string
+    .field
+      = f.input :description
+    .fields
+      = f.input :session_type, collection: EventSession.session_types,
+        prompt: "Select a presentation form",
+        as: :select,
+        input_html: { class: 'ui fluid dropdown' }
+    .field
+      = f.input :duration
+    .field
+      = f.input :language, collection: EventSession.languages, prompt: "Select a language", as: :select, input_html: { class: 'ui fluid dropdown' } 
+    .field
+      = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid dropdown' }
+    = f.button :submit
