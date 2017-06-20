@@ -150,6 +150,7 @@ nb:
     frontpage: Forside
     sign_out: Logg ut
     edit_profile: Rediger profil
+    switch_language: English
 
   misc:
     gender:

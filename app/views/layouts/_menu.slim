@@ -9,6 +9,8 @@
   - if current_user
     = link_to t('menu.edit_profile'), edit_user_path(current_user), class: 'item'
     = link_to t('menu.sign_out'), signout_path, method: :delete, class: 'item'
+    
+  = link_to t('menu.switch_language'), url_options={locale: 'en'}, html_options={class: 'item'}
 
 - if content_for? :auxiliary_menu
   .ui.secondary.pointing.menu#auxiliary-menu
