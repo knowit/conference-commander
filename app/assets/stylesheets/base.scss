@@ -71,10 +71,9 @@ h2 {
     margin-left: 10%;
   }
   a.item:hover {
-    background-color: $knowit-primary-green-color-lighter;
+    background-color: $knowit-primary-green-color-lightest;
   }
   a.item:hover {
-    color: white;
   }
   a.item {
     font-size: 18px;
@@ -87,23 +86,19 @@ h2 {
   width: 100%;
   margin: 0;
 
-  border-bottom: 2px solid $knowit-complementary-blue-color-lighter;
-  background-color: $knowit-complementary-blue-color-lighter;
+  border-top: 1px solid $knowit-complementary-gray-color-lighter;
+  background-color: white;
 
   .item {
     padding: 1em;
+    border-bottom: none;
   }
   .item:first-child {
     margin-left: 10%;
   }
   .item:hover {
-    background-color: $knowit-complementary-blue-color-light;
-  }
-  a.item:hover {
-    color: white;
-  }
-  a.item {
-    color: white;
+    background-color: $knowit-primary-green-color-lightest;
+    color: $knowit-black-color;
   }
 }
 
