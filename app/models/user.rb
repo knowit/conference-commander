@@ -58,7 +58,7 @@ class User < ApplicationRecord
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
   enum gender: { unspecified: 0, male: 1, female: 2 }
 
-  validates_inclusion_of :locale, in: [:nb, :en, :sv]
+  enum locale: { nb: 0, en: 1, sv: 2 }
 
   scope :with_allergies, -> { where("allergies <> ''") }
 

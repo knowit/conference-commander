@@ -45,6 +45,7 @@ nb:
         allergies: Allergier
         email: E-post
         gender: Kjønn
+        locale: Foretrukket språk
         name: Navn
         role: Rolle
         first_name: Fornavn
@@ -157,6 +158,10 @@ nb:
       male: Mann
       female: Kvinne
       unspecified: Uspesifisert
+    languages:
+      nb: Norsk
+      en: Engelsk
+      sv: Svensk
     empty: Ingen %{name}
 
 en:

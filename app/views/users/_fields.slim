@@ -10,19 +10,20 @@
   = f.input :passport_last_name, required: @user.persisted?
   = f.input :passport_number, required: @user.persisted?
   = f.input :passport_nationality, required: @user.persisted?
+  
 .two.fields
   .field: .ui.calendar
     = f.input :passport_issued_at, as: :string, required: @user.persisted?
   .field: .ui.calendar
     = f.input :passport_expires_at, as: :string, required: @user.persisted?
 
-.inline.fields
-  = f.label :gender
-  - User.genders.keys.each do |gender|
-    .field
-      .ui.radio.checkbox
-        = f.radio_button :gender, gender
-        = f.label I18n.t("misc.gender.#{gender}")
+.two.fields
+  = f.input :gender, collection: User.genders.keys.to_a,
+    input_html: { class: 'ui dropdown selection' },
+    label_method: lambda { |v| t("misc.gender.#{v}") }
+  = f.input :locale, collection: User.locales.keys.to_a,
+    input_html: { class: 'ui dropdown selection' },
+    label_method: lambda { |v| t("misc.languages.#{v}") }
 
 = f.input :allergies, as: :string
 
