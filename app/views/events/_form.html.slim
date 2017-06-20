@@ -5,6 +5,9 @@
     .field: .ui.calendar = f.input :ending_at,   as: :string
 
   = f.input :description
+  
+  = f.simple_fields_for :images do |image|
+    = image.input :file
 
   h3 = Venue.model_name.human.pluralize
   #venues

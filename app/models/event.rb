@@ -27,6 +27,9 @@ class Event < ApplicationRecord
   has_many :flight_reservations
   has_many :flights
 
+  has_many :images, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :images
+
   validates :name, presence: true
   validates :description, presence: true
   validates :starting_at, presence: true
@@ -45,6 +48,10 @@ class Event < ApplicationRecord
 
   def user_participation(user)
     participations.where(user: user).first
+  end
+
+  def image_url
+    images.first.file.url
   end
 
   def to_s
