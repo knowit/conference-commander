@@ -1,5 +1,5 @@
 .ui.secondary.pointing.huge.menu#top-menu
-  = link_to t('.frontpage'), root_path, class: 'item'
+  = link_to t('menu.frontpage'), root_path, class: 'item'
   - if can? :read, Event
     = link_to Event.model_name.human(count: 2), events_path, class: 'item'
   - if can? :manage, User
