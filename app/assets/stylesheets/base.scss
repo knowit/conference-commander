@@ -168,6 +168,11 @@ footer {
 }
 
 .breadcrumbs {
+  font-size: 1.2em;
+  a {
+    color: $knowit-black-color;
+    border-bottom: 2px solid $knowit-black-color;
+  }
   i.fa {
     margin-left: 0.5em;
     margin-right: 0.5em;
