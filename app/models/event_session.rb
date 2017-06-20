@@ -33,4 +33,12 @@ class EventSession < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :duration, presence: true, numericality: { only_integer: true, less_than_or_equal_to: MAX_ALLOWED_TIME_ALLOTMENT }
+
+  def end_time
+    start_time + duration.minutes
+  end
+
+  def time_interval
+    start_time..end_time
+  end
 end
