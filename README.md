@@ -1,11 +1,8 @@
-## Ruby version
-
-Latest and greatest, ie MRI v2.4.0
-
 ## System dependencies
 
-Ruby 2.4.0
-NodeJS
+* Ruby 2.4.0
+* bundler (`gem install bundler`)
+* NodeJS
 
 ## Configuration
 
