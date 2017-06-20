@@ -2,8 +2,8 @@
   - content_for :auxiliary_menu do
     - if can? :read, Accommodation
       = link_to Accommodation.model_name.human(count: 2), event_accommodations_path(event), class: 'item'
-    - if can? :read, Proposal
-      = link_to Proposal.model_name.human(count: 2), event_proposals_path(event), class: 'item'
+    - if can? :read, EventSession
+      = link_to EventSession.model_name.human(count: 2), event_event_sessions_path(event), class: 'item'
     - if can? :read, Schedule
       = link_to Schedule.model_name.human(count: 2), event_schedules_path(event), class: 'item'
     - if can? :read, Hotel

@@ -12,5 +12,5 @@
 
 class Track < ApplicationRecord
   belongs_to :schedule
-  has_many :proposals
+  has_many :event_sessions
 end

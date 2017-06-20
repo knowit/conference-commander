@@ -23,7 +23,7 @@
 class User < ApplicationRecord
 
   has_many :participations
-  has_many :proposals
+  has_many :event_sessions
 
   validates :first_name, presence: true
   validates :last_name, presence: true

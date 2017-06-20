@@ -4,7 +4,7 @@
     - if @parent
       = link_to fa_icon('plus'), new_polymorphic_path([@parent, @crudable_name])
     - else
-      = link_to fa_icon('plus'), new_polymorphic_path(crudable)
+      = link_to fa_icon('plus'), new_polymorphic_path(@crudable_name)
 
 - elsif action_name.in? %w(show edit)
   - if can? :manage, @crudable_name

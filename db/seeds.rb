@@ -20,7 +20,7 @@ e2.add_accommodations(20, 2)
 Hotel.create(name: "Havna Hotel", event: e1)
 Hotel.create(name: "Lofoten Hotel", event: e2)
 
-Proposal.create(
+EventSession.create(
   title: "Do you even Rails?",
   description: "En liten techtalk om Rail",
   duration: 10,

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/events/:event_id/allergies', to: 'allergies#index', as: :event_allergies
 
   resources :events do
-    resources :proposals
+    resources :event_sessions
     resources :accommodations
     resources :hotels do
       resources :images, shallow: true
@@ -22,10 +22,10 @@ Rails.application.routes.draw do
   resources :schedules
 
   resources :users do
-    resources :proposals, controller: :user_proposals
+    resources :event_sessions
   end
 
-  resources :proposals, only: [:index]
+  resources :event_sessions, only: [:index]
 
   # we need to redirect in order to use the correct method and thus the correct layout:
   get '/pages/front', to: redirect('/')
