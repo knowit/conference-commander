@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :hotels do
       resources :images, shallow: true
     end
-    resources :schedules
     resources :participations do
       collection do
         get :single_room_participants
@@ -19,7 +18,6 @@ Rails.application.routes.draw do
   resources :participations
 
   resources :after_signup
-  resources :schedules
 
   resources :users do
     resources :event_sessions

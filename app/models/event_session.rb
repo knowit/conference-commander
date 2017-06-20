@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: proposals
+# Table name: event_sessions
 #
 #  id          :integer          not null, primary key
 #  title       :text             not null
