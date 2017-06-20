@@ -29,6 +29,18 @@ class Track < ApplicationRecord
         colliding_times << intersection if intersection.present?
       end
     end
+    colliding_times
+  end
+
+  def overlaps_in_track(event_session)
+    colliding_times = []
+    all_session_times = event_sessions.order(:start_time).map{ |es| [es, es.time_interval] }
+    all_session_times.each do |other, interval|
+      next if event_session.id == other.id
+      intersection = time_interval_intersection(event_session.time_interval, interval)
+      colliding_times << intersection if intersection.present?
+    end
+    colliding_times
   end
 
   private
