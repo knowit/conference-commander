@@ -14,11 +14,11 @@ class EventSessionsController < ApplicationController
 
   def create
     @event_session.save
-    respond_with @event_session
+    respond_with @event, @event_session
   end
 
   def show
-    respond_with @event_session
+    redirect_to event_event_sessions_path(@event)
   end
 
   private
@@ -33,7 +33,7 @@ class EventSessionsController < ApplicationController
       :title,
       :description,
       :duration,
-      :user_id
+      :submitter_id
     )
   end
 end

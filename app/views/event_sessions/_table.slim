@@ -10,9 +10,12 @@
       .column
         .ui.card
           .content
+            .left.floated.author
+                img.ui.avatar.image src="https://semantic-ui.com/images/avatar/small/matt.jpg"
             .header
-              = event_session.title
+                = event_session.title
             .meta
-              = event_session.description
+              i.fa.fa-clock-o
+                = event_session.duration
             .description
-              = event_session.duration
+              = event_session.short_description

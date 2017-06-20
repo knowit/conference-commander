@@ -8,5 +8,9 @@
 
 - elsif action_name.in? %w(show edit)
   - if can? :manage, @crudable_name
-    = link_to fa_icon('pencil'), edit_polymorphic_path(crudable) unless action_name == 'edit'
-    =< link_to fa_icon('trash'), polymorphic_path(crudable), method: :delete
+    - if @parent
+      = link_to fa_icon('pencil'), edit_polymorphic_path([@parent, crudable]) unless action_name == 'edit'
+      =< link_to fa_icon('trash'), polymorphic_path([@parent, crudable]), method: :delete
+    - else
+      = link_to fa_icon('pencil'), edit_polymorphic_path(crudable) unless action_name == 'edit'
+      =< link_to fa_icon('trash'), polymorphic_path(crudable), method: :delete

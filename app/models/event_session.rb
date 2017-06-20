@@ -31,6 +31,19 @@ class EventSession < ApplicationRecord
   enum language: { en: 0, no: 1, sv: 2 }
 
   validates :title, presence: true
+  validates :submitter, presence: true
   validates :description, presence: true
   validates :duration, presence: true, numericality: { only_integer: true, less_than_or_equal_to: MAX_ALLOWED_TIME_ALLOTMENT }
+
+  def to_s
+    "Event"
+  end
+
+  def short_description
+    if description.length < 50
+      description
+    else
+      description.split[0..10].join(' ') + ' (...)'
+    end
+  end
 end
