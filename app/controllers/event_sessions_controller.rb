@@ -12,9 +12,28 @@ class EventSessionsController < ApplicationController
     # NOOP
   end
 
+  def create
+    @event_session.save
+    respond_with @event_session
+  end
+
+  def show
+    respond_with @event_session
+  end
+
   private
 
   def set_parent
     @parent ||= Event.find(params[:event_id])
+  end
+
+  def event_session_params
+    params.require(:event_session).permit(
+      :event_id,
+      :title,
+      :description,
+      :duration,
+      :user_id
+    )
   end
 end
