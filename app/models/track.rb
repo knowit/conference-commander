@@ -11,4 +11,5 @@
 
 class Track < ApplicationRecord
   has_many :event_sessions
+  belongs_to :venue
 end

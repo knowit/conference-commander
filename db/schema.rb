@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620150547) do
+ActiveRecord::Schema.define(version: 20170620160213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,16 +38,34 @@ ActiveRecord::Schema.define(version: 20170620150547) do
     t.index ["participation_id"], name: "index_activities_participations_on_participation_id"
   end
 
+  create_table "attachments", force: :cascade do |t|
+    t.string "attachable_type"
+    t.bigint "attachable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
+  end
+
   create_table "event_sessions", id: :serial, force: :cascade do |t|
     t.text "title", null: false
     t.text "description", null: false
     t.integer "duration", null: false
-    t.integer "user_id", null: false
+    t.integer "submitter_id", null: false
     t.integer "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "outline"
+    t.datetime "start_time"
+    t.integer "state", default: 0
+    t.bigint "tracks_id"
+    t.integer "language", default: 0
     t.index ["event_id"], name: "index_event_sessions_on_event_id"
-    t.index ["user_id"], name: "index_event_sessions_on_user_id"
+    t.index ["submitter_id"], name: "index_event_sessions_on_submitter_id"
+    t.index ["tracks_id"], name: "index_event_sessions_on_tracks_id"
   end
 
   create_table "events", id: :serial, force: :cascade do |t|
@@ -158,10 +176,12 @@ ActiveRecord::Schema.define(version: 20170620150547) do
   end
 
   create_table "tracks", id: :serial, force: :cascade do |t|
-    t.datetime "start_at"
-    t.datetime "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "venues_id"
+    t.text "name"
+    t.integer "capacity"
+    t.index ["venues_id"], name: "index_tracks_on_venues_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -201,7 +221,7 @@ ActiveRecord::Schema.define(version: 20170620150547) do
 
   add_foreign_key "accommodations", "events"
   add_foreign_key "event_sessions", "events"
-  add_foreign_key "event_sessions", "users"
+  add_foreign_key "event_sessions", "users", column: "submitter_id"
   add_foreign_key "flight_reservations", "events"
   add_foreign_key "flight_reservations", "flights"
   add_foreign_key "flight_reservations", "participations"
