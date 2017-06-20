@@ -7,7 +7,7 @@
             = link_to event_path(event),
               class: "ui inverted button" do 
               = t('events.show')
-      img class="image" src="https://unsplash.it/1000/1000"
+      img class="image" src="#{event.images.empty? ? '' : event.image_url}"
     .content
       .header
         = event.name
@@ -37,7 +37,7 @@
       - else
         = link_to edit_event_participation_path(event, 
           id: event.user_participation(current_user)), 
-          class: "ui medium button knowit-green" do
+          class: "ui medium button knowit-purple" do
           = fa_icon('pencil icon')
           | &nbsp;
           = t('participations.edit')   

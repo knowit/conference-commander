@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   def new
     @event.venues.build
+    @event.images.build
   end
 
   def show
@@ -41,6 +42,8 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:id, :name, :description, :starting_at, :ending_at, hotels_attributes: [:id, :name, :_destroy])
+    params.require(:event).permit(:id, :name, :description, :starting_at,
+      :ending_at, hotels_attributes: [:id, :name, :_destroy],
+      images_attributes: [:file])
   end
 end
