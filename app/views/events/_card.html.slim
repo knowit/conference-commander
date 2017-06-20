@@ -1,0 +1,52 @@
+- events.each do |event|
+  .event-card.ui.card
+    .blurring.dimmable.image
+      .ui.dimmer
+        .content
+          .center
+            = link_to event_path(event),
+              class: "ui inverted button" do 
+              = t('events.show')
+      img class="image" src="https://unsplash.it/1000/1000"
+    .content
+      .header
+        = event.name
+      .meta
+        span class="date" 
+          = event.starting_at.strftime("%d/%m/%Y")
+          | &nbsp;-&nbsp;
+          = event.ending_at.strftime("%d/%m/%Y")
+      .description
+        = event.description
+    .extra.content
+      span 
+        = fa_icon('users icon')
+        | &nbsp; 
+        | #{event.participants.count} #{t('events.participants')}
+      span class="right floated"
+        = fa_icon('commenting icon')
+        | &nbsp; 
+        | #{event.event_sessions.count} #{t('events.talks')}
+    .ui.two.buttons.bottom.attached 
+      - unless event.user_already_signed_up? current_user
+        = link_to new_event_participation_path(event),
+          class: "ui medium button knowit-purple" do
+          = fa_icon('plus icon')
+          | &nbsp; 
+          = t('participations.new')
+      - else
+        = link_to edit_event_participation_path(event, 
+          id: event.user_participation(current_user)), 
+          class: "ui medium button knowit-green" do
+          = fa_icon('pencil icon')
+          | &nbsp;
+          = t('participations.edit')   
+      = link_to new_event_event_session_path(event), class: "ui medium button knowit-green" do
+        = fa_icon('paper-plane icon')
+        | &nbsp; 
+        = t('event_sessions.new')
+        
+javascript:
+  $('.events .card .image').dimmer({
+    on: 'hover'
+  })
