@@ -4,7 +4,13 @@ Latest and greatest, ie MRI v2.4.0
 
 ## System dependencies
 
+Ruby 2.4.0
+NodeJS
+
 ## Configuration
+
+    $ bundle install
+    $ npm install
 
 ## Database creation
 
@@ -25,11 +31,6 @@ Create database and seed some data:
     $ rails db:migrate
     $ rails db:seed
 
-## Bower
-
-$ npm install -g Bower
-$ rake bower:install
-
 ## How to run the test suite
 
 ## Services (job queues, cache servers, search engines, etc.)
@@ -37,6 +38,11 @@ $ rake bower:install
 ## Deployment instructions
 
 ## Crowd integration
+
+## Running development
+
+    $ bin/webpack-dev-server
+    $ rails s
 
 The Crowd integration expects the following environment variables to be set:
 
