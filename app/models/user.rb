@@ -58,6 +58,8 @@ class User < ApplicationRecord
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }
   enum gender: { unspecified: 0, male: 1, female: 2 }
 
+  validates_inclusion_of :locale, in: [:nb, :en, :sv]
+
   scope :with_allergies, -> { where("allergies <> ''") }
 
   def self.find_or_create_by_auth_hash(auth_hash)
