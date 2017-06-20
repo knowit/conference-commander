@@ -8,7 +8,6 @@ Rails.application.routes.draw do
       resources :images, shallow: true
     end
     resources :schedules
-    resources :proposals
     resources :participations do
       collection do
         get :single_room_participants

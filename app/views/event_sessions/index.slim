@@ -1,0 +1,19 @@
+= render 'events/menu', event: @event
+
+- unless @event_sessions.empty?
+  table.ui.celled.table
+    thead
+      tr
+        th = EventSession.human_attribute_name(:title)
+        th = EventSession.human_attribute_name(:description)
+        th = EventSession.human_attribute_name(:duration)
+        th = t('.event_name')
+        th = t('.user_name')
+    tbody
+      - @event_sessions.each do |event_session|
+        tr
+          td = event_session.title
+          td = event_session.description
+          td = event_session.duration
+          td = link_to event_session.event.name, event_path(event_session.event)
+          td = link_to event_session.user.full_name, user_path(event_session.user)

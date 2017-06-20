@@ -7,7 +7,6 @@ module Crudable
     helper_method :crudable
   end
 
-
   def resource
     controller_name.classify.underscore
   end

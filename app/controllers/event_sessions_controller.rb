@@ -1,4 +1,4 @@
-class ProposalsController < ApplicationController
+class EventSessionsController < ApplicationController
 
   include Crudable
 

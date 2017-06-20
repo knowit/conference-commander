@@ -12,7 +12,7 @@
 #  updated_at  :datetime         not null
 #
 
-class Proposal < ApplicationRecord
+class EventSession < ApplicationRecord
 
   DURATIONS = [10, 15, 20, 30, 45, 60]
 

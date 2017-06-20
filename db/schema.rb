@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523074618) do
+ActiveRecord::Schema.define(version: 20170620124726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20170523074618) do
     t.integer "participation_id", null: false
     t.index ["activity_id"], name: "index_activities_participations_on_activity_id"
     t.index ["participation_id"], name: "index_activities_participations_on_participation_id"
+  end
+
+  create_table "event_sessions", id: :serial, force: :cascade do |t|
+    t.text "title", null: false
+    t.text "description", null: false
+    t.integer "duration", null: false
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_sessions_on_event_id"
+    t.index ["user_id"], name: "index_event_sessions_on_user_id"
   end
 
   create_table "events", id: :serial, force: :cascade do |t|
@@ -120,18 +132,6 @@ ActiveRecord::Schema.define(version: 20170523074618) do
     t.integer "user_id", null: false
   end
 
-  create_table "proposals", id: :serial, force: :cascade do |t|
-    t.text "title", null: false
-    t.text "description", null: false
-    t.integer "duration", null: false
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_proposals_on_event_id"
-    t.index ["user_id"], name: "index_proposals_on_user_id"
-  end
-
   create_table "schedules", id: :serial, force: :cascade do |t|
     t.datetime "start_at"
     t.datetime "end_at"
@@ -188,6 +188,8 @@ ActiveRecord::Schema.define(version: 20170523074618) do
   end
 
   add_foreign_key "accommodations", "events"
+  add_foreign_key "event_sessions", "events"
+  add_foreign_key "event_sessions", "users"
   add_foreign_key "flight_reservations", "events"
   add_foreign_key "flight_reservations", "flights"
   add_foreign_key "flight_reservations", "participations"
@@ -195,8 +197,6 @@ ActiveRecord::Schema.define(version: 20170523074618) do
   add_foreign_key "participations", "accommodations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
-  add_foreign_key "proposals", "events"
-  add_foreign_key "proposals", "users"
   add_foreign_key "tracks", "schedules"
   add_foreign_key "venues", "events"
 end

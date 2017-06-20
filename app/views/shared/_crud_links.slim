@@ -1,7 +1,10 @@
 
 - if action_name == 'index'
   - if can? :create, @crudable_name
-    = link_to fa_icon('plus'), new_polymorphic_path(@crudable_name)
+    - if @parent
+      = link_to fa_icon('plus'), new_polymorphic_path([@parent, @crudable_name])
+    - else
+      = link_to fa_icon('plus'), new_polymorphic_path(crudable)
 
 - elsif action_name.in? %w(show edit)
   - if can? :manage, @crudable_name
