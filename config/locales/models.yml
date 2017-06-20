@@ -158,3 +158,7 @@ nb:
       female: Kvinne
       unspecified: Uspesifisert
     empty: Ingen %{name}
+
+en:
+  menu:
+    frontpage: Front page
