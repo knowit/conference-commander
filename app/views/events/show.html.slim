@@ -2,16 +2,10 @@
 
 - breadcrumb :event, @event
 
-.ui.segment
-  = @event.description
+= @event.description
 
 .ui.segment
-  h3 Reports
-
-  = link_to "Allergies", event_allergies_path(@event), class: 'ui button secondary'
-
-.ui.segment
-  h3 Participants
+  h2 Participants
 
   - unless @event.participants.empty?
     == render 'participations/table', participations: @event.participations
@@ -19,5 +13,7 @@
   - if can? :manage, @event
     = link_to "Add participant", new_event_participation_path(@event), class: 'ui button secondary'
 
-  - if can? :single_room_participants, Participation
-    = link_to "List deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button secondary'
+- if can? :single_room_participants, Participation
+  = link_to "Deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button primary'
+
+= link_to "Deltakere med allergier", event_allergies_path(@event), class: 'ui button primary'

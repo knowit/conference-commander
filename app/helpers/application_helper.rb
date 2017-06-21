@@ -18,9 +18,9 @@ module ApplicationHelper
   def yesno_icon(pred, display_on_false: true)
     raw begin
       if pred
-        fa_icon 'check'
+        fa_icon 'check lg'
       else
-        fa_icon 'remove' if display_on_false
+        fa_icon 'remove lg' if display_on_false
       end
     end
   end
