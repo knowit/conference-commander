@@ -1,21 +1,41 @@
 - if event_sessions.empty?
   .empty= empty_table
 - else
-  .ui.four.column.divided.grid
-    .column Track 1
-    .column Track 2
-    .column Track 3
-    .column Track 4
-    - event_sessions.each do |event_session|
-      .column
-        .ui.card
-          .content
-            .left.floated.author
-                img.ui.avatar.image src="https://semantic-ui.com/images/avatar/small/matt.jpg"
-            .header
-                = event_session.title
-            .meta
-              i.fa.fa-clock-o
-                = event_session.duration
-            .description
-              = event_session.short_description
+  table.ui.very.basic.large.celled.padded.table
+    thead
+      tr
+        th = EventSession.human_attribute_name(:title)
+        th = EventSession.human_attribute_name(:submitter)
+        th = EventSession.human_attribute_name(:duration)
+        th = EventSession.human_attribute_name(:short_description)
+        th = EventSession.human_attribute_name(:state)
+        th = t('.actions')
+    tbody
+      - event_sessions.each do |event_session|
+        tr
+          td = link_to event_session.title, event_event_session_path(event, event_session)
+          td = event_session.submitter.first_name
+          td = event_session.duration
+          td = event_session.short_description
+          td = event_session.state
+          td 
+            - if can? :manage, event_session
+              = render 'shared/action_links', object: event_session
+  / .ui.four.column.divided.grid
+  /   .column Track 1
+  /   .column Track 2
+  /   .column Track 3
+  /   .column Track 4
+  /   - event_sessions.each do |event_session|
+  /     .column
+  /       .ui.card
+  /         .content
+  /           .left.floated.author
+  /               img.ui.avatar.image src="https://semantic-ui.com/images/avatar/small/matt.jpg"
+  /           .header
+  /               = event_session.title
+  /           .meta
+  /             i.fa.fa-clock-o
+  /               = event_session.duration
+  /           .description
+  /             = event_session.short_description

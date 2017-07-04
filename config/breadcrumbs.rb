@@ -2,8 +2,20 @@ crumb :root do
   link "Home", root_path
 end
 
+crumb :activities do |event|
+  parent :events
+  parent :event, event
+  link Activity.model_name.human(count: 2), event_activities_path(event)
+end
+
+crumb :activity do |activity, event|
+  parent :events
+  parent :event, event
+  link activity.title, event_activities_path(event)
+end
+
 crumb :events do
-  link Event.model_name.human(count:2), events_path
+  link Event.model_name.human(count: 2), events_path
 end
 
 crumb :event do |event|
@@ -41,4 +53,16 @@ crumb :participations do |event|
   parent :events
   parent :event, event
   link Participation.model_name.human(count:2), event_participations_path(event)
+end
+
+crumb :tracks do |event|
+  parent :events
+  parent :event, event
+  link Track.model_name.human(count: 2), event_tracks_path
+end
+
+crumb :track do |track, event|
+  parent :events
+  parent :event, event
+  link track.title, event_track_path(track)
 end

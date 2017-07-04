@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       end
     end
     resources :activities
+    resources :tracks
   end
 
   resources :participations

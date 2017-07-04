@@ -15,6 +15,6 @@
           td = link_to hotel.name, event_hotel_path(@parent, hotel)
           td = hotel.address
           td = hotel.country
-          td = "#{hotel.lat}, #{hotel.lon}"
+          td = "#{hotel.latitude}, #{hotel.longitude}"
           - if can? :manage, hotel
             td = render 'shared/action_links', object: hotel

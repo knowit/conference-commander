@@ -12,7 +12,7 @@
 
 class Track < ApplicationRecord
   has_many :event_sessions
-  belongs_to :venue
+  belongs_to :event
 
   def has_overlapping_event_sessions?
     overlapping_event_sessions.present?
@@ -41,6 +41,10 @@ class Track < ApplicationRecord
       colliding_times << intersection if intersection.present?
     end
     colliding_times
+  end
+
+  def to_s
+    name
   end
 
   private

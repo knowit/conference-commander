@@ -63,6 +63,9 @@ gem 'jbuilder', '~> 2.5'
 # Enables tagging
 gem 'acts-as-taggable-on'
 
+#geocoding for maos
+gem 'geocoder'
+
 # Crowd
 # https://github.com/robdimarco/omniauth_crowd
 gem 'omniauth', '>= 1.0.0'  # We depend on this

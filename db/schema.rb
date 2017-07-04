@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620185822) do
+ActiveRecord::Schema.define(version: 20170704152040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,11 +109,11 @@ ActiveRecord::Schema.define(version: 20170620185822) do
     t.string "name", null: false
     t.string "address"
     t.string "country"
-    t.float "lat"
-    t.float "lon"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.bigint "event_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["event_id"], name: "index_hotels_on_event_id"
   end
 
@@ -179,10 +179,10 @@ ActiveRecord::Schema.define(version: 20170620185822) do
   create_table "tracks", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "venue_id"
+    t.bigint "event_id"
     t.text "name"
     t.integer "capacity"
-    t.index ["venue_id"], name: "index_tracks_on_venue_id"
+    t.index ["event_id"], name: "index_tracks_on_event_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

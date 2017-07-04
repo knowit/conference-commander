@@ -41,4 +41,8 @@ module ApplicationHelper
     I18n.t('misc.empty', name: controller_name.classify.constantize.model_name.human(count: 2).downcase)
   end
 
+  def google_map(center)
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&markers=#{center}&size=300x300&zoom=14&key=AIzaSyDlwOtcsjjH_WsYDmgOUOCoB2OiVgdYsTo"
+  end
+
 end

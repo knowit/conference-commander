@@ -1,3 +1,5 @@
 = render 'events/menu', event: @parent
+- breadcrumb :event_activities, @activity, @parent
 
-= render "form"
+.ui.segment
+  = render "form"

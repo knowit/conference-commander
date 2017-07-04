@@ -15,7 +15,7 @@ class HotelsController < ApplicationController
 
   def create
     @hotel.save
-    respond_with @hotel
+    redirect_to event_hotels_path
   end
 
   def index
@@ -28,12 +28,12 @@ class HotelsController < ApplicationController
 
   def update
     @hotel.save
-    redirect_to event_hotel_path(@parent, @hotel)
+    redirect_to event_hotels_path
   end
 
   def destroy
     @hotel.destroy
-    redirect_to hotels_path
+    redirect_to event_hotels_path
   end
 
   private
@@ -48,8 +48,8 @@ class HotelsController < ApplicationController
       :name,
       :address,
       :country,
-      :lat,
-      :lon,
+      :latitude,
+      :longitude,
       image_attributes: [
         :file
       ]
