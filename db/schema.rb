@@ -194,8 +194,7 @@ ActiveRecord::Schema.define(version: 20170620185822) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_first_name"
-    t.string "passport_last_name"
+    t.string "passport_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"
