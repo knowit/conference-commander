@@ -12,7 +12,7 @@
 
 class Track < ApplicationRecord
   has_many :event_sessions
-  belongs_to :venue
+  belongs_to :event
 
   def has_overlapping_event_sessions?
     overlapping_event_sessions.present?

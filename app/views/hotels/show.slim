@@ -1,2 +1,4 @@
+= render 'events/menu', event: @event
+
 - @hotel.images.each do |image|
   = image_tag image.file.url, width: 800

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620185822) do
+ActiveRecord::Schema.define(version: 20170704144616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -179,10 +179,10 @@ ActiveRecord::Schema.define(version: 20170620185822) do
   create_table "tracks", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "venue_id"
+    t.bigint "event_id"
     t.text "name"
     t.integer "capacity"
-    t.index ["venue_id"], name: "index_tracks_on_venue_id"
+    t.index ["event_id"], name: "index_tracks_on_event_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -194,7 +194,8 @@ ActiveRecord::Schema.define(version: 20170620185822) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_name"
+    t.string "passport_first_name"
+    t.string "passport_last_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"
