@@ -1,4 +1,4 @@
-.ui.secondary.pointing.huge.menu#top-menu
+.ui.secondary.pointing.huge.menu#top-menu.fixed
   = link_to t('menu.frontpage'), root_path, class: 'item'
   - if can? :read, Event
     = link_to Event.model_name.human(count: 2), events_path, class: 'item'

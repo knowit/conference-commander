@@ -13,6 +13,7 @@ ui.form
       = f.input :duration
     .field
       = f.input :language, collection: EventSession.languages, prompt: "Select a language", as: :select, input_html: { class: 'ui fluid dropdown' } 
-    .field
-      = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid dropdown' }
+    - if current_user.administrator?
+      .field
+        = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid dropdown' }
     = f.button :submit
