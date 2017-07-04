@@ -21,4 +21,5 @@ ui.form
           prompt: "Set status",
           as: :select,
           input_html: { class: 'ui fluid dropdown' }
+      .field: .ui.timedatepicker = f.input :start_time, as: :string
     = f.button :submit
