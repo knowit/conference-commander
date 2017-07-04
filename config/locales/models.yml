@@ -117,6 +117,7 @@ nb:
     action_links:
       delete: Slett
       edit: Rediger
+      new: Opprett
     image_upload:
       image_row:
         delete: Slett
@@ -150,13 +151,13 @@ nb:
     frontpage: Forside
     sign_out: Logg ut
     edit_profile: Rediger profil
-  
+
   session_event:
     session_type:
       lightningtalk: Lightningtalk
       presentation: Presentasjon
       workshop: Workshop
-  
+
   misc:
     gender:
       male: Mann
