@@ -1,11 +1,28 @@
-section.frontpage-image-background#mallorca
-  div.intro-elements
-    h1
-      | CONFERENCES
-    - unless current_user
-      = link_to "Logg inn", signin_path, class: "ui massive button knowit-purple"
-    a.ui.massive.button.knowit-green#show-conferences Vis konferanser
-
+section#frontpage-top
+  .intro-flex
+    div.intro-elements
+      h1
+        | CONFERENCES
+      - unless current_user
+        = link_to "Logg inn", signin_path, class: "ui massive button knowit-purple"
+      a.ui.massive.button.knowit-green#show-conferences Vis konferanser
+    div.intro-next-event
+      h3
+        | Neste arrangement
+      .ui.divider
+      = 'Arrangementet '
+      = @next_event.name 
+      br
+      | starter 
+      br
+      = @next_event.starting_at.strftime("%d. %b %Y")
+      br
+      | og slutter
+      br
+      = @next_event.ending_at.strftime("%d. %b %Y")
+      br
+      = link_to 'Vis', @next_event, class: 'ui button knowit-green'
+      
 section#frontpage-info
   .ui.items
     .item
@@ -14,10 +31,10 @@ section#frontpage-info
       .middle.aligned.content
         .header
           h1 CONFERENCE COMMANDER
-          p På denne siden har alle ansatte i Knowit mulighet til å melde seg på konferanser arrangert av Knowit Objectnet.
+          p På denne siden har alle ansatte i Knowit mulighet til å melde seg på konferanser arrangert av Knowit.
 
-section.frontpage-image-background#berlin
+.divider-container
+  .green-divider
 section#frontpage-events
   h1 Alle arrangementer
   = render 'events/table', events: Event.all
-section.frontpage-image-background#lofoten
