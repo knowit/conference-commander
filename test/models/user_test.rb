@@ -24,6 +24,10 @@
 #  encrypted_passport_last_name_iv   :string
 #  encrypted_passport_number         :string
 #  encrypted_passport_number_iv      :string
+#  encrypted_issued_at               :string
+#  encrypted_issued_at_iv            :string
+#  encrypted_expires_at              :string
+#  encrypted_expires_at_iv           :string
 #  encrypted_passport_nationality    :string
 #  encrypted_passport_nationality_iv :string
 #
