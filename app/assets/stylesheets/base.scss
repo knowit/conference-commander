@@ -50,8 +50,14 @@ h2 {
   border-width: 0px;
 }
 
+#top-menu.fixed {
+  display: block;
+}
 #top-menu.fixed + #frontpage-info {
   margin-top: 75px;
+}
+#top-menu.fixed.submenu + .grid {
+  margin-top: 100px;
 }
 .ui.secondary.pointing.menu.fixed {
   z-index: 100;
