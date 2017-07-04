@@ -43,6 +43,10 @@ class Track < ApplicationRecord
     colliding_times
   end
 
+  def to_s
+    name
+  end
+
   private
 
   def time_interval_intersection(a, b)

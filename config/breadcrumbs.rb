@@ -54,3 +54,15 @@ crumb :participations do |event|
   parent :event, event
   link Participation.model_name.human(count:2), event_participations_path(event)
 end
+
+crumb :tracks do |event|
+  parent :events
+  parent :event, event
+  link Track.model_name.human(count: 2), event_tracks_path
+end
+
+crumb :track do |track, event|
+  parent :events
+  parent :event, event
+  link track.title, event_track_path(track)
+end

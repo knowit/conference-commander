@@ -1,0 +1,17 @@
+- if tracks.empty?
+  .empty= empty_table
+- else
+  table.ui.very.basic.large.celled.padded.table
+    thead
+      tr
+        th = Track.human_attribute_name(:name)
+        th = Track.human_attribute_name(:capacity)
+        th = t('.actions')
+    tbody
+      - tracks.each do |track|
+        tr
+          td = link_to track.name, event_track_path(event, track)
+          td = track.capacity
+          td 
+            - if can? :manage, track
+              = render 'shared/action_links', object: track
