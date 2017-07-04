@@ -38,8 +38,10 @@ nb:
 
       event_session:
         description: Beskrivelse
+        submitter: Foredragsholder
         duration: Varighet (i minutter)
         title: Tittel
+        state: Status
 
       user:
         allergies: Allergier
