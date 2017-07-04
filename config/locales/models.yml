@@ -96,6 +96,10 @@ nb:
         one: Påmelding
         other: Påmeldinger
 
+      hotel:
+        one: Hotell
+        other: Hoteller
+
   events:
     index:
       actions: Handlinger

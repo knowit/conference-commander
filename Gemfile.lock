@@ -110,6 +110,7 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gretel (3.0.9)
@@ -276,6 +277,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails
   font-awesome-rails
+  geocoder
   gretel
   jbuilder (~> 2.5)
   jquery-fileupload-rails

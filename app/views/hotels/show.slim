@@ -2,3 +2,6 @@
 
 - @hotel.images.each do |image|
   = image_tag image.file.url, width: 800
+
+= image_tag google_map(@hotel.full_address), width: 500
+

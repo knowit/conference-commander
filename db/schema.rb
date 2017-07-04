@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704144616) do
+ActiveRecord::Schema.define(version: 20170704152040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,11 +109,11 @@ ActiveRecord::Schema.define(version: 20170704144616) do
     t.string "name", null: false
     t.string "address"
     t.string "country"
-    t.float "lat"
-    t.float "lon"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.bigint "event_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["event_id"], name: "index_hotels_on_event_id"
   end
 
@@ -194,8 +194,7 @@ ActiveRecord::Schema.define(version: 20170704144616) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_first_name"
-    t.string "passport_last_name"
+    t.string "passport_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"
