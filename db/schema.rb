@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620163855) do
+ActiveRecord::Schema.define(version: 20170620185822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170620163855) do
     t.integer "state", default: 0
     t.bigint "track_id"
     t.integer "language", default: 0
+    t.integer "session_type", default: 1, null: false
     t.index ["event_id"], name: "index_event_sessions_on_event_id"
     t.index ["submitter_id"], name: "index_event_sessions_on_submitter_id"
     t.index ["track_id"], name: "index_event_sessions_on_track_id"

@@ -13,6 +13,11 @@ a {
   }
 }
 
+h1.title {
+  border-bottom: 2px solid $knowit-black-color;
+  padding-bottom: 0.5em;
+}
+
 h1, h2, h3, h4, h5 {
   font-weight: 800;
   font-family: 'Raleway';

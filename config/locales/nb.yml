@@ -145,7 +145,7 @@ nb:
       submit: Lagre %{model}
       update: Oppdater %{model}
     actions:
-      index: Liste over %{model}
+      index: '%{model}'
       show: '%{model}: %{record}'
       edit: Rediger %{model}
       new: Opprett %{model}
