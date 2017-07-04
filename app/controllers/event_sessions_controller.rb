@@ -9,16 +9,20 @@ class EventSessionsController < ApplicationController
   load_and_authorize_resource through: :event
 
   def index
-    # NOOP
+    @event_sessions = @event.event_sessions
   end
 
   def create
+    if !current_user.administrator?
+      @event_session.submitter = current_user
+    end
+
     @event_session.save
     respond_with @event, @event_session
   end
 
   def show
-    redirect_to event_event_sessions_path(@event)
+    @event_sessions = @event.event_sessions
   end
 
   private
