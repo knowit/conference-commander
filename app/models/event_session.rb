@@ -15,6 +15,7 @@
 #  state        :integer          default("proposed")
 #  track_id     :integer
 #  language     :integer          default("en")
+#  session_type :integer          default("presentation"), not null
 #
 
 class EventSession < ApplicationRecord

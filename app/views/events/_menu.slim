@@ -8,3 +8,5 @@
       / = link_to Schedule.model_name.human(count: 2), event_schedules_path(event), class: 'item' - change this to new event schedule path.
     - if can? :read, Hotel
       = link_to Hotel.model_name.human(count: 2), event_hotels_path(event), class: 'item'
+    - if can? :read, Activity
+      = link_to Activity.model_name.human(count: 2), event_activities_path(event), class: 'item'
