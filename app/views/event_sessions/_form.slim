@@ -12,8 +12,14 @@ ui.form
     .field
       = f.input :duration
     .field
-      = f.input :language, collection: EventSession.languages, prompt: "Select a language", as: :select, input_html: { class: 'ui fluid dropdown' } 
+      = f.input :language, collection: EventSession.languages.keys.to_a, prompt: "Select a language", as: :select, input_html: { class: 'ui fluid dropdown' } 
     - if current_user.administrator?
       .field
         = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid dropdown' }
+      .field
+        = f.input :state, collection: EventSession.states.keys.to_a,
+          prompt: "Set status",
+          as: :select,
+          input_html: { class: 'ui fluid dropdown' }
+      .field: .ui.timedatepicker = f.input :start_time, as: :string
     = f.button :submit
