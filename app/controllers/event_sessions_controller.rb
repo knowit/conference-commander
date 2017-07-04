@@ -25,6 +25,11 @@ class EventSessionsController < ApplicationController
     @event_sessions = @event.event_sessions
   end
 
+  def update
+    @event_session.update(event_session_params)
+    respond_with @event, @event_session
+  end
+
   private
 
   def set_parent
@@ -37,7 +42,10 @@ class EventSessionsController < ApplicationController
       :title,
       :description,
       :duration,
-      :submitter_id
+      :submitter_id,
+      :state,
+      :language,
+      :start_time
     )
   end
 end
