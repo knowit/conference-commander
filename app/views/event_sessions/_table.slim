@@ -14,7 +14,7 @@
       - event_sessions.each do |event_session|
         tr
           td = link_to event_session.title, event_event_session_path(event, event_session)
-          td = event_session.submitter.first_name
+          td = event_session.submitter.full_name
           td = event_session.duration
           td = event_session.short_description
           td = event_session.state
