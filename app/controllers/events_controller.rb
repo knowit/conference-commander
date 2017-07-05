@@ -12,7 +12,6 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event.venues.build unless @event.venues.present?
     @event.images.build unless @event.images.present?
     respond_with @event
   end
@@ -22,7 +21,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event.venues.build unless @event.venues.present?
     @event.images.build unless @event.images.present?
     respond_with @event
   end
