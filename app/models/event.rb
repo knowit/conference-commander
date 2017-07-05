@@ -19,6 +19,7 @@ class Event < ApplicationRecord
   has_many :event_sessions, dependent: :destroy
   has_many :users, through: :participations
   has_many :activities
+  
   has_many :venues
 
   has_many :tracks, dependent: :destroy
