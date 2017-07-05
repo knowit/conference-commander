@@ -16,6 +16,6 @@ html
     .ui.page.grid
       - unless flash.empty?
         = render 'layouts/alerts', flash: flash
-      .row
+      .row#main-row
         .wide.column
           = content_for?(:content) ? yield(:content) : yield

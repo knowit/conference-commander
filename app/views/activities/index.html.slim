@@ -1,11 +1,12 @@
 = render 'events/menu', event: @parent
 
-table.ui.celled.table
-  thead
-    tr
-      th = Event.human_attribute_name(:title)
-      th = Event.human_attribute_name(:description)
-      - if can? :manage, Activity
-        th = t('.actions')
+.ui.segment
+  table.ui.very.basic.large.celled.padded.table
+    thead
+      tr
+        th = Event.human_attribute_name(:title)
+        th = Event.human_attribute_name(:description)
+        - if can? :manage, Activity
+          th = t('.actions')
 
-    = render @activities
+      = render @activities

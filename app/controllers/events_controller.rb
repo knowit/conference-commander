@@ -12,8 +12,9 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event.venues.build
-    @event.images.build
+    @event.venues.build unless @event.venues.present?
+    @event.images.build unless @event.images.present?
+    respond_with @event
   end
 
   def show
