@@ -25,3 +25,8 @@ section#frontpage-info
 section#frontpage-events
   h1 Alle arrangementer
   = render 'events/table', events: Event.all
+  
+javascript:
+  $('.event-card .image').dimmer({
+    on: 'hover'
+  })
