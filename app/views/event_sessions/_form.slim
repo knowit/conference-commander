@@ -10,18 +10,23 @@
           .ui.radio.checkbox
             = radio_button_tag :session_type, k
             label= t("enum.event_session.session_type.#{k}")
+
     .two.fields
       .field
         = f.input :duration
-      = f.input :language, collection: EventSession.languages.keys.to_a, prompt: "Select a language", as: :select, input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
+
+      = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
 
     - if current_user.administrator?
       .field
-        = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid dropdown' }
+        = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid search selection dropdown' }
+
       .field
         = f.input :state, collection: EventSession.states.keys.to_a,
           as: :select,
           input_html: { class: 'ui fluid dropdown' },
           label_method: ->(e) { t("enum.event_session.state.#{e}") }
+
       .field: .ui.timedatepicker = f.input :start_time, as: :string
+
     = f.button :submit

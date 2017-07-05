@@ -18,7 +18,7 @@ class EventSessionsController < ApplicationController
     end
 
     @event_session.save
-    respond_with @event, @event_session
+    respond_with @event, location: event_event_sessions_path(@event)
   end
 
   def show
@@ -27,7 +27,7 @@ class EventSessionsController < ApplicationController
 
   def update
     @event_session.update(event_session_params)
-    respond_with @event, @event_session
+    respond_with @event, location: event_event_sessions_path(@event)
   end
 
   private
