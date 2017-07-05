@@ -8,6 +8,10 @@ input, select, textarea {
   border: 0px !important;
 }
 
+.ui.card > .image > img {
+  border-radius: 0px !important;
+}
+
 .ui.segment {
   box-shadow: none !important;
 

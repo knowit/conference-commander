@@ -40,16 +40,11 @@ html, body {
       font-size: 8.125rem;
       padding: 4rem 0;
     }
-    .intro-next-event {
-      color: white;
-      border: 2px solid white;
-      padding: 2rem 1rem;
-      text-align: center;
 
-      .button {
-        margin-top: 1rem;
-      }
+    h3 {
+      color: white;
     }
+
     .intro-knowit-logo {
       width: 100%;
       margin-top: 2rem;
@@ -128,14 +123,22 @@ html, body {
     height: 70%;
   }
   .intro-flex {
-    flex-direction: column;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+
   }
   .intro-next-event {
-    margin-top: 2rem;
   }
 }
 #top-menu.fixed + .grid {
   padding-top: 90px;
+}
+
+.intro-flex {
+  .ui.card {
+    box-shadow: 0 0 300px $knowit-primary-purple-color-lighter;
+    width: 330px;
+  }
 }

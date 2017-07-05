@@ -19,7 +19,9 @@
 #
 
 class EventSession < ApplicationRecord
+
   MAX_ALLOWED_TIME_ALLOTMENT = 480
+
   belongs_to :submitter, class_name: 'User'
   belongs_to :event
   belongs_to :track, optional: true
@@ -30,7 +32,7 @@ class EventSession < ApplicationRecord
 
   enum state: { proposed: 0, rejected: 1, accepted: 2 }
   enum language: { en: 0, no: 1, sv: 2 }
-  enum session_type: { lightingtalk: 0, presentation: 1, workshop: 2 }
+  enum session_type: { lightning_talk: 0, presentation: 1, workshop: 2 }
 
   validates :title, presence: true
   validates :submitter, presence: true

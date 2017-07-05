@@ -1,25 +1,27 @@
-ui.form
+.ui.form
   = simple_form_for [@parent, @event_session] do |f|
     .field
       = f.input :title, as: :string
     .field
       = f.input :description
-    .fields
-      = f.input :session_type, collection: EventSession.session_types,
-        prompt: "Select a presentation form",
-        as: :select,
-        input_html: { class: 'ui fluid dropdown' }
-    .field
-      = f.input :duration
-    .field
-      = f.input :language, collection: EventSession.languages.keys.to_a, prompt: "Select a language", as: :select, input_html: { class: 'ui fluid dropdown' } 
+    .grouped.fields
+      - EventSession.session_types.each do |k,v|
+        .field
+          .ui.radio.checkbox
+            = radio_button_tag :session_type, k
+            label= t("enum.event_session.session_type.#{k}")
+    .two.fields
+      .field
+        = f.input :duration
+      = f.input :language, collection: EventSession.languages.keys.to_a, prompt: "Select a language", as: :select, input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
+
     - if current_user.administrator?
       .field
         = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid dropdown' }
       .field
         = f.input :state, collection: EventSession.states.keys.to_a,
-          prompt: "Set status",
           as: :select,
-          input_html: { class: 'ui fluid dropdown' }
+          input_html: { class: 'ui fluid dropdown' },
+          label_method: ->(e) { t("enum.event_session.state.#{e}") }
       .field: .ui.timedatepicker = f.input :start_time, as: :string
     = f.button :submit

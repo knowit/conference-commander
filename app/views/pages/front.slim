@@ -6,23 +6,10 @@ section#frontpage-top
       - unless current_user
         = link_to "Logg inn", signin_path, class: "ui massive button knowit-purple"
       a.ui.massive.button.knowit-green#show-conferences Vis konferanser
-    div.intro-next-event
-      h3
-        | Neste arrangement
-      .ui.divider
-      = 'Arrangementet '
-      = @next_event.name 
-      br
-      | starter 
-      br
-      = @next_event.starting_at.strftime("%d. %b %Y")
-      br
-      | og slutter
-      br
-      = @next_event.ending_at.strftime("%d. %b %Y")
-      br
-      = link_to 'Vis', @next_event, class: 'ui button knowit-green'
-      
+    div
+      h3 Neste Arrangement
+      = render 'events/card', event: @next_event
+
 section#frontpage-info
   .ui.items
     .item
