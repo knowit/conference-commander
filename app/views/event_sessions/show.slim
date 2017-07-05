@@ -1,7 +1,7 @@
 = render 'events/menu', event: @event
 
 ui.segment
-  table.ui.definition.small.table
+  table.ui.very.basic.small.table
     tbody
       tr
         td = User.human_attribute_name(:name)
@@ -9,30 +9,30 @@ ui.segment
       tr
         td = User.human_attribute_name(:email)
         td = @event_session.submitter.email
-      tr 
+      tr
         td = EventSession.human_attribute_name(:session_type)
         td = @event_session.session_type
-      tr 
+      tr
         td = EventSession.human_attribute_name(:duration)
         td = @event_session.duration
-      tr 
+      tr
         td = EventSession.human_attribute_name(:state)
         td = @event_session.state
-      tr 
+      tr
         td = EventSession.human_attribute_name(:start_time)
         td = @event_session.start_time
-      tr 
+      tr
         td = EventSession.human_attribute_name(:track)
         td = @event_session.track
-      tr 
+      tr
         td = EventSession.human_attribute_name(:language)
         td = @event_session.language
-      tr 
+      tr
         td = EventSession.human_attribute_name(:title)
         td = @event_session.title
-      tr 
+      tr
         td = EventSession.human_attribute_name(:short_description)
         td = @event_session.short_description
-      tr 
+      tr
         td = EventSession.human_attribute_name(:outline)
         td = @event_session.outline
