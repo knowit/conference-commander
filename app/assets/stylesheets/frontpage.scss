@@ -31,7 +31,8 @@ html, body {
     justify-content: space-around;
   }
   #frontpage-top {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url('/assets/mallorca.jpg');
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url(asset-path('mallorca.jpg'));
+    background: $knowit-primary-green-color-lightest;
     height: 100%;
     margin-top: 76px;
     h1 {
