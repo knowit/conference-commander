@@ -45,7 +45,8 @@ class EventSessionsController < ApplicationController
       :submitter_id,
       :state,
       :language,
-      :start_time
+      :start_time,
+      :outline
     )
   end
 end
