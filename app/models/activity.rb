@@ -18,4 +18,8 @@ class Activity < ApplicationRecord
   validates :event, presence: true
   validates :title, presence: true
   validates :description, presence: true
+
+  def to_s
+    title
+  end
 end

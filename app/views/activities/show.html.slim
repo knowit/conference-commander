@@ -1,0 +1,9 @@
+= render 'events/menu', event: @event
+
+- breadcrumb :activities, @event
+
+ui.segment
+  h2 Deltagere
+
+  - unless @activity.participations.empty?
+    == render 'participations/tiny_table', participations: @activity.participations

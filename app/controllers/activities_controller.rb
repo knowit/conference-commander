@@ -1,17 +1,19 @@
 class ActivitiesController < ApplicationController
-  include Crudable
 
+  include Crudable
   layout 'crudable'
 
   before_action :set_parent
-  before_action :set_activity, only: [:edit, :update, :destroy]
+
+  load_and_authorize_resource :event
+  load_and_authorize_resource through: :event
 
   def index
-    @activities = Activity.all
+    @activities = @event.activities
   end
 
   def new
-    @activity = Activity.new
+    # NOOP
   end
 
   def create
@@ -45,10 +47,6 @@ class ActivitiesController < ApplicationController
 
   def set_parent
     @parent = Event.find(params[:event_id])
-  end
-
-  def set_activity
-    @activity = Activity.find(params[:id])
   end
 
   def activity_params
