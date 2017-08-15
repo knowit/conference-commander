@@ -3,7 +3,6 @@ tr id="image-#{image.id}"
     i.fa.fa-paperclip
     = " #{image.file_file_name}"
   td.actions
-    - if image.imageable.is_a?(Hotel)
-      = link_to t('.show'), image_path(image), target: '_blank', action: :show
-      = ' '
-      = link_to t('.delete'), image_path(image), method: :delete, remote: true
+    = link_to t('.show'), image_path(image), target: '_blank', action: :show
+    = ' '
+    = link_to t('.delete'), image_path(image), method: :delete, remote: true
