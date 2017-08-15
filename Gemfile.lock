@@ -65,6 +65,13 @@ GEM
     attr_encrypted (3.0.3)
       encryptor (~> 3.0.0)
     awesome_print (1.7.0)
+    axlsx (2.1.0.pre)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.1.7)
+    axlsx_rails (0.5.1)
+      actionpack (>= 3.1)
+      axlsx (>= 2.0.1)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -116,6 +123,7 @@ GEM
     gretel (3.0.9)
       rails (>= 3.1.0)
     hashie (3.5.5)
+    htmlentities (4.3.4)
     i18n (0.8.1)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
@@ -203,6 +211,7 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby-graphviz (1.2.3)
+    rubyzip (1.1.7)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -267,6 +276,8 @@ DEPENDENCIES
   annotate
   attr_encrypted
   awesome_print
+  axlsx (= 2.1.0.pre)
+  axlsx_rails
   byebug
   cancancan
   capistrano-bundler
@@ -291,6 +302,7 @@ DEPENDENCIES
   rails (~> 5.1.0)
   rails-erd
   responders
+  rubyzip (~> 1.1.0)
   sass-rails (~> 5.0)
   semantic-ui-sass!
   simple_form!
@@ -309,4 +321,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.1
+   1.15.3

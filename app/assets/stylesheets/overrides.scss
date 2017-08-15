@@ -33,3 +33,7 @@ input, select, textarea {
     background: $knowit-complementary-blue-color !important;
   }
 }
+
+span.translation_missing {
+  color: $knowit-complementary-red-color;
+}
