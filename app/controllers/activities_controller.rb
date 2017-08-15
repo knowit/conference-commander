@@ -1,6 +1,5 @@
 class ActivitiesController < ApplicationController
   include Crudable
-  include Lockable
 
   layout 'crudable'
 
