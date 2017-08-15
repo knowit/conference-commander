@@ -16,6 +16,10 @@ class ActivitiesController < ApplicationController
     # NOOP
   end
 
+  def show
+    @activity = Activity.find_by_event_id(@parent.id)
+  end
+
   def create
     @activity = @parent.activities.build(activity_params)
 
@@ -50,6 +54,16 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:title, :description)
+    params.require(:activity).permit(
+      :event_id,
+      :title,
+      :ingress,
+      :description,
+      :price,
+      :max_number_of_participants,
+      image_attributes: [
+        :file
+      ]
+    )
   end
 end

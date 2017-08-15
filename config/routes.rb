@@ -12,7 +12,9 @@ Rails.application.routes.draw do
         get :single_room_participants
       end
     end
-    resources :activities
+    resources :activities do
+      resources :images, shallow: true
+    end
     resources :tracks
   end
 

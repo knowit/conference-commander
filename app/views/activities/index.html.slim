@@ -7,7 +7,7 @@
     thead
       tr
         th = Event.human_attribute_name(:title)
-        th = Event.human_attribute_name(:description)
+        th = Event.human_attribute_name(:ingress)
         - if can? :manage, Activity
           th = t('.actions')
 

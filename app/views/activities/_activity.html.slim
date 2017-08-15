@@ -1,5 +1,5 @@
 tr
   td = link_to activity.title, event_activity_path(@parent, activity)
-  td = activity.description
+  td = activity.ingress
   - if can? :manage, activity
     td = render 'shared/action_links', object: activity
