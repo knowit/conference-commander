@@ -33,6 +33,11 @@ gem 'gretel'
 # Awesome print, for awesome printing!
 gem 'awesome_print'
 
+# Excel generation
+gem 'rubyzip', '~> 1.1.0'
+gem 'axlsx', '2.1.0.pre'
+gem 'axlsx_rails'
+
 # slim
 gem 'slim-rails'
 
@@ -73,6 +78,8 @@ gem 'omniauth_crowd'
 
 gem 'paperclip'
 
+gem 'data_migrate'
+
 # Deploy
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rvm'
@@ -99,6 +106,7 @@ group :development do
   gem 'annotate'
   # Generates ER Diagram: `bundle exec erd`
   gem 'rails-erd'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

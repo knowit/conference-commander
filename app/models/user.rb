@@ -37,26 +37,11 @@ class User < ApplicationRecord
   has_many :participations
   has_many :event_sessions
 
+  has_one :passport
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
-
-  with_options key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT'] do |user|
-    user.attr_encrypted :passport_first_name
-    user.attr_encrypted :passport_last_name
-    user.attr_encrypted :passport_number
-    user.attr_encrypted :passport_nationality
-  end
-
-  # with_options if: :created_at? do |user|
-  #   user.validates :passport_first_name, presence: true
-  #   user.validates :passport_last_name, presence: true
-  #   user.validates :passport_number, presence: true
-  #   user.validates :passport_issued_at, presence: true
-  #   user.validates :passport_expires_at, presence: true
-  #   user.validates :passport_nationality, presence: true
-  #   user.validates :birth_date, presence: true
-  # end
 
   # Role enum
   enum role: { administrator: 0, organizer: 1, speaker: 2, participant: 3 }

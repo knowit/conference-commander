@@ -2,6 +2,12 @@ crumb :root do
   link "Home", root_path
 end
 
+crumb :event_activities do |activity|
+  parent :events
+  parent :event, activity.event
+  link activity.title, event_activities_path(activity)
+end
+
 crumb :activities do |event|
   parent :events
   parent :event, event

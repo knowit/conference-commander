@@ -7,8 +7,10 @@
     thead
       tr
         th = Event.human_attribute_name(:title)
-        th = Event.human_attribute_name(:description)
+        th = Event.human_attribute_name(:ingress)
         - if can? :manage, Activity
           th = t('.actions')
 
       = render @activities
+
+= link_to t('views.activities.index.download_xlsx'), event_activities_path(format: :xlsx), class: 'ui button'

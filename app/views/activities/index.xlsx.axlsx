@@ -1,0 +1,11 @@
+wb = xlsx_package.workbook
+@activities.each do |activity|
+  wb.add_worksheet(name: activity.title.parameterize.truncate(31, separator: /\s/)) do |sheet|
+    sheet.add_row [activity.title]
+    sheet.add_row ['Navn på deltager']
+    sheet.add_row []
+    activity.participations.each do |participation|
+      sheet.add_row ["#{participation.user.first_name} #{participation.user.last_name}"]
+    end
+  end
+end

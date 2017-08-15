@@ -1,4 +1,7 @@
 = simple_form_for [@parent, @activity] do |f|
   = f.input :title, as: :string
+  = f.input :ingress, as: :string
   = f.input :description
+  = f.input :max_number_of_participants, as: :integer
+  = f.input :price, as: :integer
   = f.button :submit

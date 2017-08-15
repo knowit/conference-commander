@@ -218,3 +218,9 @@ nb:
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %B, %H:%M"
     pm: ''
+  views:
+    activities:
+      index:
+        download_xlsx: Last ned regneark med påmeldinger
+    tables:
+      actions: Handlinger
