@@ -206,6 +206,9 @@ nb:
     precision:
       format:
         delimiter: ''
+  participations:
+    table:
+      actions: Handlinger
   support:
     array:
       last_word_connector: " og "
@@ -218,6 +221,9 @@ nb:
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %B, %H:%M"
     pm: ''
+  users:
+    table:
+      actions: Handlinger
   views:
     activities:
       index:
