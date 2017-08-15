@@ -59,10 +59,10 @@ Event.all.each do |e|
     print '.'
   end
 
-  8.times do
+  8.times do |i|
     Activity.create(
       event: e,
-      title: Faker::Movie.quote,
+      title: "#{i} #{Faker::Movie.quote}",
       description: Faker::Lorem.paragraph
     )
   end
