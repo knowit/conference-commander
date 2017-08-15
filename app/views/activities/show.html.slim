@@ -3,8 +3,9 @@
 - breadcrumb :activities, @event
 .ui.items
   .item
-    .image
-      = image_tag @activity.images.last.file.url, width: 200
+    - if @activity.images.nil?
+      .image
+        = image_tag @activity.images.last.file.url, width: 200
     .content
       .header
         = @activity.title

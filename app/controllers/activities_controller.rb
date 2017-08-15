@@ -23,9 +23,6 @@ class ActivitiesController < ApplicationController
     # NOOP
   end
 
-  def show
-    @activity = Activity.find_by_event_id(@parent.id)
-  end
 
   def create
     @activity = @parent.activities.build(activity_params)
