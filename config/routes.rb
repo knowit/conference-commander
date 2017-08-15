@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :event_sessions
+    post :impersonate, on: :member
+    post :stop_impersonating, on: :collection
   end
 
   resources :event_sessions, only: [:index]

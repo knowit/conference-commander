@@ -179,6 +179,7 @@ nb:
     frontpage: Forside
     sign_out: Logg ut
     edit_profile: Rediger profil
+    currently_impersonating: 'Brukerperspektiv:'
 
   session_event:
     session_type:

@@ -15,3 +15,4 @@
           td style="width: 10%"
             - if can? :update, user
               = render 'shared/action_links', object: user
+              =< link_to fa_icon('eye lg'), impersonate_user_path(user), method: :post

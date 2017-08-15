@@ -10,6 +10,8 @@
 
     .right.menu
     - if current_user
+      - if currently_impersonating?
+        = link_to t('menu.currently_impersonating'), stop_impersonating_users_path, method: :post, class: 'item'
       = link_to t('menu.edit_profile'), edit_user_path(current_user), class: 'item'
       = link_to t('menu.sign_out'), signout_path, method: :delete, class: 'item'
 

@@ -30,6 +30,8 @@ gem 'webpacker'
 
 gem 'gretel'
 
+gem 'pretender'
+
 # Awesome print, for awesome printing!
 gem 'awesome_print'
 
