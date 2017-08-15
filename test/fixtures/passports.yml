@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: passports
+#
+#  id                       :integer          not null, primary key
+#  user_id                  :integer
+#  encrypted_first_name     :string
+#  encrypted_first_name_iv  :string
+#  encrypted_last_name      :string
+#  encrypted_last_name_iv   :string
+#  encrypted_number         :string
+#  encrypted_number_iv      :string
+#  encrypted_nationality    :string
+#  encrypted_nationality_iv :string
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value

@@ -12,3 +12,5 @@
           th = t('.actions')
 
       = render @activities
+
+= link_to t('views.activities.index.download_xlsx'), event_activities_path(format: :xlsx), class: 'ui button'

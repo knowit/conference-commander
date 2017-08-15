@@ -10,6 +10,13 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = @event.activities
+    respond_to do |format|
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="Deltagerliste.xlsx"'
+        render layout: false
+      }
+      format.html
+    end
   end
 
   def new

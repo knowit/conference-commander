@@ -15,21 +15,20 @@ class Event < ApplicationRecord
 
   has_many :participations, dependent: :destroy
   has_many :accommodations, dependent: :destroy
-  has_many :hotels, dependent: :destroy
+  has_many :hotels,         dependent: :destroy
   has_many :event_sessions, dependent: :destroy
   has_many :users, through: :participations
   has_many :activities
-  
+
   has_many :venues
-
   has_many :tracks, dependent: :destroy
-
   has_many :participants, through: :participations, source: :user
 
   has_many :flight_reservations
   has_many :flights
 
   has_many :images, as: :imageable, dependent: :destroy
+
   accepts_nested_attributes_for :images
 
   validates :name, presence: true

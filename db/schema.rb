@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815135223) do
+ActiveRecord::Schema.define(version: 20170815132805) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +52,11 @@ ActiveRecord::Schema.define(version: 20170815135223) do
     t.integer "file_file_size"
     t.datetime "file_updated_at"
     t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
+  end
+
+  create_table "data_migrations", id: false, force: :cascade do |t|
+    t.string "version", null: false
+    t.index ["version"], name: "unique_data_migrations", unique: true
   end
 
   create_table "event_sessions", id: :serial, force: :cascade do |t|
@@ -112,11 +118,11 @@ ActiveRecord::Schema.define(version: 20170815135223) do
     t.string "name", null: false
     t.string "address"
     t.string "country"
+    t.float "lat"
+    t.float "lon"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.bigint "event_id"
-    t.float "latitude"
-    t.float "longitude"
     t.index ["event_id"], name: "index_hotels_on_event_id"
   end
 
@@ -152,6 +158,21 @@ ActiveRecord::Schema.define(version: 20170815135223) do
   create_table "participations_users", id: false, force: :cascade do |t|
     t.integer "participation_id", null: false
     t.integer "user_id", null: false
+  end
+
+  create_table "passports", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "encrypted_first_name"
+    t.string "encrypted_first_name_iv"
+    t.string "encrypted_last_name"
+    t.string "encrypted_last_name_iv"
+    t.string "encrypted_number"
+    t.string "encrypted_number_iv"
+    t.string "encrypted_nationality"
+    t.string "encrypted_nationality_iv"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_passports_on_user_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -233,5 +254,6 @@ ActiveRecord::Schema.define(version: 20170815135223) do
   add_foreign_key "participations", "accommodations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
+  add_foreign_key "passports", "users"
   add_foreign_key "venues", "events"
 end
