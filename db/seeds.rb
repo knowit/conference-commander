@@ -25,7 +25,7 @@ EventSession.create(
   description: "En liten techtalk om Rail",
   duration: 10,
   event: e1,
-  user: u2
+  submitter: u2
 )
 
 Participation.create(user: u1, event: e1, accommodation: e1.accommodations.first)
