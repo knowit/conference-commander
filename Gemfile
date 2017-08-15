@@ -104,6 +104,7 @@ group :development do
   gem 'annotate'
   # Generates ER Diagram: `bundle exec erd`
   gem 'rails-erd'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
