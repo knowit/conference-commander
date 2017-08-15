@@ -78,6 +78,8 @@ gem 'omniauth_crowd'
 
 gem 'paperclip'
 
+gem 'data_migrate'
+
 # Deploy
 gem 'capistrano-rails', group: :development
 gem 'capistrano-rvm'

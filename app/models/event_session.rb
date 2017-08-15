@@ -25,7 +25,9 @@ class EventSession < ApplicationRecord
   belongs_to :submitter, class_name: 'User'
   belongs_to :event
   belongs_to :track, optional: true
+
   has_many :attachments, as: :attachable, dependent: :destroy
+
   accepts_nested_attributes_for :attachments
 
   acts_as_taggable
@@ -40,7 +42,7 @@ class EventSession < ApplicationRecord
   validates :duration, presence: true, numericality: { only_integer: true, less_than_or_equal_to: MAX_ALLOWED_TIME_ALLOTMENT }
 
   def to_s
-    "Event"
+    "EventSession"
   end
 
   def short_description

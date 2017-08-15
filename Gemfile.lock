@@ -107,6 +107,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    data_migrate (3.2.1)
+      rails (>= 4.0)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
@@ -288,6 +290,7 @@ DEPENDENCIES
   capistrano3-puma
   cocoon
   coffee-rails (~> 4.2)
+  data_migrate
   dotenv-rails
   faker
   font-awesome-rails

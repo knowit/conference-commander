@@ -1,6 +1,6 @@
 @import 'variables';
 
-.ui, input, select, textarea {
+.ui:not(.label), input, select, textarea {
   border-radius: 0px !important;
 }
 
