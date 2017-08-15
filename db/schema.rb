@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704152040) do
+ActiveRecord::Schema.define(version: 20170815125201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,17 @@ ActiveRecord::Schema.define(version: 20170704152040) do
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
   end
 
+  create_table "locks", force: :cascade do |t|
+    t.string "lockable_type"
+    t.bigint "lockable_id"
+    t.text "field"
+    t.date "locked_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lockable_type", "lockable_id", "field"], name: "index_locks_on_lockable_type_and_lockable_id_and_field"
+    t.index ["lockable_type", "lockable_id"], name: "index_locks_on_lockable_type_and_lockable_id"
+  end
+
   create_table "participations", id: :serial, force: :cascade do |t|
     t.boolean "single_room", default: false
     t.integer "user_id", null: false
@@ -206,10 +217,6 @@ ActiveRecord::Schema.define(version: 20170704152040) do
     t.string "encrypted_passport_last_name_iv"
     t.string "encrypted_passport_number"
     t.string "encrypted_passport_number_iv"
-    t.string "encrypted_issued_at"
-    t.string "encrypted_issued_at_iv"
-    t.string "encrypted_expires_at"
-    t.string "encrypted_expires_at_iv"
     t.string "encrypted_passport_nationality"
     t.string "encrypted_passport_nationality_iv"
     t.index ["email"], name: "index_users_on_email", unique: true

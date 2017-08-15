@@ -1,5 +1,6 @@
 class ParticipationsController < ApplicationController
 
+  include Lockable
   include Crudable
   layout 'crudable'
 
