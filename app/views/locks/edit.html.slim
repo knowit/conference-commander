@@ -1,0 +1,8 @@
+.ui.segment
+  = simple_form_for @lock do |f|
+    .one.fields
+      = f.input :field, as: 'hidden', input_html: { value: 'id' }
+      .field: .ui.calendar = f.input :locked_at, as: :string
+
+    .actions
+      = f.submit class: 'ui large primary button'
