@@ -13,8 +13,6 @@ class MovePassportInformation < ActiveRecord::Migration[5.1]
   end
 
   def self.down
-    User.all.each do |u|
-      u.passport.destroy
-    end
+    raise ActiveRecord::IrreversibleMigration
   end
 end
