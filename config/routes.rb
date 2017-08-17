@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :images, shallow: true
     end
     resources :tracks
+    resources :locks, shallow: true
   end
 
   resources :activities, only: [] do

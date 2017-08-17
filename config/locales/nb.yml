@@ -216,6 +216,10 @@ nb:
   participations:
     table:
       actions: Handlinger
+  shared:
+    lock_buttons:
+      lock: "Lås %{lockable}"
+      unlock: "Lås opp %{lockable}"
   support:
     array:
       last_word_connector: " og "

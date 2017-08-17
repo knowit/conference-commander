@@ -4,7 +4,6 @@ tr
     td = link_to lock.lockable, polymorphic_path([lock.lockable.event, lock.lockable])
   - else
     td = lock.lockable
-  td = lock.field
   td = lock.locked_at
   - if can? :manage, lock
     td = render 'shared/action_links', object: lock

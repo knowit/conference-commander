@@ -18,7 +18,7 @@ class LocksController < ApplicationController
 
   def create
     if @lock.save
-      redirect_to polymorphic_path([@lock.lockable, Lock])
+      redirect_back(fallback_location: polymorphic_path([@lock.lockable, Lock]))
     else
       render :new
     end
@@ -39,7 +39,7 @@ class LocksController < ApplicationController
   def destroy
     @lock.destroy
 
-    redirect_to polymorphic_path([@lock.lockable, Lock])
+    redirect_back(fallback_location: polymorphic_path([@lock.lockable, Lock]))
   end
 
   private

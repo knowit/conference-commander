@@ -1,0 +1,4 @@
+- if lockable.locked?(:id)
+  = link_to t('.unlock', lockable: lockable), lock_path(lockable.retrieve_lock(:id)), method: :delete, class: 'ui button primary'
+- else
+  = link_to t('.lock', lockable: lockable), polymorphic_path([lockable, Lock], lock: { field: :id, locked_at: Date.today }), method: :post, class: 'ui button primary'

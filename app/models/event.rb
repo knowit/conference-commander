@@ -13,6 +13,8 @@
 
 class Event < ApplicationRecord
 
+  include Lockable
+
   has_many :participations, dependent: :destroy
   has_many :accommodations, dependent: :destroy
   has_many :hotels,         dependent: :destroy

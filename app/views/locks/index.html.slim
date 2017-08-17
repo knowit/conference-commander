@@ -4,7 +4,6 @@
       tr
         th = Lock.human_attribute_name(:lockable_type)
         th = Lock.human_attribute_name(:lockable_id)
-        th = Lock.human_attribute_name(:field)
         th = Lock.human_attribute_name(:locked_at)
         - if can? :manage, Lock
           th = t('.actions')

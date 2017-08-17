@@ -12,7 +12,11 @@ module Lockable
   end
 
   def unlock!(field)
-    locks.find_by(field: field).destroy!
+    locks.find_by_field(field).destroy!
+  end
+
+  def retrieve_lock(field)
+    locks.find_by_field(field)
   end
 
   def lock(field, lock_date)
@@ -20,11 +24,11 @@ module Lockable
   end
 
   def locked?(field)
-    locks.where(field: field).where('locked_at < ?', Date.today).exists?
+    locks.where(field: field).where('locked_at <= ?', Date.today).exists?
   end
 
   def locked_fields
-    locks.where('locked_at < ?', Date.today).pluck(:field)
+    locks.where('locked_at <= ?', Date.today).pluck(:field)
   end
 
 end
