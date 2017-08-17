@@ -33,6 +33,7 @@ class Ability
   end
 
   def organizer_abilities
+    can :manage, Lock
     common_abilities
   end
 

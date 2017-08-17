@@ -150,6 +150,13 @@ nb:
       edit: Rediger %{model}
       new: Opprett %{model}
       delete: Slett %{model}
+  locks:
+    index:
+      actions: Handlinger
+      new: Ny lås
+    lock:
+      lockable_types:
+        activity: Aktivitet
   number:
     currency:
       format:

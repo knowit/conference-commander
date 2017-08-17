@@ -1,0 +1,11 @@
+.ui.segment
+  = simple_form_for [@lockable, @lock] do |f|
+    .two.fields
+      .field = f.input :field,
+        collection: @lockable.attributes.keys.reject{ |e| e.to_sym.in?(%i(id created_at updated_at)) },
+        input_html: { class: 'ui dropdown selection' },
+        label_method: lambda { |v| @lockable.class.human_attribute_name(v) }
+      .field: .ui.calendar = f.input :locked_at, as: :string
+
+    .actions
+      = f.submit class: 'ui large primary button'

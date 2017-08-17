@@ -15,7 +15,6 @@ module Lockable
     locks.find_by(field: field).destroy!
   end
 
-
   def lock(field, lock_date)
     locks.find_or_create_by(field: field, locked_at: lock_date)
   end

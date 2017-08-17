@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resources :tracks
   end
 
+  resources :activities, only: [] do
+    resources :locks, shallow: true
+  end
+
   resources :participations
 
   resources :after_signup

@@ -1,0 +1,10 @@
+tr
+  td = t(".lockable_types.#{lock.lockable_type.underscore}")
+  - if lock.lockable.respond_to?(:event)
+    td = link_to lock.lockable, polymorphic_path([lock.lockable.event, lock.lockable])
+  - else
+    td = lock.lockable
+  td = lock.field
+  td = lock.locked_at
+  - if can? :manage, lock
+    td = render 'shared/action_links', object: lock

@@ -1,0 +1,15 @@
+.ui.segment
+  table.ui.very.basic.large.celled.padded.table
+    thead
+      tr
+        th = Lock.human_attribute_name(:lockable_type)
+        th = Lock.human_attribute_name(:lockable_id)
+        th = Lock.human_attribute_name(:field)
+        th = Lock.human_attribute_name(:locked_at)
+        - if can? :manage, Lock
+          th = t('.actions')
+
+      = render @locks
+
+.ui.actions
+  = link_to t('.new'), new_polymorphic_path([@lockable, Lock]), class: 'ui button secondary'
