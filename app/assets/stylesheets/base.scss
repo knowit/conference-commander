@@ -16,6 +16,23 @@ a {
 h1.title {
   border-bottom: 2px solid $knowit-black-color;
   padding-bottom: 0.5em;
+
+  span.count {
+    vertical-align: middle;
+    margin-left: 1em;
+    height: 2em;
+    width: 2em;
+    background-color: $knowit-primary-purple-color-lighter;
+    font-size: 0.5em;
+    color: $knowit-primary-purple-color;
+    border-radius: 200rem;
+    text-align: center;
+    display: inline-block;
+    span {
+      display: inline-block;
+      margin-top: -0.4em;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5 {

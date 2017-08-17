@@ -1,6 +1,6 @@
 @import 'variables';
 
-.ui, input, select, textarea {
+.ui:not(.label), input, select, textarea {
   border-radius: 0px !important;
 }
 
@@ -32,4 +32,8 @@ input, select, textarea {
   &:hover {
     background: $knowit-complementary-blue-color !important;
   }
+}
+
+span.translation_missing {
+  color: $knowit-complementary-red-color;
 }

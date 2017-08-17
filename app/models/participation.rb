@@ -17,6 +17,8 @@
 
 class Participation < ApplicationRecord
 
+  include Lockable
+
   belongs_to :user
   belongs_to :event
   belongs_to :accommodation, optional: true
@@ -26,6 +28,8 @@ class Participation < ApplicationRecord
   has_many :flight_reservations
 
   has_and_belongs_to_many :preferred_roommates, class_name: 'User'
+
+
 
   validates :user_id, uniqueness: { scope: :event_id }
 

@@ -1,0 +1,16 @@
+table.ui.very.basic.table
+  thead
+    tr
+      th = User.human_attribute_name(:name)
+      th = t('views.tables.actions')
+
+  tbody
+    - participations.each do |participation|
+      tr
+        td = maybe participation.user.full_name
+        td
+          - if can? :manage, participation
+            div.ui.mini.buttons
+              = link_to 'Edit', edit_event_participation_path(@event, participation), class: "ui primary button"
+              div.or
+              = link_to 'Delete', event_participation_path(@event, participation), data: { confirm: 'Are you sure?' }, method: :delete, class: "ui button negative"

@@ -4,15 +4,25 @@ class ActivitiesController < ApplicationController
   layout 'crudable'
 
   before_action :set_parent
-  before_action :set_activity, only: [:edit, :update, :destroy]
+
+  load_and_authorize_resource :event
+  load_and_authorize_resource through: :event
 
   def index
-    @activities = Activity.all
+    @activities = @event.activities
+    respond_to do |format|
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="Deltagerliste.xlsx"'
+        render layout: false
+      }
+      format.html
+    end
   end
 
   def new
-    @activity = Activity.new
+    # NOOP
   end
+
 
   def create
     @activity = @parent.activities.build(activity_params)
@@ -47,11 +57,17 @@ class ActivitiesController < ApplicationController
     @parent = Event.find(params[:event_id])
   end
 
-  def set_activity
-    @activity = Activity.find(params[:id])
-  end
-
   def activity_params
-    params.require(:activity).permit(:title, :description)
+    params.require(:activity).permit(
+      :event_id,
+      :title,
+      :ingress,
+      :description,
+      :price,
+      :max_number_of_participants,
+      image_attributes: [
+        :file
+      ]
+    )
   end
 end

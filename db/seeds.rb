@@ -1,32 +1,75 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+random = Random.new
 
-u1 = User.create(first_name: 'Henning', last_name: 'Koller', email: 'henkol@knowit.no')
-u2 = User.create(first_name: 'Vegar uten d', last_name: 'Molvig', email: 'vegar.uten.d.molvig@knowit.no')
+# Create users
+puts "Creating users"
+100.times do
+  User.create(
+    first_name: Faker::Name::first_name,
+    last_name: Faker::Name::last_name,
+    email: Faker::Internet::email
+  )
+  print '.'
+end
+print "\n"
 
-e1 = Event.create(name: "Fredrikstad", description: "Fagseminar i Fredrikstad", starting_at: "2015-11-08 17:50:00", ending_at: "2015-11-08 17:50:00")
-e2 = Event.create(name: "Lofoten", description: "Fagseminar i Lofoten", starting_at: "2016-11-08 17:50:00", ending_at: "2016-11-08 17:50:00")
+# Create events
+puts "Creating events"
+3.times do
+  city = Faker::Address.city
+  start_date = Faker::Date.forward(365)
+  end_date = Faker::Date.between(start_date, start_date + 4.days)
 
-e1.add_accommodations(10, 1)
-e1.add_accommodations(15, 2)
-e2.add_accommodations(5, 1)
-e2.add_accommodations(20, 2)
+  e = Event.create(
+    name: city,
+    description: "Fagseminar i #{city}",
+    starting_at: start_date,
+    ending_at: end_date
+  )
+  e.add_accommodations(random.rand(10) + 3, 1)
+  e.add_accommodations(random.rand(15) + 3, 2)
+  print '.'
+end
+print "\n"
 
-Hotel.create(name: "Havna Hotel", event: e1)
-Hotel.create(name: "Lofoten Hotel", event: e2)
+puts "Creating Hotels, EventSession, Activities, and Participation"
+Event.all.each do |e|
+  # Create Hotels
+  Hotel.create(
+    name: "#{e.name} Hotel",
+    address: Faker::Address.street_address,
+    country: Faker::Address.country,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    event: e
+  )
+  print '.'
 
-EventSession.create(
-  title: "Do you even Rails?",
-  description: "En liten techtalk om Rail",
-  duration: 10,
-  event: e1,
-  submitter: u2
-)
+  # Create EventSessions
+  20.times do
+    start_time = Faker::Date::between(e.starting_at, e.ending_at)
+    EventSession.create(
+      title: Faker::Name.title,
+      description: Faker::Lorem.paragraph,
+      duration: [10, 30, 90].sample,
+      event: e,
+      submitter: User.order("RANDOM()").first,
+      start_time: start_time,
+      outline: Faker::Lorem.paragraph(5),
+    )
+    print '.'
+  end
 
-Participation.create(user: u1, event: e1, accommodation: e1.accommodations.first)
-Participation.create(user: u2, event: e1)
+  8.times do |i|
+    Activity.create(
+      event: e,
+      title: "#{i} #{Faker::Movie.quote}",
+      description: Faker::Lorem.paragraph
+    )
+  end
+
+  User.all.each do |user|
+    Participation.create(user: user, event: e, activities: Activity.order("RANDOM()").limit(4))
+    print '.'
+  end
+  print "\n"
+end

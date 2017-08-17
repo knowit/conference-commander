@@ -1,0 +1,36 @@
+= render 'events/menu', event: @event
+
+- breadcrumb :activities, @event
+.ui.items
+  .item
+    - if @activity.images.nil?
+      .image
+        = image_tag @activity.images.last.file.url, width: 200
+    .content
+      .header
+        = @activity.title
+      .meta
+        - if @activity.ingress?
+          = @activity.ingress
+      .description
+        = @activity.description
+      .extra
+        .ui.horizontal.list
+          - if @activity.max_number_of_participants?
+            .item
+              i.users.icon
+              .content
+                = "Maks antall deltakere: #{@activity.max_number_of_participants}"
+          - if @activity.price?
+            .item
+              i.money.icon
+              .content
+                = "Pris for aktiviteten: #{@activity.price} kr"
+
+.ui.hidden.divider
+
+.ui.segment
+  h2 Deltagere
+
+  - unless @activity.participations.empty?
+    == render 'participations/tiny_table', participations: @activity.participations

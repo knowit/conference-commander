@@ -1,6 +1,7 @@
 class ParticipationsController < ApplicationController
 
   include Crudable
+
   layout 'crudable'
 
   load_and_authorize_resource :event
