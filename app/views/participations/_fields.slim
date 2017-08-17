@@ -22,5 +22,9 @@
       = f.text_field :extended_stay_to
 
 .ui.divider
-
-= f.input :activity_ids, as: :select, collection: participation.event.activities.all, input_html: { class: 'ui fluid dropdown', multiple: '' }
+- if participation.event.locked?(:id) || participation.event.activities.reject{ |a| a.locked?(:id) }.empty?
+  .ui.center.aligned.segment
+    i.fa.fa-lock
+    =< 'Påmelding til aktiviteter er stengt'
+- else
+  = f.input :activity_ids, as: :select, collection: participation.event.activities.reject{ |a| a.locked?(:id) }, input_html: { class: 'ui fluid dropdown', multiple: '' }

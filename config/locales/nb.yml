@@ -218,8 +218,8 @@ nb:
       actions: Handlinger
   shared:
     lock_buttons:
-      lock: "Lås %{lockable}"
-      unlock: "Lås opp %{lockable}"
+      lock: "Lås aktivitetspåmeldinger"
+      unlock: "Åpne aktivitetspåmeldinger"
   support:
     array:
       last_word_connector: " og "
