@@ -42,14 +42,16 @@ class UsersController < ApplicationController
   end
 
   def impersonate
-    user = User.find(params[:id])
-    impersonate_user(user)
-    redirect_to root_path
+    if true_user.administrator?
+      user = User.find(params[:id])
+      impersonate_user(user)
+      redirect_to root_path
+    end
   end
 
   def stop_impersonating
     stop_impersonating_user
-    redirect_to pages_front_path
+    redirect_to root_path
   end
 
   private

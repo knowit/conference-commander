@@ -22,6 +22,7 @@ class Ability
       @user == user # allow users to manage themselves
     end
     can :read, User
+    can :stop_impersonating, User
     can :manage, [EventSession] do |event_session|
       event_session.submitter.nil? || event_session.submitter == @user # allow users to manage own event sessions
     end
