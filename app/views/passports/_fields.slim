@@ -1,0 +1,10 @@
+.three.fields
+  = f.input :first_name, required: required
+  = f.input :last_name, required: required
+  = f.input :number, required: required
+  = f.input :nationality, required: required
+.two.fields
+  .field: .ui.calendar
+    = f.input :issued_at, as: :string, required: required
+  .field: .ui.calendar
+    = f.input :expires_at, as: :string, required: required
