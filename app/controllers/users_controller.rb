@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   include Crudable
 
   before_action :remove_role_if_not_admin, only: :update
@@ -57,9 +58,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :gender, :role, :allergies,
-                                 :birth_date, :passport_first_name, :passport_last_name, :passport_number, :passport_nationality,
-                                 :passport_issued_at, :passport_expires_at)
+    params.require(:user).permit(
+      :first_name, :last_name, :email, :gender, :role, :allergies, :birth_date,
+      passport_attributes: [:id, :first_name, :last_name, :number, :nationality, :issued_at, :expires_at]
+    )
   end
 
   def remove_role_if_not_admin

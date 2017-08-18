@@ -5,16 +5,8 @@
     .ui.calendar
       = f.input :birth_date, as: :string, required: @user.persisted?
 
-.three.fields
-  = f.input :passport_first_name, required: @user.persisted?
-  = f.input :passport_last_name, required: @user.persisted?
-  = f.input :passport_number, required: @user.persisted?
-  = f.input :passport_nationality, required: @user.persisted?
-.two.fields
-  .field: .ui.calendar
-    = f.input :passport_issued_at, as: :string, required: @user.persisted?
-  .field: .ui.calendar
-    = f.input :passport_expires_at, as: :string, required: @user.persisted?
+= f.fields_for :passport  do |g|
+  = render 'passports/fields', f: g, required: false
 
 .inline.fields
   = f.label :gender

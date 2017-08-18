@@ -49,6 +49,9 @@ class User < ApplicationRecord
     user.attr_encrypted :passport_number
     user.attr_encrypted :passport_nationality
   end
+
+  accepts_nested_attributes_for :passport
+
   #
   # # with_options if: :created_at? do |user|
   # #   user.validates :passport_first_name, presence: true
