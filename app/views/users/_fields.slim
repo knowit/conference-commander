@@ -5,8 +5,11 @@
     .ui.calendar
       = f.input :birth_date, as: :string, required: @user.persisted?
 
+h3= Passport.model_name.human
 = f.fields_for :passport, @user.passport do |g|
   = render 'passports/fields', f: g, required: false
+
+.ui.divider
 
 .inline.fields
   = f.label :gender

@@ -4,10 +4,11 @@ section#frontpage-top
       h1
         | CONFERENCES
       - unless current_user
-        = link_to "Logg inn", signin_path, class: "ui massive button knowit-purple"
-      a.ui.massive.button.knowit-green#show-conferences Vis konferanser
+        = link_to t(".sign_in"), signin_path, class: "ui massive button knowit-purple"
+
+      a.ui.massive.button.knowit-green#show-conferences= t(".all_events")
     div
-      h3 Neste Arrangement
+      h3= t(".next_event")
       = render 'events/card', event: @next_event
 
 section#frontpage-info
@@ -18,12 +19,11 @@ section#frontpage-info
       .middle.aligned.content
         .header
           h1 CONFERENCE COMMANDER
-          p På denne siden har alle ansatte i Knowit mulighet til å melde seg på konferanser arrangert av Knowit.
 
 .divider-container
   .green-divider
 section#frontpage-events
-  h1 Alle arrangementer
+  h1= t(".all_events")
   = render 'events/table', events: Event.all
   
 javascript:

@@ -1,0 +1,100 @@
+nb:
+  events:
+    show: Se arrangement
+    participants: påmeldte
+    talks: talks
+  event_sessions:
+    new: Call for papers
+  participations:
+    new: Påmelding
+    edit: Påmelding
+
+  helpers:
+    select:
+      prompt: Vennligst velg
+    submit:
+      create: Opprett %{model}
+      submit: Lagre %{model}
+      update: Oppdater %{model}
+    actions:
+      index: '%{model}'
+      show: '%{model}: %{record}'
+      edit: Rediger %{model}
+      new: Opprett %{model}
+      delete: Slett %{model}
+
+  locks:
+    index:
+      actions: Handlinger
+      new: Ny lås
+    lock:
+      lockable_types:
+        activity: Aktivitet
+
+  shared:
+    action_links:
+      delete: Slett
+      edit: Rediger
+      new: Opprett
+    image_upload:
+      image_row:
+        delete: Slett
+        show: Vis
+      upload_fields:
+        add: Legg til bilde
+    new_link:
+      new_button: Legg til %{class_name}
+
+  user:
+    table:
+      tooltips:
+        edit: Endre bruker
+        delete: Slett bruker
+
+  users:
+    index:
+      actions: Handlinger
+    edit:
+      administrator: Administrator
+      organizer: Organisator
+      participant: Deltager
+      speaker: Foredragsholder
+
+  after_signup:
+    steps:
+      complete_profile: Ferdigstill profil
+      add_participation: Opprett deltagelse
+
+  menu:
+    frontpage: Forside
+    sign_out: Logg ut
+    edit_profile: Rediger profil
+    currently_impersonating: "Stop impersonating %{first_name} %{last_name}"
+
+  session_event:
+    session_type:
+      lightningtalk: Lightningtalk
+      presentation: Presentasjon
+      workshop: Workshop
+
+  misc:
+    gender:
+      male: Mann
+      female: Kvinne
+      unspecified: Uspesifisert
+    empty: Ingen %{name}
+
+  participations:
+    table:
+      actions: Participations
+
+  shared:
+    lock_buttons:
+      lock: "Lock activities"
+      unlock: "Unlock activities"    
+
+  pages:
+    front:
+      all_events: All events
+      next_event: Next event
+      sign_in: Sign in

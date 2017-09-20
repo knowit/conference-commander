@@ -1,0 +1,113 @@
+en:
+  events:
+    show: Show event
+    index:
+      actions: Actions
+      registration: Regisration
+    table:
+      actions: Actions
+    participants: Participants
+    talks: Talks
+
+  event_sessions:
+    new: Call for papers
+
+  participations:
+    new: My particpation
+    edit: My participation
+    table:
+      actions: Actions
+  activities:
+    table:
+      actions: Actions
+
+  proposals:
+    index:
+      event_name: Event
+      header: All proposals
+      user_name: Organized by
+
+  helpers:
+    select:
+      prompt: Choose
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+    actions:
+      index: '%{model}'
+      show: '%{model}: %{record}'
+      edit: Edit %{model}
+      new: New %{model}
+      delete: Delete %{model}
+
+  locks:
+    index:
+      actions: Handlinger
+      new: Ny lås
+    lock:
+      lockable_types:
+        activity: Aktivitet
+
+  shared:
+    action_links:
+      delete: Delete
+      edit: Edit
+      new: Create
+    image_upload:
+      image_row:
+        delete: Delete
+        show: Show
+      upload_fields:
+        add: Add image
+    new_link:
+      new_button: Add %{class_name}
+
+    lock_buttons:
+      lock: Lock
+
+  user:
+    table:
+      tooltips:
+        edit: Edit user
+        delete: Delete user
+
+  users:
+    index:
+      actions: Actions
+    edit:
+      administrator: Administrator
+      organizer: Organizer
+      participant: Participant
+      speaker: Speaker
+
+  after_signup:
+    steps:
+      complete_profile: Complete profile
+      add_participation: Add participation
+
+  menu:
+    frontpage: Front page
+    sign_out: Sign out
+    edit_profile: Edit profile
+    currently_impersonating: "Stop impersonating %{first_name} %{last_name}"
+
+  session_event:
+    session_type:
+      lightningtalk: Lightning talk
+      presentation: Presentation
+      workshop: Workshop
+
+  misc:
+    gender:
+      male: Male
+      female: Female
+      unspecified: Other/Unspecified
+    empty: No %{name}
+
+
+  pages:
+    front:
+      all_events: All events
+      next_event: Next event
+      sign_in: Sign in

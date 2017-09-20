@@ -1,0 +1,110 @@
+en:
+
+  accommodations:
+    index:
+      actions: Action
+
+  activerecord:
+    attributes:
+      accommodation:
+        number_of_beds: Number of beds
+        event: Event
+      event:
+        description: Description
+        ending_at: End
+        starting_at: Start
+        name: Name
+
+      event_session:
+        description: Description
+        submitter: Submitted
+        duration: Duration (minutes)
+        title: Title
+        state: Status
+
+      user:
+        allergies: Allergies
+        email: E-mail
+        gender: Gender
+        name: Name
+        role: Role
+        first_name: First name
+        last_name: Last name
+        birth_date: Birth date 
+
+      passport:
+        first_name: First name in passport
+        last_name: Last name in passport
+        number: Passport number
+        nationality: Nationality in passport
+        issued_at: Passport issue date
+        expires_at: Passport expiration date
+
+      participation:
+        single_room: I request a single room
+        request_for_sharing_room: I want to share room with
+        extended_stay: I want to extend my stay
+        extended_stay_from: Extended stay from
+        extended_stay_to: Extended stay until
+        activity_ids: Activities I want to participate in
+
+      activity:
+        title: Title
+        description: Description
+
+      event_session:
+        title: Title
+        description: Description
+        short_description: Short description
+        duration: Requested duration (minutes)
+        language: Language used
+
+    models:
+      accommodation:
+        one: Room
+        other: Rooms
+
+      event:
+        one: Event
+        other: Events
+
+      event_session:
+        one: Session
+        other: Sessions
+
+      user:
+        one: User
+        other: Users
+
+      activity:
+        one: Activity
+        other: Activities
+
+      participation:
+        one: Participation
+        other: Participations
+
+      hotel:
+        one: Hotel
+        other: Hotels
+      
+      passport: Passport information
+
+
+  enum:
+    language:
+      en: English
+      'no': Norwegian
+      sv: Swedish
+
+    event_session:
+      session_type:
+        lightning_talk: Lightning talk
+        presentation: Participation
+        workshop: Workshop
+      state:
+        proposed: Proposed
+        rejected: Rejected
+        accepted: Accepted
+
+

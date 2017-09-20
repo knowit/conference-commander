@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815135223) do
+ActiveRecord::Schema.define(version: 20170920071238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -182,6 +182,10 @@ ActiveRecord::Schema.define(version: 20170815135223) do
     t.string "encrypted_nationality_iv"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_issued_at"
+    t.string "encrypted_issued_at_iv"
+    t.string "encrypted_expires_at"
+    t.string "encrypted_expires_at_iv"
     t.index ["user_id"], name: "index_passports_on_user_id"
   end
 
@@ -228,7 +232,8 @@ ActiveRecord::Schema.define(version: 20170815135223) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_name"
+    t.string "passport_first_name"
+    t.string "passport_last_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"

@@ -1,2 +1,2 @@
 I18n.config.available_locales = [:nb, :en]
-I18n.default_locale = :nb
+I18n.default_locale = :en
