@@ -6,12 +6,14 @@
       tr
         th = User.human_attribute_name(:name)
         th = User.human_attribute_name(:email)
-        th = t('.actions')
+        th = t('.passport_information_complete')
+        th = t('shared.table.actions')
     tbody
       - users.each do |user|
         tr
           td = user.full_name
           td = user.email
+          td = yesno_icon(user.passport_complete?)
           td style="width: 10%"
             - if can? :update, user
               = render 'shared/action_links', object: user

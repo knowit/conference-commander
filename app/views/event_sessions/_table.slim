@@ -10,7 +10,7 @@
         th = EventSession.human_attribute_name(:short_description)
         th = EventSession.human_attribute_name(:session_type)
         th = EventSession.human_attribute_name(:state)
-        th = t('.actions')
+        th = t('shared.table.actions')
     tbody
       - event_sessions.each do |event_session|
         tr

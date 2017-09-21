@@ -9,7 +9,7 @@
         - if user_signed_in?
           th = Participation.model_name.human
           - if can? :manage, Event
-            th = t('.actions')
+            th = t('shared.table.actions')
     tbody
       - events.each do |event|
         tr

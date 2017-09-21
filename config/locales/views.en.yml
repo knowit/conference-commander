@@ -65,6 +65,8 @@ en:
 
     lock_buttons:
       lock: Lock
+    table:
+      actions: Actions
 
   user:
     table:
@@ -80,6 +82,8 @@ en:
       organizer: Organizer
       participant: Participant
       speaker: Speaker
+    table:
+      passport_information_complete: Passport information complete?
 
   after_signup:
     steps:

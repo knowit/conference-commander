@@ -9,7 +9,7 @@
         th = Event.human_attribute_name(:title)
         th = Event.human_attribute_name(:ingress)
         - if can? :manage, Activity
-          th = t('.actions')
+          th = t('shared.table.actions')
 
       = render @activities
 

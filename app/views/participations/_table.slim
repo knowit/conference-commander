@@ -9,7 +9,7 @@ table.ui.very.basic.table
       th = Participation.human_attribute_name(:extended_stay_from)
       th = Participation.human_attribute_name(:extended_stay_to)
       th = Activity.model_name.human(count: 2)
-      th = t('.actions')
+      th = t('shared.table.actions')
 
   tbody
     - participations.each do |participation|

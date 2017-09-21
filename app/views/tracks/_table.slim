@@ -6,7 +6,7 @@
       tr
         th = Track.human_attribute_name(:name)
         th = Track.human_attribute_name(:capacity)
-        th = t('.actions')
+        th = t('shared.table.actions')
     tbody
       - tracks.each do |track|
         tr

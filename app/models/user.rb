@@ -43,6 +43,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
 
+  delegate :complete?, to: :passport, prefix: true, allow_nil: true
+
   # with_options key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT'] do |user|
   #   user.attr_encrypted :passport_first_name
   #   user.attr_encrypted :passport_last_name

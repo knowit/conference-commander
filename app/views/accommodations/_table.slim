@@ -3,7 +3,7 @@ table.ui.celled.table
     tr
       th = Accommodation.human_attribute_name(:event)
       th = Accommodation.human_attribute_name(:number_of_beds)
-      th = t('.actions')
+      th = t('shared.table.actions')
   tbody
     - @accommodations.each do |accommodation|
       tr

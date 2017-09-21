@@ -20,13 +20,13 @@ class Passport < ApplicationRecord
 
   belongs_to :user
 
-  with_options key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT'] do |passport|
-    passport.attr_encrypted :first_name
-    passport.attr_encrypted :last_name
-    passport.attr_encrypted :number
-    passport.attr_encrypted :nationality
-    passport.attr_encrypted :issued_at
-    passport.attr_encrypted :expires_at
+  ATTRIBUTES = %i[first_name last_name number nationality issued_at expires_at]
+  ATTRIBUTES.each do |attribute|
+    attr_encrypted attribute, key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT']
+  end
+
+  def complete?
+    ATTRIBUTES.map { |attribute| send(attribute) }.map(&:present?).all?
   end
 
 end
