@@ -20,11 +20,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # NOOP
+    @user.build_passport unless @user.passport
   end
 
   def new
-    # NOOP
+    @user.build_passport unless @user.passport
   end
 
   def create
