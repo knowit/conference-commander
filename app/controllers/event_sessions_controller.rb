@@ -30,6 +30,11 @@ class EventSessionsController < ApplicationController
     respond_with @event, location: event_event_sessions_path(@event)
   end
 
+  def destroy
+    @event_session.destroy
+    respond_with @event, location: event_event_sessions_path(@event)
+  end
+
   private
 
   def set_parent
