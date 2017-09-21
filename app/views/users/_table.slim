@@ -13,7 +13,7 @@
         tr
           td = user.full_name
           td = user.email
-          td = yesno_icon(user.passport_complete?)
+          td = yesno_icon(user.passport_complete?, display_on_false: false)
           td style="width: 10%"
             - if can? :update, user
               = render 'shared/action_links', object: user
