@@ -7,8 +7,10 @@
 / .ui.segment
 /   h2 Participants
 
-  - unless @event.participants.empty?
-    == render 'participations/table', participations: @event.participations
+- unless @event.participants.empty?
+  == render 'participations/table', participations: @event.participations
+
+= render 'program/program'
 
 /   - if can? :manage, @event
 /     = link_to "Add participant", new_event_participation_path(@event), class: 'ui button secondary'
