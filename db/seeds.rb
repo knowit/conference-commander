@@ -44,6 +44,13 @@ Event.all.each do |e|
   )
   print '.'
 
+  5.times do |i|
+    Track.create(
+      name: "Track #{i}",
+      event: e
+    )
+  end
+
   # Create EventSessions
   20.times do
     start_time = Faker::Date::between(e.starting_at, e.ending_at)
@@ -55,6 +62,7 @@ Event.all.each do |e|
       submitter: User.order("RANDOM()").first,
       start_time: start_time,
       outline: Faker::Lorem.paragraph(5),
+      track: Track.where(event: e).order("RANDOM()").first
     )
     print '.'
   end
