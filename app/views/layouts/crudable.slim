@@ -3,6 +3,11 @@
   = raw(breadcrumbs separator: fa_icon('angle-right lg'))
 
   = render 'shared/crud_title'
+
+  - if content_for? :auxiliary_menu
+    #auxiliary-menu
+      = yield :auxiliary_menu
+
   = yield
 
 

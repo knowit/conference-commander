@@ -32,6 +32,8 @@ gem 'gretel'
 
 gem 'pretender'
 
+gem 'simple-navigation'
+
 # Awesome print, for awesome printing!
 gem 'awesome_print'
 

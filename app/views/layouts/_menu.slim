@@ -2,11 +2,7 @@
 
 #top-menu.ui.menu.fixed(class=submenu)
   .ui.secondary.pointing.huge.menu
-    = link_to t('menu.frontpage'), root_path, class: 'item'
-    - if can? :read, Event
-      = link_to Event.model_name.human(count: 2), events_path, class: 'item'
-    - if can? :manage, User
-      = link_to User.model_name.human(count: 2), users_path, class: 'item'
+    = render_navigation renderer: :links
 
     .right.menu
     - if current_user
@@ -14,7 +10,3 @@
         = link_to t('menu.currently_impersonating', first_name: current_user.first_name, last_name: current_user.last_name), stop_impersonating_users_path, method: :post, class: 'item'
       = link_to t('menu.edit_profile'), edit_user_path(current_user), class: 'item'
       = link_to t('menu.sign_out'), signout_path, method: :delete, class: 'item'
-
-  - if content_for? :auxiliary_menu
-    .ui.secondary.pointing.menu#auxiliary-menu
-      = yield :auxiliary_menu

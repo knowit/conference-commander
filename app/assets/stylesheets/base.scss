@@ -14,6 +14,8 @@ a {
 }
 
 h1.title {
+  font-size: 40px;
+  font-weight: 300;
   border-bottom: 2px solid $knowit-black-color;
   padding-bottom: 0.5em;
 
@@ -59,7 +61,10 @@ h2 {
     border: 0px;
     border-top: 1px solid $knowit-primary-green-color-lighter;
   }
+}
 
+.ui.menu {
+  box-shadow: none;
 }
 
 .ui.error.message {
@@ -68,7 +73,6 @@ h2 {
 }
 
 #main-row {
-  padding-top: 50px;
 }
 
 #top-menu.fixed {
@@ -78,7 +82,7 @@ h2 {
   padding-top: 125px;
 }
 #top-menu.fixed.submenu + .grid {
-  padding-top: 150px;
+
 }
 .ui.secondary.pointing.menu.fixed {
   z-index: 100;
@@ -113,25 +117,24 @@ h2 {
     color: $knowit-black-color;
     font-weight: bold;
   }
+  a.simple-navigation-active-leaf {
+    background: $knowit-primary-purple-color-lightest;
+  }
 }
 
 #auxiliary-menu {
-  width: 100%;
-  margin: 0;
+  text-align: right;
+  font-weight: 500;
+  margin-bottom: 100px;
 
-  border-top: 1px solid $knowit-complementary-gray-color-lighter;
-  background-color: white;
-
-  .item {
-    padding: 1em;
-    border-bottom: none;
-  }
-  .item:first-child {
-    margin-left: 10%;
-  }
-  .item:hover {
-    background-color: $knowit-primary-green-color-lightest;
+  a {
+    font-size: 18px;
     color: $knowit-black-color;
+    margin-left: 15px;
+    border-bottom: 1px solid $knowit-black-color;
+  }
+  a.simple-navigation-active-leaf {
+    border-bottom: 4px solid $knowit-black-color;
   }
 }
 
@@ -204,7 +207,7 @@ footer {
   font-size: 1.2em;
   a {
     color: $knowit-black-color;
-    border-bottom: 2px solid $knowit-black-color;
+    border-bottom: 1px solid $knowit-black-color;
   }
   i.fa {
     margin-left: 0.5em;
