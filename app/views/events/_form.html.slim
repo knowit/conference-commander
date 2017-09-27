@@ -1,8 +1,8 @@
 = simple_form_for @event, html: { class: 'ui large form' } do |f|
   .three.fields
     .field = f.input :name, as: :string
-    .field: .ui.calendar = f.input :starting_at, as: :string
-    .field: .ui.calendar = f.input :ending_at,   as: :string
+    .field: .ui.timedatepicker = f.input :starting_at, as: :string
+    .field: .ui.timedatepicker = f.input :ending_at,   as: :string
 
   = f.input :description
 
