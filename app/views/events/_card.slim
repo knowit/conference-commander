@@ -10,7 +10,10 @@
             = link_to edit_event_path(event), class: 'ui inverted button' do
               i.icon.pencil
               = t('shared.action_links.edit')
-    img class="image" src="#{event.images.empty? ? '' : event.image_url}"
+    - if event.images.empty?
+      = image_tag 'placeholder.png'
+    - else
+      = image_tag event.image_url
   .content
     .header
       = event.name
