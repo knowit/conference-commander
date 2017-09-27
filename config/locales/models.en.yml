@@ -26,6 +26,7 @@ en:
         allergies: Allergies
         email: E-mail
         gender: Gender
+        locale: Locale
         name: Name
         role: Role
         first_name: First name
@@ -58,6 +59,9 @@ en:
         short_description: Short description
         duration: Requested duration (minutes)
         language: Language used
+
+      track:
+        capacity: Audience capacity
 
     models:
       accommodation:

@@ -19,6 +19,14 @@ h3= Passport.model_name.human
         = f.radio_button :gender, gender
         = f.label I18n.t("misc.gender.#{gender}")
 
+.inline.fields
+  = f.label :locale
+  - User::ALLOWED_LOCALES.each do |locale|
+    .field
+      .ul.radio.checkbox
+        = f.radio_button :locale, locale
+        = f.label t("misc.locale.#{locale}")
+
 = f.input :allergies, as: :string
 
 - if current_user.admin?

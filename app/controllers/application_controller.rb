@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  before_action :set_locale
+
   respond_to :html
   responders :flash
 
@@ -36,6 +38,15 @@ class ApplicationController < ActionController::Base
       root_path
     else
       after_signup_path(:complete_profile)
+    end
+  end
+
+  def set_locale
+    I18n.locale =
+    if current_user
+      current_user.locale || I18n.default_locale
+    else
+      I18n.default_locale
     end
   end
 

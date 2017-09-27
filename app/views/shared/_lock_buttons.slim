@@ -1,8 +1,8 @@
 - if lockable.locked?(:id)
   = link_to lock_path(lockable.retrieve_lock(:id)), method: :delete, class: 'ui button primary' do
     i.fa.fa-unlock
-    =< t('.unlock', lockable: lockable)
+    =< t('shared.buttons.unlock', lockable: lockable.class)
 - else
   = link_to polymorphic_path([lockable, Lock], lock: { field: :id, locked_at: Date.today }), method: :post, class: 'ui button primary' do
     i.fa.fa-lock
-    =< t('.lock', lockable: lockable)
+    =< t('shared.buttons.lock', lockable: lockable.class)

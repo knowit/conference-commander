@@ -8,6 +8,8 @@
       tr
         th = Event.human_attribute_name(:title)
         th = Event.human_attribute_name(:ingress)
+        /th = Event.human_attribute_name(:participations)
+        th = "Antall"
         - if can? :manage, Activity
           th = t('shared.table.actions')
 

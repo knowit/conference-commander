@@ -5,8 +5,6 @@ class EventsController < ApplicationController
   include Crudable
   layout 'crudable'
 
-  respond_to :html
-
   def index
     # NOOP
   end
@@ -17,7 +15,17 @@ class EventsController < ApplicationController
   end
 
   def show
-    respond_with @event
+    if params[:format] == 'xlsx' && !current_user.admin?
+      redirect_to root_path
+    else
+      respond_to do |format|
+        format.xlsx {
+          response.headers['Content-Disposition'] = 'attachment; filename="Deltagerliste.xlsx"'
+          render layout: false
+        }
+        format.html
+      end
+    end
   end
 
   def edit
@@ -43,8 +51,20 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:id, :name, :description, :starting_at,
-      :ending_at, hotels_attributes: [:id, :name, :_destroy],
-      images_attributes: [:file])
+    params.require(:event).permit(
+      :id,
+      :name,
+      :description,
+      :starting_at,
+      :ending_at,
+      hotels_attributes: [
+        :id,
+        :name,
+        :_destroy
+      ],
+      images_attributes: [
+        :file
+      ]
+    )
   end
 end

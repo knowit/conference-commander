@@ -47,6 +47,7 @@ nb:
         allergies: Allergier
         email: E-post
         gender: Kjønn
+        locale: Språk
         name: Navn
         role: Rolle
         first_name: Fornavn
@@ -79,6 +80,9 @@ nb:
         short_description: Kort beskrivelse
         duration: Ønsket lengde (minutter)
         language: Språk
+
+      track:
+        capacity: Publikumskapasitet
 
     models:
       accommodation:

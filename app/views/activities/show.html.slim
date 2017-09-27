@@ -7,8 +7,6 @@
       .image
         = image_tag @activity.images.last.file.url, width: 200
     .content
-      .header
-        = @activity.title
       .meta
         - if @activity.ingress?
           = @activity.ingress
@@ -17,6 +15,10 @@
       .extra
         .ui.horizontal.list
           - if @activity.max_number_of_participants?
+            .item
+              i.users.icon
+              .content
+                = "Deltakere: #{@activity.participations.count}"
             .item
               i.users.icon
               .content

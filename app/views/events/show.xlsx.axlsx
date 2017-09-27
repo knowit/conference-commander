@@ -1,0 +1,25 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: @event.name) do |sheet|
+  sheet.add_row([
+    User.human_attribute_name(:name),
+    Participation.human_attribute_name(:single_room),
+    Participation.human_attribute_name(:request_for_sharing_room),
+    Participation.human_attribute_name(:extended_stay),
+    Participation.human_attribute_name(:extended_stay_from),
+    Participation.human_attribute_name(:extended_stay_to),
+    Activity.model_name.human(count: 2),
+    t('shared.users.passport_information_complete')
+  ])
+  @event.participations.each do |p|
+    sheet.add_row([
+      p.user.full_name,
+      p.single_room,
+      p.request_for_sharing_room,
+      p.extended_stay,
+      p.extended_stay_from,
+      p.extended_stay_to,
+      p.activities.map(&:title).join(', '),
+      p.user.passport_complete?
+    ])
+  end
+end
