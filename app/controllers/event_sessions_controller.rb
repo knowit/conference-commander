@@ -51,7 +51,8 @@ class EventSessionsController < ApplicationController
       :state,
       :language,
       :start_time,
-      :outline
+      :outline,
+      :track_id
     )
   end
 end

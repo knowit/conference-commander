@@ -21,6 +21,7 @@
       .field
         = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid search selection dropdown' }
 
+
       .field
         = f.input :state, collection: EventSession.states.keys.to_a,
           as: :select,
@@ -28,6 +29,8 @@
           label_method: ->(e) { t("enum.event_session.state.#{e}") }
 
       .field: .ui.timedatepicker = f.input :start_time, as: :string
+      .field
+        = f.input :track_id, collection: Track.where(event: @event_session.event), prompt: "Select track", label_method: :name, as: :select, input_html: { class: 'ui fluid search selection dropdown'}
       .field
         = f.input :outline, as: :text
 
