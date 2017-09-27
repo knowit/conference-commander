@@ -53,11 +53,6 @@ ActiveRecord::Schema.define(version: 20170927125050) do
     t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
   end
 
-  create_table "data_migrations", id: false, force: :cascade do |t|
-    t.string "version", null: false
-    t.index ["version"], name: "unique_data_migrations", unique: true
-  end
-
   create_table "event_sessions", id: :serial, force: :cascade do |t|
     t.text "title", null: false
     t.text "description", null: false
