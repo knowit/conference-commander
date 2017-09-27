@@ -32,9 +32,7 @@ class HotelsController < ApplicationController
   end
 
   def update
-    @hotel = @parent.hotels.build(hotel_params)
-
-    if @hotel.save
+    if hotel.update(activity_params)
       redirect_to event_hotels_path(@parent)
     else
       render :edit
