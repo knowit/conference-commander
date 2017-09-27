@@ -1,5 +1,6 @@
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
+    primary.item :hotels, Hotel.model_name.human(count: 2), event_hotels_path(@event)
     primary.item :accomodations, Accommodation.model_name.human(count: 2), event_accommodations_path(@event)
     primary.item :event_sessions, EventSession.model_name.human(count: 2), event_event_sessions_path(@event)
     primary.item :activities, Activity.model_name.human(count: 2), event_activities_path(@event)
