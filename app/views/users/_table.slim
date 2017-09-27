@@ -6,7 +6,7 @@
       tr
         th = User.human_attribute_name(:name)
         th = User.human_attribute_name(:email)
-        th = t('.passport_information_complete')
+        th = t('shared.users.passport_information_complete')
         th = t('shared.table.actions')
     tbody
       - users.each do |user|

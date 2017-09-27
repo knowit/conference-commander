@@ -89,10 +89,12 @@ nb:
       actions: Participations
 
   shared:
-    lock_buttons:
-      lock: "Lock activities"
-      unlock: "Unlock activities"    
-
+    buttons:
+      download_xlsx: Last ned regneark
+      lock: "Lås %{lockable}"
+      unlock: "Åpne %{lockable}"
+    users:
+      passport_information_complete: Fullstendig passinfo registrert?
   pages:
     front:
       all_events: All events

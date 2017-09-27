@@ -54,6 +54,10 @@ en:
       delete: Delete
       edit: Edit
       new: Create
+    buttons:
+      download_xlsx: Download spreadsheet
+      lock: "Lock %{lockable}"
+      unlock: "Unlock %{lockable}"
     image_upload:
       image_row:
         delete: Delete
@@ -62,12 +66,10 @@ en:
         add: Add image
     new_link:
       new_button: Add %{class_name}
-
-    lock_buttons:
-      lock: Lock
     table:
       actions: Actions
-
+    users:
+      passport_information_complete: Passport information complete?
   user:
     table:
       tooltips:
@@ -82,9 +84,6 @@ en:
       organizer: Organizer
       participant: Participant
       speaker: Speaker
-    table:
-      passport_information_complete: Passport information complete?
-
   after_signup:
     steps:
       complete_profile: Complete profile
