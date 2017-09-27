@@ -1,30 +1,33 @@
-.field
-  .ui.checkbox
-    = f.input :single_room
+- if @event.event_type == 'social'
 
-= f.input :request_for_sharing_room, as: :string
-
-.ui.divider
-
-.field
-  .ui.checkbox
-    = f.input :extended_stay
-
-.two.fields
-  .field
-    = f.label :extended_stay_from
-    .ui.calendar
-      = f.text_field :extended_stay_from
-
-  .field
-    = f.label :extended_stay_to
-    .ui.calendar
-      = f.text_field :extended_stay_to
-
-.ui.divider
-- if participation.event.locked?(:id) || participation.event.activities.reject{ |a| a.locked?(:id) }.empty?
-  .ui.center.aligned.segment
-    i.fa.fa-lock
-    =< 'Påmelding til aktiviteter er stengt'
 - else
-  = f.input :activity_ids, as: :select, collection: participation.event.activities.reject{ |a| a.locked?(:id) }, input_html: { class: 'ui fluid dropdown', multiple: '' }
+  .field
+    .ui.checkbox
+      = f.input :single_room
+
+  = f.input :request_for_sharing_room, as: :string
+
+  .ui.divider
+
+  .field
+    .ui.checkbox
+      = f.input :extended_stay
+
+  .two.fields
+    .field
+      = f.label :extended_stay_from
+      .ui.calendar
+        = f.text_field :extended_stay_from
+
+    .field
+      = f.label :extended_stay_to
+      .ui.calendar
+        = f.text_field :extended_stay_to
+
+  .ui.divider
+  - if participation.event.locked?(:id) || participation.event.activities.reject{ |a| a.locked?(:id) }.empty?
+    .ui.center.aligned.segment
+      i.fa.fa-lock
+      =< 'Påmelding til aktiviteter er stengt'
+  - else
+    = f.input :activity_ids, as: :select, collection: participation.event.activities.reject{ |a| a.locked?(:id) }, input_html: { class: 'ui fluid dropdown', multiple: '' }
