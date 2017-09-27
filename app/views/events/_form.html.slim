@@ -1,4 +1,7 @@
 = simple_form_for @event, html: { class: 'ui large form' } do |f|
+  = f.input :event_type, collection: Event.event_types.keys,
+    input_html: { class: 'ui dropdown selection' }
+
   .three.fields
     .field = f.input :name, as: :string
     .field: .ui.timedatepicker = f.input :starting_at, as: :string

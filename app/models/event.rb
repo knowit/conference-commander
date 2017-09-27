@@ -40,6 +40,8 @@ class Event < ApplicationRecord
 
   accepts_nested_attributes_for :tracks, allow_destroy: true
 
+  enum event_type: { conference: 0, social: 1 }
+
   def add_accommodations(quantity, number_of_beds)
     accs = Array.new(quantity, { number_of_beds: number_of_beds })
     accommodations.create(accs)
