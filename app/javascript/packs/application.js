@@ -10,11 +10,6 @@
 import { calendar } from 'semantic-ui-calendar/dist/calendar';
 
 $(document).on('turbolinks:load', function() {
-  $('.calendar').calendar({ type: 'date' });
-  $('.ui.dropdown').dropdown();
-})
-
-$(document).on('turbolinks:load', function() {
-  $('.timedatepicker').calendar({ type: 'datetime' });
+  $('.calendar').calendar({ type: 'datetime' });
   $('.ui.dropdown').dropdown();
 })

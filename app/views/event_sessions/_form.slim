@@ -27,7 +27,7 @@
           input_html: { class: 'ui fluid dropdown' },
           label_method: ->(e) { t("enum.event_session.state.#{e}") }
 
-      .field: .ui.timedatepicker = f.input :start_time, as: :string
+      .field: .ui.calendar = f.input :start_time, as: :string
       .field
         = f.input :outline, as: :text
 
