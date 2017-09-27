@@ -1,4 +1,7 @@
 = simple_form_for @event, html: { class: 'ui large form' } do |f|
+  .ui.checkbox
+    = f.input :is_published, as: :boolean
+
   = f.input :event_type, collection: Event.event_types.keys,
     input_html: { class: 'ui dropdown selection' }
 
@@ -11,7 +14,6 @@
 
   = f.simple_fields_for :images do |image|
     = image.input :file
-
 
   .actions
     = f.submit class: 'ui large primary button'

@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   respond_to :html
 
   def index
-    # NOOP
+    @events = Event.next_events(current_user.administrator?)
   end
 
   def new
@@ -44,7 +44,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:event_type, :id, :name, :description, :starting_at,
-      :ending_at, hotels_attributes: [:id, :name, :_destroy],
+      :ending_at, :is_published, hotels_attributes: [:id, :name, :_destroy],
       images_attributes: [:file])
   end
 end

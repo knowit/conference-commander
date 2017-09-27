@@ -35,6 +35,7 @@ nb:
         ending_at: Slutt
         starting_at: Start
         name: Navn
+        is_published: Publisert
 
       event_session:
         description: Beskrivelse
@@ -108,7 +109,7 @@ nb:
       hotel:
         one: Hotell
         other: Hoteller
-      
+
       passport: Passinformasjon
 
   events:
@@ -144,5 +145,3 @@ nb:
         proposed: Foreslått
         rejected: Avvist
         accepted: Godkjent
-
-

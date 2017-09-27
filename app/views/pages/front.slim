@@ -8,8 +8,9 @@ section#frontpage-top
 
       a.ui.massive.button.knowit-green#show-conferences= t(".all_events")
     div
-      h3= t(".next_event")
-      = render 'events/card', event: @next_event
+      - unless @next_events.empty?
+        h3= t(".next_event")
+        = render 'events/card', event: @next_events.first
 
 section#frontpage-info
   .ui.items
@@ -24,8 +25,8 @@ section#frontpage-info
   .green-divider
 section#frontpage-events
   h1= t(".all_events")
-  = render 'events/table', events: Event.all
-  
+  = render 'events/table', events: @next_events
+
 javascript:
   $('.event-card .image').dimmer({
     on: 'hover'

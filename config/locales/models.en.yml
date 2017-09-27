@@ -14,6 +14,7 @@ en:
         ending_at: End
         starting_at: Start
         name: Name
+        is_published: Published
 
       event_session:
         description: Description
@@ -30,7 +31,7 @@ en:
         role: Role
         first_name: First name
         last_name: Last name
-        birth_date: Birth date 
+        birth_date: Birth date
 
       passport:
         first_name: First name in passport
@@ -87,7 +88,7 @@ en:
       hotel:
         one: Hotel
         other: Hotels
-      
+
       passport: Passport information
 
 
@@ -106,5 +107,3 @@ en:
         proposed: Proposed
         rejected: Rejected
         accepted: Accepted
-
-

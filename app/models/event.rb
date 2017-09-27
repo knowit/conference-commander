@@ -42,6 +42,16 @@ class Event < ApplicationRecord
 
   enum event_type: { conference: 0, social: 1 }
 
+  scope :next_events, -> (show_draft) {
+    selection = where("starting_at > ?", Time.now)
+
+    unless show_draft
+      selection = selection.where(is_published: true)
+    end
+
+    selection.order(:starting_at)
+  }
+
   def add_accommodations(quantity, number_of_beds)
     accs = Array.new(quantity, { number_of_beds: number_of_beds })
     accommodations.create(accs)

@@ -11,6 +11,6 @@ class PagesController < ApplicationController
   def front
     @frontpage = true
     @current_event = Event.last
-    @next_event = Event.all.order(:starting_at).first
+    @next_events = Event.next_events(current_user.administrator?)
   end
 end
