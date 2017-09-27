@@ -26,6 +26,7 @@ en:
         allergies: Allergies
         email: E-mail
         gender: Gender
+        locale: Locale
         name: Name
         role: Role
         first_name: First name

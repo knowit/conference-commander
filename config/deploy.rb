@@ -4,7 +4,7 @@ set :application, 'conference-commander'
 
 # The environment stages
 set :stages, %w(production)
-# set :repo_url, 'ssh://git@stash.knowit.no:7999/neocv/cvreg.git'
+
 set :repo_url, 'git@github.com:knowit/conference-commander.git'
 
 set :pty,             true

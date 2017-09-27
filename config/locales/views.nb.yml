@@ -83,6 +83,9 @@ nb:
       female: Kvinne
       unspecified: Uspesifisert
     empty: Ingen %{name}
+    locale:
+      en: English
+      nb: Norsk (bokmål)
 
   participations:
     table:

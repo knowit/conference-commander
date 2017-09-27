@@ -107,8 +107,9 @@ en:
       female: Female
       unspecified: Other/Unspecified
     empty: No %{name}
-
-
+    locale:
+      en: English
+      nb: Norsk (bokmål)
   pages:
     front:
       all_events: All events
