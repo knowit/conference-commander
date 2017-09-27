@@ -59,6 +59,9 @@ en:
         duration: Requested duration (minutes)
         language: Language used
 
+      track:
+        capacity: Audience capacity
+
     models:
       accommodation:
         one: Room

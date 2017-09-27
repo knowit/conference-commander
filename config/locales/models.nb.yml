@@ -80,6 +80,9 @@ nb:
         duration: Ønsket lengde (minutter)
         language: Språk
 
+      track:
+        capacity: Publikumskapasitet
+
     models:
       accommodation:
         one: Rom
