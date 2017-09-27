@@ -1,7 +1,20 @@
 = render 'events/menu', event: @event
 
-- @hotel.images.each do |image|
-  = image_tag image.file.url, width: 800
+- breadcrumb :hotels, @event
 
-= image_tag google_map(@hotel.full_address), width: 500
+.ui.items
+  .item
+    - unless @hotel.images.nil?
+      - @hotel.images.each do |image|
+        .image
+          = image_tag image.file.url, width: 800
+    .content
+      = @hotel.full_address
+  .item
+    .content
+      - if @hotel.description
+        .description
+          = @hotel.description
+    .image
+      = image_tag google_map(@hotel.full_address), width: 800
 

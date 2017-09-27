@@ -3,6 +3,7 @@
     - @hotel.errors.full_messages.each do |msg|
       li = msg
   = f.input :name, as: :string
+  = f.input :description, as: :string
   .two.fields
     .field
       = f.input :address, as: :string

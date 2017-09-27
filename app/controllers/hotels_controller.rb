@@ -14,8 +14,13 @@ class HotelsController < ApplicationController
   end
 
   def create
-    @hotel.save
-    redirect_to event_hotels_path
+    @hotel = @parent.hotels.build(hotel_params)
+
+    if @hotel.save
+      redirect_to event_hotels_path(@parent)
+    else
+      render :new
+    end
   end
 
   def index
@@ -27,8 +32,13 @@ class HotelsController < ApplicationController
   end
 
   def update
-    @hotel.save
-    redirect_to event_hotels_path
+    @hotel = @parent.hotels.build(hotel_params)
+
+    if @hotel.save
+      redirect_to event_hotels_path(@parent)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -46,6 +56,7 @@ class HotelsController < ApplicationController
     params.require(:hotel).permit(
       :event_id,
       :name,
+      :description,
       :address,
       :country,
       :latitude,

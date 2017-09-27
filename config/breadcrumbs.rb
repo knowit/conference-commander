@@ -72,3 +72,15 @@ crumb :track do |track, event|
   parent :event, event
   link track.title, event_track_path(track)
 end
+
+crumb :hotels do |event|
+  parent :events
+  parent :event, event
+  link Hotel.model_name.human(count: 2), event_hotels_path
+end
+
+crumb :hotel do |hotel, event|
+  parent :events
+  parent :event, event
+  link hotel.name, event_hotel_path(hotel)
+end

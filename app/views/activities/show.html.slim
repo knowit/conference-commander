@@ -1,9 +1,10 @@
 = render 'events/menu', event: @event
 
 - breadcrumb :activities, @event
+
 .ui.items
   .item
-    - if @activity.images.nil?
+    - unless @activity.images.nil?
       .image
         = image_tag @activity.images.last.file.url, width: 200
     .content
