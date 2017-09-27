@@ -232,16 +232,13 @@ ActiveRecord::Schema.define(version: 20170927143234) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_name"
+    t.string "passport_first_name"
+    t.string "passport_last_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"
     t.string "passport_nationality"
     t.date "birth_date"
-    t.string "encrypted_issued_at"
-    t.string "encrypted_issued_at_iv"
-    t.string "encrypted_expires_at"
-    t.string "encrypted_expires_at_iv"
     t.string "locale", default: "en", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
