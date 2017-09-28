@@ -37,3 +37,8 @@ input, select, textarea {
 span.translation_missing {
   color: $knowit-complementary-red-color;
 }
+
+.ui.table td a {
+  color: $knowit-primary-green-color;
+  font-weight: 500;
+}

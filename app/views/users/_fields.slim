@@ -23,7 +23,7 @@ h3= Passport.model_name.human
   = f.label :locale
   - User::ALLOWED_LOCALES.each do |locale|
     .field
-      .ul.radio.checkbox
+      .ui.radio.checkbox
         = f.radio_button :locale, locale
         = f.label t("misc.locale.#{locale}")
 

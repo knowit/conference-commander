@@ -18,7 +18,7 @@ class Ability
   end
 
   def common_abilities
-    can :update, User, user_id:  @user.id
+    can :update, User, id:  @user.id
     can :read, User
     can :stop_impersonating, User
     can :update, EventSession, submitter_id: @user.id # allow users to manage own event sessions
@@ -39,8 +39,8 @@ class Ability
 
   def participant_abilities
     common_abilities
-    can :read, [Event, Participation, Activity, EventSession]
-    can :update, Participation, user_id: @user.id
+    can :read, [Event, Activity, EventSession]
+    can [:create, :read, :update], Participation, user_id: @user.id
   end
 
   def guest_abilities

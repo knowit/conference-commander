@@ -2,6 +2,7 @@
 @import "mixins";
 
 html, body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   background-color: $knowit-complementary-gray-color-lightest-tint25;
 }
 
@@ -124,7 +125,6 @@ h2 {
 
 #auxiliary-menu {
   text-align: right;
-  font-weight: 500;
   margin-bottom: 100px;
 
   a {
