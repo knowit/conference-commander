@@ -15,17 +15,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    if params[:format] == 'xlsx' && !current_user.admin?
-      redirect_to root_path
-    else
-      respond_to do |format|
-        format.xlsx {
-          response.headers['Content-Disposition'] = 'attachment; filename="Deltagerliste.xlsx"'
-          render layout: false
-        }
-        format.html
-      end
-    end
+    respond_with @event
   end
 
   def edit

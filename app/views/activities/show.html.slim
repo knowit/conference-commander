@@ -4,7 +4,7 @@
 
 .ui.items
   .item
-    - unless @activity.images.nil?
+    - unless @activity.images.blank?
       .image
         = image_tag @activity.images.last.file.url, width: 200
     .content

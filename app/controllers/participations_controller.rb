@@ -8,7 +8,17 @@ class ParticipationsController < ApplicationController
   load_and_authorize_resource through: :event
 
   def index
-    respond_with @participations
+    if params[:format] == 'xlsx' && !current_user.admin?
+      redirect_to root_path
+    else
+      respond_to do |format|
+        format.xlsx {
+          response.headers['Content-Disposition'] = 'attachment; filename="Deltagerliste.xlsx"'
+          render layout: false
+        }
+        format.html
+      end
+    end
   end
 
   def show
