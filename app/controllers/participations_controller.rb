@@ -10,7 +10,7 @@ class ParticipationsController < ApplicationController
   load_and_authorize_resource through: :event
 
   def index
-    if params[:format] == 'xlsx' && !current_user.admin?
+    if params[:format] == 'xlsx' && !current_user.administrator?
       redirect_to root_path
     else
       respond_to do |format|

@@ -7,7 +7,7 @@
 
 - if can? :manage, @event
 
-  - if current_user.admin?
+  - if current_user.administrator?
     = link_to event_participations_path(@event, format: :xlsx), class: 'ui button secondary' do
       i.icon.download
       = t('shared.buttons.download_xlsx')

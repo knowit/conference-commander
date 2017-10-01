@@ -13,10 +13,7 @@ class EventSessionsController < ApplicationController
   end
 
   def create
-    if !current_user.administrator?
-      @event_session.submitter = current_user
-    end
-
+    @event_session.submitter = current_user unless current_user.administrator?
     @event_session.save
     respond_with @event, location: event_event_sessions_path(@event)
   end

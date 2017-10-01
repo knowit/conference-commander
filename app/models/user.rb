@@ -71,7 +71,7 @@ class User < ApplicationRecord
     valid?
   end
 
-  def admin?
+  def administrator?
     role == 'administrator'
   end
 
