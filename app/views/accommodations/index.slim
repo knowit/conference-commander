@@ -1,5 +1,7 @@
 = render 'events/menu', event: @event
 
+- breadcrumb :accommodations, @event
+
 .ui.segment
   - unless @accommodations.empty?
     = render 'table'

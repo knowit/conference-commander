@@ -20,8 +20,12 @@
           - if user_signed_in?
             td
               - unless event.user_already_signed_up? current_user
-                = link_to fa_icon('plus lg'), new_event_participation_path(event)
+                = link_to new_event_participation_path(event), class: 'ui mini secondary button' do
+                  i.icon.plus
+                  = t('.add_participation')
               - else
-                = link_to fa_icon('pencil lg'), edit_event_participation_path(event, id: event.user_participation(current_user))
+                = link_to edit_event_participation_path(event, id: event.user_participation(current_user)), class: 'ui mini primary button' do
+                  i.icon.pencil
+                  = t('.edit_participation')
             - if can? :manage, event
-              td = render 'shared/action_links', object: event
+              td.actions = render 'shared/action_links', object: event

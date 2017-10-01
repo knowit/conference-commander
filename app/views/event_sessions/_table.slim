@@ -9,7 +9,8 @@
         th = EventSession.human_attribute_name(:duration)
         th = EventSession.human_attribute_name(:session_type)
         th = EventSession.human_attribute_name(:state)
-        th = t('shared.table.actions')
+        - if can? :manage, EventSession
+          th = t('shared.table.actions')
     tbody
       - event_sessions.each do |event_session|
         tr
@@ -17,9 +18,9 @@
           td = event_session.submitter.full_name
           td = event_session.duration
           td 
-            .ui.mini.label= event_session.session_type.upcase
+            .ui.tiny.label= event_session.session_type.upcase
           td
-            .ui.mini.label= event_session.state.upcase
-          td
-            - if can? :manage, event_session
+            .ui.tiny.label= event_session.state.upcase
+          - if can? :manage, event_session
+            td.actions
               = render 'shared/action_links', object: event_session

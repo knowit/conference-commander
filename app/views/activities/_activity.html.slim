@@ -3,4 +3,4 @@ tr
   td = activity.ingress
   td = activity.participations.count
   - if can? :manage, activity
-    td = render 'shared/action_links', object: activity
+    td.actions = render 'shared/action_links', object: activity

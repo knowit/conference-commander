@@ -55,6 +55,12 @@ crumb :event_session do |event_session, event|
   link event_session.title, event_event_session_path(event_session)
 end
 
+crumb :accommodations do |event|
+  parent :events
+  parent :event, event
+  link Accommodation.model_name.human(count:2), event_accommodations_path(event)
+end
+
 crumb :participations do |event|
   parent :events
   parent :event, event
@@ -78,7 +84,6 @@ crumb :venues do |event|
   parent :event, event
   link Venue.model_name.human(count: 2), event_venues_path
 end
-
 
 crumb :hotels do |event|
   parent :events

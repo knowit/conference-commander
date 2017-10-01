@@ -55,7 +55,6 @@ h2 {
   form .actions {
     margin-top: 1em;
     padding-top: 1em;
-    border-top: 2px solid $knowit-black-color;
   }
 
   // .ui.divider {
@@ -125,7 +124,7 @@ h2 {
 
 #auxiliary-menu {
   text-align: right;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
   a {
     font-size: 18px;
@@ -158,6 +157,7 @@ h2 {
 
 .ui.page.grid {
   padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 
@@ -231,4 +231,9 @@ footer {
     width: 42px;
     padding: 12px;
   }
+}
+
+td.actions {
+  text-align: right;
+  max-width: 10%;
 }

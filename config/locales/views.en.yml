@@ -6,6 +6,8 @@ en:
       registration: Regisration
     table:
       actions: Actions
+      add_participation: Add participation
+      edit_participation: Edit participation
     participants: Participants
     talks: Talks
 
@@ -17,6 +19,10 @@ en:
     edit: My participation
     table:
       actions: Actions
+    index:
+      list_single_room_participants: List single room participants
+      list_allergic_participants: List allergic participants
+
   activities:
     table:
       actions: Actions
@@ -55,7 +61,7 @@ en:
       edit: Edit
       new: Create
     buttons:
-      download_xlsx: Download spreadsheet
+      download_xlsx: Download as spreadsheet
       lock: "Lock %{lockable}"
       unlock: "Unlock %{lockable}"
     image_upload:

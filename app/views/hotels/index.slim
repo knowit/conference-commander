@@ -1,5 +1,7 @@
 = render 'events/menu', event: @event
 
+- breadcrumb :hotels, @event
+
 .ui.segment
   - unless @hotels.empty?
     table.ui.very.basic.table
@@ -9,7 +11,8 @@
           th = Hotel.human_attribute_name(:address)
           th = Hotel.human_attribute_name(:country)
           th = t('.coordinates')
-          th = t('shared.table.actions')
+          - if can? :manage, hotel
+            th = t('shared.table.actions')
       tbody
         - @hotels.each do |hotel|
           tr
@@ -18,4 +21,4 @@
             td = hotel.country
             td = "#{hotel.latitude}, #{hotel.longitude}"
             - if can? :manage, hotel
-              td = render 'shared/action_links', object: hotel
+              td.actions = render 'shared/action_links', object: hotel

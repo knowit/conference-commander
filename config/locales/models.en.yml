@@ -108,7 +108,7 @@ en:
     event_session:
       session_type:
         lightning_talk: Lightning talk
-        presentation: Participation
+        presentation: Presentation
         workshop: Workshop
       state:
         proposed: Proposed

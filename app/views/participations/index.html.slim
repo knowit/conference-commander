@@ -6,9 +6,16 @@
   = render 'table', participations: @participations
 
 - if can? :manage, @event
-  = link_to "Add participant", new_event_participation_path(@event), class: 'ui button secondary'
+
   - if current_user.admin?
-    = link_to t('shared.buttons.download_xlsx'), event_participations_path(@event, format: :xlsx), class: 'ui button primary'
-  = link_to "Deltakere med enkeltrom", single_room_participants_event_participations_path(@event), class: 'ui button primary'
-  = link_to "Deltakere med allergier", event_allergies_path(@event), class: 'ui button primary'
+    = link_to event_participations_path(@event, format: :xlsx), class: 'ui button secondary' do
+      i.icon.download
+      = t('shared.buttons.download_xlsx')
+
+  / = link_to single_room_participants_event_participations_path(@event), class: 'ui button secondary' do
+  /   = t('.list_single_room_participants')
+
+  / = link_to event_allergies_path(@event), class: 'ui button secondary' do
+  /   = t('.list_allergic_participants')
+
   = render 'shared/lock_buttons', lockable: @event

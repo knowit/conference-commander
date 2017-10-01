@@ -6,4 +6,4 @@ tr
     td = lock.lockable
   td = lock.locked_at
   - if can? :manage, lock
-    td = render 'shared/action_links', object: lock
+    td.actions = render 'shared/action_links', object: lock

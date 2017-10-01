@@ -4,6 +4,8 @@ class ParticipationsController < ApplicationController
 
   layout 'crudable'
 
+  before_action :set_parent
+
   load_and_authorize_resource :event
   load_and_authorize_resource through: :event
 
@@ -50,6 +52,10 @@ class ParticipationsController < ApplicationController
   end
 
   private
+
+  def set_parent
+    @parent ||= Event.find(params[:event_id])
+  end
 
   def participation_params
     params.require(:participation).permit(:user_id, :event_id, :single_room, :request_for_sharing_room, :extended_stay,
