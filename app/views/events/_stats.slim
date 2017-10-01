@@ -1,0 +1,36 @@
+.ui.huge.horizontal.divided.list.inverted.full-width#event-stats
+  .item
+    i.large.building.icon
+    .content
+      .header= @event.hotels.count
+      = Hotel.model_name.human(count: 2)
+  .item
+    i.large.hotel.icon
+    .content
+      .header = @event.accommodations.count
+      = Accommodation.model_name.human(count: 2)
+  .item
+    i.large.map.marker.icon
+    .content
+      .header = @event.event_sessions.count
+      = EventSession.model_name.human(count: 2)
+  .item
+    i.large.bicycle.icon
+    .content
+      .header = @event.activities.count
+      = Activity.model_name.human(count: 2)
+  .item
+    i.large.cubes.icon
+    .content
+      .header = @event.venues.count
+      = Venue.model_name.human(count: 2)
+  .item
+    i.large.cube.icon
+    .content
+      .header = @event.tracks.count
+      = Track.model_name.human(count: 2)
+  .item
+    i.large.user.icon
+    .content
+      .header = @event.users.count
+      = Participation.model_name.human(count: 2)

@@ -1,0 +1,17 @@
+- unless venues.empty?
+  table.ui.very.basic.large.celled.padded.table
+    thead
+      tr
+        th = Venue.human_attribute_name(:name)
+        th = Venue.human_attribute_name(:description)
+        th = Venue.human_attribute_name(:capacity)
+        - if can? :manage, Venue
+          th = t('shared.table.actions')
+    tbody
+      - venues.each do |venue|
+        tr
+          td = link_to venue.name, event_venue_path(@event, venue)
+          td = venue.description
+          td = venue.capacity
+          - if can? :manage, event
+            td = render 'shared/action_links', object: venue 

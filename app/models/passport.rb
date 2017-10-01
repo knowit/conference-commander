@@ -22,6 +22,7 @@ class Passport < ApplicationRecord
 
   ATTRIBUTES = %i[first_name last_name number nationality issued_at expires_at]
   ATTRIBUTES.each do |attribute|
+    attribute attribute
     attr_encrypted attribute, key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT']
   end
 

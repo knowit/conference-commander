@@ -34,6 +34,8 @@
 
 class User < ApplicationRecord
 
+  ALLOWED_LOCALES = %i(nb en)
+
   has_many :participations
   has_many :event_sessions
 
@@ -42,15 +44,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
+  validates :locale, presence: true, inclusion: { in: ALLOWED_LOCALES.map(&:to_s) }
 
   delegate :complete?, to: :passport, prefix: true, allow_nil: true
-
-  # with_options key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT'] do |user|
-  #   user.attr_encrypted :passport_first_name
-  #   user.attr_encrypted :passport_last_name
-  #   user.attr_encrypted :passport_number
-  #   user.attr_encrypted :passport_nationality
-  # end
 
   accepts_nested_attributes_for :passport
 

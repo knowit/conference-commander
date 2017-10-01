@@ -1,0 +1,9 @@
+ui.form
+  = simple_form_for [@parent, @venue] do |f|
+    .field
+      = f.input :name, as: :string
+    .field
+      = f.input :description, as: :text
+    .field
+      = f.input :capacity
+    = f.button :submit

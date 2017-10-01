@@ -31,4 +31,9 @@ class Hotel < ApplicationRecord
     name
   end
 
+  def title
+    name
+  end
+
+
 end

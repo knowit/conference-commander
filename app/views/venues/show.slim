@@ -1,0 +1,7 @@
+= render 'events/menu', event: @event
+
+- breadcrumb :venues, @event
+
+ui.segment
+  = @venue.name
+  = @venue.capacity

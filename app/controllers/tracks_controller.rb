@@ -6,7 +6,7 @@ class TracksController < ApplicationController
   before_action :set_parent
 
   load_and_authorize_resource :event
-  load_and_authorize_resource through: :event
+  load_and_authorize_resource
 
   def index
     @tracks = @event.tracks
@@ -43,9 +43,8 @@ class TracksController < ApplicationController
 
   def track_params
     params.require(:track).permit(
-      :event_id,
-      :name,
-      :capacity
+      :venue_id,
+      :name
     )
   end
 end

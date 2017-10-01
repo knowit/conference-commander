@@ -4,11 +4,23 @@ class ParticipationsController < ApplicationController
 
   layout 'crudable'
 
+  before_action :set_parent
+
   load_and_authorize_resource :event
   load_and_authorize_resource through: :event
 
   def index
-    respond_with @participations
+    if params[:format] == 'xlsx' && !current_user.admin?
+      redirect_to root_path
+    else
+      respond_to do |format|
+        format.xlsx {
+          response.headers['Content-Disposition'] = 'attachment; filename="Deltagerliste.xlsx"'
+          render layout: false
+        }
+        format.html
+      end
+    end
   end
 
   def show
@@ -40,6 +52,10 @@ class ParticipationsController < ApplicationController
   end
 
   private
+
+  def set_parent
+    @parent ||= Event.find(params[:event_id])
+  end
 
   def participation_params
     params.require(:participation).permit(:user_id, :event_id, :single_room, :request_for_sharing_room, :extended_stay,

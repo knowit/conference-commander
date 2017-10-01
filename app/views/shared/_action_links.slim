@@ -1,6 +1,7 @@
-- if @parent
-  = link_to fa_icon('pencil lg'), edit_polymorphic_path([@parent, object])
-  =< link_to fa_icon('trash lg'), polymorphic_path([@parent, object]), method: :delete
-- else
-  = link_to fa_icon('pencil lg'), edit_polymorphic_path(object)
-  =< link_to fa_icon('trash lg'), polymorphic_path(object), method: :delete
+- polymorphic_object = @parent ? [@parent, object] : object
+
+= link_to edit_polymorphic_path(polymorphic_object) do
+  i.large.icon.pencil
+=< link_to polymorphic_path(polymorphic_object), method: :delete do
+  i.large.icon.trash
+

@@ -19,11 +19,12 @@ class Event < ApplicationRecord
   has_many :accommodations, dependent: :destroy
   has_many :hotels,         dependent: :destroy
   has_many :event_sessions, dependent: :destroy
-  has_many :users, through: :participations
-  has_many :activities
+  has_many :activities,     dependent: :destroy
+  has_many :venues,         dependent: :destroy
 
-  has_many :venues
-  has_many :tracks, dependent: :destroy
+  has_many :tracks, through: :venues, dependent: :destroy
+  has_many :users, through: :participations
+
   has_many :participants, through: :participations, source: :user
 
   has_many :flight_reservations
@@ -38,7 +39,7 @@ class Event < ApplicationRecord
   validates :starting_at, presence: true
   validates :ending_at, presence: true
 
-  accepts_nested_attributes_for :tracks, allow_destroy: true
+  accepts_nested_attributes_for :tracks, :venues, allow_destroy: true
 
   enum event_type: { conference: 0, social: 1 }
 
@@ -67,6 +68,10 @@ class Event < ApplicationRecord
 
   def image_url
     images.first.file.url
+  end
+
+  def dates
+    starting_at.to_date.upto(ending_at.to_date)
   end
 
   def to_s

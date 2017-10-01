@@ -1,6 +1,6 @@
 @import 'variables';
 
-.ui:not(.label), input, select, textarea {
+.ui:not(.label):not(.circular), input, select, textarea {
   border-radius: 0px !important;
 }
 
@@ -36,4 +36,9 @@ input, select, textarea {
 
 span.translation_missing {
   color: $knowit-complementary-red-color;
+}
+
+.ui.table td a {
+  color: $knowit-primary-green-color;
+  font-weight: 600;
 }

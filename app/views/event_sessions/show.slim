@@ -1,38 +1,40 @@
 = render 'events/menu', event: @event
 
-ui.segment
+- breadcrumb :event_sessions, @event
+
+.ui.segment
   table.ui.very.basic.small.table
     tbody
       tr
-        td = User.human_attribute_name(:name)
+        th = User.human_attribute_name(:name)
         td = @event_session.submitter.full_name
       tr
-        td = User.human_attribute_name(:email)
+        th = User.human_attribute_name(:email)
         td = @event_session.submitter.email
       tr
-        td = EventSession.human_attribute_name(:session_type)
+        th = EventSession.human_attribute_name(:session_type)
         td = @event_session.session_type
       tr
-        td = EventSession.human_attribute_name(:duration)
+        th = EventSession.human_attribute_name(:duration)
         td = @event_session.duration
       tr
-        td = EventSession.human_attribute_name(:state)
+        th = EventSession.human_attribute_name(:state)
         td = @event_session.state
       tr
-        td = EventSession.human_attribute_name(:start_time)
+        th = EventSession.human_attribute_name(:start_time)
         td = @event_session.start_time
       tr
-        td = EventSession.human_attribute_name(:track)
+        th = EventSession.human_attribute_name(:track)
         td = @event_session.track
       tr
-        td = EventSession.human_attribute_name(:language)
+        th = EventSession.human_attribute_name(:language)
         td = @event_session.language
       tr
-        td = EventSession.human_attribute_name(:title)
+        th = EventSession.human_attribute_name(:title)
         td = @event_session.title
       tr
-        td = EventSession.human_attribute_name(:short_description)
+        th = EventSession.human_attribute_name(:short_description)
         td = @event_session.short_description
       tr
-        td = EventSession.human_attribute_name(:outline)
+        th = EventSession.human_attribute_name(:outline)
         td = @event_session.outline

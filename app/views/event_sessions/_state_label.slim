@@ -1,0 +1,8 @@
+.ui.very.basic.label class="session-#{session.state}"
+  - case session.state
+  - when 'accepted'
+    i.icon.check
+  - when 'rejected'
+    i.icon.cancel
+
+  =<> session.state.upcase

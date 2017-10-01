@@ -2,7 +2,56 @@
     font-family: Brushup;
     src: url(asset-path('brushup.otf')) format("opentype");
 }
+
 @font-face {
     font-family: BrushupToo;
     src: url(asset-path('brushuptoo.otf')) format("opentype");
+}
+
+@font-face {
+    font-family: Raleway;
+    font-weight: bold;
+    font-style: normal;
+    src: url(asset-path('raleway-bold.ttf')) format("truetype");
+}
+
+@font-face {
+    font-family: Raleway;
+    font-weight: 200;
+    font-style: normal;
+    src: url(asset-path('raleway-light.ttf')) format("truetype");
+}
+
+@font-face {
+    font-family: Raleway;
+    font-weight: 200;
+    font-style: italic;
+    src: url(asset-path('raleway-lightitalic.ttf')) format("truetype");
+}
+
+@font-face {
+    font-family: Raleway;
+    font-weight: 500;
+    font-style: normal;
+    src: url(asset-path('raleway-medium.ttf')) format("truetype");
+}
+
+@font-face {
+    font-family: Raleway;
+    font-weight: 400;
+    font-style: normal;
+    src: url(asset-path('raleway-regular.ttf')) format("truetype");
+}
+
+@font-face {
+    font-family: Raleway;
+    font-weight: 600;
+    font-style: normal;
+    src: url(asset-path('raleway-semibold.ttf')) format("truetype");
+}
+@font-face {
+    font-family: Raleway;
+    font-weight: 400;
+    font-style: italic;
+    src: url(asset-path('raleway-semibolditalic.ttf')) format("truetype");
 }

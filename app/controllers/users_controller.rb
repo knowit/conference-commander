@@ -60,8 +60,23 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
-      :first_name, :last_name, :email, :gender, :role, :allergies, :birth_date,
-      passport_attributes: [:id, :first_name, :last_name, :number, :nationality, :issued_at, :expires_at]
+      :first_name,
+      :last_name,
+      :email,
+      :gender,
+      :locale,
+      :role,
+      :allergies,
+      :birth_date,
+      passport_attributes: [
+        :id,
+        :first_name,
+        :last_name,
+        :number,
+        :nationality,
+        :issued_at,
+        :expires_at
+      ]
     )
   end
 

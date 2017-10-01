@@ -18,14 +18,10 @@ class Ability
   end
 
   def common_abilities
-    can :update, [User] do |user|
-      @user == user # allow users to manage themselves
-    end
+    can :update, User, id:  @user.id
     can :read, User
     can :stop_impersonating, User
-    can :manage, [EventSession] do |event_session|
-      event_session.submitter.nil? || event_session.submitter == @user # allow users to manage own event sessions
-    end
+    can :update, EventSession, submitter_id: @user.id # allow users to manage own event sessions
   end
 
   def administrator_abilities
@@ -43,13 +39,11 @@ class Ability
 
   def participant_abilities
     common_abilities
-    can :read, [Event, Participation, Activity, EventSession]
-    can :manage, [Participation] do |p|
-      p.user.nil? || p.user == @user # allow users to manage own participation
-    end
+    can :read, [Event, Activity, EventSession]
+    can [:create, :read, :update], Participation, user_id: @user.id
   end
 
   def guest_abilities
-    can :read, [Event]
+    can :read, Event
   end
 end

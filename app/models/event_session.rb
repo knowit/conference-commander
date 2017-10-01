@@ -41,8 +41,11 @@ class EventSession < ApplicationRecord
   validates :description, presence: true
   validates :duration, presence: true, numericality: { only_integer: true, less_than_or_equal_to: MAX_ALLOWED_TIME_ALLOTMENT }
 
+  scope :by_date, ->(date) { where(start_time: date.all_day) }
+  scope :program, ->(date) { where(state: %i[accepted proposed]) }
+
   def to_s
-    "EventSession"
+    title
   end
 
   def short_description

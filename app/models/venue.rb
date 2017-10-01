@@ -12,4 +12,8 @@
 class Venue < ApplicationRecord
   belongs_to :event
   has_many :tracks
+
+  def to_s
+    name
+  end
 end

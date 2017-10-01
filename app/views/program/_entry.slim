@@ -1,0 +1,30 @@
+.ui.item
+  / .ui.tiny.image
+  /   = image_tag 'placeholder.png'
+  .content
+    .header.full-width
+      =< session.title
+      span.time 
+        = session.start_time.strftime('%H:%M') 
+        |&ndash;
+        = session.end_time.strftime('%H:%M')
+        |&nbsp;
+    .description
+      = session.outline
+    .extra
+      br
+      .ui.very.basic.label
+        = session.session_type.upcase
+      .ui.very.basic.label 
+        i.map.icon
+        =<> session.track&.venue&.name
+      .ui.very.very.basic.label 
+        i.user.icon
+        =<> session.submitter.full_name
+      .ui.very.basic.label 
+        i.clock.icon
+        =<> session.duration
+        |  min
+      .pull-right
+        = render 'event_sessions/state_label', session: session
+

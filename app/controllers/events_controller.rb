@@ -5,10 +5,8 @@ class EventsController < ApplicationController
   include Crudable
   layout 'crudable'
 
-  respond_to :html
-
   def index
-    @events = Event.next_events(current_user.administrator?)
+    # NOOP
   end
 
   def new
@@ -43,8 +41,20 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_type, :id, :name, :description, :starting_at,
-      :ending_at, :is_published, hotels_attributes: [:id, :name, :_destroy],
-      images_attributes: [:file])
+    params.require(:event).permit(
+      :id,
+      :name,
+      :description,
+      :starting_at,
+      :ending_at,
+      hotels_attributes: [
+        :id,
+        :name,
+        :_destroy
+      ],
+      images_attributes: [
+        :file
+      ]
+    )
   end
 end

@@ -2,7 +2,9 @@
 
   = raw(breadcrumbs separator: fa_icon('angle-right lg'))
 
-  = render 'shared/crud_title'
+  = render 'shared/crud_header', parent: @parent, resource: crudable
+
+
   = yield
 
 

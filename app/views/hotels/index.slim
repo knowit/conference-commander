@@ -1,20 +1,24 @@
 = render 'events/menu', event: @event
 
-- unless @hotels.empty?
-  table.ui.celled.table
-    thead
-      tr
-        th = Hotel.human_attribute_name(:name)
-        th = Hotel.human_attribute_name(:address)
-        th = Hotel.human_attribute_name(:country)
-        th = t('.coordinates')
-        th = t('shared.table.actions')
-    tbody
-      - @hotels.each do |hotel|
+- breadcrumb :hotels, @event
+
+.ui.segment
+  - unless @hotels.empty?
+    table.ui.very.basic.celled.table
+      thead
         tr
-          td = link_to hotel.name, event_hotel_path(@parent, hotel)
-          td = hotel.address
-          td = hotel.country
-          td = "#{hotel.latitude}, #{hotel.longitude}"
-          - if can? :manage, hotel
-            td = render 'shared/action_links', object: hotel
+          th = Hotel.human_attribute_name(:name)
+          th = Hotel.human_attribute_name(:address)
+          th = Hotel.human_attribute_name(:country)
+          th = t('.coordinates')
+          - if can? :manage, Hotel
+            th = t('shared.table.actions')
+      tbody
+        - @hotels.each do |hotel|
+          tr
+            td = link_to hotel.name, event_hotel_path(@parent, hotel)
+            td = hotel.address
+            td = hotel.country
+            td = "#{hotel.latitude}, #{hotel.longitude}"
+            - if can? :manage, hotel
+              td.actions = render 'shared/action_links', object: hotel

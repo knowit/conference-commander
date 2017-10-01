@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927143917) do
+ActiveRecord::Schema.define(version: 20171001164422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20170927143917) do
     t.bigint "event_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "description"
     t.index ["event_id"], name: "index_hotels_on_event_id"
   end
 
@@ -214,10 +215,8 @@ ActiveRecord::Schema.define(version: 20170927143917) do
   create_table "tracks", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "event_id"
     t.text "name"
-    t.integer "capacity"
-    t.index ["event_id"], name: "index_tracks_on_event_id"
+    t.integer "venue_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -236,14 +235,8 @@ ActiveRecord::Schema.define(version: 20170927143917) do
     t.date "passport_expires_at"
     t.string "passport_nationality"
     t.date "birth_date"
-    t.string "encrypted_passport_first_name"
-    t.string "encrypted_passport_first_name_iv"
-    t.string "encrypted_passport_last_name"
-    t.string "encrypted_passport_last_name_iv"
-    t.string "encrypted_passport_number"
-    t.string "encrypted_passport_number_iv"
-    t.string "encrypted_passport_nationality"
-    t.string "encrypted_passport_nationality_iv"
+    t.string "locale", default: "en", null: false
+    t.text "about"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
@@ -252,6 +245,8 @@ ActiveRecord::Schema.define(version: 20170927143917) do
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "capacity"
     t.index ["event_id"], name: "index_venues_on_event_id"
   end
 

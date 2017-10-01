@@ -40,5 +40,4 @@ class AfterSignupController < ApplicationController
       params.require(:participation).permit!
     end
   end
-
 end
