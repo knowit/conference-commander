@@ -31,7 +31,7 @@ h3= Passport.model_name.human
 
 = f.input :about, as: :text
 
-- if current_user.aadministrator?
+- if current_user.administrator?
   = f.input :role, collection: User.roles.keys.to_a,
     input_html: { class: 'ui dropdown selection' },
     label_method: lambda { |v| t("users.edit.#{v}") }

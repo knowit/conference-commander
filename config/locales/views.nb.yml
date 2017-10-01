@@ -18,7 +18,7 @@ nb:
       update: Oppdater %{model}
     actions:
       index: '%{model}'
-      show: '%{model}: %{record}'
+      show: '%{record}'
       edit: Rediger %{model}
       new: Opprett %{model}
       delete: Slett %{model}
