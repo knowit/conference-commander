@@ -2,7 +2,7 @@
 @import "mixins";
 
 html, body {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important;
   background-color: $knowit-complementary-gray-color-lightest-tint25;
 }
 
@@ -40,7 +40,7 @@ h1.title {
 
 h1, h2, h3, h4, h5 {
   font-weight: 800;
-  font-family: 'Raleway';
+  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 h2 {
@@ -58,10 +58,10 @@ h2 {
     border-top: 2px solid $knowit-black-color;
   }
 
-  .ui.divider {
-    border: 0px;
-    border-top: 1px solid $knowit-primary-green-color-lighter;
-  }
+  // .ui.divider {
+  //   border: 0px;
+  //   border-top: 1px solid $knowit-primary-green-color-lighter;
+  // }
 }
 
 .ui.menu {
@@ -125,7 +125,7 @@ h2 {
 
 #auxiliary-menu {
   text-align: right;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 
   a {
     font-size: 18px;
@@ -179,7 +179,6 @@ footer {
   .ui.horizontal.divider.header {
     color: white;
   }
-
 }
 
 #image_files {
@@ -212,5 +211,24 @@ footer {
   i.fa {
     margin-left: 0.5em;
     margin-right: 0.5em;
+  }
+}
+.ui.label.workshop {
+  background-color: $knowit-primary-purple-color-lighter;
+}
+
+.ui.label.presentation {
+  background-color: $knowit-complementary-blue-color-lighter;
+}
+
+.ui.label.very.basic {
+  background: transparent;
+}
+
+.crud-links {
+  a.icon {
+    height: 42px;
+    width: 42px;
+    padding: 12px;
   }
 }

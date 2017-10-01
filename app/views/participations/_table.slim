@@ -22,9 +22,7 @@ table.ui.very.basic.table
         td = yesno_icon participation.extended_stay
         td = maybe participation.extended_stay_from
         td = maybe participation.extended_stay_to
-        td
-          - participation.activities.each do |activity|
-            div = activity.title
+        td.numeric = participation.activities.count
 
         - if can?(:manage, Participation)
           td

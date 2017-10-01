@@ -36,7 +36,7 @@ en:
       update: Update %{model}
     actions:
       index: '%{model}'
-      show: '%{model}: %{record}'
+      show: '%{record}'
       edit: Edit %{model}
       new: New %{model}
       delete: Delete %{model}

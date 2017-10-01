@@ -1,16 +1,19 @@
-- if action_name == 'index'
-  - if can? :create, @crudable_name
-    - url = @parent ? new_polymorphic_path([@parent, @crudable_name]) : new_polymorphic_path(@crudable_name)
-    = link_to url, class: 'ui primary button' do
-      i.icon.plus
-      =< t('shared.action_links.new')
-      =< crudable.model_name.human.downcase
+.crud-links
+  - if action_name == 'index'
+    - if can? :create, @crudable_name
+      - url = @parent ? new_polymorphic_path([@parent, @crudable_name]) : new_polymorphic_path(@crudable_name)
+      = link_to url, class: 'ui primary button' do
+        i.icon.plus
+        =< t('shared.action_links.new')
+        =< crudable.model_name.human.downcase
 
-- elsif action_name.in? %w(show edit)
-  - if can? :manage, @crudable_name
-    - if @parent
-      = link_to fa_icon('pencil'), edit_polymorphic_path([@parent, crudable]), class: 'ui primary button' unless action_name == 'edit'
-      =< link_to fa_icon('trash'), polymorphic_path([@parent, crudable]), method: :delete
-    - else
-      = link_to fa_icon('pencil'), edit_polymorphic_path(crudable) unless action_name == 'edit'
-      =< link_to fa_icon('trash'), polymorphic_path(crudable), method: :delete
+  - elsif action_name.in? %w(show edit)
+    - if can? :manage, @crudable_name
+      - object = @parent ? [@parent, crudable] : crudable
+      - unless action_name == 'edit'
+        = link_to edit_polymorphic_path(object), class: 'ui button primary' do
+          i.icon.pencil
+          =< t('shared.action_links.edit')
+      =< link_to polymorphic_path(object), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui button red' do
+        i.icon.trash
+        = t('shared.action_links.delete')

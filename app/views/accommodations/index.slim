@@ -1,4 +1,5 @@
 = render 'events/menu', event: @event
 
-- unless @accommodations.empty?
-  = render 'table'
+.ui.segment
+  - unless @accommodations.empty?
+    = render 'table'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927143234) do
+ActiveRecord::Schema.define(version: 20171001115015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +51,6 @@ ActiveRecord::Schema.define(version: 20170927143234) do
     t.integer "file_file_size"
     t.datetime "file_updated_at"
     t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
-  end
-
-  create_table "data_migrations", id: false, force: :cascade do |t|
-    t.string "version", null: false
-    t.index ["version"], name: "unique_data_migrations", unique: true
   end
 
   create_table "event_sessions", id: :serial, force: :cascade do |t|
@@ -218,10 +213,8 @@ ActiveRecord::Schema.define(version: 20170927143234) do
   create_table "tracks", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "event_id"
     t.text "name"
-    t.integer "capacity"
-    t.index ["event_id"], name: "index_tracks_on_event_id"
+    t.integer "venue_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -233,16 +226,13 @@ ActiveRecord::Schema.define(version: 20170927143234) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_name"
+    t.string "passport_first_name"
+    t.string "passport_last_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"
     t.string "passport_nationality"
     t.date "birth_date"
-    t.string "encrypted_issued_at"
-    t.string "encrypted_issued_at_iv"
-    t.string "encrypted_expires_at"
-    t.string "encrypted_expires_at_iv"
     t.string "locale", default: "en", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
@@ -252,6 +242,8 @@ ActiveRecord::Schema.define(version: 20170927143234) do
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "capacity"
     t.index ["event_id"], name: "index_venues_on_event_id"
   end
 

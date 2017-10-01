@@ -26,5 +26,4 @@ module Crudable
   def crudable
     member || collection
   end
-
 end

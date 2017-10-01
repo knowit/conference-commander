@@ -29,8 +29,6 @@ class Participation < ApplicationRecord
 
   has_and_belongs_to_many :preferred_roommates, class_name: 'User'
 
-
-
   validates :user_id, uniqueness: { scope: :event_id }
 
   scope :single_room_participants, -> { where(single_room: true) }

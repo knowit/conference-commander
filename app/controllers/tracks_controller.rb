@@ -5,8 +5,8 @@ class TracksController < ApplicationController
 
   before_action :set_parent
 
-  load_and_authorize_resource :event
-  load_and_authorize_resource through: :event
+  load_and_authorize_resource :venue
+  load_and_authorize_resource through: :venue
 
   def index
     @tracks = @event.tracks
@@ -14,38 +14,37 @@ class TracksController < ApplicationController
 
   def create
     @track.save
-    respond_with @event, @track
+    respond_with @venue, @track
   end
 
   def show
-    @tracks = @event.tracks
+    @tracks = @venue.tracks
   end
 
   def edit
-    @tracks = @event.tracks
+    @tracks = @venue.tracks
   end
 
   def update
     @track.update(track_params)
-    respond_with @event, @track
+    respond_with @venue, @track
   end
 
   def destroy
     @track.destroy
-    respond_with @event, @track
+    respond_with @venue, @track
   end
 
   private
 
   def set_parent
-    @parent ||= Event.find(params[:event_id])
+    @parent ||= Venue.find(params[:venue_id])
   end
 
   def track_params
     params.require(:track).permit(
-      :event_id,
-      :name,
-      :capacity
+      :venue_id,
+      :name
     )
   end
 end

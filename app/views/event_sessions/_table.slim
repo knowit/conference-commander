@@ -7,7 +7,6 @@
         th = EventSession.human_attribute_name(:title)
         th = EventSession.human_attribute_name(:submitter)
         th = EventSession.human_attribute_name(:duration)
-        th = EventSession.human_attribute_name(:short_description)
         th = EventSession.human_attribute_name(:session_type)
         th = EventSession.human_attribute_name(:state)
         th = t('shared.table.actions')
@@ -17,7 +16,6 @@
           td = link_to event_session.title, event_event_session_path(event, event_session)
           td = event_session.submitter.full_name
           td = event_session.duration
-          td = event_session.short_description
           td 
             .ui.mini.label= event_session.session_type.upcase
           td

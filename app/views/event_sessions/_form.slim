@@ -4,12 +4,12 @@
       = f.input :title, as: :string
     .field
       = f.input :description
-    .grouped.fields
+    .inline.fields
       - EventSession.session_types.each do |k,v|
         .field
           .ui.radio.checkbox
-            = radio_button_tag :session_type, k
-            label= t("enum.event_session.session_type.#{k}")
+            = f.radio_button :session_type, k
+            = f.label t("enum.event_session.session_type.#{k}")
 
     .two.fields
       .field
