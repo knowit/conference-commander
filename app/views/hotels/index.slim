@@ -11,7 +11,7 @@
           th = Hotel.human_attribute_name(:address)
           th = Hotel.human_attribute_name(:country)
           th = t('.coordinates')
-          - if can? :manage, hotel
+          - if can? :manage, Hotel
             th = t('shared.table.actions')
       tbody
         - @hotels.each do |hotel|

@@ -1,0 +1,42 @@
+  - if parent
+    h1.title= t("helpers.actions.show", record: parent.to_s)
+
+    - if content_for? :auxiliary_menu
+      #auxiliary-menu
+        = yield :auxiliary_menu
+
+    h1.ui.title.header
+      - model_name = controller_name.classify.constantize.model_name
+      - case action_name.to_sym
+      - when :index
+        = t("helpers.actions.#{action_name.downcase}", model: model_name.human(count: 2))
+        span.count
+          span= crudable.count
+      - when :show
+        = t("helpers.actions.#{action_name.downcase}", record: crudable.to_s)
+      - else
+        = t("helpers.actions.#{action_name.downcase}", model: model_name.human.downcase)
+
+      span style='float: right'
+        = render 'shared/crud_links', object: crudable
+
+
+  - else
+    h1.title
+      - model_name = controller_name.classify.constantize.model_name
+      - case action_name.to_sym
+      - when :index
+        = t("helpers.actions.#{action_name.downcase}", model: model_name.human(count: 2))
+        span.count
+          span= crudable.count
+      - when :show
+        = t("helpers.actions.#{action_name.downcase}", record: crudable.to_s)
+      - else
+        = t("helpers.actions.#{action_name.downcase}", model: model_name.human.downcase)
+
+      span style='float: right'
+        = render 'shared/crud_links', object: crudable
+
+    - if content_for? :auxiliary_menu
+      #auxiliary-menu
+        = yield :auxiliary_menu

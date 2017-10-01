@@ -1,7 +1,7 @@
 random = Random.new
 
 # Create users
-puts "Creating users"
+print "Creating users: "
 100.times do
   User.create(
     first_name: Faker::Name::first_name,
@@ -10,10 +10,10 @@ puts "Creating users"
   )
   print 'u'
 end
-print "\n"
+puts
 
 # Create events
-puts "Creating events"
+print "Creating events: "
 3.times do
   city = Faker::Address.city
   start_date = Faker::Date.forward(365)
@@ -32,8 +32,9 @@ end
 puts
 
 Event.all.each do |e|
+  puts e.name
   # Create Hotels
-  puts "Creating Hotels"
+  print "  Creating Hotels: "
   Hotel.create(
     name: "#{e.name} Hotel",
     address: Faker::Address.street_address,
@@ -42,9 +43,10 @@ Event.all.each do |e|
     longitude: Faker::Address.longitude,
     event: e
   )
-  puts 'h'
+  print 'h'
+  puts
 
-  puts "Creating Venues and Tracks"
+  print "  Creating Venues and Tracks: "
   3.times do
     venue = Venue.create(
       name: "Room #{(100..200).to_a.sample}",
@@ -63,13 +65,14 @@ Event.all.each do |e|
   end 
   puts
 
-  puts "Creating Sessions"
+  print "  Creating Sessions: "
   20.times do
-    start_time = Faker::Date::between(e.starting_at, e.ending_at)
+    start_time = Faker::Date::between(e.starting_at, e.ending_at) + (8..18).to_a.sample.hours
+    duration = [10, 30, 90].sample
     EventSession.create(
       title: Faker::Name.title,
       description: Faker::Lorem.paragraph,
-      duration: [10, 30, 90].sample,
+      duration: duration,
       event: e,
       submitter: User.order("RANDOM()").first,
       start_time: start_time,
@@ -80,7 +83,7 @@ Event.all.each do |e|
   end
   puts
 
-  puts "Creating Activities"
+  print "  Creating Activities: "
   8.times do |i|
     Activity.create(
       event: e,
@@ -91,7 +94,7 @@ Event.all.each do |e|
   end
   puts
 
-  puts "Creating Participations"
+  print "  Creating Participations: "
   User.all.each do |user|
     Participation.create(user: user, event: e, activities: Activity.order("RANDOM()").limit(4))
     print 'p'
