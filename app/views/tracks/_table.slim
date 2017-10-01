@@ -5,13 +5,15 @@
     thead
       tr
         th = Track.human_attribute_name(:name)
-        th = Track.human_attribute_name(:capacity)
+        th = Track.human_attribute_name(:venue)
+        th = EventSession.model_name.human(count: 2)
         th = t('shared.table.actions')
     tbody
       - tracks.each do |track|
         tr
           td = link_to track.name, event_track_path(event, track)
-          td = track.capacity
+          td = link_to track.venue.name, event_venue_path(event, track.venue)
+          td = track.event_sessions.size
           td 
             - if can? :manage, track
               = render 'shared/action_links', object: track

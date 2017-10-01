@@ -18,9 +18,10 @@
           td = event_session.submitter.full_name
           td = event_session.duration
           td 
-            .ui.tiny.label= event_session.session_type.upcase
-          td
-            .ui.tiny.label= event_session.state.upcase
+            .ui.very.basic.tiny.label= event_session.session_type.upcase
+          td 
+            .ui.very.basic.tiny.label= event_session.state.upcase
+            
           - if can? :manage, event_session
             td.actions
               = render 'shared/action_links', object: event_session

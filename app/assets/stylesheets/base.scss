@@ -49,6 +49,7 @@ h2 {
 }
 
 .ui.segment {
+  padding: 25px;
   background: $knowit-primary-green-color-lightest;
   border: 0px;
 
@@ -221,6 +222,22 @@ footer {
   background-color: $knowit-complementary-blue-color-lighter;
 }
 
+.ui.very.basic.label.session-accepted {
+  background-color: green;
+  border-color: green;
+  color: white;
+}
+
+.ui.very.basic.label.session-rejected {
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+
+.ui.very.basic.label.session-proposed {
+
+}
+
 .ui.label.very.basic {
   background: transparent;
 }
@@ -251,6 +268,7 @@ span.time {
 }
 
 #event-stats {
-  border: 2px solid $knowit-black-color;
-  padding: 20px;
+  background: $knowit-black-color;
+  color: white;
+  padding: 15px;
 }

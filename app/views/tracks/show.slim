@@ -2,6 +2,8 @@
 
 - breadcrumb :tracks, @event
 
-ui.segment
-  = @track.name
-  = @track.capacity
+.ui.segment
+  h2.large.header= EventSession.model_name.human(count: 2)
+  .ui.very.relaxed.items
+    - @track.event_sessions.each do |session|
+      = render 'program/entry', session: session

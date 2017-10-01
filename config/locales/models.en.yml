@@ -95,6 +95,10 @@ en:
       venue:
         one: Venue
         other: Venues
+
+      track:
+        one: Track
+        other: Tracks
       
       passport: Passport information
 

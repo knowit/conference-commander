@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :activities do
       resources :images, shallow: true
     end
+    resources :tracks
     resources :venues do
       resources :tracks
     end

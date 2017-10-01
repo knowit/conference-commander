@@ -3,5 +3,5 @@ ui.form
     .field
       = f.input :name, as: :string
     .field
-      = f.input :capacity
+      = f.input :venue_id, collection: @parent.venues.all, input_html: { class: 'ui fluid dropdown', multiple: false }
     = f.button :submit

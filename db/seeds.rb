@@ -78,6 +78,7 @@ Event.all.each do |e|
       start_time: start_time,
       outline: Faker::Lorem.paragraph(5),
       track: Track.order("RANDOM()").first,
+      state: [:proposed, :rejected, :accepted].sample
     )
     print 's'
   end

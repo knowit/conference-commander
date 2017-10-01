@@ -29,6 +29,8 @@ h3= Passport.model_name.human
 
 = f.input :allergies, as: :string
 
+= f.input :about, as: :text
+
 - if current_user.admin?
   = f.input :role, collection: User.roles.keys.to_a,
     input_html: { class: 'ui dropdown selection' },

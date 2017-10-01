@@ -1,32 +1,6 @@
 - @event.dates.each do |date|
   .ui.huge.horizontal.divider.header
     = date.strftime('%A %B %e, %Y')
-  .ui.very.relaxed.items
-    - @event.event_sessions.by_date(date).order(:start_time).each do |session|
-      .ui.item
-        / .ui.tiny.image
-        /   = image_tag 'placeholder.png'
-        .content
-          .header.full-width
-            =< session.title
-            span.time 
-              = session.start_time.strftime('%H:%M') 
-              |&ndash;
-              = session.end_time.strftime('%H:%M')
-              |&nbsp;
-          .description
-            = session.outline
-          .extra
-            br
-            .ui.very.basic.label
-              = session.session_type.upcase
-            .ui.very.basic.label 
-              i.map.icon
-              =<> session.track&.venue&.name
-            .ui.very.very.basic.label 
-              i.user.icon
-              =<> session.submitter.full_name
-            .ui.very.basic.label 
-              i.clock.icon
-              =<> session.duration
-              |  min
+  .ui.relaxed.divided.items
+    - @event.event_sessions.program.by_date(date).order(:start_time).each do |session|
+      = render 'program/entry', session: session

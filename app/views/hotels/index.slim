@@ -4,7 +4,7 @@
 
 .ui.segment
   - unless @hotels.empty?
-    table.ui.very.basic.table
+    table.ui.very.basic.celled.table
       thead
         tr
           th = Hotel.human_attribute_name(:name)
