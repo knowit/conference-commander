@@ -47,6 +47,7 @@ class EventsController < ApplicationController
       :description,
       :starting_at,
       :ending_at,
+      :is_published,
       hotels_attributes: [
         :id,
         :name,
