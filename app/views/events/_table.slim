@@ -9,6 +9,7 @@
         - if user_signed_in?
           th = Participation.model_name.human
           - if can? :manage, Event
+            th = Event.human_attribute_name(:is_published)
             th = t('shared.table.actions')
     tbody
       - events.each do |event|
@@ -28,4 +29,5 @@
                   i.icon.pencil
                   = t('.edit_participation')
             - if can? :manage, event
+              td = event.is_published
               td.actions = render 'shared/action_links', object: event
