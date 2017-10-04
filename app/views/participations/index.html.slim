@@ -12,10 +12,10 @@
       i.icon.download
       = t('shared.buttons.download_xlsx')
 
-  / = link_to single_room_participants_event_participations_path(@event), class: 'ui button secondary' do
-  /   = t('.list_single_room_participants')
+  = link_to single_room_participants_event_participations_path(@event), class: 'ui button secondary' do
+    = t('.list_single_room_participants')
 
-  / = link_to event_allergies_path(@event), class: 'ui button secondary' do
-  /   = t('.list_allergic_participants')
+  = link_to event_allergies_path(@event), class: 'ui button secondary' do
+    = t('.list_allergic_participants')
 
   = render 'shared/lock_buttons', lockable: @event

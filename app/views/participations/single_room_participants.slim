@@ -1,5 +1,4 @@
-p#notice = notice
+.ui.segment
+  = render 'table', participations: @event.participations.single_room_participants
 
-== render 'participations/table', participations: @event.participations.single_room_participants
-
-= link_to 'Back', event_path(@event)
+= link_to 'Back', event_path(@event), class: 'ui secondary button'
