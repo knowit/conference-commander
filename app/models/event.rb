@@ -44,7 +44,7 @@ class Event < ApplicationRecord
   enum event_type: { conference: 0, social: 1 }
 
   scope :next_events, -> (show_draft) {
-    selection = where("starting_at > ?", Time.now)
+    selection = where("ending_at > ?", Time.now)
 
     unless show_draft
       selection = selection.where(is_published: true)
@@ -77,5 +77,4 @@ class Event < ApplicationRecord
   def to_s
     name
   end
-
 end
