@@ -6,7 +6,7 @@ section#frontpage-top
       - unless current_user
         = link_to t(".sign_in"), signin_path, class: "ui massive button knowit-purple"
 
-      a.ui.massive.button.knowit-green#show-conferences= t(".all_events")
+      a.ui.massive.button.knowit-green#show-conferences= t(".next_events")
     div
       - unless @next_events.empty?
         h3= t(".next_event")
@@ -24,7 +24,7 @@ section#frontpage-info
 .divider-container
   .green-divider
 section#frontpage-events
-  h1= t(".all_events")
+  h1= t(".next_events")
   = render 'events/table', events: @next_events
 
 javascript:

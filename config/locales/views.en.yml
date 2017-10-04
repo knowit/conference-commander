@@ -1,6 +1,8 @@
 en:
   events:
     show: Show event
+    participants: Participants
+    talks: Talks
     index:
       actions: Actions
       registration: Regisration
@@ -8,8 +10,6 @@ en:
       actions: Actions
       add_participation: Add participation
       edit_participation: Edit participation
-    participants: Participants
-    talks: Talks
 
   event_sessions:
     new: Call for papers
@@ -49,21 +49,17 @@ en:
 
   locks:
     index:
-      actions: Handlinger
-      new: Ny lås
+      actions: Actions
+      new: New lock
     lock:
       lockable_types:
-        activity: Aktivitet
+        activity: Activity
 
   shared:
     action_links:
       delete: Delete
       edit: Edit
       new: Create
-    buttons:
-      download_xlsx: Download as spreadsheet
-      lock: "Lock %{lockable}"
-      unlock: "Unlock %{lockable}"
     image_upload:
       image_row:
         delete: Delete
@@ -72,10 +68,17 @@ en:
         add: Add image
     new_link:
       new_button: Add %{class_name}
+    buttons:
+      download_xlsx: Download as spreadsheet
+      lock: "Lock %{lockable}"
+      unlock: "Unlock %{lockable}"
+      upload_fields:
+        add: Add image
     table:
       actions: Actions
     users:
       passport_information_complete: Passport information complete?
+
   user:
     table:
       tooltips:
@@ -90,6 +93,7 @@ en:
       organizer: Organizer
       participant: Participant
       speaker: Speaker
+
   after_signup:
     steps:
       complete_profile: Complete profile
@@ -116,8 +120,10 @@ en:
     locale:
       en: English
       nb: Norsk (bokmål)
+
   pages:
     front:
       all_events: All events
+      next_events: Next events
       next_event: Next event
       sign_in: Sign in
