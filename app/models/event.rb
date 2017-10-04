@@ -43,6 +43,11 @@ class Event < ApplicationRecord
 
   enum event_type: { conference: 0, social: 1 }
 
+  scope :all_events, -> (show_draft) {
+    selection = show_draft ? all : where(is_published: true)
+    selection.order(starting_at: :desc)
+  }
+
   scope :next_events, -> (show_draft) {
     selection = where("ending_at > ?", Time.now)
 

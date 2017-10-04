@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   layout 'crudable'
 
   def index
-    # NOOP
+    @events = Event.all_events(current_user&.administrator?)
   end
 
   def new
