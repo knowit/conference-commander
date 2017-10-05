@@ -5,11 +5,11 @@ html
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application'
+    = javascript_pack_tag    'application'
 
 
   body
-    - unless controller_name.to_sym == :sessions
+    - unless controller_name.to_sym == :sessions || action_name.to_sym == :program
       = render 'layouts/menu', fixed: true
 
     .ui.page.grid

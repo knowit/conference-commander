@@ -222,20 +222,29 @@ footer {
   background-color: $knowit-complementary-blue-color-lighter;
 }
 
-.ui.very.basic.label.session-accepted {
-  background-color: green;
-  border-color: green;
-  color: white;
+.ui.label.knowit-purple {
+  color: $knowit-primary-purple-color-lighter;
+  background-color: $knowit-primary-purple-color;
 }
 
-.ui.very.basic.label.session-rejected {
+.ui.label.knowit-blue {
+  background-color: $knowit-complementary-blue-color-lighter;
+}
+
+.ui.label.session-accepted {
+  background-color: $knowit-primary-green-color;
+  color: $knowit-primary-green-color-lightest;
+}
+
+.ui.label.session-rejected {
   background-color: red;
   border-color: red;
   color: white;
 }
 
-.ui.very.basic.label.session-proposed {
-
+.ui.label.session-proposed {
+  background-color: $knowit-complementary-gray-color;
+  color: $knowit-complementary-gray-color-lighter;
 }
 
 .ui.label.very.basic {
@@ -266,4 +275,14 @@ span.time {
   background: $knowit-black-color;
   color: white;
   padding: 15px;
+}
+
+.ui.huge.horizontal.divider.header {
+  line-height: 4;
+  margin: 0;
+  padding: 0;
+}
+
+.ui.segment.program-day {
+  background: $knowit-primary-purple-color-lighter;
 }

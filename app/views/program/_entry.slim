@@ -13,18 +13,21 @@
       = session.outline
     .extra
       br
-      .ui.very.basic.label
-        = session.session_type.upcase
-      .ui.very.basic.label 
+      .ui.image.label.knowit-purple
+        = image_tag session.submitter.profile_picture_url
+        =< session.submitter.full_name
+      .ui.label.knowit-purple
+        = session.session_type.capitalize
+      .ui.label.icon.knowit-purple
         i.map.icon
-        =<> session.track&.venue&.name
-      .ui.very.very.basic.label 
-        i.user.icon
-        =<> session.submitter.full_name
-      .ui.very.basic.label 
+        = session.track&.venue&.name
+      .ui.label.knowit-purple
         i.clock.icon
-        =<> session.duration
+        = session.duration
         |  min
+      = render 'event_sessions/state_label', session: session
       .pull-right
-        = render 'event_sessions/state_label', session: session
+        .ui.compact.labeled.blue.icon.button
+          i.plus.icon
+          | Follow
 

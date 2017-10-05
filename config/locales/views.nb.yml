@@ -118,6 +118,8 @@ nb:
       workshop: Workshop
 
   misc:
+    events:
+      program_view: Programvisning
     gender:
       male: Mann
       female: Kvinne

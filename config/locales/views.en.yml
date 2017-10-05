@@ -119,6 +119,8 @@ en:
       workshop: Workshop
 
   misc:
+    events:
+      program_view: Program view
     gender:
       male: Male
       female: Female

@@ -4,7 +4,7 @@ module Crudable
 
   included do
     before_action :set_crudable_name
-    helper_method :crudable
+    helper_method :crudable, :crud?
   end
 
   def resource
@@ -21,6 +21,10 @@ module Crudable
 
   def set_crudable_name
     @crudable_name = controller_name.classify.constantize
+  end
+
+  def crud?
+    action_name.in? %w(new show edit index create update destroy)
   end
 
   def crudable

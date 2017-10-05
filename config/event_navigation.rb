@@ -7,5 +7,6 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :tracks, Track.model_name.human(count: 2), event_tracks_path(@event), if: -> { can?(:read, Track) }, highlights_on: %r(/tracks)
     primary.item :venues, Venue.model_name.human(count: 2), event_venues_path(@event), if: -> { can?(:read, Venue) }, highlights_on: %r(/venues)
     primary.item :participations, Participation.model_name.human(count: 2), event_participations_path(@event), if: -> { can?(:manage, Participation) }, highlights_on: %r(/participations)
+    primary.item :program, t('misc.events.program_view'), event_program_path(@event), if: -> { can?(:read, Event) }, highlights_on: %r(/event/program)
   end
 end
