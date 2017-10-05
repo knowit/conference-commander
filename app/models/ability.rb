@@ -41,6 +41,9 @@ class Ability
     common_abilities
     can :read, [Event, Activity, EventSession]
     can [:create, :read, :update], Participation, user_id: @user.id
+    cannot [:destroy], EventSession do |session|
+      session.locked?
+    end
   end
 
   def guest_abilities

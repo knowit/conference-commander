@@ -3,18 +3,4 @@
 - breadcrumb :activities, @event
 
 .ui.segment
-  table.ui.very.basic.large.celled.padded.table
-    thead
-      tr
-        th = Event.human_attribute_name(:title)
-        th = Event.human_attribute_name(:ingress)
-        /th = Event.human_attribute_name(:participations)
-        th
-        - if can? :manage, Activity
-          th = t('shared.table.actions')
-
-      = render @activities
-
-= link_to  event_activities_path(format: :xlsx), class: 'ui secondary button' do
-  i.icon.download
-  = t('shared.buttons.download_xlsx')
+  = render 'table', activities: @activities

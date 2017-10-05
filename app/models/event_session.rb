@@ -20,6 +20,8 @@
 
 class EventSession < ApplicationRecord
 
+  include Lockable
+
   MAX_ALLOWED_TIME_ALLOTMENT = 480
 
   belongs_to :submitter, class_name: 'User'

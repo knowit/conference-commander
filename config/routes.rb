@@ -36,7 +36,9 @@ Rails.application.routes.draw do
     post :stop_impersonating, on: :collection
   end
 
-  resources :event_sessions, only: [:index]
+  resources :event_sessions do
+    resources :locks, shallow: true
+  end
 
   # we need to redirect in order to use the correct method and thus the correct layout:
   get '/pages/front', to: redirect('/')

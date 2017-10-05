@@ -18,9 +18,9 @@ module ApplicationHelper
   def yesno_icon(pred, display_on_false: true)
     raw begin
       if pred
-        fa_icon 'check lg'
+        content_tag(:i, nil, class: 'check icon large')
       else
-        fa_icon 'remove lg' if display_on_false
+        content_tag(:i, nil, class: 'remove icon large') if display_on_false
       end
     end
   end

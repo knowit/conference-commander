@@ -2,13 +2,13 @@ table.ui.very.basic.table
   thead
     tr
       th = User.human_attribute_name(:name)
-      - if current_user.administrator?
-        th = Participation.human_attribute_name(:single_room)
-        th = Participation.human_attribute_name(:request_for_sharing_room)
-      th = Participation.human_attribute_name(:extended_stay)
-      th = Participation.human_attribute_name(:extended_stay_from)
-      th = Participation.human_attribute_name(:extended_stay_to)
-      th = Activity.model_name.human(count: 2)
+      / - if current_user.administrator?
+      /   th = Participation.human_attribute_name(:single_room)
+      /   th = Participation.human_attribute_name(:request_for_sharing_room)
+      / th = Participation.human_attribute_name(:extended_stay)
+      / th = Participation.human_attribute_name(:extended_stay_from)
+      / th = Participation.human_attribute_name(:extended_stay_to)
+      / th = Activity.model_name.human(count: 2)
       - if can?(:manage, Participation)
         th = t('shared.table.actions')
 
@@ -16,16 +16,16 @@ table.ui.very.basic.table
     - participations.each do |participation|
       tr
         td = maybe participation.user.full_name
-        - if current_user.administrator?
-          td = yesno_icon participation.single_room
-          td = maybe participation.request_for_sharing_room
-        td = yesno_icon participation.extended_stay
-        td = maybe participation.extended_stay_from
-        td = maybe participation.extended_stay_to
-        td.numeric = participation.activities.count
-
+        / - if current_user.administrator?
+        /   td = yesno_icon participation.single_room
+        /   td = maybe participation.request_for_sharing_room
+        / td = yesno_icon participation.extended_stay
+        / td = maybe participation.extended_stay_from
+        / td = maybe participation.extended_stay_to
+        / td.numeric = participation.activities.count
         - if can?(:manage, Participation)
-          td
+          td.actions
             - if can? :manage, participation
-              = link_to fa_icon('pencil lg'), edit_event_participation_path(@event, participation)
-              =< link_to fa_icon('trash lg'), event_participation_path(@event, participation), data: { confirm: 'Are you sure?' }, method: :delete
+              = render 'shared/action_links', object: participation
+              / = link_to fa_icon('pencil lg'), edit_event_participation_path(@event, participation)
+              / =< link_to fa_icon('trash lg'), event_participation_path(@event, participation), data: { confirm: 'Are you sure?' }, method: :delete
