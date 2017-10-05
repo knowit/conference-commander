@@ -53,6 +53,11 @@ ActiveRecord::Schema.define(version: 20171001164422) do
     t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
   end
 
+  create_table "data_migrations", id: false, force: :cascade do |t|
+    t.string "version", null: false
+    t.index ["version"], name: "unique_data_migrations", unique: true
+  end
+
   create_table "event_sessions", id: :serial, force: :cascade do |t|
     t.text "title", null: false
     t.text "description", null: false
@@ -228,13 +233,16 @@ ActiveRecord::Schema.define(version: 20171001164422) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_first_name"
-    t.string "passport_last_name"
+    t.string "passport_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"
     t.string "passport_nationality"
     t.date "birth_date"
+    t.string "encrypted_issued_at"
+    t.string "encrypted_issued_at_iv"
+    t.string "encrypted_expires_at"
+    t.string "encrypted_expires_at_iv"
     t.string "locale", default: "en", null: false
     t.text "about"
     t.index ["email"], name: "index_users_on_email", unique: true
