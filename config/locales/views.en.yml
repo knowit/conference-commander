@@ -10,6 +10,7 @@ en:
       actions: Actions
       add_participation: Add participation
       edit_participation: Edit participation
+      event_participation_locked: Participation locked
 
   event_sessions:
     new: Call for papers

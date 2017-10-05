@@ -27,6 +27,10 @@ module Lockable
     locks.where(field: field).where('locked_at <= ?', Date.today).exists?
   end
 
+  def unlocked?(field = :id)
+    !locked?(field)
+  end
+
   def locked_fields
     locks.where('locked_at <= ?', Date.today).pluck(:field)
   end
