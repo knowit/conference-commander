@@ -9,6 +9,9 @@
         th = User.human_attribute_name(:name)
         td = @event_session.submitter.full_name
       tr
+        th = ''
+        td = image_tag @event_session.submitter.profile_picture_url
+      tr
         th = User.human_attribute_name(:email)
         td = @event_session.submitter.email
       tr
