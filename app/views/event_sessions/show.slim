@@ -11,6 +11,13 @@
       tr
         th = ''
         td = image_tag @event_session.submitter.profile_picture_url
+      - @event_session.co_presenters.each do |p|
+        tr
+          th = User.human_attribute_name(:name)
+          td = p.full_name
+        tr
+          th = ''
+          td = image_tag p.profile_picture_url
       tr
         th = User.human_attribute_name(:email)
         td = @event_session.submitter.email

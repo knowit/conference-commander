@@ -49,7 +49,10 @@ class EventSessionsController < ApplicationController
       :state,
       :language,
       :start_time,
-      :outline
+      :outline,
+      :level,
+      co_presenter_ids: [],
+      tag_list: []
     )
   end
 end
