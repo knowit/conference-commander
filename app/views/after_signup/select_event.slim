@@ -1,0 +1,9 @@
+= render 'steps'
+
+.ui.segment#add-participation
+  h1
+    => I18n.t('after_signup.steps.%s' % step)
+  .ui.divider
+  = simple_form_for :wizard, url: wizard_path, method: :put do |f|
+    = f.input :event_id, collection: Event.available, input_html: { class: 'ui dropdown selection' }
+    = f.submit 'Next', class: 'ui large knowit-purple button'

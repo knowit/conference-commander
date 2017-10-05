@@ -98,6 +98,7 @@ en:
   after_signup:
     steps:
       complete_profile: Complete profile
+      select_event: Select Event
       add_participation: Add participation
 
   menu:

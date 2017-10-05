@@ -7,14 +7,17 @@
         th = User.human_attribute_name(:name)
         th = User.human_attribute_name(:email)
         th = t('shared.users.passport_information_complete')
-        th = t('shared.table.actions')
+        - if can? :manage, User
+          th = t('shared.table.actions')
     tbody
       - users.each do |user|
         tr
           td = user.full_name
           td = user.email
           td = yesno_icon(user.passport_complete?, display_on_false: false)
-          td style="width: 10%"
+          td.actions
             - if can? :update, user
               = render 'shared/action_links', object: user
-              =< link_to fa_icon('eye lg'), impersonate_user_path(user), method: :post
+            - if can? :manage, User
+              =< link_to impersonate_user_path(user), method: :post, class: 'ui circular icon button' do
+                i.icon.spy
