@@ -79,4 +79,10 @@ class User < ApplicationRecord
     full_name
   end
 
+  # We use Gravatar for profile pictures for simplicity
+  def profile_picture_url
+    hash = Digest::MD5.hexdigest(email)
+    "https://www.gravatar.com/avatar/#{hash}?d=mm"
+  end
+
 end

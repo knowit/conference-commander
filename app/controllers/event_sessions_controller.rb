@@ -42,6 +42,7 @@ class EventSessionsController < ApplicationController
   def event_session_params
     params.require(:event_session).permit(
       :event_id,
+      :session_type,
       :title,
       :description,
       :duration,

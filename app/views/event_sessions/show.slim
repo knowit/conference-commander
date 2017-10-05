@@ -9,6 +9,9 @@
         th = User.human_attribute_name(:name)
         td = @event_session.submitter.full_name
       tr
+        th = ''
+        td = image_tag @event_session.submitter.profile_picture_url
+      tr
         th = User.human_attribute_name(:email)
         td = @event_session.submitter.email
       tr
@@ -28,7 +31,7 @@
         td = @event_session.track
       tr
         th = EventSession.human_attribute_name(:language)
-        td = @event_session.language
+        td = t(".languages.#{@event_session.language}")
       tr
         th = EventSession.human_attribute_name(:title)
         td = @event_session.title

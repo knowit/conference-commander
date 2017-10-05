@@ -12,8 +12,7 @@
             = f.label t("enum.event_session.session_type.#{k}")
 
     .two.fields
-      .field
-        = f.input :duration
+      = f.input :duration, collection: (1..120).to_a.select{ |e| e % 5 == 0 }, as: :select, input_html: { class: 'ui fluid dropdown' }
 
       = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
 
