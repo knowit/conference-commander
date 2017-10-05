@@ -13,6 +13,11 @@ en:
 
   event_sessions:
     new: Call for papers
+    show:
+      languages:
+        en: English
+        no: Norwegian
+        sv: Swedish
 
   participations:
     new: My particpation

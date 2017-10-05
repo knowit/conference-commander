@@ -31,7 +31,7 @@
         td = @event_session.track
       tr
         th = EventSession.human_attribute_name(:language)
-        td = @event_session.language
+        td = t(".languages.#{@event_session.language}")
       tr
         th = EventSession.human_attribute_name(:title)
         td = @event_session.title
