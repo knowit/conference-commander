@@ -10,7 +10,7 @@
         = session.end_time.strftime('%H:%M')
         |&nbsp;
     .description
-      = session.outline
+      = session.description
     .extra
       br
       .ui.image.label.knowit-purple
@@ -27,7 +27,16 @@
         |  min
       = render 'event_sessions/state_label', session: session
       .pull-right
-        .ui.compact.labeled.blue.icon.button
+        .ui.compact.labeled.positive.icon.button
           i.plus.icon
           | Follow
+
+      - unless session.tag_list.empty?
+        br
+        .ui.tiny.labels
+          - session.tag_list.each do |tag|
+            .ui.knowit-blue.label
+              i.icon.hashtag
+              = tag
+
 

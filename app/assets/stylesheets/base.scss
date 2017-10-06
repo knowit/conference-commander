@@ -228,7 +228,8 @@ footer {
 }
 
 .ui.label.knowit-blue {
-  background-color: $knowit-complementary-blue-color-lighter;
+  color: $knowit-complementary-blue-color-lightest;
+  background-color: $knowit-complementary-blue-color-light;
 }
 
 .ui.label.session-accepted {

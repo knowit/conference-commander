@@ -12,8 +12,11 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
       format.json { head :forbidden, content_type: 'text/html' }
-      format.html { redirect_to signin_path, notice: exception.message }
       format.js   { head :forbidden, content_type: 'text/html' }
+      format.html do
+        session[:return_to] = request.fullpath
+        redirect_to signin_path, notice: exception.message 
+      end
     end
   end
 
@@ -35,7 +38,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     if user.complete?
-      request.referer || root_path
+      session[:return_to] || root_path
     else
       after_signup_path(:complete_profile)
     end
@@ -49,5 +52,4 @@ class ApplicationController < ActionController::Base
       I18n.default_locale
     end
   end
-
 end

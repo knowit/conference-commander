@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_or_create_by_auth_hash(auth_hash)
+    redirect = session[:return_to]
     reset_session
+    session[:return_to] = redirect if redirect
     session[:user_id] = @user.id
     redirect_to after_sign_in_path_for(@user)
   end
