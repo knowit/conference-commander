@@ -29,6 +29,7 @@ class EventSession < ApplicationRecord
   belongs_to :track, optional: true
 
   has_many :attachments, as: :attachable, dependent: :destroy
+  has_and_belongs_to_many :co_presenters, class_name: 'User'
 
   accepts_nested_attributes_for :attachments
 
@@ -37,6 +38,7 @@ class EventSession < ApplicationRecord
   enum state: { proposed: 0, rejected: 1, accepted: 2 }
   enum language: { en: 0, no: 1, sv: 2 }
   enum session_type: { lightning_talk: 0, presentation: 1, workshop: 2 }
+  enum level: { beginner: 0, intermediate: 1, expert: 2 }
 
   validates :title, presence: true
   validates :submitter, presence: true

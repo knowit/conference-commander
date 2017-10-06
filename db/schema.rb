@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171001164422) do
+ActiveRecord::Schema.define(version: 20171005122211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,9 +72,19 @@ ActiveRecord::Schema.define(version: 20171001164422) do
     t.bigint "track_id"
     t.integer "language", default: 0
     t.integer "session_type", default: 1, null: false
+    t.integer "level", default: 0, null: false
     t.index ["event_id"], name: "index_event_sessions_on_event_id"
     t.index ["submitter_id"], name: "index_event_sessions_on_submitter_id"
     t.index ["track_id"], name: "index_event_sessions_on_track_id"
+  end
+
+  create_table "event_sessions_users", force: :cascade do |t|
+    t.bigint "event_session_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_session_id"], name: "index_event_sessions_users_on_event_session_id"
+    t.index ["user_id"], name: "index_event_sessions_users_on_user_id"
   end
 
   create_table "events", id: :serial, force: :cascade do |t|

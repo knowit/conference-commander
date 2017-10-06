@@ -20,7 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 nb:
-
   accommodations:
     index:
       actions: Handlinger
@@ -38,12 +37,17 @@ nb:
         is_published: Publisert
 
       event_session:
+        co_presenter_ids: Medvirkende
         description: Beskrivelse
-        submitter: Foredragsholder
-        duration: Varighet (i minutter)
-        title: Tittel
+        duration: Ønsket lengde (minutter)
+        language: Språk
+        level: Vanskelighetsgrad
+        session_type: Type
+        short_description: Kort beskrivelse
         state: Status
-
+        submitter: Foredragsholder
+        tag_list: Tagger
+        title: Tittel
       user:
         allergies: Allergier
         email: E-post
@@ -74,14 +78,6 @@ nb:
       activity:
         title: Tittel
         description: Beskrivelse
-
-      event_session:
-        title: Tittel
-        description: Beskrivelse
-        short_description: Kort beskrivelse
-        duration: Ønsket lengde (minutter)
-        language: Språk
-
       track:
         capacity: Publikumskapasitet
 
@@ -141,6 +137,10 @@ nb:
       'no': Norsk
       sv: Svensk
     event_session:
+      level:
+        beginner: Nybegynner
+        expert: Ekspert
+        intermediate: Middels
       session_type:
         lightning_talk: Lyntale
         presentation: Presentasjon

@@ -5,16 +5,28 @@
     .field
       = f.input :description
     .inline.fields
+      label for='event_session[session_type]'= EventSession.human_attribute_name(:session_type)
       - EventSession.session_types.each do |k,v|
         .field
           .ui.radio.checkbox
             = f.radio_button :session_type, k
             = f.label t("enum.event_session.session_type.#{k}")
+    .inline.fields
+      label for='event_session[level]'= EventSession.human_attribute_name(:level)
+      - EventSession.levels.each do |k,v|
+        .field
+          .ui.radio.checkbox
+            = f.radio_button :level, k
+            = f.label t("enum.event_session.level.#{k}")
 
     .two.fields
       = f.input :duration, collection: (1..120).to_a.select{ |e| e % 5 == 0 }, as: :select, input_html: { class: 'ui fluid dropdown' }
 
       = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
+
+    .two.fields
+      = f.input :co_presenter_ids, collection: User.all, as: :select, input_html: { class: 'ui fluid search selection dropdown', multiple: true }
+      = f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name), as: :select, input_html: { class: 'ui fluid search selection dropdown dropdown-allow-additions', multiple: true }
 
     - if current_user.administrator?
       .field
