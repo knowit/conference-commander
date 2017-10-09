@@ -1,0 +1,42 @@
+@import "variables";
+
+.ui.segment {
+
+  table, td, th {
+    border-color: $knowit-primary-green-color-lighter !important;
+  }
+
+  table {
+    tr.locked td {
+      &, &:not(.actions) a:not(.button), .label {
+        color: $knowit-primary-green-color-lighter;
+        border-color: $knowit-primary-green-color-lighter;
+      }
+
+    }
+    td i.icon.remove {
+      color: $knowit-primary-green-color-lighter;
+    }
+
+    td.actions {
+      width: 15%;
+    }
+
+
+    td.actions a.circular.icon.button { 
+      float: left;
+      padding: 0.4em;
+      background: $knowit-primary-green-color-lighter;
+
+      & > .icon {
+        width: 1em;
+        height: 1em;
+      }
+
+      &.toggled {
+        background: $knowit-primary-purple-color-light;
+        color: white;
+      }
+    }
+  }
+}

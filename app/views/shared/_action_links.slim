@@ -1,7 +1,7 @@
 - polymorphic_object = @parent ? [@parent, object] : object
 
-= link_to edit_polymorphic_path(polymorphic_object) do
-  i.large.icon.pencil
-=< link_to polymorphic_path(polymorphic_object), method: :delete do
-  i.large.icon.trash
+= link_to edit_polymorphic_path(polymorphic_object), class: 'ui circular icon button' do
+  i.icon.pencil
+=< link_to polymorphic_path(polymorphic_object), method: :delete, class: 'ui circular icon button' do
+  i.icon.trash
 

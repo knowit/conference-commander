@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   load_and_authorize_resource
 
   include Crudable
+
   layout 'crudable'
 
   def index
@@ -35,6 +36,11 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
+    respond_with @event
+  end
+
+  def program
+    @event = Event.find(params[:event_id])
     respond_with @event
   end
 

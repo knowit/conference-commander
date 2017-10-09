@@ -1,0 +1,6 @@
+- if lockable.locked?(:id)
+  = link_to lock_path(lockable.retrieve_lock(:id)), method: :delete, class: 'ui circular toggled icon button' do
+    i.icon.unlock
+- else
+  = link_to polymorphic_path([lockable, Lock], lock: { field: :id, locked_at: Date.today }), method: :post, class: 'ui circular icon button' do
+    i.icon.lock

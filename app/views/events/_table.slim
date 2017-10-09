@@ -13,21 +13,28 @@
             th = t('shared.table.actions')
     tbody
       - events.each do |event|
-        tr
+        - classes = 'locked' if event.locked?
+        tr class=classes
           td = link_to event.name, event_path(event)
           td = event.description
           td = event.starting_at.strftime("%d/%m/%Y")
           td = event.ending_at.strftime("%d/%m/%Y")
           - if user_signed_in?
             td
-              - unless event.user_already_signed_up? current_user
-                = link_to new_event_participation_path(event), class: 'ui mini secondary button' do
-                  i.icon.plus
-                  = t('.add_participation')
+              - if event.unlocked?
+                - unless event.user_already_signed_up? current_user
+                  = link_to new_event_participation_path(event), class: 'ui mini secondary button' do
+                    i.icon.plus
+                    = t('.add_participation')
+                - else
+                  = link_to edit_event_participation_path(event, id: event.user_participation(current_user)), class: 'ui mini primary button' do
+                    i.icon.pencil
+                    = t('.edit_participation')
               - else
-                = link_to edit_event_participation_path(event, id: event.user_participation(current_user)), class: 'ui mini primary button' do
-                  i.icon.pencil
-                  = t('.edit_participation')
+                i.icon.lock.large
+                = t('.event_participation_locked')
             - if can? :manage, event
-              td = event.is_published
-              td.actions = render 'shared/action_links', object: event
+              td = yesno_icon(event.is_published)
+              td.actions 
+                = render 'shared/lock_icon_links', lockable: event
+                = render 'shared/action_links', object: event

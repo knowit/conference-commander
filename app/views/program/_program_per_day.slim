@@ -1,6 +1,7 @@
 - @event.dates.each do |date|
   .ui.huge.horizontal.divider.header
     = date.strftime('%A %B %e, %Y')
-  .ui.relaxed.divided.items
-    - @event.event_sessions.program.by_date(date).order(:start_time).each do |session|
-      = render 'program/entry', session: session
+  .ui.segment.program-day
+    .ui.relaxed.divided.items
+      - @event.event_sessions.program.by_date(date).order(:start_time).each do |session|
+        = render 'program/entry', session: session

@@ -23,8 +23,12 @@ module Lockable
     locks.find_or_create_by(field: field, locked_at: lock_date)
   end
 
-  def locked?(field)
+  def locked?(field = :id)
     locks.where(field: field).where('locked_at <= ?', Date.today).exists?
+  end
+
+  def unlocked?(field = :id)
+    !locked?(field)
   end
 
   def locked_fields

@@ -10,6 +10,7 @@ nb:
       actions: Handlinger
       add_participation: Meld deg på
       edit_participation: Rediger påmelding
+      event_participation_locked: Påmelding låst
 
   event_sessions:
     new: Call for papers
@@ -117,6 +118,8 @@ nb:
       workshop: Workshop
 
   misc:
+    events:
+      program_view: Programvisning
     gender:
       male: Mann
       female: Kvinne

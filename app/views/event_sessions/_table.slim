@@ -13,7 +13,8 @@
           th = t('shared.table.actions')
     tbody
       - event_sessions.each do |event_session|
-        tr
+        - classes = 'locked' if event_session.locked?
+        tr class=classes
           td = link_to event_session.title, event_event_session_path(event, event_session)
           td = event_session.submitter.full_name
           td = event_session.duration
@@ -24,4 +25,5 @@
             
           - if can? :manage, event_session
             td.actions
+              = render 'shared/lock_icon_links', lockable: event_session
               = render 'shared/action_links', object: event_session
