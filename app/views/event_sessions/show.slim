@@ -11,16 +11,12 @@
       tr
         th = ''
         td = image_tag @event_session.submitter.profile_picture_url
-      - @event_session.co_presenters.each do |p|
-        tr
-          th = User.human_attribute_name(:name)
-          td = p.full_name
-        tr
-          th = ''
-          td = image_tag p.profile_picture_url
       tr
         th = User.human_attribute_name(:email)
         td = @event_session.submitter.email
+      tr
+        th = EventSession.human_attribute_name(:co_presenters)
+        td = @event_session.co_presenters
       tr
         th = EventSession.human_attribute_name(:session_type)
         td = @event_session.session_type
@@ -30,6 +26,9 @@
       tr
         th = EventSession.human_attribute_name(:state)
         td = @event_session.state
+      tr
+        th = EventSession.human_attribute_name(:comments_to_organizers)
+        td = @event_session.comments_to_organizers
       tr
         th = EventSession.human_attribute_name(:start_time)
         td = @event_session.start_time
