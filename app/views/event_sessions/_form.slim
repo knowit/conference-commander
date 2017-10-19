@@ -1,9 +1,11 @@
 .ui.form
   = simple_form_for [@parent, @event_session] do |f|
     .field
-      = f.input :title, as: :string
+      = f.label :title
+      = f.hint t("hint.event_session.title")
+      = f.input_field :title, as: :string
     .field
-      = f.input :description
+      = f.input :description, hint: t("hint.event_session.abstract")
     .inline.fields
       label for='event_session[session_type]'= EventSession.human_attribute_name(:session_type)
       - EventSession.session_types.each do |k,v|
@@ -25,8 +27,8 @@
       = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
 
     .two.fields
-      = f.input :co_presenter_ids, collection: User.all, as: :select, input_html: { class: 'ui fluid search selection dropdown', multiple: true }
-      = f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name), as: :select, input_html: { class: 'ui fluid search selection dropdown dropdown-allow-additions', multiple: true }
+      = f.input :co_presenter_ids, collection: User.all, as: :select, input_html: { class: 'ui fluid search selection dropdown', multiple: true }, hint: t("hint.event_session.speakers")
+      = f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name), as: :select, input_html: { class: 'ui fluid search selection dropdown dropdown-allow-additions', multiple: true }, hint: t("hint.event_session.tags")
 
     - if current_user.administrator?
       .field

@@ -93,10 +93,17 @@ en:
       track:
         one: Track
         other: Tracks
-      
+
       passport: Passport information
 
-
+  hint:
+    event_session:
+      title: The title of your presentation. This will be presented in the conference programme.
+      abstract: A short description of your presentation. Will also be published in the conference programme. Should be at most a few paragraphs, as well as an optional outline.
+      level: The level of the talk.
+      language: The language in which your presentation will be held.
+      speakers: If multiple speakers, please list all separated by commas.
+      tags: Tags for the presentation
   enum:
     language:
       en: English
