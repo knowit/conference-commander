@@ -25,8 +25,11 @@
       = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
 
     .two.fields
-      = f.input :co_presenter_ids, collection: User.all, as: :select, input_html: { class: 'ui fluid search selection dropdown', multiple: true }
+      = f.input :co_presenters
       = f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name), as: :select, input_html: { class: 'ui fluid search selection dropdown dropdown-allow-additions', multiple: true }
+
+    .field
+      = f.input :comments_to_organizers
 
     - if current_user.administrator?
       .field
