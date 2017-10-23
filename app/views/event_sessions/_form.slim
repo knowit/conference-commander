@@ -22,7 +22,7 @@
             = f.label t("enum.event_session.level.#{k}")
 
     .two.fields
-      = f.input :duration, collection: (1..120).to_a.select{ |e| e % 5 == 0 }, as: :select, input_html: { class: 'ui fluid dropdown' }
+      = f.input :duration, collection: [ "Presentation (60 or 45 min incl. Q&A)", "Short talk (20 or 30 minutes incl. Q&A)", "Lightning talk (10 minutes or shorter, incl. Q&A)", "Workshop / tutorial (please specify length in abstract)"], as: :select, input_html: { class: 'ui fluid dropdown' }
 
       = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
 
