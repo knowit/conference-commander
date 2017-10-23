@@ -4,10 +4,10 @@
       = form_tag '/auth/crowd', class: 'ui form' do
         h1 CONFERENCE COMMANDER
         .field
-          = label_tag :username, 'E-post'
+          = label_tag :username, 'E-mail'
           = text_field_tag :username, params[:username], type: :email
         .field
-          = label_tag :password, 'Passord'
+          = label_tag :password, 'Password'
           = password_field_tag :password, ''
 
-        = submit_tag 'Logg inn', class: 'ui massive fluid knowit-purple button'
+        = submit_tag 'Log in', class: 'ui massive fluid knowit-purple button'
