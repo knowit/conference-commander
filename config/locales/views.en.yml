@@ -12,6 +12,11 @@ en:
       edit_participation: Edit participation
       event_participation_locked: Participation locked
 
+  sessions:
+    new:
+      username: E-mail
+      password: Password
+
   event_sessions:
     new: Call for papers
     show:
@@ -135,3 +140,4 @@ en:
       next_events: Next events
       next_event: Next event
       sign_in: Sign in
+
