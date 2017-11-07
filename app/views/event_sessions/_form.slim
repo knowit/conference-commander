@@ -33,6 +33,10 @@
     .field
       = f.input :comments_to_organizers
 
+    .field
+      = f.simple_fields_for :submitter do |s|
+        = s.input :about, hint: t('hint.event_session.about_submitter')
+
     - if current_user.administrator?
       .field
         = f.input :submitter_id, collection: User.all, prompt: "Select a user", label_method: :full_name, as: :select,  input_html: { class: 'ui fluid search selection dropdown' }

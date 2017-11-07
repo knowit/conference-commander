@@ -38,6 +38,7 @@ en:
         first_name: First name
         last_name: Last name
         birth_date: Birth date
+        about: Short biography
 
       passport:
         first_name: First name in passport
@@ -105,6 +106,7 @@ en:
       language: The language in which your presentation will be held.
       co_presenters: If multiple speakers, please list all separated by commas.
       tags: Tags for the presentation
+      about_submitter: Short biography of the main presenter
   enum:
     language:
       en: English

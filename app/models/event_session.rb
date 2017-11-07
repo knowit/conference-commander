@@ -34,6 +34,7 @@ class EventSession < ApplicationRecord
   has_many :attachments, as: :attachable, dependent: :destroy
 
   accepts_nested_attributes_for :attachments
+  accepts_nested_attributes_for :submitter
 
   acts_as_taggable
 
