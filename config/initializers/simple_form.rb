@@ -56,8 +56,9 @@ SimpleForm.setup do |config|
     b.optional :maxlength
     b.optional :pattern
     b.optional :min_max
-    b.use :label_input
+    b.use :label
     b.use :hint,  wrap_with: { tag: 'div', class: 'hint' }
+    b.use :input
     b.use :error, wrap_with: { tag: 'div', class: 'ui red pointing above label error' }
   end
 

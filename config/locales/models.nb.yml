@@ -37,7 +37,7 @@ nb:
         is_published: Publisert
 
       event_session:
-        co_presenters: Medvirkende
+        co_presenters: Flere foredragsholdere
         comments_to_organizers: Kommentarer til arrangøren
         description: Beskrivelse
         duration: Ønsket lengde (minutter)
@@ -47,7 +47,7 @@ nb:
         short_description: Kort beskrivelse
         state: Status
         submitter: Foredragsholder
-        tag_list: Tagger
+        tag_list: Nøkkelord
         title: Tittel
       user:
         allergies: Allergier
@@ -131,7 +131,14 @@ nb:
       event_name: Arrangement
       header: Liste over alle innslag
       user_name: Holdes av
-
+  hint:
+    event_session:
+      title: The title of your presentation. This will be presented in the conference programme.
+      abstract: A short description of your presentation. Will also be published in the conference programme. Should be at most a few paragraphs, as well as an optional outline.
+      level: The level of the talk.
+      language: Språket som vil bli brukt i presentasjonen
+      co_presenters: Hvis det er flere foredragsholdere, list de opp separert med komma
+      tags: Nøkkelord i presentasjonen
   enum:
     language:
       en: Engelsk
