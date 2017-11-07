@@ -17,3 +17,25 @@
 .event-image {
   height: 200px;
 }
+
+.new_event_session.ui.form {
+  .inline.fields > label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .field > label,
+  .inline.fields > label {
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    &:after {
+      margin: -0.2em 0em 0em 0.2em;
+      content: '*';
+      color: #DB2828;
+    }
+  }
+  
+  .field > .hint {
+    margin-bottom: 0.5rem;
+  }
+}

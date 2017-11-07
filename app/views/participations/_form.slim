@@ -1,5 +1,8 @@
+- user = current_user
 = simple_form_for [event, participation], html: { class: 'ui large form' } do |f|
   = render 'fields', f: f, participation: @participation
   = f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id }
+  = f.simple_fields_for :user do |user_participation|
+    = user_participation.input :allergies, as: :string
   .actions
     = f.button :submit, class: 'ui large primary button'

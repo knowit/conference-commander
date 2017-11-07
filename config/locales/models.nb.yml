@@ -37,7 +37,7 @@ nb:
         is_published: Publisert
 
       event_session:
-        co_presenters: Medvirkende
+        co_presenters: Flere foredragsholdere
         comments_to_organizers: Kommentarer til arrangøren
         description: Beskrivelse
         duration: Ønsket lengde (minutter)
@@ -47,7 +47,7 @@ nb:
         short_description: Kort beskrivelse
         state: Status
         submitter: Foredragsholder
-        tag_list: Tagger
+        tag_list: Nøkkelord
         title: Tittel
       user:
         allergies: Allergier
@@ -59,6 +59,7 @@ nb:
         first_name: Fornavn
         last_name: Etternavn
         birth_date: Fødselsdato
+        about: Kort biografi
 
       passport:
         first_name: Fornavn i passet
@@ -81,7 +82,12 @@ nb:
         description: Beskrivelse
       track:
         capacity: Publikumskapasitet
-
+    errors:
+      messages:
+        record_invalid: 'Det oppstod feil: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Kan ikke slette registreringen, fordi 1 %{record} avhenger av denne.
+          has_many: Kan ikke slette registreringen, fordi %{record} avhenger av denne.
     models:
       accommodation:
         one: Rom
@@ -131,7 +137,15 @@ nb:
       event_name: Arrangement
       header: Liste over alle innslag
       user_name: Holdes av
-
+  hint:
+    event_session:
+      title: Presentasjonens tittel. Denne blir vist i konferanseprogrammet.
+      abstract: En kort beskrivelse av presentasjonen. Blir også vist i konferanseprogrammet. Bør ikke være mer enn et par setninger.
+      level: Ferdighetsnivå
+      language: Språket som vil bli brukt i presentasjonen
+      co_presenters: Dersom det er flere foredragsholdere, list de opp separert med komma
+      tags: Nøkkelord til presentasjonen
+      about_submitter: Kort biografi om hovedforedragsholder
   enum:
     language:
       en: Engelsk

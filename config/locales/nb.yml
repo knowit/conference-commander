@@ -1,11 +1,4 @@
 nb:
-  activerecord:
-    errors:
-      messages:
-        record_invalid: 'Det oppstod feil: %{errors}'
-        restrict_dependent_destroy:
-          has_one: Kan ikke slette registreringen, fordi 1 %{record} avhenger av denne.
-          has_many: Kan ikke slette registreringen, fordi %{record} avhenger av denne.
   date:
     abbr_day_names:
     - søn

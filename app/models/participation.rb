@@ -33,6 +33,9 @@ class Participation < ApplicationRecord
 
   scope :single_room_participants, -> { where(single_room: true) }
 
+  accepts_nested_attributes_for :user
+
+
   def self.list_single_room_participants
     @participants = Participation.where(single_room: true)
   end

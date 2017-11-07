@@ -12,6 +12,12 @@ nb:
       edit_participation: Rediger påmelding
       event_participation_locked: Påmelding låst
 
+  sessions:
+    new:
+      log_in: Logg in
+      username: E-post
+      password: Passord
+
   event_sessions:
     new: Call for papers
     show:
