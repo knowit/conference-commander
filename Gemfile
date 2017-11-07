@@ -57,6 +57,9 @@ gem 'wicked'
 # Encryption
 gem 'attr_encrypted'
 
+# LDAP
+gem 'net-ldap'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'

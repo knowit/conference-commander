@@ -23,6 +23,8 @@
 #  encrypted_expires_at_iv :string
 #  locale                  :string           default("en"), not null
 #  about                   :text
+#  mobile                  :string
+#  company                 :string
 #
 
 class User < ApplicationRecord

@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     reset_session
     session[:return_to] = redirect if redirect
     session[:user_id] = @user.id
+    LDAPService.new.refresh_user(@user) unless Rails.env.test?
     redirect_to after_sign_in_path_for(@user)
   end
 

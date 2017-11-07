@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  require 'ldap_connector'
+
   protect_from_forgery with: :exception
 
   before_action :set_locale
