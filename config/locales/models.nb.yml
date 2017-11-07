@@ -59,6 +59,7 @@ nb:
         first_name: Fornavn
         last_name: Etternavn
         birth_date: Fødselsdato
+        about: Kort biografi
 
       passport:
         first_name: Fornavn i passet
@@ -81,7 +82,12 @@ nb:
         description: Beskrivelse
       track:
         capacity: Publikumskapasitet
-
+    errors:
+      messages:
+        record_invalid: 'Det oppstod feil: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Kan ikke slette registreringen, fordi 1 %{record} avhenger av denne.
+          has_many: Kan ikke slette registreringen, fordi %{record} avhenger av denne.
     models:
       accommodation:
         one: Rom
@@ -133,12 +139,13 @@ nb:
       user_name: Holdes av
   hint:
     event_session:
-      title: The title of your presentation. This will be presented in the conference programme.
-      abstract: A short description of your presentation. Will also be published in the conference programme. Should be at most a few paragraphs, as well as an optional outline.
-      level: The level of the talk.
-      language: The language in which your presentation will be held.
-      speakers: If multiple speakers, please list all separated by commas.
-      tags: Nøkkelord i presentasjonen
+      title: Presentasjonens tittel. Denne blir vist i konferanseprogrammet.
+      abstract: En kort beskrivelse av presentasjonen. Blir også vist i konferanseprogrammet. Bør ikke være mer enn et par setninger.
+      level: Ferdighetsnivå
+      language: Språket som vil bli brukt i presentasjonen
+      co_presenters: Dersom det er flere foredragsholdere, list de opp separert med komma
+      tags: Nøkkelord til presentasjonen
+      about_submitter: Kort biografi om hovedforedragsholder
   enum:
     language:
       en: Engelsk

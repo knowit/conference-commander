@@ -14,6 +14,10 @@
 #  encrypted_nationality_iv :string
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+#  encrypted_issued_at      :string
+#  encrypted_issued_at_iv   :string
+#  encrypted_expires_at     :string
+#  encrypted_expires_at_iv  :string
 #
 
 class Passport < ApplicationRecord

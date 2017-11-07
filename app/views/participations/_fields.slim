@@ -1,17 +1,13 @@
 - if @event.event_type == 'social'
 
 - else
-  .field
-    .ui.checkbox
-      = f.input :single_room
+  = f.input :single_room, wrapper: :ui_checkbox
 
   = f.input :request_for_sharing_room, as: :string
 
   .ui.divider
 
-  .field
-    .ui.checkbox
-      = f.input :extended_stay
+  = f.input :extended_stay, wrapper: :ui_checkbox
 
   .two.fields
     .field

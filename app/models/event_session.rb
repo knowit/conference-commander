@@ -2,20 +2,23 @@
 #
 # Table name: event_sessions
 #
-#  id           :integer          not null, primary key
-#  title        :text             not null
-#  description  :text             not null
-#  duration     :integer          not null
-#  submitter_id :integer          not null
-#  event_id     :integer          not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  outline      :text
-#  start_time   :datetime
-#  state        :integer          default("proposed")
-#  track_id     :integer
-#  language     :integer          default("en")
-#  session_type :integer          default("presentation"), not null
+#  id                     :integer          not null, primary key
+#  title                  :text             not null
+#  description            :text             not null
+#  duration               :integer          not null
+#  submitter_id           :integer          not null
+#  event_id               :integer          not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  outline                :text
+#  start_time             :datetime
+#  state                  :integer          default("proposed")
+#  track_id               :integer
+#  language               :integer          default("en")
+#  session_type           :integer          default("presentation"), not null
+#  level                  :integer          default("beginner"), not null
+#  co_presenters          :string
+#  comments_to_organizers :string
 #
 
 class EventSession < ApplicationRecord
@@ -31,6 +34,7 @@ class EventSession < ApplicationRecord
   has_many :attachments, as: :attachable, dependent: :destroy
 
   accepts_nested_attributes_for :attachments
+  accepts_nested_attributes_for :submitter
 
   acts_as_taggable
 

@@ -59,7 +59,11 @@ class EventSessionsController < ApplicationController
       :co_presenters,
       :comments_to_organizers,
       co_presenter_ids: [],
-      tag_list: []
+      tag_list: [],
+      submitter_attributes: [
+        :id,
+        :about
+      ]
     )
   end
 end
