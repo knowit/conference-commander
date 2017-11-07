@@ -5,8 +5,8 @@ html
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Sarpanch:400,500,600,700,800,900"
     = javascript_pack_tag    'application'
-
 
   body
     - unless controller_name.to_sym == :sessions || action_name.to_sym == :program
