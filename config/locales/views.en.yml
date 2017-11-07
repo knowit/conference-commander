@@ -14,6 +14,7 @@ en:
 
   sessions:
     new:
+      log_in: Log in
       username: E-mail
       password: Password
 

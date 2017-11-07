@@ -14,6 +14,7 @@ nb:
 
   sessions:
     new:
+      log_in: Logg in
       username: E-post
       password: Passord
 
