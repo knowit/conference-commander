@@ -19,7 +19,7 @@ class Accommodation < ApplicationRecord
   scope :vacancies, -> { participations.count < number_of_beds }
 
   def self.vacancies(event_id)
-    where(event_id: event_id).select{ |record| record.vacant? }
+    where(event_id: event_id).select { |record| record.vacant? }
   end
 
   def vacant?

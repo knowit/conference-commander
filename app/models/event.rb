@@ -24,6 +24,8 @@ class Event < ApplicationRecord
   has_many :activities,     dependent: :destroy
   has_many :venues,         dependent: :destroy
 
+  has_many :custom_fields, as: :customizable, dependent: :destroy
+
   has_many :tracks, through: :venues, dependent: :destroy
   has_many :users, through: :participations
 
@@ -41,7 +43,7 @@ class Event < ApplicationRecord
   validates :starting_at, presence: true
   validates :ending_at, presence: true
 
-  accepts_nested_attributes_for :tracks, :venues, allow_destroy: true
+  accepts_nested_attributes_for :tracks, :venues, :custom_fields, allow_destroy: true
 
   enum event_type: { conference: 0, social: 1 }
 

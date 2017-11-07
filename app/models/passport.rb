@@ -25,9 +25,9 @@ class Passport < ApplicationRecord
   belongs_to :user
 
   ATTRIBUTES = %i[first_name last_name number nationality issued_at expires_at]
-  ATTRIBUTES.each do |attribute|
-    attribute attribute
-    attr_encrypted attribute, key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT']
+  ATTRIBUTES.each do |attribute_name|
+    attribute attribute_name
+    attr_encrypted attribute_name, key: ENV['ENCRYPT_KEY'], salt: ENV['ENCRYPT_SALT']
   end
 
   def complete?

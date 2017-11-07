@@ -1,0 +1,5 @@
+.inline.fields.nested-fields
+  .two.fields
+    = f.input :name
+    = f.input :data_type, collection: CustomField::DATA_TYPES, input_html: { class: 'ui dropdown selection' }
+  = link_to_remove_association "<i class='minus icon' ></i> Remove".html_safe, f, class: 'ui red icon button'

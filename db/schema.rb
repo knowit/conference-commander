@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019150406) do
+ActiveRecord::Schema.define(version: 20171107150314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "accommodations", id: :serial, force: :cascade do |t|
     t.integer "number_of_beds"
@@ -53,9 +54,12 @@ ActiveRecord::Schema.define(version: 20171019150406) do
     t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
   end
 
-  create_table "data_migrations", id: false, force: :cascade do |t|
-    t.string "version", null: false
-    t.index ["version"], name: "unique_data_migrations", unique: true
+  create_table "custom_fields", force: :cascade do |t|
+    t.string "customizable_type"
+    t.bigint "customizable_id", null: false
+    t.string "name", null: false
+    t.string "data_type", null: false
+    t.index ["customizable_type", "customizable_id"], name: "index_custom_fields_on_customizable_type_and_customizable_id"
   end
 
   create_table "event_sessions", id: :serial, force: :cascade do |t|
@@ -174,6 +178,7 @@ ActiveRecord::Schema.define(version: 20171019150406) do
     t.boolean "extended_stay"
     t.date "extended_stay_from"
     t.date "extended_stay_to"
+    t.jsonb "custom"
     t.index ["accommodation_id"], name: "index_participations_on_accommodation_id"
     t.index ["event_id"], name: "index_participations_on_event_id"
     t.index ["user_id", "event_id"], name: "index_participations_on_user_id_and_event_id", unique: true
@@ -245,16 +250,13 @@ ActiveRecord::Schema.define(version: 20171019150406) do
     t.integer "gender", default: 0, null: false
     t.text "allergies"
     t.string "last_name", default: "X", null: false
-    t.string "passport_name"
+    t.string "passport_first_name"
+    t.string "passport_last_name"
     t.string "passport_number"
     t.date "passport_issued_at"
     t.date "passport_expires_at"
     t.string "passport_nationality"
     t.date "birth_date"
-    t.string "encrypted_issued_at"
-    t.string "encrypted_issued_at_iv"
-    t.string "encrypted_expires_at"
-    t.string "encrypted_expires_at_iv"
     t.string "locale", default: "en", null: false
     t.text "about"
     t.index ["email"], name: "index_users_on_email", unique: true
