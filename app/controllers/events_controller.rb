@@ -63,7 +63,7 @@ class EventsController < ApplicationController
       ],
       images_attributes: [
         :file
-      ], 
+      ],
       custom_fields_attributes: [
         :name, :data_type
       ]
