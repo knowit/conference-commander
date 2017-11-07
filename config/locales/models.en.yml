@@ -103,7 +103,7 @@ en:
       abstract: A short description of your presentation. Will also be published in the conference programme. Should be at most a few paragraphs, as well as an optional outline.
       level: The level of the talk.
       language: The language in which your presentation will be held.
-      speakers: If multiple speakers, please list all separated by commas.
+      co_presenters: If multiple speakers, please list all separated by commas.
       tags: Tags for the presentation
   enum:
     language:

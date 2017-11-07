@@ -5,7 +5,9 @@
 # $(document).on 'turbolinks:load', ->
 #   $('.calendar').calendar(type: 'datetime')
 
+
 $(document).on 'turbolinks:load', ->
   $('.simple_form').on 'keydown', (e) ->
+    # Prevent default if enter is used inside a form (key 13)
     if e.keyCode == 13
       e.preventDefault()

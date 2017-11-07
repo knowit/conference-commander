@@ -136,8 +136,8 @@ nb:
       title: The title of your presentation. This will be presented in the conference programme.
       abstract: A short description of your presentation. Will also be published in the conference programme. Should be at most a few paragraphs, as well as an optional outline.
       level: The level of the talk.
-      language: The language in which your presentation will be held.
-      speakers: If multiple speakers, please list all separated by commas.
+      language: Språket som vil bli brukt i presentasjonen
+      co_presenters: Hvis det er flere foredragsholdere, list de opp separert med komma
       tags: Nøkkelord i presentasjonen
   enum:
     language:

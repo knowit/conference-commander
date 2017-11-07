@@ -27,7 +27,7 @@
       = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
 
     .two.fields
-      = f.input :co_presenters
+      = f.input :co_presenters, hint: t("hint.event_session.co_presenters")
       = f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name), as: :select, input_html: { class: 'ui fluid search selection dropdown dropdown-allow-additions', multiple: true }, hint: t("hint.event_session.tags")
 
     .field
