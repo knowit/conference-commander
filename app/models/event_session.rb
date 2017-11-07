@@ -29,7 +29,6 @@ class EventSession < ApplicationRecord
   belongs_to :track, optional: true
 
   has_many :attachments, as: :attachable, dependent: :destroy
-  has_and_belongs_to_many :co_presenters, class_name: 'User'
 
   accepts_nested_attributes_for :attachments
 

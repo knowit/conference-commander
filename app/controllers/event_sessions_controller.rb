@@ -15,8 +15,12 @@ class EventSessionsController < ApplicationController
 
   def create
     @event_session.submitter = current_user unless current_user.administrator?
-    @event_session.save
-    respond_with @event, location: event_event_sessions_path(@event)
+    if @event_session.save
+      respond_with @event, location: event_event_sessions_path(@event)
+    else
+      flash[:error] = @event_session.errors.full_messages.to_sentence
+      redirect_to action: :new
+    end
   end
 
   def show
@@ -52,6 +56,8 @@ class EventSessionsController < ApplicationController
       :start_time,
       :outline,
       :level,
+      :co_presenters,
+      :comments_to_organizers,
       co_presenter_ids: [],
       tag_list: []
     )

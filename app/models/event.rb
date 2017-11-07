@@ -74,7 +74,7 @@ class Event < ApplicationRecord
   end
 
   def image_url
-    images.first.file.url
+    images.first&.file&.url || 'placeholder.png'
   end
 
   def dates
