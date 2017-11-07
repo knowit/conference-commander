@@ -16,6 +16,7 @@
 #  track_id     :integer
 #  language     :integer          default("en")
 #  session_type :integer          default("presentation"), not null
+#  level        :integer          default("beginner"), not null
 #
 
 class EventSession < ApplicationRecord

@@ -1,17 +1,17 @@
-
 # == Schema Information
 #
 # Table name: hotels
 #
-#  id         :integer          not null, primary key
-#  name       :string           not null
-#  address    :string
-#  country    :string
-#  lat        :float
-#  lon        :float
-#  created_at :datetime
-#  updated_at :datetime
-#  event_id   :integer
+#  id          :integer          not null, primary key
+#  name        :string           not null
+#  address     :string
+#  country     :string
+#  created_at  :datetime
+#  updated_at  :datetime
+#  event_id    :integer
+#  latitude    :float
+#  longitude   :float
+#  description :string
 #
 
 class Hotel < ApplicationRecord
