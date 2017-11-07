@@ -2,9 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 #
-# $(document).on 'turbolinks:load', ->
-#   $('.calendar').calendar(type: 'datetime')
-
 
 $(document).on 'turbolinks:load', ->
   $('.simple_form').on 'keydown', (e) ->

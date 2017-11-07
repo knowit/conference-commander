@@ -68,6 +68,7 @@ class UsersController < ApplicationController
       :role,
       :allergies,
       :birth_date,
+      :about,
       passport_attributes: [
         :id,
         :first_name,
