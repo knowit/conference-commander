@@ -8,6 +8,7 @@
         th = Event.human_attribute_name(:ingress)
         /th = Event.human_attribute_name(:participations)
         th
+        th = Event.human_attribute_name(:default_activity)
         - if can? :manage, Activity
           th = t('shared.table.actions')
 

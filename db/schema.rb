@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107181011) do
+ActiveRecord::Schema.define(version: 20171125162031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20171107181011) do
     t.string "ingress"
     t.integer "price"
     t.integer "max_number_of_participants"
+    t.boolean "default_activity", default: false, null: false
     t.index ["event_id"], name: "index_activities_on_event_id"
   end
 

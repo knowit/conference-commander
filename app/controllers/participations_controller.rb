@@ -29,6 +29,7 @@ class ParticipationsController < ApplicationController
 
   def new
     @participation.user = current_user
+    @participation.activity_ids = @participation.event.activities.select {|a| a.default_activity}.map {|a| a.id}
     respond_with @participation
   end
 
