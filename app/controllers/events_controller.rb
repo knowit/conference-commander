@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
   def edit
     @event.images.build unless @event.images.present?
+    @event.custom_fields.build unless @event.custom_fields.present?
     respond_with @event
   end
 
@@ -65,7 +66,7 @@ class EventsController < ApplicationController
         :file
       ],
       custom_fields_attributes: [
-        :name, :data_type
+        :id, :name, :data_type, :description, :_destroy
       ]
     )
   end

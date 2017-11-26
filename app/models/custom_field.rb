@@ -3,5 +3,6 @@ class CustomField < ApplicationRecord
 
   belongs_to :customizable, polymorphic: true
   validates :name, :data_type, presence: true
+  validates :description, presence: true
   validates :data_type, inclusion: { in: DATA_TYPES }
 end

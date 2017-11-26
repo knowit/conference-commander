@@ -4,8 +4,8 @@
   border-radius: 0px !important;
 }
 
-input, select, textarea {
-  border: 0px !important;
+input, select, textarea, .select.dropdown, .ui.selection.active.dropdown .menu {
+  border-color: white !important;
 }
 
 .ui.card > .image > img {

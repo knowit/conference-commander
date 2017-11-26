@@ -8,3 +8,6 @@ $(document).on 'turbolinks:load', ->
     # Prevent default if enter is used inside a form (key 13)
     if e.keyCode == 13
       e.preventDefault()
+
+  $(document).on 'cocoon:after-insert', ->
+    $('.ui.dropdown').dropdown()

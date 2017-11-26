@@ -14,10 +14,13 @@
   = f.simple_fields_for :images do |image|
     = image.input :file
 
+  h3 Custom fields
+
   = f.simple_fields_for :custom_fields do |g|
-    = render 'custom_field_fields', f: g
+    table.ui.compact.very.basic.table
+      = render 'custom_field_fields', f: g
     .links
-      = link_to_add_association "<i class='plus icon'></i> Add field".html_safe, f, :custom_fields, class: 'ui secondary icon button'
+      = link_to_add_association "<i class='plus icon'></i> Add field".html_safe, f, :custom_fields, class: 'ui secondary icon button', 'data-association-insertion-node' => 'table', 'data-association-insertion-method' => 'append'
 
   .actions
     = f.submit class: 'ui large primary button'

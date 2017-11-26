@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171125162031) do
+ActiveRecord::Schema.define(version: 20171126143849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "accommodations", id: :serial, force: :cascade do |t|
     t.integer "number_of_beds"
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20171125162031) do
     t.bigint "customizable_id", null: false
     t.string "name", null: false
     t.string "data_type", null: false
+    t.string "description"
     t.index ["customizable_type", "customizable_id"], name: "index_custom_fields_on_customizable_type_and_customizable_id"
   end
 
