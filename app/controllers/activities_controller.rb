@@ -65,6 +65,7 @@ class ActivitiesController < ApplicationController
       :description,
       :price,
       :max_number_of_participants,
+      :default_activity,
       image_attributes: [
         :file
       ]
