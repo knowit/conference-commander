@@ -2,7 +2,6 @@
 
 - else
   = f.input :single_room, wrapper: :ui_checkbox
-
   = f.input :request_for_sharing_room, as: :string
 
   .ui.divider
@@ -24,6 +23,12 @@
   - if participation.event.locked?(:id) || participation.event.activities.reject{ |a| a.locked?(:id) }.empty?
     .ui.center.aligned.segment
       i.fa.fa-lock
-      =< 'Påmelding til aktiviteter er stengt'
+      =< 'Activity participations are locked.'
   - else
     = f.input :activity_ids, as: :select, collection: participation.event.activities.reject{ |a| a.locked?(:id) }, input_html: { class: 'ui fluid dropdown', multiple: '' }
+
+  - if participation.event.custom_fields.present?
+    - participation.event.custom_fields.each do |custom_field|
+      .field
+        label = custom_field.description
+        = text_field :custom, custom_field.name.to_sym
