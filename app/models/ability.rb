@@ -21,7 +21,7 @@ class Ability
     can :update, User, id:  @user.id
     can :read, User
     can :stop_impersonating, User
-    can [:update, :manage], EventSession, submitter_id: @user.id # allow users to manage own event sessions
+    can [:manage], EventSession, submitter_id: @user.id # allow users to manage own event sessions
   end
 
   def administrator_abilities
@@ -36,6 +36,7 @@ class Ability
   def speaker_abilities
     common_abilities
     can :read, [Event, Activity, EventSession]
+    can [:create, :read, :update], Participation, user_id: @user.id
   end
 
   def participant_abilities
