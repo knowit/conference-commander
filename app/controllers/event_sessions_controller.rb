@@ -19,7 +19,7 @@ class EventSessionsController < ApplicationController
       respond_with @event, location: event_event_sessions_path(@event)
     else
       flash[:error] = @event_session.errors.full_messages.to_sentence
-      redirect_to action: :new
+      render :new
     end
   end
 
@@ -28,8 +28,12 @@ class EventSessionsController < ApplicationController
   end
 
   def update
-    @event_session.update(event_session_params)
-    respond_with @event, location: event_event_sessions_path(@event)
+    if @event_session.update(event_session_params)
+      redirect_to event_event_sessions_path(@event)
+    else
+      flash[:error] = @event_session.errors.full_messages.to_sentence
+      render :edit
+    end
   end
 
   def destroy
