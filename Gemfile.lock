@@ -14,6 +14,17 @@ GIT
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
 
+GIT
+  remote: https://github.com/randym/axlsx.git
+  revision: c8ac844572b25fda358cc01d2104720c4c42f450
+  ref: c8ac844
+  specs:
+    axlsx (2.1.0.pre)
+      htmlentities (~> 4.3.4)
+      mimemagic (~> 0.3)
+      nokogiri (>= 1.6.6)
+      rubyzip (>= 1.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -65,10 +76,6 @@ GEM
     attr_encrypted (3.0.3)
       encryptor (~> 3.0.0)
     awesome_print (1.7.0)
-    axlsx (2.1.0.pre)
-      htmlentities (~> 4.3.1)
-      nokogiri (>= 1.4.1)
-      rubyzip (~> 1.1.7)
     axlsx_rails (0.5.1)
       actionpack (>= 3.1)
       axlsx (>= 2.0.1)
@@ -128,7 +135,8 @@ GEM
       rails (>= 3.1.0)
     hashie (3.5.5)
     htmlentities (4.3.4)
-    i18n (0.8.1)
+    i18n (0.9.3)
+      concurrent-ruby (~> 1.0)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2)
@@ -152,16 +160,16 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
-    mini_portile2 (2.1.0)
-    minitest (5.10.2)
+    mini_portile2 (2.3.0)
+    minitest (5.11.3)
     multi_json (1.12.1)
     net-ldap (0.16.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
     nio4r (2.0.0)
-    nokogiri (1.7.2)
-      mini_portile2 (~> 2.1.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
     omniauth (1.6.1)
       hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
@@ -169,7 +177,7 @@ GEM
       activesupport
       nokogiri (>= 1.4.4)
       omniauth (~> 1.0)
-    paperclip (5.1.0)
+    paperclip (5.2.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
@@ -218,7 +226,7 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby-graphviz (1.2.3)
-    rubyzip (1.1.7)
+    rubyzip (1.2.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -257,7 +265,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
-    tzinfo (1.2.3)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -285,7 +293,7 @@ DEPENDENCIES
   annotate
   attr_encrypted
   awesome_print
-  axlsx (= 2.1.0.pre)
+  axlsx!
   axlsx_rails
   byebug
   cancancan
@@ -315,7 +323,7 @@ DEPENDENCIES
   rails (~> 5.1.0)
   rails-erd
   responders
-  rubyzip (~> 1.1.0)
+  rubyzip (>= 1.2.1)
   sass-rails (~> 5.0)
   semantic-ui-sass!
   simple-navigation
@@ -335,4 +343,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.4
+   1.16.0

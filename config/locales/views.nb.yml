@@ -105,6 +105,8 @@ nb:
       organizer: Organisator
       participant: Deltager
       speaker: Foredragsholder
+    fields:
+      company_hint: Denne informasjonen er hentet fra den sentrale brukerdatabasen. Om informasjonen her er feil, ta kontakt med arrangementsansvarlig.
 
   after_signup:
     steps:

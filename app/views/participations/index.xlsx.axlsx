@@ -2,6 +2,7 @@ wb = xlsx_package.workbook
 wb.add_worksheet(name: @event.name) do |sheet|
   sheet.add_row([
     User.human_attribute_name(:name),
+    User.human_attribute_name(:company),
     Passport.human_attribute_name(:first_name),
     Passport.human_attribute_name(:last_name),
     Passport.human_attribute_name(:number),
@@ -16,6 +17,7 @@ wb.add_worksheet(name: @event.name) do |sheet|
   @event.participations.each do |p|
     sheet.add_row([
       p.user.full_name,
+      p.user.company,
       p.user&.passport&.first_name,
       p.user&.passport&.last_name,
       p.user&.passport&.number,

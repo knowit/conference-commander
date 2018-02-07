@@ -28,9 +28,14 @@ class ParticipationsController < ApplicationController
   end
 
   def new
-    @participation.user = current_user
-    @participation.activity_ids = @participation.event.activities.select(&:default_activity).map(&:id)
-    respond_with @participation
+    existing_participation = @event.user_participation(current_user)
+    if existing_participation
+      redirect_to edit_event_participation_path(@event, id: existing_participation)
+    else
+      @participation.user = current_user
+      @participation.activity_ids = @participation.event.activities.select(&:default_activity).map(&:id)
+      respond_with @participation
+    end
   end
 
   def edit

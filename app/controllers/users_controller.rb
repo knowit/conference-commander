@@ -66,6 +66,7 @@ class UsersController < ApplicationController
       :gender,
       :locale,
       :role,
+      :company,
       :allergies,
       :birth_date,
       :about,

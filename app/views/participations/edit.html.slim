@@ -1,6 +1,10 @@
 - breadcrumb :participations, @event
 
-= image_tag @event.image_url, class: 'event-image'
+.ui.grid
+  .four.wide.column
+    = image_tag @event.image_url, class: 'event-image'
+  .twelve.wide.column
+    span = @event.description
 
 .ui.segment
   .ui.large.list.horizontal
