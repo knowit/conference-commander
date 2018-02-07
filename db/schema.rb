@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20171126143849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "accommodations", id: :serial, force: :cascade do |t|
     t.integer "number_of_beds"

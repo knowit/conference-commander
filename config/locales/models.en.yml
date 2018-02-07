@@ -30,6 +30,7 @@ en:
         title: Title
       user:
         allergies: Allergies
+        company: Company
         email: E-mail
         gender: Gender
         locale: Locale

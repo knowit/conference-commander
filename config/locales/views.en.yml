@@ -104,6 +104,8 @@ en:
       organizer: Organizer
       participant: Participant
       speaker: Speaker
+    fields:
+      company_hint: This information has been collected from Active Directory. If the information is incorrect, please contact the event coordinator.
 
   after_signup:
     steps:

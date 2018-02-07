@@ -27,6 +27,7 @@ h3= Passport.model_name.human
         = f.radio_button :locale, locale
         = f.label t("misc.locale.#{locale}")
 
+= f.input :company, as: :string, disabled: !current_user.administrator?, hint: t('.company_hint')
 = f.input :allergies, as: :string
 
 = f.input :about, as: :text

@@ -51,6 +51,7 @@ nb:
         title: Tittel
       user:
         allergies: Allergier
+        company: Firma
         email: E-post
         gender: Kjønn
         locale: Språk
