@@ -6,4 +6,6 @@
 
 = image_tag @event.image_url, class: 'event-image'
 
+p= simple_format @event.description
+
 = render 'program/program'
