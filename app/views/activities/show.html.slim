@@ -32,7 +32,6 @@
 
 .ui.hidden.divider
 
-- if current_user.administrator?
-  .ui.segment
-    - unless @activity.participations.empty?
-      == render 'participations/table', participations: @activity.participations
+.ui.segment
+  - unless @activity.participations.empty?
+    == render 'participations/table', participations: @activity.participations
