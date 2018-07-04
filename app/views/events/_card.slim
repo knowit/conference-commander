@@ -17,12 +17,12 @@
     .meta
       - if event.starting_at.to_date == event.ending_at.to_date
         span class="date"
-          => event.starting_at.strftime("%d. %b %Y %H:m")
+          => event.starting_at.strftime("%d. %b %Y %H:%m")
       - else
-      span class="date"
-        => event.starting_at.strftime("%d. %b %Y")
-        | &mdash;
-        =< event.ending_at.strftime("%d. %b %Y")
+        span class="date"
+          => event.starting_at.strftime("%d. %b %Y")
+          | &mdash;
+          =< event.ending_at.strftime("%d. %b %Y")
     .description
       = event.short_description.present? ? event.short_description : event.description
   .extra.content
