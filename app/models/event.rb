@@ -39,6 +39,7 @@ class Event < ApplicationRecord
   accepts_nested_attributes_for :images
 
   validates :name, presence: true
+  validates :short_description, presence: true
   validates :description, presence: true
   validates :starting_at, presence: true
   validates :ending_at, presence: true

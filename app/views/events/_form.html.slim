@@ -9,6 +9,8 @@
     .field: .ui.timedatepicker = f.input :starting_at, as: :string
     .field: .ui.timedatepicker = f.input :ending_at,   as: :string
 
+  = f.input :short_description
+
   = f.input :description
 
   = f.simple_fields_for :images do |image|

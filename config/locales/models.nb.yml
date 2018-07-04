@@ -30,6 +30,7 @@ nb:
         number_of_beds: Antall sengeplasser
         event: Arrangement
       event:
+        short_description: Kort beskrivelse
         description: Beskrivelse
         ending_at: Slutt
         starting_at: Start
