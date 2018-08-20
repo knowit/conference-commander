@@ -141,12 +141,12 @@ nb:
       user_name: Holdes av
   hint:
     event_session:
-      title: Presentasjonens tittel. Denne blir vist i konferanseprogrammet.
-      abstract: En kort beskrivelse av presentasjonen. Blir også vist i konferanseprogrammet. Bør ikke være mer enn et par setninger.
+      title: Foredragets tittel. Denne blir vist i konferanseprogrammet.
+      abstract: En kort beskrivelse av foredraget. Blir også vist i konferanseprogrammet. Bør ikke være mer enn et par setninger.
       level: Ferdighetsnivå
-      language: Språket som vil bli brukt i presentasjonen
+      language: Språket som vil bli brukt i foredraget
       co_presenters: Dersom det er flere foredragsholdere, list de opp separert med komma
-      tags: Nøkkelord til presentasjonen
+      tags: Nøkkelord til foredraget
       about_submitter: Kort biografi om hovedforedragsholder
   enum:
     language:
@@ -160,7 +160,7 @@ nb:
         intermediate: Middels
       session_type:
         lightning_talk: Lyntale
-        presentation: Presentasjon
+        presentation: Foredrag
         workshop: Workshop
       state:
         proposed: Foreslått

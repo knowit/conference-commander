@@ -13,16 +13,16 @@
           .ui.radio.checkbox
             = f.radio_button :session_type, k
             = f.label t("enum.event_session.session_type.#{k}")
-    .inline.fields
+    .inline.fields.hidden
       label for='event_session[level]'= EventSession.human_attribute_name(:level)
-      - EventSession.levels.each do |k,v|
-        .field
-          .ui.radio.checkbox
-            = f.radio_button :level, k
-            = f.label t("enum.event_session.level.#{k}")
+      - first_level = EventSession.levels.first
+      .field
+        .ui.radio.checkbox
+          = f.radio_button :level, first_level[1]
+          = f.label t("enum.event_session.level.#{first_level[0]}")
 
     .two.fields
-      = f.input :duration, collection: (1..120).to_a.select{ |e| e % 5 == 0 }, as: :select, input_html: { class: 'ui fluid dropdown' }
+      = f.input :duration, collection: [[15, "15 min, foredrag"],[30, "30 min, foredrag"], [180, "3 timer, workshop"], [360, "6 timer, workshop"]].to_a, label_method: :second, value_method: :first, as: :select, input_html: { class: 'ui fluid dropdown' }
 
       = f.input :language, collection: EventSession.languages.keys.to_a, as: :select, selected: 'no', input_html: { class: 'ui fluid dropdown' }, label_method: ->(e) { t("enum.language.#{e}") }
 
