@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20180704144651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "accommodations", id: :serial, force: :cascade do |t|
     t.integer "number_of_beds"
@@ -104,6 +103,7 @@ ActiveRecord::Schema.define(version: 20180704144651) do
     t.datetime "updated_at", null: false
     t.integer "event_type", default: 0, null: false
     t.boolean "is_published", default: false, null: false
+    t.boolean "allow_externals", default: false, null: false
     t.text "short_description"
   end
 

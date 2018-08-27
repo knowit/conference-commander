@@ -18,7 +18,7 @@
       - first_level = EventSession.levels.first
       .field
         .ui.radio.checkbox
-          = f.radio_button :level, first_level[1]
+          = f.radio_button :level, first_level[0]
           = f.label t("enum.event_session.level.#{first_level[0]}")
 
     .two.fields
