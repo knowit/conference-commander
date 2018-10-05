@@ -4,6 +4,17 @@
 
 = render 'stats'
 
+- if @event.unlocked?
+  .button
+    - unless @event.user_already_signed_up? current_user
+      = link_to new_event_participation_path(@event), class: 'ui positive button' do
+        i.icon.plus
+        = t('events.table.add_participation')
+    - else
+      = link_to edit_event_participation_path(@event, id: @event.user_participation(current_user)), class: 'ui primary button' do
+        i.icon.pencil
+        = t('events.table.edit_participation')
+
 = image_tag @event.image_url, class: 'event-image'
 
 p= simple_format @event.description
