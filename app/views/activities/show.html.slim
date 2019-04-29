@@ -12,7 +12,7 @@
         - if @activity.ingress?
           = @activity.ingress
       .description
-        = @activity.description
+        = simple_format @activity.description
       .extra
         .ui.horizontal.list
           - if @activity.max_number_of_participants?
